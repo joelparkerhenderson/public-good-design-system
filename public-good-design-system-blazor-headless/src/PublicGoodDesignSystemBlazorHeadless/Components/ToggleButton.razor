@@ -1,0 +1,16 @@
+@* ToggleButton.razor *@
+<button
+    class="@CssClasses"
+    aria-checked="@Pressed"
+    aria-label="@Label"
+    type="button"
+    role="switch"
+    disabled="@Disabled"
+    @onclick="HandleClick"
+    @onkeydown="HandleKeyDown"
+    @attributes="AdditionalAttributes">
+    @if (ChildContent != null)
+    {
+        @ChildContent
+    }
+</button>

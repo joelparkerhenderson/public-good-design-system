@@ -1,0 +1,46 @@
+# Tour List Item
+
+## Metadata
+
+- Component: tour-list-item
+- PascalCase: TourListItem
+- Description: one step in a tour guide list
+- HTML tag: <li>
+- CSS class: .tour-list-item
+- Interactive: no
+
+## Composition
+
+- Pattern: Tour/List/ListItem
+- Parent: tour-list
+
+## ARIA
+
+- `role="group"` -- groups the step content semantically
+- `aria-roledescription="step"` -- identifies the element as a tour step
+- `aria-label` -- provides an accessible name, optionally including "Step N of M"
+- `aria-current="step"` -- indicates the currently active step
+- `aria-hidden="true"` -- hides inactive steps from assistive technology
+- `hidden` -- hides inactive steps from visual rendering
+
+## Keyboard
+
+- None directly -- keyboard interactions are managed by the parent TourGuideList and by interactive elements within step content
+
+## Acceptance Criteria
+
+- [ ] Renders <li> element with class="tour-list-item"
+- [ ] Has aria-label attribute
+- [ ] Has role="group"
+- [ ] Keyboard navigation works correctly
+- [ ] WCAG 2.2 AAA compliant
+- [ ] Zero CSS — fully headless
+
+## References
+
+- Documentation: index.md
+- CSS class: .tour-list-item in css-style-sheet-template.css
+- HTML headless: public-good-design-system-html-headless/components/tour-list-item.html
+- WAI-ARIA Group Role: https://www.w3.org/TR/wai-aria-1.2/#group
+- WAI-ARIA aria-roledescription: https://www.w3.org/TR/wai-aria-1.2/#aria-roledescription
+- WAI-ARIA aria-current: https://www.w3.org/TR/wai-aria-1.2/#aria-current

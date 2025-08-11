@@ -1,0 +1,9 @@
+@* Timer.razor *@
+<time
+    class="@CssClasses"
+    aria-label="@Label"
+    role="timer"
+    aria-live="polite"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</time>

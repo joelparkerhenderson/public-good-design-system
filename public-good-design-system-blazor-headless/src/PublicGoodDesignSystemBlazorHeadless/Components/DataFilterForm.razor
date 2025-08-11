@@ -1,0 +1,10 @@
+@* DataFilterForm.razor *@
+<form
+    class="@CssClasses"
+    aria-label="@Label"
+    onsubmit="@HandleSubmit"
+    role="search"
+    handleSubmit="@HandleSubmit"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</form>

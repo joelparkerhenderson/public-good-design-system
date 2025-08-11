@@ -1,0 +1,12 @@
+@* ScrollBar.razor *@
+<div
+    class="@CssClasses"
+    role="scrollbar"
+    aria-label="@Label"
+    aria-orientation="@Orientation"
+    aria-valuenow="0"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</div>

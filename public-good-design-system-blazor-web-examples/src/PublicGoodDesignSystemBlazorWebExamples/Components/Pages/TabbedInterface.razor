@@ -1,0 +1,59 @@
+@page "/tabbed-interface"
+
+<h1>Tabbed Interface</h1>
+
+<TabBar Label="Notification filters">
+    <TabBarButton Selected="@IsAllTab" Controls="all-panel" @onclick="SetAllTab">
+        All
+    </TabBarButton>
+    <TabBarButton Selected="@IsUnreadTab" Controls="unread-panel" @onclick="SetUnreadTab">
+        Unread <Badge Type="warning">@unreadCount</Badge>
+    </TabBarButton>
+</TabBar>
+
+<div id="@PanelId">
+    <AccordionNav Label="Notification details">
+        <AccordionNavList>
+            @foreach (var n in FilteredNotifications)
+            {
+                <AccordionNavListItem>
+                    <summary>
+                        @n.Title
+                        @if (!n.Read)
+                        {
+                            <Badge Type="info">New</Badge>
+                        }
+                        <Badge Type="@n.Type">@n.Type</Badge>
+                    </summary>
+                    <p>@n.Message</p>
+                </AccordionNavListItem>
+            }
+        </AccordionNavList>
+    </AccordionNav>
+</div>
+
+@code {
+    private record NotificationItem(int Id, string Title, string Message, string Type, bool Read);
+
+    private static readonly NotificationItem[] notifications =
+    [
+        new(1, "Welcome", "Thanks for signing up!", "info", true),
+        new(2, "Update available", "Version 2.0 is ready.", "info", false),
+        new(3, "Disk space low", "Less than 10% remaining.", "warning", false),
+        new(4, "Build failed", "CI pipeline error on main.", "error", false),
+    ];
+
+    private string activeTab = "all";
+
+    private bool IsAllTab => activeTab == "all";
+    private bool IsUnreadTab => activeTab == "unread";
+    private string PanelId => IsAllTab ? "all-panel" : "unread-panel";
+
+    private void SetAllTab() => activeTab = "all";
+    private void SetUnreadTab() => activeTab = "unread";
+
+    private int unreadCount => notifications.Count(n => !n.Read);
+
+    private IEnumerable<NotificationItem> FilteredNotifications =>
+        IsAllTab ? notifications : notifications.Where(n => !n.Read);
+}

@@ -1,0 +1,379 @@
+# Public Good Design System
+
+Public Good Design System is a free open source design system that anyone can use and improve.
+
+This is brand new work and we welcome collaboration, and guidance, and feedback.
+
+Contact <joel@joelparkerhenderson.com>
+
+## Examples
+
+Batteries-included web examples for HTML, Svelte, React, Vue, Blazor:
+
+- [HTML JavaScript examples](public-good-design-system-html-javascript-examples)
+- [Svelte SvelteKit examples](public-good-design-system-svelte-sveltekit-examples)
+- [React Next.js examples](public-good-design-system-react-next-examples)
+- [Vue Nuxt.js examples](public-good-design-system-vue-nuxt-examples)
+- [Blazor Web examples](public-good-design-system-blazor-web-examples)
+
+Headless versions if you want to use components with all your own styles:
+
+- [HTML headless](public-good-design-system-html-headless)
+- [Svelte headless](public-good-design-system-svelte-headless)
+- [Blazor headless](public-good-design-system-blazor-headless)
+- [React headless](public-good-design-system-react-headless)
+- [Vue headless](public-good-design-system-vue-headless)
+
+
+## Components
+
+- [accordion-nav](components/accordion-nav): a navigation container for collapsible accordion information
+- [accordion-nav-list](components/accordion-nav-list): an ordered list of accordion nav list item components
+- [accordion-nav-list-item](components/accordion-nav-list-item): one accordion nav list item component
+- [action-link](components/action-link): a hyperlink styled as an action trigger
+- [ai-label](components/ai-label): an indicator of AI instances that is a pathway to AI explainability
+- [alert-dialog](components/alert-dialog): a modal dialog for urgent messages requiring user acknowledgment
+- [alert](components/alert): a status message for important information or feedback
+- [angle-slider-range-input](components/angle-slider-range-input): a range input for selecting an angle in degrees
+- [aspect-ratio-container](components/aspect-ratio-container): a container that maintains a fixed aspect ratio
+- [avatar](components/avatar): an avatar indicator that shows an avatar image or avatar text
+- [avatar-image](components/avatar-image): an avatar indicator inside image such as a user photo
+- [avatar-text](components/avatar-text): an avatar indicator inner text such as a user name
+- [back-link](components/back-link): a navigation link to return to a previous page
+- [badge](components/badge): a small label for counts, statuses, or categories
+- [banner](components/banner): a prominent message bar across the top of a page
+- [beach-ball](components/beach-ball): a decorative animated beach ball element
+- [breadcrumb-nav](components/breadcrumb-nav): a navigation container for breadcrumb trail links
+- [breadcrumb-nav-list](components/breadcrumb-nav-list): an ordered list of breadcrumb navigation items
+- [breadcrumb-nav-list-item](components/breadcrumb-nav-list-item): one breadcrumb navigation link in the trail
+- [button](components/button): a generic clickable button element
+- [button-input](components/button-input): an input element of type button for form actions
+- [calendar-table](components/calendar-table): a calendar table interactive grid for managing dates, days, etc.
+- [calendar-table-head](components/calendar-table-head): a calendar table interactive grid thead for managing dates, days, etc.
+- [calendar-table-body](components/calendar-table-body): a calendar table interactive grid tbody for managing dates, days, etc.
+- [calendar-table-foot](components/calendar-table-foot): a calendar table interactive grid tfoot for managing dates, days, etc.
+- [calendar-table-col](components/calendar-table-col): a calendar table interactive grid column for managing dates, days, etc.
+- [calendar-table-row](components/calendar-table-row): a calendar table interactive grid row for managing dates, days, etc.
+- [calendar-table-data](components/calendar-table-data): a calendar table interactive grid data cell for managing dates, days, etc.
+- [calendar-range-picker](components/calendar-range-picker): a picker for selecting a date range on a calendar
+- [call-to-action](components/call-to-action): a prominent prompt encouraging user action
+- [caption](components/caption): a caption for a table or figure element
+- [card](components/card): a grouped content container with header, body, and footer areas
+- [care-card](components/care-card): a medical care instruction card with urgency levels
+- [carousel](components/carousel): a slideshow for cycling through content items
+- [character-counter](components/character-counter): a counter showing remaining or used characters in a text field
+- [character](components/character): a single character display element
+- [checkbox-input](components/checkbox-input): a checkbox input for toggling a boolean value
+- [checkbox-group](components/checkbox-group): a group component that manages a collection of checkboxes with shared state
+- [check-list](components/check-list): an ordered list of check list item components
+- [check-list-item](components/check-list-item): one check list item component with a checkbox
+- [clipboard-copy-button](components/clipboard-copy-button): a button that copies text to the clipboard
+- [collapsible](components/collapsible): a container that can be expanded or collapsed
+- [color-input](components/color-input): an input for selecting a color value
+- [color-picker](components/color-picker): a two-dimensional board for picking colors by hue and saturation
+- [color-picker-button](components/color-picker-button): a button showing a color swatch in a color picker
+- [combobox](components/combobox): a text input combined with a dropdown list for filtering options
+- [command](components/command): a command palette for searching and executing actions
+- [contents-nav](components/contents-nav): a navigation landmark for a list of contents
+- [contents-list](components/contents-list): an ordered list of contents list item components
+- [contents-list-item](components/contents-list-item): one contents list item component linking to a page section
+- [context-menu](components/context-menu): a menu that appears on right-click or long-press
+- [context-menu-item](components/context-menu-item): one item in a context menu
+- [currency-input](components/currency-input): a locale-aware currency input with automatic formatting, symbols, separators
+- [data-filter-form](components/data-filter-form): a form for filtering data by criteria
+- [data-table](components/data-table): a data table interactive grid for displaying and sorting tabular data
+- [data-table-head](components/data-table-head): a data table interactive grid thead for displaying and sorting tabular data
+- [data-table-body](components/data-table-body): a data table interactive grid tbody for displaying and sorting tabular data
+- [data-table-foot](components/data-table-foot): a data table interactive grid tfoot for displaying and sorting tabular data
+- [data-table-col](components/data-table-col): a data table interactive grid column for displaying and sorting tabular data
+- [data-table-row](components/data-table-row): a data table interactive grid row for displaying and sorting tabular data
+- [data-table-data](components/data-table-data): a data table interactive grid data cell for displaying and sorting tabular data
+- [date-field](components/date-field): a structured field for entering date components
+- [date-input](components/date-input): an input for entering a date value
+- [date-range](components/date-range): a display of a start and end date range
+- [datetime-local-input](components/datetime-local-input): an input for entering a date and time without time zone
+- [details](components/details): a disclosure widget that shows and hides content
+- [dial](components/dial): a rotary dial control for selecting a value
+- [dialog](components/dialog): a modal or non-modal dialog window
+- [do-list](components/do-list): a guideline list of encouraged do-list-item components
+- [do-list-item](components/do-list-item): an encouraged-practice item in a do-list guideline list
+- [dont-list](components/dont-list): a guideline list of discouraged dont-list-item components
+- [dont-list-item](components/dont-list-item): a discouraged-practice item in a dont-list guideline list
+- [drawer](components/drawer): a panel that slides in from the edge of the screen
+- [dropdown-menu](components/dropdown-menu): a menu that opens below a trigger button
+- [editable-form](components/editable-form): a form wrapper for inline editing of content
+- [editable](components/editable): an inline-editable text element that toggles between view and edit modes
+- [email-link](components/email-link): a mailto hyperlink for an email address
+- [email-input](components/email-input): an input for entering an email address
+- [emoji-character-picker](components/emoji-character-picker): a picker for browsing and selecting emoji characters
+- [emoji](components/emoji): a single emoji character with accessible name
+- [error-message](components/error-message): an error message associated with a form field
+- [error-summary](components/error-summary): a summary of all validation errors on a form
+- [expander](components/expander): a control that expands to reveal more content
+- [field](components/field): a form field wrapper with label, input, and error message
+- [fieldset](components/fieldset): a group of related form fields with a legend
+- [figure](components/figure): a self-contained figure with optional caption
+- [file-dialog](components/file-dialog): a dialog for browsing and selecting files
+- [file-input](components/file-input): an input for selecting files from the file system
+- [file-manager](components/file-manager): a file browser for navigating and managing files
+- [file-upload](components/file-upload): a drag-and-drop area for uploading files
+- [five-face-rating-view](components/five-face-rating-view): a read-only display of a five-face satisfaction rating
+- [five-face-rating-picker](components/five-face-rating-picker): a picker for selecting a 1-5 satisfaction rating using face labels
+- [five-face-rating-picker-button](components/five-face-rating-picker-button): a picker button for selecting a 1-5 satisfaction rating using face labels
+- [five-star-rating-view](components/five-star-rating-view): a read-only display of a five-star rating
+- [five-star-rating-picker](components/five-star-rating-picker): a picker for selecting a 1-5 star rating using radio buttons
+- [five-star-rating-picker-button](components/five-star-rating-picker-button): a picker button for selecting a 1-5 star rating using radio buttons
+- [flair](components/flair): a decorative highlight or emphasis element
+- [floating-panel](components/floating-panel): a panel that floats above page content
+- [footer](components/footer): a page or section footer area
+- [footnote](components/footnote): a footnote reference and content element
+- [form](components/form): a form element for collecting and submitting user data
+- [gantt-table](components/gantt-table): a Gantt chart table interactive grid for planning schedule visualization
+- [gantt-table-head](components/gantt-table-head): a Gantt chart table interactive grid thead for planning schedule visualization
+- [gantt-table-body](components/gantt-table-body): a Gantt chart table interactive grid tbody for planning schedule visualization
+- [gantt-table-foot](components/gantt-table-foot): a Gantt chart table interactive grid tfoot for planning schedule visualization
+- [gantt-table-col](components/gantt-table-col): a Gantt chart table interactive grid column for planning schedule visualization
+- [gantt-table-row](components/gantt-table-row): a Gantt chart table interactive grid row for planning schedule visualization
+- [gantt-table-data](components/gantt-table-data): a Gantt chart table interactive grid data cell for planning schedule visualization
+- [grail-layout](components/grail-layout): a responsive web design structure with header, left aside, center main, right aside, footer
+- [grail-layout-top-header](components/grail-layout-top-header): grail layout top header full width with tag
+- [grail-layout-left-aside](components/grail-layout-left-aside): grail layout left aside sidebar with tag
+- [grail-layout-center-main](components/grail-layout-center-main): grail layout center main content with tag
+- [grail-layout-right-aside](components/grail-layout-right-aside): grail layout right aside sidebar with tag
+- [grail-layout-bottom-footer](components/grail-layout-bottom-footer): grail layout bottom footer full width with tag
+- [hamburger-menu](components/hamburger-menu): a toggle button that opens a mobile navigation menu
+- [header](components/header): a page or section header area
+- [hidden-input](components/hidden-input): a hidden input for including data in form submission
+- [hint](components/hint): hint text providing guidance for a form field
+- [hover-card](components/hover-card): a card that appears on hover over a trigger element
+- [icon](components/icon): a container for displaying an icon
+- [image-file-input](components/image-file-input): an input for selecting image files with preview
+- [image](components/image): an image element with alt text
+- [image-input](components/image-input): a graphical submit button that displays an image
+- [information-callout](components/information-callout): a callout box highlighting informational content
+- [input](components/input): a generic HTML input element
+- [inset-text](components/inset-text): indented text to distinguish it from surrounding content
+- [kanban-table](components/kanban-table): a kanban board table interactive grid for organizing items by status
+- [kanban-table-head](components/kanban-table-head): a kanban board table interactive grid thead for organizing items by status
+- [kanban-table-body](components/kanban-table-body): a kanban board table interactive grid tbody for organizing items by status
+- [kanban-table-foot](components/kanban-table-foot): a kanban board table interactive grid tfoot for organizing items by status
+- [kanban-table-col](components/kanban-table-col): a kanban board table interactive grid column for organizing items by status
+- [kanban-table-row](components/kanban-table-row): a kanban board table interactive grid row for organizing items by status
+- [kanban-table-data](components/kanban-table-data): kanban board table interactive grid data cell for organizing items by status
+- [kbd](components/kbd): show keyboard shortcuts and key combinations in a styled inline element
+- [label](components/label): a label associated with a form input
+- [listbox](components/listbox): a list of selectable options with keyboard navigation
+- [measurement-instance-input](components/measurement-instance-input): an input for entering a measurement value and unit
+- [measurement-instance-view](components/measurement-instance-view): a read-only display of a measurement value and unit
+- [measurement-system-input](components/measurement-system-input): an input for selecting a measurement system
+- [measurement-system-view](components/measurement-system-view): a read-only display of a measurement system
+- [measurement-unit-input](components/measurement-unit-input): an input for selecting a measurement unit
+- [measurement-unit-view](components/measurement-unit-view): a read-only display of a measurement unit
+- [medical-record-red-box](components/medical-record-red-box): a red highlighted box for critical medical record information
+- [menu](components/menu): a list of actions or options triggered by a button
+- [menu-item](components/menu-item): one item in a menu
+- [menu-bar](components/menu-bar): a horizontal bar of menu triggers
+- [menu-bar-button](components/menu-bar-button): one item in a menu bar
+- [meter](components/meter): a gauge displaying a scalar value within a known range
+- [month-input](components/month-input): an input for selecting a month and year
+- [navigation-menu](components/navigation-menu): a site-wide navigation menu with links
+- [net-promoter-score-view](components/net-promoter-score-view): a read-only display of a Net Promoter Score
+- [net-promoter-score-picker](components/net-promoter-score-picker): a picker for selecting a 0-10 Net Promoter Score
+- [net-promoter-score-picker-button](components/net-promoter-score-picker-button): a picker button for selecting a 0-10 Net Promoter Score
+- [notification](components/notification): a brief message about an event or update
+- [number-input](components/number-input): an input for entering a numeric value with validation
+- [option](components/option): an option element within a select dropdown
+- [pagination-nav](components/pagination-nav): an ordered list of page navigation links
+- [pagination-list](components/pagination-list): an ordered list of page navigation links
+- [pagination-list-item](components/pagination-list-item): one page link in a pagination list
+- [panel](components/panel): a generic content panel with optional heading
+- [password-input](components/password-input): an input for entering a password with obscured text
+- [password-input-or-text-input-div](components/password-input-or-text-input-div): an input for entering a password or text with show/hide toggle
+- [pin-input-div](components/pin-input-div): a series of single-digit inputs for entering a PIN or OTP code
+- [popover](components/popover): a floating content box anchored to a trigger element
+- [popup](components/popup): a temporary overlay that appears above page content
+- [postal-code-input](components/postal-code-input): an input for entering a postal or ZIP code
+- [postal-code-view](components/postal-code-view): a read-only display of a postal or ZIP code
+- [progress-circle](components/progress-circle): a circular progress indicator
+- [progress-spinner](components/progress-spinner): an indeterminate spinning progress indicator
+- [progress](components/progress): a horizontal progress bar showing completion
+- [qr-code](components/qr-code): a QR code image generated from text or URL data
+- [radio-group](components/radio-group): a group of radio buttons for selecting one option
+- [radio-input](components/radio-input): a single radio button input
+- [range-input](components/range-input): a slider input for selecting a value within a range
+- [red-amber-green-view](components/red-amber-green-view): a read-only display of a red/amber/green status
+- [red-amber-green-picker](components/red-amber-green-picker): a picker for selecting a red/amber/green status
+- [red-amber-green-picker-button](components/red-amber-green-picker-button): a picker button for selecting a red/amber/green status
+- [red-orange-yellow-green-blue-view](components/red-orange-yellow-green-blue-view): a read-only display of a five-level color status
+- [red-orange-yellow-green-blue-picker](components/red-orange-yellow-green-blue-picker): a picker for selecting a five-level color status
+- [red-orange-yellow-green-blue-picker-button](components/red-orange-yellow-green-blue-picker-button): a picker button for selecting a five-level color status
+- [reset-input](components/reset-input): a button input that resets a form to default values
+- [resizable](components/resizable): a container that the user can resize by dragging
+- [review-date](components/review-date): a display of a content review date
+- [scroll-area](components/scroll-area): a scrollable container with custom scrollbar support
+- [scroll-bar](components/scroll-bar): a custom scrollbar element
+- [search-input](components/search-input): an input for entering a search query
+- [segment-group](components/segment-group): a group of mutually exclusive segment options
+- [segment-group-item](components/segment-group-item): one selectable segment in a segment group
+- [select-with-extras](components/select-with-extras): a select dropdown with additional features like search or groups
+- [select](components/select): a dropdown select element for choosing one option
+- [separator](components/separator): a horizontal or vertical divider between content sections
+- [sheet](components/sheet): a panel that slides in from a screen edge as an overlay
+- [sidebar](components/sidebar): a side panel for navigation or supplementary content
+- [signature-pad](components/signature-pad): a drawing area for capturing a handwritten signature
+- [skeleton](components/skeleton): a placeholder loading animation for content
+- [skip-link](components/skip-link): a hidden link for keyboard users to skip to main content
+- [slide-out-drawer](components/slide-out-drawer): a drawer that slides out from the side of the page
+- [slider](components/slider): a draggable control for selecting a value along a track
+- [sonner](components/sonner): a toast notification manager
+- [sparkline](components/sparkline): a small inline chart showing a data trend
+- [splitter](components/splitter): a draggable divider for resizing adjacent panels
+- [submit-input](components/submit-input): a button input that submits a form
+- [summary-list](components/summary-list): an ordered list of key-value summary pairs
+- [summary-list-item](components/summary-list-item): one key-value pair in a summary list
+- [switch-button](components/switch-button): a toggle switch for turning a setting on or off
+- [tab-bar](components/tab-bar): a group of tabs for switching between content panels
+- [tab-bar-button](components/tab-bar-button): one tab button in a tab group
+- [table](components/table): a table with rows and columns
+- [table-head](components/table-head): a table interactive grid thead
+- [table-body](components/table-body): a table interactive grid tbody
+- [table-foot](components/table-foot): a table interactive grid tfoot
+- [table-col](components/table-col): a table interactive grid column
+- [table-row](components/table-row): a table interactive grid row
+- [table-data](components/table-data): a table interactive grid data cell
+- [tag-group](components/tag-group): a group of tag elements
+- [tag](components/tag): a keyword label for categorizing content
+- [tag-input](components/tag-input): an input for adding and removing tags
+- [task-bar](components/task-bar): a horizontal bar of task shortcuts or actions
+- [task-bar-button](components/task-bar-button): one item in a task bar
+- [task-list](components/task-list): an ordered list of task list items
+- [task-list-item](components/task-list-item): one task item with a checkbox and label
+- [tel-input](components/tel-input): an input for entering a telephone number
+- [tel-link](components/tel-link): a tel hyperlink for a telephone number
+- [text-input](components/text-input): a single-line text input field
+- [textarea](components/textarea): a multi-line text input area
+- [theme-picker](components/theme-picker): a picker for selecting a visual theme
+- [theme-select](components/theme-select): a select dropdown for choosing a theme
+- [theme-select-option](components/theme-select-option): one option in a theme select dropdown
+- [theme-view](components/theme-view): a read-only display of the current theme
+- [time-input](components/time-input): an input for entering a time value
+- [time-picker-input](components/time-picker-input): an input with a dropdown for picking a time
+- [timeline-list](components/timeline-list): an ordered list of chronological events or milestones
+- [timeline-list-item](components/timeline-list-item): one event in a timeline list
+- [timer](components/timer): a countdown or elapsed time display
+- [toast](components/toast): a brief auto-dismissing notification message
+- [toggle-group](components/toggle-group): a group of toggle buttons for selecting options
+- [toggle-button](components/toggle-button): a button that toggles between pressed and unpressed states
+- [tool-bar](components/tool-bar): a horizontal bar of tool actions
+- [tool-bar-button](components/tool-bar-button): one action button in a tool bar
+- [tooltip](components/tooltip): a small popup showing descriptive text on hover or focus
+- [tour](components/tour): a tour guide, such as for sightseeing, or pathways, or demonstrations, etc.
+- [tour-list](components/tour-list): an ordered list of tour guide steps
+- [tour-list-item](components/tour-list-item): one step in a tour guide list
+- [tree-menu](components/tree-menu): a hierarchical tree menu with expandable branches
+- [tree-nav](components/tree-nav): a hierarchical navigation with expandable branches
+- [tree-nav-list](components/tree-nav-list): a hierarchical list with nested expandable items
+- [tree-nav-list-item](components/tree-nav-list-item): one item in a tree navigation list
+- [united-kingdom-national-health-service-number-input](components/united-kingdom-national-health-service-number-input): an input for entering a UK NHS number
+- [united-kingdom-national-health-service-number-view](components/united-kingdom-national-health-service-number-view): a read-only display of a UK NHS number
+- [united-states-social-security-number-input](components/united-states-social-security-number-input): an input for entering a US Social Security number
+- [united-states-social-security-number-view](components/united-states-social-security-number-view): a read-only display of a US Social Security number
+- [url-input](components/url-input): an input for entering a URL
+- [vital-sign-blood-pressure-diastolic-as-mmhg-view](components/vital-sign-blood-pressure-diastolic-as-mmhg-view): number display of one vital sign blood pressure diastolic with integers
+- [vital-sign-blood-pressure-diastolic-as-mmhg-input](components/vital-sign-blood-pressure-diastolic-as-mmhg-input): number input of one vital sign blood pressure diastolic with integers
+- [vital-sign-blood-pressure-systolic-as-mmhg-view](components/vital-sign-blood-pressure-systolic-as-mmhg-view): number display of one vital sign blood pressure systolic with integers
+- [vital-sign-blood-pressure-systolic-as-mmhg-input](components/vital-sign-blood-pressure-systolic-as-mmhg-input): number input of one vital sign blood pressure systolic with integers
+- [vital-sign-body-fat-as-percentage-view](components/vital-sign-body-fat-as-percentage-view): number display of one vital sign body fat percentage with one decimal point
+- [vital-sign-body-fat-as-percentage-input](components/vital-sign-body-fat-as-percentage-input): number input of one vital sign body fat percentage with one decimal point
+- [vital-sign-body-temperature-as-celcius-view](components/vital-sign-body-temperature-as-celcius-view): number display of one vital sign body temperature in Celsius degrees with one decimal point
+- [vital-sign-body-temperature-as-celcius-input](components/vital-sign-body-temperature-as-celcius-input): number input of one vital sign body temperature in Celsius degrees with one decimal point
+- [vital-sign-cholesterol-as-hdl-mmol-per-litre-view](components/vital-sign-cholesterol-as-hdl-mmol-per-litre-view): number display of one vital sign cholesterol HDL (good cholesterol) millimole per litre with one decimal point
+- [vital-sign-cholesterol-as-hdl-mmol-per-litre-input](components/vital-sign-cholesterol-as-hdl-mmol-per-litre-input): number input of one vital sign cholesterol HDL (good cholesterol) millimole per litre with one decimal point
+- [vital-sign-cholesterol-as-ldl-mmol-per-litre-view](components/vital-sign-cholesterol-as-ldl-mmol-per-litre-view): number display of one vital sign cholesterol LDL (bad cholesterol) millimole per litre with one decimal point
+- [vital-sign-cholesterol-as-ldl-mmol-per-litre-input](components/vital-sign-cholesterol-as-ldl-mmol-per-litre-input): number input of one vital sign cholesterol LDL (bad cholesterol) millimole per litre with one decimal point
+- [vital-sign-heart-rate-as-beats-per-minute-view](components/vital-sign-heart-rate-as-beats-per-minute-view): number display of one vital sign heart rate in beats per minute (BPM) with integers
+- [vital-sign-heart-rate-as-beats-per-minute-input](components/vital-sign-heart-rate-as-beats-per-minute-input): number input of one vital sign heart rate in beats per minute (BPM) with integers
+- [vital-sign-heart-rate-variability-view](components/vital-sign-heart-rate-variability-view): number display of one vital sign heart rate variability (HRV) with integers
+- [vital-sign-heart-rate-variability-input](components/vital-sign-heart-rate-variability-input): number input of one vital sign heart rate variability (HRV) with integers
+- [vital-sign-height-as-cm-view](components/vital-sign-height-as-cm-view): number display of one vital sign height in centimetres with integers
+- [vital-sign-height-as-cm-input](components/vital-sign-height-as-cm-input): number input of one vital sign height in centimetres with integers
+- [vital-sign-respiratory-rate-as-breaths-per-minute-view](components/vital-sign-respiratory-rate-as-breaths-per-minute-view): number display of one vital sign respiratory rate in breaths per minute with integers
+- [vital-sign-respiratory-rate-as-breaths-per-minute-input](components/vital-sign-respiratory-rate-as-breaths-per-minute-input): number input of one vital sign respiratory rate in breaths per minute with integers
+- [vital-sign-sleep-score-as-0-to-100-view](components/vital-sign-sleep-score-as-0-to-100-view): number display of one vital sign sleep score with range 0-100
+- [vital-sign-sleep-score-as-0-to-100-input](components/vital-sign-sleep-score-as-0-to-100-input): number input of one vital sign sleep score with range 0-100
+- [vital-sign-total-sleep-time-as-min-per-day-view](components/vital-sign-total-sleep-time-as-min-per-day-view): number display of one vital sign total sleep time as minutes per day
+- [vital-sign-total-sleep-time-as-min-per-day-input](components/vital-sign-total-sleep-time-as-min-per-day-input): number input of one vital sign total sleep time as minutes per day
+- [vital-sign-vo2-max-as-ml-per-kg-per-minute-view](components/vital-sign-vo2-max-as-ml-per-kg-per-minute-view): number display of one vital sign VO2 max in millilitres per kilogram per minute with integers
+- [vital-sign-vo2-max-as-ml-per-kg-per-minute-input](components/vital-sign-vo2-max-as-ml-per-kg-per-minute-input): number input of one vital sign VO2 max in millilitres per kilogram per minute with integers
+- [vital-sign-waist-circumference-as-cm-view](components/vital-sign-waist-circumference-as-cm-view): number display of one vital sign waist circumference in centimetres with integers
+- [vital-sign-waist-circumference-as-cm-input](components/vital-sign-waist-circumference-as-cm-input): number input of one vital sign waist circumference in centimetres with integers
+- [vital-sign-weight-as-kg-view](components/vital-sign-weight-as-kg-view): number display of one vital sign weight in kilograms with integers
+- [vital-sign-weight-as-kg-input](components/vital-sign-weight-as-kg-input): number input of one vital sign weight in kilograms with integers
+- [warning-callout](components/warning-callout): a callout box highlighting a warning message
+- [week-input](components/week-input): an input for selecting a week and year
+
+## Design Principles
+
+- Accessible: Semantic HTML elements, ARIA roles/attributes, and keyboard navigation built in. WCAG 2.2 AAA.
+- Composable: Compound components (e.g., Nav + NavList + NavListItem) snap together.
+- Internationalizable: All text comes through parameters such as translation systems. No hardcoded user-facing strings.
+- Batteries-included examples: We provide complete examples with Svelte, React, Vue, Blazor.
+- Semantic CSS friendly: If you like CSS semantic classes such as Daisy, you can target each component by semantic class.
+- Tailwind friendly: If you like CSS utility classes such as Tailwind, you can use it in all the typical ways.
+- Headless friendly: If you like to bring your own styles, you can use our headless versions with your own CSS.
+
+## Component name patterns
+
+- \*Bar \*BarButton
+  - MenuBar MenuBarButton
+  - TabBar TabBarButton
+  - TaskBar TaskBarButton
+  - ToolBar ToolBarButton
+- \*Group \*GroupItem
+  - SegmentGroup SegmentGroupItem
+- \*Guide \*GuideList \*GuideListItem
+  - Tour TourList TourListItem
+- \*List \*ListItem
+  - CheckList CheckListItem
+  - ContentsList ContentsListItem
+  - DoList DoListItem
+  - DontList DontListItem
+  - PaginationList PaginationListItem
+  - SummaryList SummaryListItem
+- \*Nav \*NavList \*NavListItem
+  - AccordionNav AccordionNavList AccordionNavListItem
+  - BreadcrumbNav BreadcrumbNavList BreadcrumbNavListItem
+  - ContentsNav ContentsList ContentsListItem
+  - PaginationNav PaginationList PaginationListItem
+  - TreeNav TreeNavList TreeNavListItem
+- *Select *SelectOption
+  - ThemeSelect ThemeSelectOption
+- \*Menu \*MenuItem
+  - ContextMenu ContextMenuItem
+  - Menu MenuItem
+- \*Input \*Link
+  - TelInput TelLink
+  - EmailInput EmailLink
+- \*Picker \*PickerButton
+  - ColorPicker ColorPickerButton
+  - FiveFaceRatingPicker FiveFaceRatingPickerButton
+  - FiveStarRatingPicker FiveStarRatingPickerButton
+  - NetPromoterScorePicker NetPromoterScorePickerButton
+  - RedAmberGreenPicker RedAmberGreenPickerButton
+  - RedOrangeYellowGreenBluePicker RedOrangeYellowGreenBluePickerButton
+- \*Table \*TableHead \*TableBody \*TableFoot \*TableCol \*TableRow \*TableData
+  - Table TableHead TableBody TableFoot TableCol TableRow TableData
+  - CalendarTable CalendarTableHead CalendarTableBody CalendarTableFoot CalendarTableCol CalendarTableRow CalendarTableData
+  - DataTable DataTableHead DataTableBody DataTableFoot DataTableCol DataTableRow DataTableData
+  - GanttTable GanttTableHead GanttTableBody GanttTableFoot GanttTableCol GanttTableRow GanttTableData
+  - KanbanTable KanbanTableHead KanbanTableBody KanbanTableFoot KanbanTableCol KanbanTableRow KanbanTableData
+
+
+## Tracking
+
+- Package: public-good-design-system
+- Version: 0.2.0
+- Created: 2025-08-09T21:09:52Z
+- Updated: 2026-03-08T00:00:00Z
+- License: MIT or Apache-2.0 or GPL-2.0 or GPL-3.0 or contact us for more
+- Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)

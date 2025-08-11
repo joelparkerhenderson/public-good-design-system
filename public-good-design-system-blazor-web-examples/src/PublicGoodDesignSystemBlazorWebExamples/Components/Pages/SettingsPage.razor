@@ -1,0 +1,70 @@
+@page "/settings-page"
+
+<h1>Settings</h1>
+
+@if (saved)
+{
+    <Banner Type="success" Dismissible="true" CloseLabel="Dismiss">
+        Settings saved successfully.
+    </Banner>
+}
+
+<Fieldset Legend="Appearance">
+    <SwitchButton Label="Dark mode" Checked="@darkMode" CheckedChanged="v => darkMode = v" />
+
+    <Separator />
+
+    <Select Label="Language" Value="@language" ValueChanged="v => language = v">
+        <Option Value="en">English</Option>
+        <Option Value="es">Espa&#241;ol</Option>
+        <Option Value="fr">Fran&#231;ais</Option>
+        <Option Value="de">Deutsch</Option>
+        <Option Value="ja">&#26085;&#26412;&#35486;</Option>
+    </Select>
+
+    <Separator />
+
+    <RadioGroup Label="Font size">
+        <RadioInput Label="Small" Name="fontSize" Value="small"
+                    Checked="@IsSmallFont" @onclick="SetSmallFont" />
+        <RadioInput Label="Medium" Name="fontSize" Value="medium"
+                    Checked="@IsMediumFont" @onclick="SetMediumFont" />
+        <RadioInput Label="Large" Name="fontSize" Value="large"
+                    Checked="@IsLargeFont" @onclick="SetLargeFont" />
+    </RadioGroup>
+</Fieldset>
+
+<Fieldset Legend="Notifications">
+    <SwitchButton Label="Push notifications" Checked="@pushNotifications" CheckedChanged="v => pushNotifications = v" />
+
+    <Separator />
+
+    <SwitchButton Label="Daily email digest" Checked="@emailDigest" CheckedChanged="v => emailDigest = v" />
+</Fieldset>
+
+<Button @onclick="HandleSave">Save Settings</Button>
+
+@code {
+    private bool darkMode;
+    private bool pushNotifications = true;
+    private bool emailDigest = true;
+    private string language = "en";
+    private string fontSize = "medium";
+    private bool saved;
+
+    private bool IsSmallFont => fontSize == "small";
+    private bool IsMediumFont => fontSize == "medium";
+    private bool IsLargeFont => fontSize == "large";
+
+    private void SetSmallFont() => fontSize = "small";
+    private void SetMediumFont() => fontSize = "medium";
+    private void SetLargeFont() => fontSize = "large";
+
+    private async Task HandleSave()
+    {
+        saved = true;
+        StateHasChanged();
+        await Task.Delay(3000);
+        saved = false;
+    }
+}

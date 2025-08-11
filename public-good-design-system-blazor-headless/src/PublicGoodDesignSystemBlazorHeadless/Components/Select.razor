@@ -1,0 +1,10 @@
+@* Select.razor *@
+<select
+    class="@CssClasses"
+    aria-label="@Label"
+    required="@Required"
+    disabled="@Disabled"
+    value="@Value"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</select>

@@ -1,0 +1,5 @@
+#!/bin/sh
+set -euf
+top="$(git rev-parse --show-toplevel)"
+"$top/bin/test-components"
+"$top/bin/test-implementations"

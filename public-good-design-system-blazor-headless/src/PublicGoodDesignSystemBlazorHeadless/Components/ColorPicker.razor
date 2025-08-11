@@ -1,0 +1,15 @@
+@* ColorPicker.razor *@
+<div
+    class="@CssClasses"
+    role="slider"
+    tabindex="@(Disabled ? -1 : 0)"
+    aria-label="@Label"
+    aria-valuenow="@X"
+    aria-valuemin="0"
+    aria-valuemax="100"
+    data-x="@X"
+    data-y="@Y"
+    aria-disabled="@(Disabled ? "true" : null)"
+    @onkeydown="HandleKeyDown"
+    @attributes="AdditionalAttributes">
+</div>

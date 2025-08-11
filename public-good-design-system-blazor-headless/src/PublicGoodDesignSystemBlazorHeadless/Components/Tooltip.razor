@@ -1,0 +1,10 @@
+@* Tooltip.razor *@
+@if (Visible)
+{
+    <div
+        class="@CssClasses"
+        role="tooltip"
+        id="@Id"
+        @attributes="AdditionalAttributes">
+    </div>
+}

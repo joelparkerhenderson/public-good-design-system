@@ -1,0 +1,11 @@
+@* Editable.razor *@
+@if (Editing)
+{
+    <input
+        class="@CssClasses"
+        type="text"
+        aria-label="@Label"
+        value="@Value"
+        @onkeydown="HandleKeyDown"
+        @attributes="AdditionalAttributes" />
+}

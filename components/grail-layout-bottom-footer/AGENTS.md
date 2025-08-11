@@ -1,0 +1,39 @@
+# Grail Layout Bottom Footer
+
+## Metadata
+
+- Component: grail-layout-bottom-footer
+- PascalCase: GrailLayoutBottomFooter
+- Description: grail layout bottom footer full width with <footer> tag
+- HTML tag: <footer>
+- CSS class: .grail-layout-bottom-footer
+- Interactive: no
+
+## Composition
+
+- Pattern: GrailLayout
+- Parent: grail-layout
+
+## Key Behaviors
+
+- Renders a `<div>` element for the bottom footer section
+- Spreads `restProps` onto the div for consumer customization
+- No styles applied; consumer provides all styling
+
+## Props
+
+- `children`: slot (required) -- content to render inside the bottom footer section
+- `...restProps`: unknown -- additional attributes spread onto the `<div>` element
+
+## Acceptance Criteria
+
+- [ ] Renders <footer> element with class="grail-layout-bottom-footer"
+- [ ] WCAG 2.2 AAA compliant
+- [ ] Zero CSS — fully headless
+
+## References
+
+- Documentation: index.md
+- CSS class: .grail-layout-bottom-footer in css-style-sheet-template.css
+- HTML headless: public-good-design-system-html-headless/components/grail-layout-bottom-footer.html
+- CSS Grid Layout: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout

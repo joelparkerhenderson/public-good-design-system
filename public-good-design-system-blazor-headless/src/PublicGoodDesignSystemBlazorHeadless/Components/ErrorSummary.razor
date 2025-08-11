@@ -1,0 +1,10 @@
+@* ErrorSummary.razor *@
+<div
+    class="@CssClasses"
+    aria-labelledby="@TitleId"
+    role="alert"
+    tabindex="-1"
+    titleId="@TitleId"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</div>

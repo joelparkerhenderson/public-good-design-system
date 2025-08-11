@@ -1,0 +1,14 @@
+@* Tour.razor *@
+@if (Active)
+{
+    <div
+        class="@CssClasses"
+        aria-label="@Label"
+        role="dialog"
+        aria-modal="true"
+        tabindex="-1"
+        @onkeydown="HandleKeyDown"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </div>
+}

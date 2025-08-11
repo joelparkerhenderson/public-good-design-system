@@ -1,0 +1,9 @@
+@* TagInput.razor *@
+<input
+    class="@CssClasses"
+    aria-label="@Label"
+    type="text"
+    disabled="@Disabled"
+    value="@Value"
+    @onkeydown="HandleKeyDown"
+    @attributes="AdditionalAttributes" />

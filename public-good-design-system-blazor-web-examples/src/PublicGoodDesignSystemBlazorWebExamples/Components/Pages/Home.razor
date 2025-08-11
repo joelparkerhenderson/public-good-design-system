@@ -1,0 +1,37 @@
+@page "/"
+
+<main class="home-page">
+    <h1>Public Good Design System — Blazor Web Examples</h1>
+    <p>Explore headless component examples styled with the NHS UK design system.</p>
+    <ul aria-label="Example pages">
+        @foreach (var example in examples)
+        {
+            <li>
+                <a href="@example.Href">
+                    <strong>@example.Title</strong>
+                    <span>@example.Description</span>
+                </a>
+            </li>
+        }
+    </ul>
+</main>
+
+@code {
+    private record ExampleLink(string Href, string Title, string Description);
+
+    private static readonly ExampleLink[] examples =
+    [
+        new("/contact-form", "Contact Form", "Form validation with text, email, and select inputs"),
+        new("/dashboard", "Dashboard", "Cards, progress indicators, badges, and data tables"),
+        new("/dialog-flow", "Dialog Flow", "Modal dialogs, alert dialogs, drawers, and tooltips"),
+        new("/file-upload-form", "File Upload Form", "File upload with progress simulation"),
+        new("/navigation-and-menus", "Navigation and Menus", "Navigation menu, menu bar, toolbar, and hamburger menu"),
+        new("/page-layout", "Page Layout", "Header, footer, breadcrumbs, sidebar, and skip link"),
+        new("/rating-and-feedback", "Rating and Feedback", "Star ratings, face ratings, and Net Promoter Score"),
+        new("/search-and-filter", "Search and Filter", "Search input, combobox, tags, and filterable data table"),
+        new("/settings-page", "Settings Page", "Switches, radio groups, select dropdowns, and fieldsets"),
+        new("/tabbed-interface", "Tabbed Interface", "Tab bar with accordion navigation and badges"),
+        new("/task-management", "Task Management", "Task list with add, toggle, progress, and filtering"),
+        new("/timeline-and-cards", "Timeline and Cards", "Timeline, cards, date range, review date, and summary lists"),
+    ];
+}

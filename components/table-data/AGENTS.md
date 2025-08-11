@@ -1,0 +1,44 @@
+# Table Data
+
+## Metadata
+
+- Component: table-data
+- PascalCase: TableData
+- Description: a table interactive grid data cell <td>
+- HTML tag: <td>
+- CSS class: .table-data
+- Interactive: no
+
+## Composition
+
+- Pattern: Table/Head/Body/Foot/Col/Row/Data
+- Parent: table
+
+## Key Behaviors
+
+- Renders a `<td>` element for table data cell semantics
+- Accepts `className` for CSS class targeting
+- Spreads `restProps` onto the `<td>` element for consumer customization
+
+## Keyboard
+
+Standard table cell keyboard interactions.
+
+## Props
+
+- `className`: string (default: `""`) -- CSS class name for the cell
+- `children`: slot (required) -- cell content
+- `...restProps`: unknown -- additional attributes spread onto the `<td>` element
+
+## Acceptance Criteria
+
+- [ ] Renders <td> element with class="table-data"
+- [ ] WCAG 2.2 AAA compliant
+- [ ] Zero CSS — fully headless
+
+## References
+
+- Documentation: index.md
+- CSS class: .table-data in css-style-sheet-template.css
+- HTML headless: public-good-design-system-html-headless/components/table-data.html
+- MDN td element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/td

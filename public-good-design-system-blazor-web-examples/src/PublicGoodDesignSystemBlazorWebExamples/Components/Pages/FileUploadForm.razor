@@ -1,0 +1,109 @@
+@page "/file-upload-form"
+@implements IDisposable
+
+<h1>File Upload Form</h1>
+
+<Form Label="File upload" OnSubmit="HandleSubmit">
+    @if (done)
+    {
+        <Alert Type="success" Heading="Upload complete">
+            Your files have been uploaded successfully.
+        </Alert>
+    }
+
+    <Field Label="Select files">
+        <FileUpload Label="Choose files"
+                    Accept=".pdf,.doc,.docx,.txt"
+                    Multiple="true"
+                    Disabled="@uploading" />
+    </Field>
+
+    @if (files.Count > 0)
+    {
+        <ul>
+            @for (var i = 0; i < files.Count; i++)
+            {
+                var index = i;
+                <li>
+                    @files[index].Name
+                    <Badge>@FormatSize(files[index].Size)</Badge>
+                    <button type="button" @onclick="() => RemoveFile(index)" disabled="@uploading">Remove</button>
+                </li>
+            }
+        </ul>
+    }
+
+    @if (uploading)
+    {
+        <Progress Label="Upload progress" Value="@progress.ToString()" Max="100" />
+        <p>@progress% uploaded</p>
+    }
+
+    <Button Type="submit" Disabled="@(files.Count == 0 || uploading || done)">
+        @if (uploading)
+        {
+            <span>Uploading...</span>
+        }
+        else if (done)
+        {
+            <span>Uploaded</span>
+        }
+        else
+        {
+            <span>Upload Files</span>
+        }
+    </Button>
+</Form>
+
+@code {
+    private record UploadedFile(string Name, long Size);
+
+    private List<UploadedFile> files = new();
+    private bool uploading;
+    private int progress;
+    private bool done;
+    private System.Timers.Timer? timer;
+
+    private static string FormatSize(long bytes)
+    {
+        if (bytes < 1024) return $"{bytes} B";
+        if (bytes < 1024 * 1024) return $"{bytes / 1024.0:F1} KB";
+        return $"{bytes / (1024.0 * 1024.0):F1} MB";
+    }
+
+    private void RemoveFile(int index)
+    {
+        if (index >= 0 && index < files.Count)
+            files.RemoveAt(index);
+    }
+
+    private void HandleSubmit()
+    {
+        if (files.Count == 0 || uploading || done) return;
+        uploading = true;
+        progress = 0;
+
+        timer = new System.Timers.Timer(300);
+        timer.Elapsed += async (_, _) =>
+        {
+            progress += 10;
+            if (progress >= 100)
+            {
+                progress = 100;
+                uploading = false;
+                done = true;
+                timer?.Stop();
+                timer?.Dispose();
+                timer = null;
+            }
+            await InvokeAsync(StateHasChanged);
+        };
+        timer.Start();
+    }
+
+    public void Dispose()
+    {
+        timer?.Stop();
+        timer?.Dispose();
+    }
+}

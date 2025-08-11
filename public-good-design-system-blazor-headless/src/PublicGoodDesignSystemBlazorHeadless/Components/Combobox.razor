@@ -1,0 +1,16 @@
+@* Combobox.razor *@
+<div
+    class="@CssClasses"
+    @attributes="AdditionalAttributes">
+    <input
+        role="combobox"
+        aria-label="@Label"
+        aria-expanded="@(Open ? "true" : "false")"
+        aria-autocomplete="list"
+        value="@Value"
+        @oninput="HandleInput"
+        @onkeydown="HandleKeyDown" />
+    <div role="listbox" aria-label="@Label">
+        @ChildContent
+    </div>
+</div>

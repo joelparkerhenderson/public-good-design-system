@@ -1,0 +1,7 @@
+@* Field.razor *@
+<div
+    class="@CssClasses"
+    data-required="@(Required ? "required" : null)"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</div>

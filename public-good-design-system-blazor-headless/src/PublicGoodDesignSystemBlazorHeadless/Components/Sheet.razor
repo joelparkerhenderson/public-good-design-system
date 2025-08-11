@@ -1,0 +1,16 @@
+@* Sheet.razor *@
+@if (Open)
+{
+    <div
+        class="@CssClasses"
+        aria-label="@Label"
+        data-side="@Side"
+        role="dialog"
+        aria-modal="true"
+        tabindex="-1"
+        side="@Side"
+        @onkeydown="HandleKeyDown"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </div>
+}

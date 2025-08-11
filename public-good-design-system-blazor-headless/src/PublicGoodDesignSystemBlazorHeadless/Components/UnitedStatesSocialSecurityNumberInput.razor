@@ -1,0 +1,13 @@
+@* UnitedStatesSocialSecurityNumberInput.razor *@
+<input
+    class="@CssClasses"
+    aria-label="@Label"
+    pattern="@SsnPattern"
+    type="text"
+    inputmode="numeric"
+    autocomplete="off"
+    ssnPattern="@SsnPattern"
+    required="@Required"
+    disabled="@Disabled"
+    value="@Value"
+    @attributes="AdditionalAttributes" />

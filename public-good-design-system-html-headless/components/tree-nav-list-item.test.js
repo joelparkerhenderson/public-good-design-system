@@ -1,0 +1,29 @@
+// tree-nav-list-item.test.js
+// TreeNavListItem component test
+
+const path = require('path');
+
+describe('TreeNavListItem', function() {
+  beforeEach(async function() {
+    await browser.url('file://' + path.resolve(__dirname, 'tree-nav-list-item.html'));
+  });
+
+  it('should render the li element with correct class', async function() {
+    const el = await $('li.tree-nav-list-item');
+    await expect(el).toExist();
+    const className = await el.getAttribute('class');
+    expect(className).toContain('tree-nav-list-item');
+  });
+
+  it('should have the correct ARIA role', async function() {
+    const el = await $('li.tree-nav-list-item');
+    const roleAttr = await el.getAttribute('role');
+    expect(roleAttr).toBe('treeitem');
+  });
+
+  it('should have an aria-label attribute', async function() {
+    const el = await $('li.tree-nav-list-item');
+    const label = await el.getAttribute('aria-label');
+    expect(label).not.toBeNull();
+  });
+});

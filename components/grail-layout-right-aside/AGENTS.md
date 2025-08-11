@@ -1,0 +1,39 @@
+# Grail Layout Right Aside
+
+## Metadata
+
+- Component: grail-layout-right-aside
+- PascalCase: GrailLayoutRightAside
+- Description: grail layout right aside sidebar with <aside> tag
+- HTML tag: <aside>
+- CSS class: .grail-layout-right-aside
+- Interactive: no
+
+## Composition
+
+- Pattern: GrailLayout
+- Parent: grail-layout
+
+## Key Behaviors
+
+- Renders a `<div>` element for the right aside section
+- Spreads `restProps` onto the div for consumer customization
+- No styles applied; consumer provides all styling
+
+## Props
+
+- `children`: slot (required) -- content to render inside the right aside
+- `...restProps`: unknown -- additional attributes spread onto the `<div>` element
+
+## Acceptance Criteria
+
+- [ ] Renders <aside> element with class="grail-layout-right-aside"
+- [ ] WCAG 2.2 AAA compliant
+- [ ] Zero CSS — fully headless
+
+## References
+
+- Documentation: index.md
+- CSS class: .grail-layout-right-aside in css-style-sheet-template.css
+- HTML headless: public-good-design-system-html-headless/components/grail-layout-right-aside.html
+- CSS Grid Layout: https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_grid_layout

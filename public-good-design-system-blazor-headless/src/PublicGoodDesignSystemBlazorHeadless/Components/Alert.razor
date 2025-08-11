@@ -1,0 +1,12 @@
+@* Alert.razor *@
+<div
+    class="@CssClasses"
+    aria-live="@AriaLive"
+    data-type="@Type"
+    aria-atomic="true"
+    role="@Role"
+    ariaLive="@AriaLive"
+    type="@Type"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</div>

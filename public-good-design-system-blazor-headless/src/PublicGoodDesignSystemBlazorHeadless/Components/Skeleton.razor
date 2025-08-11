@@ -1,0 +1,11 @@
+@* Skeleton.razor *@
+<div
+    class="@CssClasses"
+    aria-hidden="true"
+    aria-busy="true"
+    @attributes="AdditionalAttributes">
+    @if (ChildContent != null)
+    {
+        @ChildContent
+    }
+</div>

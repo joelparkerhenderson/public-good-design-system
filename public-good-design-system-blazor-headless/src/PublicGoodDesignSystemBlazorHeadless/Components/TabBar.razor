@@ -1,0 +1,12 @@
+@* TabBar.razor *@
+<div
+    class="@CssClasses"
+    aria-label="@Label"
+    this="@_elementRef"
+    role="tablist"
+    barRef="@_elementRef"
+    @ref="_elementRef"
+    @onkeydown="HandleKeyDown"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</div>

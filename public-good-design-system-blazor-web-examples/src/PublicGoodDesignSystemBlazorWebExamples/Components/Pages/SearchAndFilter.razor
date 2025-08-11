@@ -1,0 +1,124 @@
+@page "/search-and-filter"
+
+<h1>Search and Filter</h1>
+
+<section class="section">
+    <SearchInput Label="Search products" Value="@query" ValueChanged="v => query = v" />
+</section>
+
+<section class="section">
+    <Combobox Label="Filter by category" Value="@comboValue" ValueChanged="v => comboValue = v"
+             Open="@comboOpen" OpenChanged="v => comboOpen = v">
+        @foreach (var cat in ComboSuggestions)
+        {
+            <div role="option" @onclick="() => SelectCategory(cat)">@cat</div>
+        }
+    </Combobox>
+</section>
+
+<section class="section">
+    <div @onkeydown="HandleTagKeyDown">
+        <TextInput Label="Add filter tag" Value="@tagValue" ValueChanged="v => tagValue = v" />
+    </div>
+</section>
+
+@if (filterTags.Count > 0)
+{
+    <TagGroup Label="Active filters">
+        @foreach (var tag in filterTags)
+        {
+            <Tag Label="@tag">
+                @tag
+                <button type="button" @onclick="() => RemoveTag(tag)">Remove</button>
+            </Tag>
+        }
+    </TagGroup>
+}
+
+<section class="section">
+    <DataTable Label="Products" Caption="@($"{Filtered.Count()} products found")">
+        <DataTableHead>
+            <DataTableRow>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Status</th>
+            </DataTableRow>
+        </DataTableHead>
+        <DataTableBody>
+            @foreach (var product in Filtered)
+            {
+                <DataTableRow>
+                    <DataTableData>@product.Name</DataTableData>
+                    <DataTableData>@product.Category</DataTableData>
+                    <DataTableData>@product.Price.ToString("C2")</DataTableData>
+                    <DataTableData>
+                        <Badge Type="@StatusBadgeType(product.Status)">@product.Status</Badge>
+                    </DataTableData>
+                </DataTableRow>
+            }
+        </DataTableBody>
+    </DataTable>
+</section>
+
+@code {
+    private record Product(int Id, string Name, string Category, decimal Price, string Status);
+
+    private static readonly Product[] products =
+    [
+        new(1, "Wireless Keyboard", "Electronics", 59.99m, "in-stock"),
+        new(2, "Ergonomic Mouse", "Electronics", 34.99m, "in-stock"),
+        new(3, "Standing Desk", "Furniture", 499.00m, "low-stock"),
+        new(4, "Monitor Arm", "Furniture", 89.99m, "in-stock"),
+        new(5, "USB-C Hub", "Electronics", 44.99m, "out-of-stock"),
+        new(6, "Desk Lamp", "Lighting", 29.99m, "in-stock"),
+        new(7, "Webcam HD", "Electronics", 74.99m, "low-stock"),
+        new(8, "Cable Organizer", "Accessories", 12.99m, "in-stock"),
+    ];
+
+    private static readonly string[] categories = products.Select(p => p.Category).Distinct().ToArray();
+
+    private string query = "";
+    private string comboValue = "";
+    private bool comboOpen;
+    private List<string> filterTags = new();
+    private string tagValue = "";
+
+    private IEnumerable<string> ComboSuggestions =>
+        categories.Where(c =>
+            c.Contains(comboValue, StringComparison.OrdinalIgnoreCase) &&
+            !filterTags.Contains(c));
+
+    private IEnumerable<Product> Filtered =>
+        products.Where(p =>
+            (string.IsNullOrEmpty(query) || p.Name.Contains(query, StringComparison.OrdinalIgnoreCase)) &&
+            (filterTags.Count == 0 || filterTags.Contains(p.Category)));
+
+    private void SelectCategory(string category)
+    {
+        if (!filterTags.Contains(category))
+            filterTags.Add(category);
+        comboValue = "";
+        comboOpen = false;
+    }
+
+    private void HandleTagKeyDown(KeyboardEventArgs e)
+    {
+        if (e.Key == "Enter" && !string.IsNullOrWhiteSpace(tagValue))
+        {
+            if (!filterTags.Contains(tagValue))
+                filterTags.Add(tagValue);
+            tagValue = "";
+        }
+    }
+
+    private void RemoveTag(string tag) => filterTags.Remove(tag);
+
+    private static string StatusBadgeType(string status) => status switch
+    {
+        "in-stock" => "success",
+        "low-stock" => "warning",
+        "out-of-stock" => "error",
+        _ => "default",
+    };
+}

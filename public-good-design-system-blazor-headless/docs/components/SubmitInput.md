@@ -1,0 +1,55 @@
+# SubmitInput
+
+A submit input is a UI/UX component that provides a form submission button using the native HTML `<input type="submit">` element. When clicked within a form, it triggers the form's submit event. The component supports custom button text through the value prop and can be disabled to prevent premature submission.
+
+Submit inputs provide a simple, semantic way to add form submission capability that works with the browser's built-in form handling. They are the standard mechanism for triggering form validation and submission in HTML forms.
+
+## Implementation Notes
+
+- Renders a single `<input type="submit">` element for native form submission behavior
+- The browser automatically triggers the containing form's `submit` event when clicked
+- Default button text is "Submit", configurable via the `value` prop
+- Supports additional attributes via `AdditionalAttributes` for extensibility (e.g., `id`, `name`, `class`)
+- No ARIA attributes needed beyond the native semantics of `<input type="submit">`
+- When used within a form, clicking this input also triggers built-in browser validation
+
+## Parameters
+
+| Name | Type | Default | Description |
+|------|------|---------|-------------|
+| `CssClass` | `string?` | `—` | Additional CSS class(es) to apply |
+| `Value` | `string?` | `Submit` | The value value |
+| `Disabled` | `bool` | `—` | Whether the component is disabled |
+
+## Usage
+
+
+```razor
+<SubmitInput />
+```
+
+
+```razor
+<SubmitInput value="Send" />
+```
+
+
+```razor
+<SubmitInput value="Save changes" disabled={!formValid} />
+```
+
+
+## Keyboard Interactions
+
+- Enter: activates the submit button
+- Space: activates the submit button
+
+Note: keyboard interactions are provided natively by the `<input type="submit">` element.
+
+## ARIA Attributes
+
+No additional ARIA attributes are needed. The native `<input type="submit">` element has an implicit `button` role and the `value` attribute serves as its accessible name.
+
+## References
+
+- MDN input type="submit": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit

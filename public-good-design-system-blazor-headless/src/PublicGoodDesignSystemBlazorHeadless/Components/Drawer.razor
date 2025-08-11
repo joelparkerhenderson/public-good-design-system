@@ -1,0 +1,16 @@
+@* Drawer.razor *@
+@if (Open)
+{
+    <div
+        class="@CssClasses"
+        aria-label="@Label"
+        data-side="@Side"
+        role="dialog"
+        tabindex="-1"
+        aria-modal="true"
+        side="@Side"
+        @onkeydown="HandleKeyDown"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </div>
+}

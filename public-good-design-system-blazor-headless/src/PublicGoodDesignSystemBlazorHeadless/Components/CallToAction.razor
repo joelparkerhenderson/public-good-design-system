@@ -1,0 +1,11 @@
+@* CallToAction.razor *@
+@if (!string.IsNullOrEmpty(Href))
+{
+    <a
+        class="@CssClasses"
+        aria-label="@Label"
+        href="@Href"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </a>
+}

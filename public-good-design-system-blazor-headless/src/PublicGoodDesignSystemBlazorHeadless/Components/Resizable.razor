@@ -1,0 +1,11 @@
+@* Resizable.razor *@
+<div
+    class="@CssClasses"
+    aria-label="@Label"
+    data-resize="@Direction"
+    role="region"
+    tabindex="0"
+    direction="@Direction"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</div>

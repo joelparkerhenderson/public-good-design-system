@@ -1,0 +1,69 @@
+<script setup lang="ts">
+
+    // AccordionNavListItem component
+    //
+    // A single expandable section within an AccordionNavList, using the native
+    // HTML <details> element for built-in disclosure behavior. The consumer
+    // provides a <summary> element (the clickable header) and content (the
+    // expandable body) as children. The open prop is two-way bindable via
+    // defineModel(), allowing parent components to programmatically control
+    // and observe the expanded state.
+    //
+    // Props:
+    //   className — string, optional. CSS class name.
+    //   open — boolean, default false, bindable. Whether the item is expanded.
+    //   default slot. A <summary> and content elements.
+    //   ...restProps — additional HTML attributes spread onto <details>.
+    //
+    // Syntax:
+    //   <AccordionNavListItem>
+    //     <summary>Header</summary>
+    //     <p>Content</p>
+    //   </AccordionNavListItem>
+    //
+    // Examples:
+    //   <!-- Basic accordion item -->
+    //   <AccordionNavListItem>
+    //     <summary>What is Vue?</summary>
+    //     <p>A compiler-based UI framework.</p>
+    //   </AccordionNavListItem>
+    //
+    //   <!-- Pre-expanded with binding -->
+    //   <AccordionNavListItem v-model:open={isOpen}>
+    //     <summary>Details</summary>
+    //     <p>Expanded content.</p>
+    //   </AccordionNavListItem>
+    //
+    // Keyboard:
+    //   - Tab: Focus the summary element
+    //   - Enter / Space: Toggle open/close (browser native behavior)
+    //
+    // Accessibility:
+    //   - Native <details> provides implicit disclosure widget semantics
+    //   - Browser automatically manages expanded/collapsed state announcement
+    //
+    // Internationalization:
+    //   - No hardcoded text; all content comes through children
+    //
+    // Claude rules:
+    //   - Compound component — use inside AccordionNavList
+    //   - Headless: no CSS, no styles — consumer provides all styling
+    //   - Do not replace native <details> with custom ARIA widgets
+    //   - The open prop must use defineModel() for two-way binding
+    //
+    // References:
+    //   - HTML details element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
+
+    const open = defineModel<boolean>("open", { default: false });
+
+</script>
+
+<template>
+    <!-- AccordionNavListItem.vue -->
+    <details
+        class="accordion-nav-list-item"
+        :open="open"
+    >
+        <slot />
+    </details>
+</template>

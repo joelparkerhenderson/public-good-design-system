@@ -1,0 +1,11 @@
+@* Popup.razor *@
+@if (Open)
+{
+    <div
+        class="@CssClasses"
+        aria-label="@Label"
+        role="dialog"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </div>
+}

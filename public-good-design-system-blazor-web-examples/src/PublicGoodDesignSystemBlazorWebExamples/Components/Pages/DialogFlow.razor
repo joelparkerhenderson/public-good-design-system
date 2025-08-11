@@ -1,0 +1,66 @@
+@page "/dialog-flow"
+
+<h1>Dialog Flow</h1>
+
+<section class="section">
+    <h2>Confirmation Dialog</h2>
+    <span @onmouseenter="() => tooltipVisible = true" @onmouseleave="() => tooltipVisible = false"
+          @onfocusin="() => tooltipVisible = true" @onfocusout="() => tooltipVisible = false">
+        <Button @onclick="() => confirmOpen = true" Disabled="@deleted"
+                aria-describedby="delete-tip">Delete Account</Button>
+    </span>
+    <Tooltip Id="delete-tip" Label="Opens a confirmation dialog" Visible="@tooltipVisible" />
+
+    <Dialog Open="@confirmOpen" OpenChanged="v => confirmOpen = v" Label="Confirm account deletion" Modal="true">
+        <h2>Are you sure?</h2>
+        <p>This action cannot be undone. All your data will be permanently deleted.</p>
+        <div>
+            <Button @onclick="() => confirmOpen = false">Cancel</Button>
+            <Button @onclick="HandleDelete">Delete permanently</Button>
+        </div>
+    </Dialog>
+</section>
+
+<section class="section">
+    <h2>Alert Dialog</h2>
+    <Button @onclick="() => alertOpen = true">Show Session Warning</Button>
+
+    <AlertDialog Open="@alertOpen" OpenChanged="v => alertOpen = v" Title="Session expiring">
+        <p>Your session will expire in 5 minutes. Please save your work.</p>
+        <Button @onclick="() => alertOpen = false">Dismiss</Button>
+    </AlertDialog>
+</section>
+
+<section class="section">
+    <h2>Help Drawer</h2>
+    <Button @onclick="() => drawerOpen = true">Open Help Panel</Button>
+
+    <Drawer Open="@drawerOpen" OpenChanged="v => drawerOpen = v" Label="Help panel" Side="right">
+        <h2>Help &amp; Support</h2>
+        <ul>
+            <li><a href="#">Getting started guide</a></li>
+            <li><a href="#">FAQ</a></li>
+            <li><a href="#">Contact support</a></li>
+        </ul>
+        <Button @onclick="() => drawerOpen = false">Close</Button>
+    </Drawer>
+</section>
+
+@if (deleted)
+{
+    <p role="status">Account has been deleted.</p>
+}
+
+@code {
+    private bool confirmOpen;
+    private bool alertOpen;
+    private bool drawerOpen;
+    private bool deleted;
+    private bool tooltipVisible;
+
+    private void HandleDelete()
+    {
+        deleted = true;
+        confirmOpen = false;
+    }
+}

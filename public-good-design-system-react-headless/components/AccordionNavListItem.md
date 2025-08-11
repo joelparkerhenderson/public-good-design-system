@@ -1,0 +1,43 @@
+# AccordionNavListItem
+
+A single expandable section within an AccordionNavList, using the native HTML `<details>` element for built-in disclosure behavior. The consumer provides a `<summary>` element and content as children.
+
+The `open` prop is two-way controlled, allowing parent components to programmatically control and observe the expanded state.
+
+## Props
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| open | boolean | false | Whether the item is expanded (controlled) |
+| children | ReactNode | required | A `<summary>` and content elements |
+| ...restProps | HTML attributes | — | Spread onto the `<details>` |
+
+## Usage
+
+```tsx
+<AccordionNavListItem>
+  <summary>Question</summary>
+  <p>Answer</p>
+</AccordionNavListItem>
+```
+
+```tsx
+<AccordionNavListItem open={isOpen} onChange={setIsOpen}>
+  <summary>Details</summary>
+  <p>Expanded content here.</p>
+</AccordionNavListItem>
+```
+
+## Keyboard
+
+- Tab: Focus the summary element
+- Enter / Space: Toggle open/close (browser native)
+
+## Accessibility
+
+- Native `<details>` provides implicit disclosure widget semantics
+- Browser automatically manages expanded/collapsed state announcement
+
+## References
+
+- [HTML details element](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details)

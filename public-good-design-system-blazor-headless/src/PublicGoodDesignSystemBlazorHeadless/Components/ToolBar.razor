@@ -1,0 +1,12 @@
+@* ToolBar.razor *@
+<div
+    class="@CssClasses"
+    aria-label="@Label"
+    this="@_elementRef"
+    role="toolbar"
+    toolbarRef="@_elementRef"
+    @ref="_elementRef"
+    @onkeydown="HandleKeyDown"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</div>

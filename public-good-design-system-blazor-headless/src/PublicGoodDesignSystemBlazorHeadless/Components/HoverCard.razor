@@ -1,0 +1,11 @@
+@* HoverCard.razor *@
+@if (Open)
+{
+    <div
+        class="@CssClasses"
+        aria-label="@Label"
+        role="tooltip"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </div>
+}

@@ -1,0 +1,76 @@
+@page "/dashboard"
+
+<h1>Dashboard</h1>
+
+<Banner Type="info" Dismissible="true" CloseLabel="Dismiss">
+    Sprint ends in 5 days. 3 of 5 tasks remaining.
+</Banner>
+
+<div class="card-grid">
+    <Card Heading="Sprint Progress" HeadingLevel="2">
+        <ProgressCircle Label="Sprint completion" Value="@percent" Max="100" />
+        <p>@completed of @total tasks completed</p>
+    </Card>
+
+    <Card Heading="Build Status" HeadingLevel="2">
+        <Badge Type="success">Passing</Badge>
+        <Progress Label="Test coverage" Value="87" Max="100" />
+        <p>87% test coverage</p>
+    </Card>
+
+    <Card Heading="Team Velocity" HeadingLevel="2">
+        <p>42 story points this sprint</p>
+        <Badge Type="info">On track</Badge>
+    </Card>
+</div>
+
+<section class="section">
+    <h2>Sprint Tasks</h2>
+    <DataTable Label="Sprint tasks">
+        <DataTableHead>
+            <DataTableRow>
+                <th>Task</th>
+                <th>Assignee</th>
+                <th>Status</th>
+                <th>Priority</th>
+            </DataTableRow>
+        </DataTableHead>
+        <DataTableBody>
+            @foreach (var task in tasks)
+            {
+                <DataTableRow>
+                    <DataTableData>@task.Title</DataTableData>
+                    <DataTableData>@task.Assignee</DataTableData>
+                    <DataTableData>
+                        <Badge Type="@StatusBadgeType(task.Status)">@task.Status</Badge>
+                    </DataTableData>
+                    <DataTableData>@task.Priority</DataTableData>
+                </DataTableRow>
+            }
+        </DataTableBody>
+    </DataTable>
+</section>
+
+@code {
+    private record TaskItem(int Id, string Title, string Assignee, string Status, string Priority);
+
+    private static readonly TaskItem[] tasks =
+    [
+        new(1, "Design landing page", "Alice", "done", "high"),
+        new(2, "Implement auth flow", "Bob", "in-progress", "high"),
+        new(3, "Write unit tests", "Carol", "in-progress", "medium"),
+        new(4, "Update documentation", "Dave", "todo", "low"),
+        new(5, "Code review", "Alice", "todo", "medium"),
+    ];
+
+    private int completed => tasks.Count(t => t.Status == "done");
+    private int total => tasks.Length;
+    private int percent => (int)Math.Round((double)completed / total * 100);
+
+    private static string StatusBadgeType(string status) => status switch
+    {
+        "done" => "success",
+        "in-progress" => "warning",
+        _ => "default",
+    };
+}

@@ -1,0 +1,8 @@
+@* CalendarTableData.razor *@
+<td
+    class="@CssClasses"
+    aria-selected="@(Selected ? "true" : "false")"
+    role="gridcell"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</td>

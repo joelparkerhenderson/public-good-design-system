@@ -1,0 +1,13 @@
+@* Banner.razor *@
+@if (Visible)
+{
+    <div
+        class="@CssClasses"
+        data-type="@Type"
+        role="region"
+        aria-live="polite"
+        type="@Type"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </div>
+}

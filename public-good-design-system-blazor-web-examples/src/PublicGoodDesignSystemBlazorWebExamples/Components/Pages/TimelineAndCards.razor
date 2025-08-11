@@ -1,0 +1,65 @@
+@page "/timeline-and-cards"
+
+<h1>Timeline and Cards</h1>
+
+<Card Heading="Filter by Date Range" HeadingLevel="2">
+    <DateRange Label="Date range filter"
+               StartLabel="From" EndLabel="To"
+               Start="@filterStart" StartChanged="v => filterStart = v"
+               End="@filterEnd" EndChanged="v => filterEnd = v" />
+</Card>
+
+<ReviewDate Label="Last updated" Datetime="2025-06-20">
+    Last updated: June 20, 2025
+</ReviewDate>
+
+<TimelineList Label="Project milestones">
+    @foreach (var m in FilteredMilestones)
+    {
+        <TimelineListItem Datetime="@m.Date" Heading="@m.Heading">
+            <Card Heading="@m.Title" HeadingLevel="3">
+                <Badge Type="@m.Status">@m.StatusLabel</Badge>
+                <p>@m.Description</p>
+                <SummaryList Label="@($"{m.Title} details")">
+                    <SummaryListItem Term="Target Date">@m.Heading</SummaryListItem>
+                    <SummaryListItem Term="Status">@m.StatusLabel</SummaryListItem>
+                </SummaryList>
+            </Card>
+        </TimelineListItem>
+    }
+</TimelineList>
+
+<SummaryList Label="Overall project summary">
+    <SummaryListItem Term="Total milestones">@milestones.Length</SummaryListItem>
+    <SummaryListItem Term="Completed">@milestones.Count(m => m.Status == "success")</SummaryListItem>
+    <SummaryListItem Term="In Progress">@milestones.Count(m => m.Status == "warning")</SummaryListItem>
+    <SummaryListItem Term="Planned">@milestones.Count(m => m.Status == "default")</SummaryListItem>
+</SummaryList>
+
+@code {
+    private record Milestone(string Date, string Heading, string Title, string Description, string Status, string StatusLabel);
+
+    private static readonly Milestone[] milestones =
+    [
+        new("2025-01-10", "January 10, 2025", "Project Kickoff",
+            "Initial planning and team assembly completed successfully.",
+            "success", "Completed"),
+        new("2025-03-01", "March 1, 2025", "Alpha Release",
+            "Core features implemented and internal testing begun.",
+            "success", "Completed"),
+        new("2025-06-15", "June 15, 2025", "Beta Launch",
+            "Public beta with feature-complete product for user testing.",
+            "warning", "In Progress"),
+        new("2025-09-01", "September 1, 2025", "General Availability",
+            "Full production release with documentation and support.",
+            "default", "Planned"),
+    ];
+
+    private string? filterStart = "2025-01-01";
+    private string? filterEnd = "2025-12-31";
+
+    private IEnumerable<Milestone> FilteredMilestones =>
+        milestones.Where(m =>
+            (string.IsNullOrEmpty(filterStart) || string.Compare(m.Date, filterStart, StringComparison.Ordinal) >= 0) &&
+            (string.IsNullOrEmpty(filterEnd) || string.Compare(m.Date, filterEnd, StringComparison.Ordinal) <= 0));
+}
