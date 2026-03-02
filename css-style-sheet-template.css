@@ -1,0 +1,941 @@
+/* Public Good Design System: CSS style sheet template */
+
+/* accordion-nav: a navigation container for collapsible accordion information */
+.accordion-nav {
+}
+
+/* accordion-nav-list: an ordered list of accordion nav list item components */
+.accordion-nav-list {
+}
+
+/* accordion-nav-list-item: one accordion nav list item component */
+.accordion-nav-list-item {
+}
+
+/* action-link: a hyperlink styled as an action trigger */
+.action-link {
+}
+
+/* alert-dialog: a modal dialog for urgent messages requiring user acknowledgment */
+.alert-dialog {
+}
+
+/* alert: a status message for important information or feedback */
+.alert {
+}
+
+/* angle-slider-range-input: a range input for selecting an angle in degrees */
+.angle-slider-range-input {
+}
+
+/* aspect-ratio-container: a container that maintains a fixed aspect ratio */
+.aspect-ratio-container {
+}
+
+/* avatar: an avatar indicator that shows an avatar image or avatar text */
+.avatar {
+}
+
+/* avatar-image: an avatar indicator inside image such as a user photo */
+.avatar-image {
+}
+
+/* avatar-text: an avatar indicator inner text such as a user name */
+.avatar-text {
+}
+
+/* back-link: a navigation link to return to a previous page */
+.back-link {
+}
+
+/* badge: a small label for counts, statuses, or categories */
+.badge {
+}
+
+/* banner: a prominent message bar across the top of a page */
+.banner {
+}
+
+/* beach-ball: a decorative animated beach ball element */
+.beach-ball {
+}
+
+/* breadcrumb-nav: a navigation container for breadcrumb trail links */
+.breadcrumb-nav {
+}
+
+/* breadcrumb-nav-list: an ordered list of breadcrumb navigation items */
+.breadcrumb-nav-list {
+}
+
+/* breadcrumb-nav-list-item: one breadcrumb navigation link in the trail */
+.breadcrumb-nav-list-item {
+}
+
+/* button: a generic clickable button element */
+.button {
+}
+
+/* button-input: an input element of type button for form actions */
+.button-input {
+}
+
+/* calendar-table: a calendar table interactive grid for mananging dates, days, etc. */
+.calendar-table {
+}
+
+/* calendar-table-head: a calendar table interactive grid thead for mananging dates, days, etc. */
+.calendar-table-head {
+}
+
+/* calendar-table-body: a calendar table interactive grid tbody for mananging dates, days, etc. */
+.calendar-table-body {
+}
+
+/* calendar-table-foot: a calendar table interactive grid tfoot for mananging dates, days, etc. */
+.calendar-table-foot {
+}
+
+/* calendar-table-col: a calendar table interactive grid column for mananging dates, days, etc. */
+.calendar-table-col {
+}
+
+/* calendar-table-row: a calendar table interactive grid row for mananging dates, days, etc. */
+.calendar-table-row {
+}
+
+/* calendar-table-data: a calendar table interactive grid data cell for mananging dates, days, etc. */
+.calendar-table-data {
+}
+
+/* calendar-range-picker: a picker for selecting a date range on a calendar */
+.calendar-range-picker {
+}
+
+/* call-to-action: a prominent prompt encouraging user action */
+.call-to-action {
+}
+
+/* caption: a caption for a table or figure element */
+.caption {
+}
+
+/* card: a grouped content container with header, body, and footer areas */
+.card {
+}
+
+/* care-card: a medical care instruction card with urgency levels */
+.care-card {
+}
+
+/* carousel: a slideshow for cycling through content items */
+.carousel {
+}
+
+/* character-counter: a counter showing remaining or used characters in a text field */
+.character-counter {
+}
+
+/* character: a single character display element */
+.character {
+}
+
+/* checkbox-input: a checkbox input for toggling a boolean value */
+.checkbox-input {
+}
+
+/* check-list: an ordered list of check list item components */
+.check-list {
+}
+
+/* check-list-item: one check list item component with a checkbox */
+.check-list-item {
+}
+
+/* clipboard-copy-button: a button that copies text to the clipboard */
+.clipboard-copy-button {
+}
+
+/* collapsible: a container that can be expanded or collapsed */
+.collapsible {
+}
+
+/* color-input: an input for selecting a color value */
+.color-input {
+}
+
+/* color-picker: a two-dimensional board for picking colors by hue and saturation */
+.color-picker {
+}
+
+/* color-picker-button: a button showing a color swatch in a color picker */
+.color-picker-button {
+}
+
+/* combobox: a text input combined with a dropdown list for filtering options */
+.combobox {
+}
+
+/* command: a command palette for searching and executing actions */
+.command {
+}
+
+/* contents-nav: a navigation landmark for a table of contents */
+.contents-nav {
+}
+
+/* contents-list: an ordered list of contents list item components */
+.contents-list {
+}
+
+/* contents-list-item: one contents list item component linking to a page section */
+.contents-list-item {
+}
+
+/* context-menu: a menu that appears on right-click or long-press */
+.context-menu {
+}
+
+/* context-menu-item: one item in a context menu */
+.context-menu-item {
+}
+
+/* data-filter-form: a form for filtering data by criteria */
+.data-filter-form {
+}
+
+/* data-table: a data table interactive grid for displaying and sorting tabular data */
+.data-table {
+}
+
+/* data-table-head: a data table interactive grid thead for displaying and sorting tabular data */
+.data-table-head {
+}
+
+/* data-table-body: a data table interactive grid tbody for displaying and sorting tabular data */
+.data-table-body {
+}
+
+/* data-table-foot: a data table interactive grid tfoot for displaying and sorting tabular data */
+.data-table-foot {
+}
+
+/* data-table-col: a data table interactive grid column for displaying and sorting tabular data */
+.data-table-col {
+}
+
+/* data-table-row: a data table interactive grid row for displaying and sorting tabular data */
+.data-table-row {
+}
+
+/* data-table-data: a data table interactive grid data cell for displaying and sorting tabular data */
+.data-table-data {
+}
+
+/* date-field: a structured field for entering date components */
+.date-field {
+}
+
+/* date-input: an input for entering a date value */
+.date-input {
+}
+
+/* date-range: a display of a start and end date range */
+.date-range {
+}
+
+/* datetime-local-input: an input for entering a date and time without time zone */
+.datetime-local-input {
+}
+
+/* details: a disclosure widget that shows and hides content */
+.details {
+}
+
+/* dial: a rotary dial control for selecting a value */
+.dial {
+}
+
+/* dialog: a modal or non-modal dialog window */
+.dialog {
+}
+
+/* do-list: a guideline list of encouraged do-list-item components */
+.do-list {
+}
+
+/* do-list-item: an encouraged-practice item in a do-list guideline list */
+.do-list-item {
+}
+
+/* dont-list: a guideline list of discouraged dont-list-item components */
+.dont-list {
+}
+
+/* dont-list-item: a discouraged-practice item in a dont-list guideline list */
+.dont-list-item {
+}
+
+/* drawer: a panel that slides in from the edge of the screen */
+.drawer {
+}
+
+/* dropdown-menu: a menu that opens below a trigger button */
+.dropdown-menu {
+}
+
+/* editable-form: a form wrapper for inline editing of content */
+.editable-form {
+}
+
+/* editable: an inline-editable text element that toggles between view and edit modes */
+.editable {
+}
+
+/* email-link: a mailto hyperlink for an email address */
+.email-link {
+}
+
+/* email-input: an input for entering an email address */
+.email-input {
+}
+
+/* emoji-character-picker: a picker for browsing and selecting emoji characters */
+.emoji-character-picker {
+}
+
+/* emoji: a single emoji character with accessible name */
+.emoji {
+}
+
+/* error-message: an error message associated with a form field */
+.error-message {
+}
+
+/* error-summary: a summary of all validation errors on a form */
+.error-summary {
+}
+
+/* expander: a control that expands to reveal more content */
+.expander {
+}
+
+/* field: a form field wrapper with label, input, and error message */
+.field {
+}
+
+/* fieldset: a group of related form fields with a legend */
+.fieldset {
+}
+
+/* figure: a self-contained figure with optional caption */
+.figure {
+}
+
+/* file-dialog: a dialog for browsing and selecting files */
+.file-dialog {
+}
+
+/* file-input: an input for selecting files from the file system */
+.file-input {
+}
+
+/* file-manager: a file browser for navigating and managing files */
+.file-manager {
+}
+
+/* file-upload: a drag-and-drop area for uploading files */
+.file-upload {
+}
+
+/* five-face-rating-view: a read-only display of a five-face satisfaction rating */
+.five-face-rating-view {
+}
+
+/* five-face-rating-picker: a picker for selecting a 1-5 satisfaction rating using face labels */
+.five-face-rating-picker {
+}
+
+/* five-face-rating-picker-button: a picker button for selecting a 1-5 satisfaction rating using face labels */
+.five-face-rating-picker-button {
+}
+
+/* five-star-rating-view: a read-only display of a five-star rating */
+.five-star-rating-view {
+}
+
+/* five-star-rating-picker: a picker for selecting a 1-5 star rating using radio buttons */
+.five-star-rating-picker {
+}
+
+/* five-star-rating-picker-button: a picker button for selecting a 1-5 star rating using radio buttons */
+.five-star-rating-picker-button {
+}
+
+/* flair: a decorative highlight or emphasis element */
+.flair {
+}
+
+/* floating-panel: a panel that floats above page content */
+.floating-panel {
+}
+
+/* footer: a page or section footer area */
+.footer {
+}
+
+/* footnote: a footnote reference and content element */
+.footnote {
+}
+
+/* form: a form element for collecting and submitting user data */
+.form {
+}
+
+/* gantt-table: a Gantt chart table interactive grid for planning schedule visualization */
+.gantt-table {
+}
+
+/* gantt-table-head: a Gantt chart table interactive grid thead for planning schedule visualization */
+.gantt-table-head {
+}
+
+/* gantt-table-body: a Gantt chart table interactive grid tbody for planning schedule visualization */
+.gantt-table-body {
+}
+
+/* gantt-table-foot: a Gantt chart table interactive grid tfoot for planning schedule visualization */
+.gantt-table-foot {
+}
+
+/* gantt-table-col: a Gantt chart table interactive grid column for planning schedule visualization */
+.gantt-table-col {
+}
+
+/* gantt-table-row: a Gantt chart table interactive grid row for interactive grid planning schedule visualization */
+.gantt-table-row {
+}
+
+/* gantt-table-data: a Gantt chart table interactive grid data cell for planning schedule visualization */
+.gantt-table-data {
+}
+
+/* hamburger-menu: a toggle button that opens a mobile navigation menu */
+.hamburger-menu {
+}
+
+/* header: a page or section header area */
+.header {
+}
+
+/* hidden-input: a hidden input for including data in form submission */
+.hidden-input {
+}
+
+/* hint: hint text providing guidance for a form field */
+.hint {
+}
+
+/* holy-grail-layout: a classic layout with header, footer, main content, and two sidebars */
+.holy-grail-layout {
+}
+
+/* hover-card: a card that appears on hover over a trigger element */
+.hover-card {
+}
+
+/* icon: a container for displaying an icon */
+.icon {
+}
+
+/* image-file-input: an input for selecting image files with preview */
+.image-file-input {
+}
+
+/* image: an image element with alt text */
+.image {
+}
+
+/* information-callout: a callout box highlighting informational content */
+.information-callout {
+}
+
+/* input: a generic HTML input element */
+.input {
+}
+
+/* inset-text: indented text to distinguish it from surrounding content */
+.inset-text {
+}
+
+/* kanban-table: a kanban board table interactive grid for organizing items by status */
+.kanban-table {
+}
+
+/* kanban-table-head: a kanban board table interactive grid thead for organizing items by status */
+.kanban-table-head {
+}
+
+/* kanban-table-body: a kanban board table interactive grid tbody for organizing items by status */
+.kanban-table-body {
+}
+
+/* kanban-table-foot: a kanban board table interactive grid tfoot for organizing items by status */
+.kanban-table-foot {
+}
+
+/* kanban-table-col: a kanban board table interactive grid column for organizing items by status */
+.kanban-table-col {
+}
+
+/* kanban-table-row: a kanban board interactive grid table row for organizing items by status */
+.kanban-table-row {
+}
+
+/* kanban-table-data: kanban board table interactive grid data cell or organizing items by status */
+.kanban-table-data {
+}
+
+/* label: a label associated with a form input */
+.label {
+}
+
+/* listbox: a list of selectable options with keyboard navigation */
+.listbox {
+}
+
+/* measurement-instance-input: an input for entering a measurement value and unit */
+.measurement-instance-input {
+}
+
+/* measurement-instance-view: a read-only display of a measurement value and unit */
+.measurement-instance-view {
+}
+
+/* measurement-system-input: an input for selecting a measurement system */
+.measurement-system-input {
+}
+
+/* measurement-system-view: a read-only display of a measurement system */
+.measurement-system-view {
+}
+
+/* measurement-unit-input: an input for selecting a measurement unit */
+.measurement-unit-input {
+}
+
+/* measurement-unit-view: a read-only display of a measurement unit */
+.measurement-unit-view {
+}
+
+/* medical-record-red-box: a red highlighted box for critical medical record information */
+.medical-record-red-box {
+}
+
+/* menu: a list of actions or options triggered by a button */
+.menu {
+}
+
+/* menu-item: one item in a menu */
+.menu-item {
+}
+
+/* menu-bar: a horizontal bar of menu triggers */
+.menu-bar {
+}
+
+/* menu-bar-button: one item in a menu bar */
+.menu-bar-button {
+}
+
+/* meter: a gauge displaying a scalar value within a known range */
+.meter {
+}
+
+/* month-input: an input for selecting a month and year */
+.month-input {
+}
+
+/* navigation-menu: a site-wide navigation menu with links */
+.navigation-menu {
+}
+
+/* net-promoter-score-view: a read-only display of a Net Promoter Score */
+.net-promoter-score-view {
+}
+
+/* net-promoter-score-picker: a picker for selecting a 0-10 Net Promoter Score */
+.net-promoter-score-picker {
+}
+
+/* net-promoter-score-picker-button: a picker button for selecting a 0-10 Net Promoter Score */
+.net-promoter-score-picker-button {
+}
+
+/* notification: a brief message about an event or update */
+.notification {
+}
+
+/* number-input: an input for entering a numeric value with validation */
+.number-input {
+}
+
+/* option: an option element within a select dropdown */
+.option {
+}
+
+/* pagination-nav: an ordered list of page navigation links */
+.pagination-nav {
+}
+
+/* pagination-list: an ordered list of page navigation links */
+.pagination-list {
+}
+
+/* pagination-list-item: one page link in a pagination list */
+.pagination-list-item {
+}
+
+/* panel: a generic content panel with optional heading */
+.panel {
+}
+
+/* password-input-div: an input for entering a password with obscured text */
+.password-input-div {
+}
+
+/* pin-input-div: a series of single-digit inputs for entering a PIN or OTP code */
+.pin-input-div {
+}
+
+/* popover: a floating content box anchored to a trigger element */
+.popover {
+}
+
+/* popup: a temporary overlay that appears above page content */
+.popup {
+}
+
+/* postal-code-input: an input for entering a postal or ZIP code */
+.postal-code-input {
+}
+
+/* postal-code-view: a read-only display of a postal or ZIP code */
+.postal-code-view {
+}
+
+/* progress-circle: a circular progress indicator */
+.progress-circle {
+}
+
+/* progress-spinner: an indeterminate spinning progress indicator */
+.progress-spinner {
+}
+
+/* progress: a horizontal progress bar showing completion */
+.progress {
+}
+
+/* qr-code: a QR code image generated from text or URL data */
+.qr-code {
+}
+
+/* radio-group: a group of radio buttons for selecting one option */
+.radio-group {
+}
+
+/* radio-input: a single radio button input */
+.radio-input {
+}
+
+/* range-input: a slider input for selecting a value within a range */
+.range-input {
+}
+
+/* red-amber-green-view: a read-only display of a red/amber/green status */
+.red-amber-green-view {
+}
+
+/* red-amber-green-picker: a picker for selecting a red/amber/green status */
+.red-amber-green-picker {
+}
+
+/* red-amber-green-picker-button: a picker button for selecting a red/amber/green status */
+.red-amber-green-picker-button {
+}
+
+/* red-orange-yellow-green-blue-view: a read-only display of a five-level color status */
+.red-orange-yellow-green-blue-view {
+}
+
+/* red-orange-yellow-green-blue-picker: a picker for selecting a five-level color status */
+.red-orange-yellow-green-blue-picker {
+}
+
+/* red-orange-yellow-green-blue-picker-button: a picker button for selecting a five-level color status */
+.red-orange-yellow-green-blue-picker-button {
+}
+
+/* reset-input: a button input that resets a form to default values */
+.reset-input {
+}
+
+/* resizable: a container that the user can resize by dragging */
+.resizable {
+}
+
+/* review-date: a display of a content review date */
+.review-date {
+}
+
+/* scroll-area: a scrollable container with custom scrollbar support */
+.scroll-area {
+}
+
+/* scroll-bar: a custom scrollbar element */
+.scroll-bar {
+}
+
+/* search-input: an input for entering a search query */
+.search-input {
+}
+
+/* segment-group: a group of mutually exclusive segment options */
+.segment-group {
+}
+
+/* segment-group-item: one selectable segment in a segment group */
+.segment-group-item {
+}
+
+/* select-with-extras: a select dropdown with additional features like search or groups */
+.select-with-extras {
+}
+
+/* select: a dropdown select element for choosing one option */
+.select {
+}
+
+/* separator: a horizontal or vertical divider between content sections */
+.separator {
+}
+
+/* sheet: a panel that slides in from a screen edge as an overlay */
+.sheet {
+}
+
+/* sidebar: a side panel for navigation or supplementary content */
+.sidebar {
+}
+
+/* signature-pad: a drawing area for capturing a handwritten signature */
+.signature-pad {
+}
+
+/* skeleton: a placeholder loading animation for content */
+.skeleton {
+}
+
+/* skip-link: a hidden link for keyboard users to skip to main content */
+.skip-link {
+}
+
+/* slide-out-drawer: a drawer that slides out from the side of the page */
+.slide-out-drawer {
+}
+
+/* slider: a draggable control for selecting a value along a track */
+.slider {
+}
+
+/* sonner: a toast notification manager */
+.sonner {
+}
+
+/* sparkline: a small inline chart showing a data trend */
+.sparkline {
+}
+
+/* splitter: a draggable divider for resizing adjacent panels */
+.splitter {
+}
+
+/* submit-input: a button input that submits a form */
+.submit-input {
+}
+
+/* summary-list: an ordered list of key-value summary pairs */
+.summary-list {
+}
+
+/* summary-list-item: one key-value pair in a summary list */
+.summary-list-item {
+}
+
+/* switch-button: a toggle switch for turning a setting on or off */
+.switch-button {
+}
+
+/* tab-bar: a group of tabs for switching between content panels */
+.tab-bar {
+}
+
+/* tab-bar-button: one tab button in a tab group */
+.tab-bar-button {
+}
+
+/* table: a data table with rows and columns */
+.table {
+}
+
+/* tag-group: a group of tag elements */
+.tag-group {
+}
+
+/* tag: a keyword label for categorizing content */
+.tag {
+}
+
+/* tag-input: an input for adding and removing tags */
+.tag-input {
+}
+
+/* task-bar: a horizontal bar of task shortcuts or actions */
+.task-bar {
+}
+
+/* task-bar-button: one item in a task bar */
+.task-bar-button {
+}
+
+/* task-list: an ordered list of task list items */
+.task-list {
+}
+
+/* task-list-item: one task item with a checkbox and label */
+.task-list-item {
+}
+
+/* tel-input: an input for entering a telephone number */
+.tel-input {
+}
+
+/* tel-link: a tel: hyperlink for a telephone number */
+.tel-link {
+}
+
+/* text-input: a single-line text input field */
+.text-input {
+}
+
+/* textarea: a multi-line text input area */
+.textarea {
+}
+
+/* theme-picker: a picker for selecting a visual theme */
+.theme-picker {
+}
+
+/* theme-select: a select dropdown for choosing a theme */
+.theme-select {
+}
+
+/* theme-select-option: one option in a theme select dropdown */
+.theme-select-option {
+}
+
+/* theme-view: a read-only display of the current theme */
+.theme-view {
+}
+
+/* time-input: an input for entering a time value */
+.time-input {
+}
+
+/* time-picker-input: an input with a dropdown for picking a time */
+.time-picker-input {
+}
+
+/* timeline-list: an ordered list of chronological events or milestones */
+.timeline-list {
+}
+
+/* timeline-list-item: one event in a timeline list */
+.timeline-list-item {
+}
+
+/* timer: a countdown or elapsed time display */
+.timer {
+}
+
+/* toast: a brief auto-dismissing notification message */
+.toast {
+}
+
+/* toggle-group: a group of toggle buttons for selecting options */
+.toggle-group {
+}
+
+/* toggle-button: a button that toggles between pressed and unpressed states */
+.toggle-button {
+}
+
+/* tool-bar: a horizontal bar of tool actions */
+.tool-bar {
+}
+
+/* tool-bar-button: one action button in a tool bar */
+.tool-bar-button {
+}
+
+/* tooltip: a small popup showing descriptive text on hover or focus */
+.tooltip {
+}
+
+/* tour: a tour guide, such as for sightseeing, or pathways, or demonstrations, etc. */
+.tour {
+}
+
+/* tour-list: an ordered list of tour guide steps */
+.tour-list {
+}
+
+/* tour-list-item: one step in a tour guide list */
+.tour-list-item {
+}
+
+/* tree-nav: a hierarchical navigation with expandable branches */
+.tree-nav {
+}
+
+/* tree-nav-list: a hierarchical list with nested expandable items */
+.tree-nav-list {
+}
+
+/* united-kingdom-national-health-service-number-input: an input for entering a UK NHS number */
+.united-kingdom-national-health-service-number-input {
+}
+
+/* united-kingdom-national-health-service-number-view: a read-only display of a UK NHS number */
+.united-kingdom-national-health-service-number-view {
+}
+
+/* united-states-social-security-number-input: an input for entering a US Social Security number */
+.united-states-social-security-number-input {
+}
+
+/* united-states-social-security-number-view: a read-only display of a US Social Security number */
+.united-states-social-security-number-view {
+}
+
+/* url-input: an input for entering a URL */
+.url-input {
+}
+
+/* warning-callout: a callout box highlighting a warning message */
+.warning-callout {
+}
+
+/* week-input: an input for selecting a week and year */
+.week-input {
+}
