@@ -1,5 +1,7 @@
 # Public Good Design System
 
+[CSS style sheet template](css-style-sheet-template.css)
+
 ## Components
 
 - accordion:

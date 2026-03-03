@@ -1,0 +1,12 @@
+@* KanbanTableData.razor *@
+<td
+    class="@CssClasses"
+    aria-label="@Label"
+    aria-selected="@(Active ? "true" : "false")"
+    role="gridcell"
+    @attributes="AdditionalAttributes">
+    @if (ChildContent != null)
+    {
+        @ChildContent
+    }
+</td>

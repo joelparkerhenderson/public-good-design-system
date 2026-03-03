@@ -1,0 +1,9 @@
+@* GanttTable.razor *@
+<table
+    class="@CssClasses"
+    aria-label="@Label"
+    role="grid"
+    @attributes="AdditionalAttributes">
+    <caption>@Label</caption>
+    @ChildContent
+</table>

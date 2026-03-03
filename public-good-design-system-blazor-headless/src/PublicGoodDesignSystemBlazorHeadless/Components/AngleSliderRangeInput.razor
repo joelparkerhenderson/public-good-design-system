@@ -1,0 +1,17 @@
+@* AngleSliderRangeInput.razor *@
+<input
+    class="@CssClasses"
+    type="range"
+    aria-label="@Label"
+    aria-valuemin="@Min"
+    aria-valuemax="@Max"
+    aria-valuenow="@Value"
+    aria-valuetext="@ValueText"
+    min="@Min"
+    max="@Max"
+    step="@Step"
+    value="@Value"
+    disabled="@Disabled"
+    name="@Name"
+    id="@Id"
+    @attributes="AdditionalAttributes" />

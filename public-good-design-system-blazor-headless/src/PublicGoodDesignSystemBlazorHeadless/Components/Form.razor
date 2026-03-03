@@ -1,0 +1,9 @@
+@* Form.razor *@
+<form
+    class="@CssClasses"
+    aria-label="@Label"
+    onsubmit="@HandleSubmit"
+    handleSubmit="@HandleSubmit"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</form>

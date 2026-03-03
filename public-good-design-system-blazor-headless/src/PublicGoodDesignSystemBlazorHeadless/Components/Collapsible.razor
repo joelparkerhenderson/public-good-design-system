@@ -1,0 +1,8 @@
+@* Collapsible.razor *@
+<details
+    class="@CssClasses"
+    open="@Open"
+    @attributes="AdditionalAttributes">
+    <summary class="collapsable-summary">@Summary</summary>
+    @ChildContent
+</details>

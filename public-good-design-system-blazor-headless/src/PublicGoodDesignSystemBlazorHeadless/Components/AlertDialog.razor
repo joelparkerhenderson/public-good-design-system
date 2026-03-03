@@ -1,0 +1,14 @@
+@* AlertDialog.razor *@
+@if (Open)
+{
+    <dialog
+        class="@CssClasses"
+        aria-labelledby="@TitleId"
+        role="alertdialog"
+        aria-modal="true"
+        titleId="@TitleId"
+        open
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </dialog>
+}

@@ -1,0 +1,10 @@
+@* Badge.razor *@
+<span
+    class="@CssClasses"
+    aria-label="@Label"
+    data-type="@Type"
+    role="status"
+    type="@Type"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</span>

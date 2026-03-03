@@ -1,0 +1,12 @@
+@* SwitchButton.razor *@
+<button
+    class="@CssClasses"
+    aria-checked="@(Checked ? "true" : "false")"
+    aria-label="@Label"
+    type="button"
+    role="switch"
+    disabled="@Disabled"
+    @onclick="HandleClick"
+    @onkeydown="HandleKeyDown"
+    @attributes="AdditionalAttributes">
+</button>

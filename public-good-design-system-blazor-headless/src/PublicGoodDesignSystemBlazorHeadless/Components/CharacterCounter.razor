@@ -1,0 +1,14 @@
+@* CharacterCounter.razor *@
+<span
+    class="@CssClasses"
+    aria-label="@Label"
+    data-count="@Count"
+    data-max="@Max"
+    data-remaining="@Remaining"
+    data-over-limit="@(OverLimit ? "overlimit" : null)"
+    role="status"
+    aria-live="polite"
+    count="@Count"
+    remaining="@Remaining"
+    @attributes="AdditionalAttributes">
+</span>

@@ -1,0 +1,15 @@
+@* ClipboardCopyButton.razor *@
+<button
+    class="@CssClasses"
+    aria-label="@Label"
+    data-copied="@Copied"
+    onclick="@HandleClick"
+    type="button"
+    copied="@Copied"
+    handleClick="@HandleClick"
+    @attributes="AdditionalAttributes">
+    @if (ChildContent != null)
+    {
+        @ChildContent
+    }
+</button>

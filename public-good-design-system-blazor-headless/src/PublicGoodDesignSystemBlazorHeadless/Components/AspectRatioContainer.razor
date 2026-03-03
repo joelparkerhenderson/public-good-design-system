@@ -1,0 +1,9 @@
+@* AspectRatioContainer.razor *@
+<div
+    class="@CssClasses"
+    aspect-ratio="@Ratio"
+    data-aspect-ratio-container="@Ratio"
+    ratio="@Ratio"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</div>

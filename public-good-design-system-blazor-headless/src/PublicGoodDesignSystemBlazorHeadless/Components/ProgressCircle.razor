@@ -1,0 +1,14 @@
+@* ProgressCircle.razor *@
+<div
+    class="@CssClasses"
+    aria-label="@Label"
+    aria-valuenow="@Value"
+    aria-valuemin="@Min"
+    aria-valuemax="@Max"
+    role="Progress"
+    @attributes="AdditionalAttributes">
+    @if (ChildContent != null)
+    {
+        @ChildContent
+    }
+</div>

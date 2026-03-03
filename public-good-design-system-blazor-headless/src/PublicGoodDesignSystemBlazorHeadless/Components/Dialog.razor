@@ -1,0 +1,14 @@
+@* Dialog.razor *@
+@if (Open)
+{
+    <dialog
+        class="@CssClasses"
+        aria-label="@Label"
+        aria-modal="@(Modal ? "modal" : null)"
+        tabindex="-1"
+        open
+        @onkeydown="HandleKeyDown"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </dialog>
+}

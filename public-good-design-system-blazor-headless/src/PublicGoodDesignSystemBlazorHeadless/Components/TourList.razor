@@ -1,0 +1,14 @@
+@* TourList.razor *@
+@if (Active)
+{
+    <ol
+        class="@CssClasses"
+        aria-label="@Label"
+        role="dialog"
+        aria-modal="true"
+        tabindex="-1"
+        @onkeydown="HandleKeyDown"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </ol>
+}

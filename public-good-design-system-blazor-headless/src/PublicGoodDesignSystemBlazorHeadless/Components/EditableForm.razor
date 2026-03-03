@@ -1,0 +1,15 @@
+@* EditableForm.razor *@
+@if (Editing)
+{
+    <form
+        class="@CssClasses"
+        aria-label="@Label"
+        onsubmit="@HandleSubmit"
+        onkeydown="@HandleKeyDown"
+        tabindex="-1"
+        handleSubmit="@HandleSubmit"
+        handleKeydown="@HandleKeyDown"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </form>
+}

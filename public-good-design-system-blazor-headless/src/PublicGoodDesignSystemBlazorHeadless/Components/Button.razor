@@ -1,0 +1,10 @@
+@* Button.razor *@
+<button
+    class="@CssClasses"
+    aria-pressed="@(Pressed ? "true" : "false")"
+    aria-label="@Label"
+    type="@Type"
+    disabled="@Disabled"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</button>

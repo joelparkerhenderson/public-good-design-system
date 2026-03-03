@@ -1,0 +1,13 @@
+@* UnitedKingdomNationalHealthServiceNumberInput.razor *@
+<input
+    class="@CssClasses"
+    aria-label="@Label"
+    pattern="@NhsPattern"
+    type="text"
+    inputmode="numeric"
+    autocomplete="off"
+    nhsPattern="@NhsPattern"
+    required="@Required"
+    disabled="@Disabled"
+    value="@Value"
+    @attributes="AdditionalAttributes" />

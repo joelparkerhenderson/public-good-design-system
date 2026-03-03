@@ -1,0 +1,11 @@
+@* SegmentGroupItem.razor *@
+<button
+    class="@CssClasses"
+    aria-checked="@(Checked ? "true" : "false")"
+    data-value="@Value"
+    role="radio"
+    value="@Value"
+    disabled="@Disabled"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</button>

@@ -1,0 +1,10 @@
+@* TabBarButton.razor *@
+<button
+    class="@CssClasses"
+    aria-selected="@(Selected ? "true" : "false")"
+    aria-controls="@Controls"
+    role="tab"
+    tabindex="@(Selected ? 0 : -1)"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</button>

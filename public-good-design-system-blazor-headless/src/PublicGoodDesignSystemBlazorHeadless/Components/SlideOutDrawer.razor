@@ -1,0 +1,15 @@
+@* SlideOutDrawer.razor *@
+@if (Open)
+{
+    <div
+        class="@CssClasses"
+        aria-label="@Label"
+        onkeydown="@HandleKeyDown"
+        role="dialog"
+        aria-modal="true"
+        tabindex="-1"
+        handleKeydown="@HandleKeyDown"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </div>
+}

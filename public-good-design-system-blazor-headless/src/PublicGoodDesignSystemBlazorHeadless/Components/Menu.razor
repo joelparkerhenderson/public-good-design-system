@@ -1,0 +1,12 @@
+@* Menu.razor *@
+<div
+    class="@CssClasses"
+    aria-label="@Label"
+    this="@_elementRef"
+    role="menu"
+    menuRef="@_elementRef"
+    @ref="_elementRef"
+    @onkeydown="HandleKeyDown"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</div>

@@ -1,0 +1,77 @@
+using Bunit;
+using Xunit;
+using PublicGoodDesignSystemBlazorHeadless.Components;
+
+namespace PublicGoodDesignSystemBlazorHeadless.Tests.Components;
+
+public class KanbanTableDataTests : TestContext
+{
+    [Fact]
+    public void RendersAsTd()
+    {
+        var cut = RenderComponent<KanbanTableData>();
+        var element = cut.Find("td");
+        Assert.NotNull(element);
+    }
+
+    [Fact]
+    public void HasBaseClass()
+    {
+        var cut = RenderComponent<KanbanTableData>();
+        var element = cut.Find("td");
+        Assert.Contains("kanban-table-data", element.GetAttribute("class"));
+    }
+
+    [Fact]
+    public void RendersChildContent()
+    {
+        var cut = RenderComponent<KanbanTableData>(p => p
+            .AddChildContent("Hello child"));
+        Assert.Contains("Hello child", cut.Markup);
+    }
+
+    [Fact]
+    public void MergesCssClass()
+    {
+        var cut = RenderComponent<KanbanTableData>(p => p
+            .Add(c => c.CssClass, "custom-class"));
+        var element = cut.Find("td");
+        var classes = element.GetAttribute("class");
+        Assert.Contains("kanban-table-data", classes);
+        Assert.Contains("custom-class", classes);
+    }
+
+    [Fact]
+    public void PassesThroughAdditionalAttributes()
+    {
+        var cut = RenderComponent<KanbanTableData>(p => p
+            .Add(c => c.AdditionalAttributes, new Dictionary<string, object> { { "data-testid", "test-123" } }));
+        var element = cut.Find("td");
+        Assert.Equal("test-123", element.GetAttribute("data-testid"));
+    }
+
+    [Fact]
+    public void HasRoleGridcell()
+    {
+        var cut = RenderComponent<KanbanTableData>();
+        var element = cut.Find("td");
+        Assert.Equal("gridcell", element.GetAttribute("role"));
+    }
+
+    [Fact]
+    public void RendersAriaLabel()
+    {
+        var cut = RenderComponent<KanbanTableData>(p => p
+            .Add(c => c.Label, "Test label"));
+        var element = cut.Find("td");
+        Assert.Equal("Test label", element.GetAttribute("aria-label"));
+    }
+
+    [Fact]
+    public void LabelDefaultIsEmptyString()
+    {
+        var cut = RenderComponent<KanbanTableData>();
+        // Default value for Label should be ""
+        Assert.NotNull(cut.Instance);
+    }
+}

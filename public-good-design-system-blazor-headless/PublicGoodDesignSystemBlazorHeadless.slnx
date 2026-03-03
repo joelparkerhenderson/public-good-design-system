@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/PublicGoodDesignSystemBlazorHeadless/PublicGoodDesignSystemBlazorHeadless.csproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/PublicGoodDesignSystemBlazorHeadless.Tests/PublicGoodDesignSystemBlazorHeadless.Tests.csproj" />
+  </Folder>
+</Solution>

@@ -1,0 +1,13 @@
+@* Dial.razor *@
+<div
+    class="@CssClasses"
+    aria-label="@Label"
+    aria-valuenow="@Value"
+    aria-valuemin="@Min"
+    aria-valuemax="@Max"
+    aria-disabled="@(Disabled ? "true" : null)"
+    role="slider"
+    tabindex="@(Disabled ? -1 : 0)"
+    @onkeydown="HandleKeyDown"
+    @attributes="AdditionalAttributes">
+</div>

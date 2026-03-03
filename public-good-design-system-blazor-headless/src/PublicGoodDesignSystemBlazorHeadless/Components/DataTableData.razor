@@ -1,0 +1,8 @@
+@* DataTableData.razor *@
+<td
+    class="@CssClasses"
+    aria-selected="@(Active ? "true" : "false")"
+    role="gridcell"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</td>

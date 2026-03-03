@@ -1,0 +1,13 @@
+@* FileDialog.razor *@
+@if (Open)
+{
+    <dialog
+        class="@CssClasses"
+        aria-label="@Label"
+        tabindex="-1"
+        open
+        @onkeydown="HandleKeyDown"
+        @attributes="AdditionalAttributes">
+        @ChildContent
+    </dialog>
+}

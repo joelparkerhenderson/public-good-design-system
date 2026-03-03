@@ -1,0 +1,8 @@
+@* Icon.razor *@
+<span
+    class="@CssClasses"
+    aria-label="@Label"
+    aria-hidden="@(Decorative ? "decorative" : null)"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</span>
