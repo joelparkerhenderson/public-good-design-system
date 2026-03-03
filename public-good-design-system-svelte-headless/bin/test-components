@@ -1,0 +1,11 @@
+#!/bin/sh
+set -euf
+top="$(git rev-parse --show-toplevel)"
+for dir in $(find "$top/components" -type d -depth 1 | sort); do
+     name=$(basename "$dir")
+     has_claude_file=$([ -f "$dir/CLAUDE.md" ] && echo "true" || echo "false")
+     has_index_file=$([ -f "$dir/index.md" ] && echo "true" || echo "false")
+     has_component_svelte_file=$([ -f "$dir"*.svelte ] && echo "true" || echo "false")
+     has_component_svelte_test_file=$([ -f "$dir"*.svelte.test.ts ] && echo "true" || echo "false")
+     echo "$name|$has_claude_file|$has_index_file|$has_component_svelte_file|$has_component_svelte_test_file"
+done
