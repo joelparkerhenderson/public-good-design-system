@@ -10,29 +10,60 @@
 
 ## Overview
 
-Think carefully. Use high effort. Create plan.md file.
+Vue 3 + Nuxt 3 example application demonstrating all 236 components from the Public Good Design System headless component library, styled with NHS UK design system colors, typography, spacing, and focus states.
 
-Research related
+### Related Projects
 
 - [Public Good Design System: Components](../components/)
-- [Public Good Design System: React headless](../public-good-design-system-react-headless/)
+- [Public Good Design System: Vue headless](../public-good-design-system-vue-headless/)
+- [Public Good Design System: React Next.js examples](../public-good-design-system-react-next-examples/)
 
-Research design system styles and colors by NHS UK:
+### NHS UK Design System References
 
 - [NHS UK - Design system](https://service-manual.nhs.uk/design-system)
-- [NHS UK - Design system - Styles - Focus State](https://service-manual.nhs.uk/design-system/styles/focus-state)
-- [NHS UK - Design system - Styles - Icons](https://service-manual.nhs.uk/design-system/styles/icons)
-- [NHS UK - Design system - Styles - Layout](https://service-manual.nhs.uk/design-system/styles/layout)
-- [NHS UK - Design system - Styles - Page Template](https://service-manual.nhs.uk/design-system/styles/page-template)
-- [NHS UK - Design system - Styles - Spacing](https://service-manual.nhs.uk/design-system/styles/spacing)
-- [NHS UK - Design system - Styles - Typography](https://service-manual.nhs.uk/design-system/styles/typography)
-- [NHS UK - Design system - Styles - Use Frutiger Font](https://service-manual.nhs.uk/design-system/styles/use-frutiger-font)
-- [NHS UK - Aaccessibilty - Design](https://service-manual.nhs.uk/accessibility/design)
+- [NHS UK - Design system - Styles](https://service-manual.nhs.uk/design-system/styles)
+- [NHS UK - Accessibility - Design](https://service-manual.nhs.uk/accessibility/design)
 - [NHS UK - NHS Identity - Identity Guidelines - Colours](https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/)
 
-## Project Overview
+### Tech Stack
 
-This project is Vue Nuxt.js examples of the Public Good Design System Vue headless component library and using NHS UK design system styles and colors.
+- **Vue 3** with Composition API and TypeScript (`<script setup lang="ts">`)
+- **Nuxt 3** for file-based routing and component auto-imports
+- **Vitest** + **Vue Testing Library** + **jsdom** for testing
+- **NHS UK CSS** via `assets/css/nhs.css` (CSS custom properties)
+
+### Scripts
+
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm test` | Run all 1342 tests |
+
+### Project Structure
+
+```
+├── app.vue                     # Root layout
+├── nuxt.config.ts              # Nuxt configuration
+├── components/                 # 236 headless Vue components
+├── pages/                      # 13 example pages
+├── assets/css/nhs.css          # NHS UK design tokens & styles
+├── tests/components/           # 236 component test files
+├── vitest.config.ts            # Vitest configuration
+└── vitest-setup.ts             # Test setup (cleanup)
+```
+
+### Vue Component Conventions
+
+- `<script setup lang="ts">` syntax for all components
+- `defineProps<{}>()` with `withDefaults()` for prop definitions
+- `defineModel()` for two-way bindable props (v-model)
+- `computed()` for derived values
+- Headless: no CSS embedded, uses CSS class names matching kebab-case component name
+- `v-bind="$attrs"` for pass-through attributes
+- Emit events instead of callback props (Vue convention)
+
+## Project Overview
 
 ### Suffix → HTML Element Mapping
 
@@ -72,14 +103,14 @@ This project is Vue Nuxt.js examples of the Public Good Design System Vue headle
 
 ### Common Patterns
 
-- `<label htmlFor={id}>` — link labels to inputs
+- `<label :for="id">` — link labels to inputs
 - `aria-labelledby` / `aria-describedby` — link related elements
-- `aria-invalid` + `aria-errormessage` — error state
+- `:aria-invalid` + `:aria-errormessage` — error state
 - `role="alert"` — announce dynamic content
 - `role="group"` with `aria-label` — group related controls
-- Roving tabindex (`tabIndex={selected ? 0 : -1}`) — grid navigation
-- `aria-pressed` — toggle button state
-- `aria-expanded` — expandable sections
+- Roving tabindex (`:tabindex="selected ? 0 : -1"`) — grid navigation
+- `:aria-pressed` — toggle button state
+- `:aria-expanded` — expandable sections
 - `aria-current` — current item in navigation
 
 ## Internationalization
