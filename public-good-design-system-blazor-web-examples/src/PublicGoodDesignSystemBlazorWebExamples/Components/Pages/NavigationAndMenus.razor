@@ -1,0 +1,85 @@
+@page "/navigation-and-menus"
+
+<h1>Navigation and Menus</h1>
+
+<section class="section">
+    <h2>Navigation Menu</h2>
+    <NavigationMenu Label="Main navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+        </ul>
+    </NavigationMenu>
+</section>
+
+<Separator Label="Section divider" />
+
+<section class="section">
+    <h2>Menu Bar</h2>
+    <MenuBar Label="Application menu">
+        <MenuBarButton @onclick="() => fileMenuOpen = !fileMenuOpen">File</MenuBarButton>
+        <MenuBarButton @onclick="() => editMenuOpen = !editMenuOpen">Edit</MenuBarButton>
+        <MenuBarButton>View</MenuBarButton>
+        <MenuBarButton>Help</MenuBarButton>
+    </MenuBar>
+
+    <DropdownMenu Label="File" Open="@fileMenuOpen" OpenChanged="v => fileMenuOpen = v">
+        <ul role="menu">
+            <li role="menuitem">New</li>
+            <li role="menuitem">Open</li>
+            <li role="menuitem">Save</li>
+            <li role="menuitem">Export</li>
+        </ul>
+    </DropdownMenu>
+
+    <DropdownMenu Label="Edit" Open="@editMenuOpen" OpenChanged="v => editMenuOpen = v">
+        <ul role="menu">
+            <li role="menuitem">Undo</li>
+            <li role="menuitem">Redo</li>
+            <li role="menuitem">Cut</li>
+            <li role="menuitem">Copy</li>
+            <li role="menuitem">Paste</li>
+        </ul>
+    </DropdownMenu>
+</section>
+
+<Separator />
+
+<section class="section">
+    <h2>Toolbar</h2>
+    <ToolBar Label="Document formatting">
+        <ToolBarButton>Bold</ToolBarButton>
+        <ToolBarButton>Italic</ToolBarButton>
+        <ToolBarButton>Underline</ToolBarButton>
+        <ToolBarButton Disabled="true">Strikethrough</ToolBarButton>
+        <ToolBarButton>Align Left</ToolBarButton>
+        <ToolBarButton>Align Center</ToolBarButton>
+        <ToolBarButton>Align Right</ToolBarButton>
+    </ToolBar>
+</section>
+
+<Separator />
+
+<section class="section">
+    <h2>Hamburger Menu</h2>
+    <HamburgerMenu Label="Mobile menu" Open="@hamburgerOpen" OpenChanged="v => hamburgerOpen = v">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Dashboard</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Team</a></li>
+            <li><a href="#">Reports</a></li>
+            <li><a href="#">Settings</a></li>
+            <li><a href="#">Help</a></li>
+        </ul>
+    </HamburgerMenu>
+</section>
+
+@code {
+    private bool hamburgerOpen;
+    private bool fileMenuOpen;
+    private bool editMenuOpen;
+}

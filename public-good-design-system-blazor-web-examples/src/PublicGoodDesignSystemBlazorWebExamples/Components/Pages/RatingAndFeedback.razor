@@ -1,0 +1,56 @@
+@page "/rating-and-feedback"
+
+<h1>Rating and Feedback</h1>
+
+@if (submitted)
+{
+    <Alert Type="success" Heading="Thank you!">
+        <p>Your feedback has been submitted.</p>
+        <FiveStarRatingView Label="Your rating" Value="@stars.ToString()" />
+    </Alert>
+}
+else
+{
+    <Form Label="Feedback form" OnSubmit="HandleSubmit">
+        <section class="section">
+            <h2>Product Rating</h2>
+            <FiveStarRatingPicker Label="Product rating" Value="@stars" ValueChanged="v => stars = v" />
+        </section>
+
+        <Separator />
+
+        <section class="section">
+            <h2>Service Satisfaction</h2>
+            <FiveFaceRatingPicker Label="Service satisfaction" Value="@satisfaction" ValueChanged="v => satisfaction = v" />
+        </section>
+
+        <Separator />
+
+        <section class="section">
+            <h2>Recommendation</h2>
+            <NetPromoterScorePicker Label="Recommendation likelihood" Value="@nps" ValueChanged="v => nps = v" />
+        </section>
+
+        <Separator />
+
+        <section class="section">
+            <h2>Additional Comments</h2>
+            <Textarea Label="Comments" Value="@comment" ValueChanged="v => comment = v" Rows="4" />
+        </section>
+
+        <Button Type="submit">Submit Feedback</Button>
+    </Form>
+}
+
+@code {
+    private int stars;
+    private int satisfaction;
+    private string? nps;
+    private string comment = "";
+    private bool submitted;
+
+    private void HandleSubmit()
+    {
+        submitted = true;
+    }
+}

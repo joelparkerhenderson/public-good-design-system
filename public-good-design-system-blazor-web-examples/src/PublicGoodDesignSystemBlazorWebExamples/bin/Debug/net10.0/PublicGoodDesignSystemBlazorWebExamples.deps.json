@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "PublicGoodDesignSystemBlazorWebExamples/1.0.0": {
+        "dependencies": {
+          "PublicGoodDesignSystemBlazorHeadless": "1.0.0"
+        },
+        "runtime": {
+          "PublicGoodDesignSystemBlazorWebExamples.dll": {}
+        }
+      },
+      "PublicGoodDesignSystemBlazorHeadless/1.0.0": {
+        "runtime": {
+          "PublicGoodDesignSystemBlazorHeadless.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "PublicGoodDesignSystemBlazorWebExamples/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "PublicGoodDesignSystemBlazorHeadless/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

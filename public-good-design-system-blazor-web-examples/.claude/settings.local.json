@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(find /Users/jph/git/joelparkerhenderson/public-good-design-system/public-good-design-system-blazor-headless -name \"*.js\" -o -name \"*.ts\" 2>/dev/null | head -10)",
+      "Bash(dotnet build 2>&1)",
+      "Bash(dotnet --version 2>&1)",
+      "Bash(dotnet build /Users/jph/git/joelparkerhenderson/public-good-design-system/public-good-design-system-blazor-web-examples/src/PublicGoodDesignSystemBlazorWebExamples/PublicGoodDesignSystemBlazorWebExamples.csproj 2>&1 | tail -5)",
+      "Bash(dotnet list /Users/jph/git/joelparkerhenderson/public-good-design-system/public-good-design-system-blazor-web-examples/src/PublicGoodDesignSystemBlazorWebExamples/PublicGoodDesignSystemBlazorWebExamples.csproj package --outdated 2>&1)",
+      "Bash(dotnet list /Users/jph/git/joelparkerhenderson/public-good-design-system/public-good-design-system-blazor-headless/src/PublicGoodDesignSystemBlazorHeadless/PublicGoodDesignSystemBlazorHeadless.csproj package --outdated 2>&1)"
+    ]
+  }
+}

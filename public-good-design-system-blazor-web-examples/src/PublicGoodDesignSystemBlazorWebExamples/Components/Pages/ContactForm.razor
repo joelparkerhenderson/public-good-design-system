@@ -1,0 +1,92 @@
+@page "/contact-form"
+
+<h1>Contact Form</h1>
+
+@if (submitted)
+{
+    <div role="status">
+        <h2>Thank you, @data.Name!</h2>
+        <p>Your message has been sent. We will get back to you soon.</p>
+    </div>
+}
+else
+{
+    <Form Label="Contact us" OnSubmit="HandleSubmit">
+        @if (errors.Count > 0)
+        {
+            <ErrorSummary Title="There is a problem">
+                <ul>
+                    @foreach (var error in errors)
+                    {
+                        <li><a href="#@error.Key">@error.Value</a></li>
+                    }
+                </ul>
+            </ErrorSummary>
+        }
+
+        <Field Label="Full name" Required="true" Error="@GetError("name")">
+            <TextInput Label="Full name" id="name"
+                       Value="@data.Name" ValueChanged="v => data.Name = v"
+                       Required="true" />
+        </Field>
+
+        <Field Label="Email address" Required="true" Error="@GetError("email")">
+            <EmailInput Label="Email address" id="email"
+                        Value="@data.Email" ValueChanged="v => data.Email = v"
+                        Required="true" />
+        </Field>
+
+        <Field Label="Subject">
+            <Select Label="Subject"
+                    Value="@data.Subject" ValueChanged="v => data.Subject = v">
+                <Option Value="general">General enquiry</Option>
+                <Option Value="support">Technical support</Option>
+                <Option Value="billing">Billing</Option>
+                <Option Value="feedback">Feedback</Option>
+            </Select>
+        </Field>
+
+        <Field Label="Message" Required="true" Error="@GetError("message")">
+            <Textarea Label="Message" id="message"
+                      Value="@data.Message" ValueChanged="v => data.Message = v"
+                      Rows="5" Required="true" />
+        </Field>
+
+        <Button Type="submit">Send Message</Button>
+    </Form>
+}
+
+@code {
+    private class FormData
+    {
+        public string Name { get; set; } = "";
+        public string Email { get; set; } = "";
+        public string Subject { get; set; } = "general";
+        public string Message { get; set; } = "";
+    }
+
+    private FormData data = new();
+    private Dictionary<string, string> errors = new();
+    private bool submitted;
+
+    private string? GetError(string field) =>
+        errors.TryGetValue(field, out var msg) ? msg : null;
+
+    private bool Validate()
+    {
+        errors = new();
+        if (string.IsNullOrWhiteSpace(data.Name))
+            errors["name"] = "Enter your full name";
+        if (string.IsNullOrWhiteSpace(data.Email) || !data.Email.Contains('@'))
+            errors["email"] = "Enter a valid email address";
+        if (string.IsNullOrWhiteSpace(data.Message))
+            errors["message"] = "Enter your message";
+        return errors.Count == 0;
+    }
+
+    private void HandleSubmit()
+    {
+        if (Validate())
+            submitted = true;
+    }
+}

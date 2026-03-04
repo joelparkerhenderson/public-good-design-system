@@ -1,0 +1,53 @@
+@page "/page-layout"
+
+<h1>Page Layout</h1>
+
+<Header Label="Site header">
+    <h2>Example Site</h2>
+    <NavigationMenu Label="Header navigation">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </NavigationMenu>
+</Header>
+
+<BreadcrumbNav Label="Breadcrumb">
+    <BreadcrumbNavList>
+        <BreadcrumbNavListItem><a href="#">Home</a></BreadcrumbNavListItem>
+        <BreadcrumbNavListItem><a href="#">Products</a></BreadcrumbNavListItem>
+        <BreadcrumbNavListItem Current="true">Widget Pro</BreadcrumbNavListItem>
+    </BreadcrumbNavList>
+</BreadcrumbNav>
+
+<div class="layout-body">
+    <Sidebar Label="Side navigation">
+        <nav>
+            <ul>
+                <li><a href="#">Overview</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">Support</a></li>
+            </ul>
+        </nav>
+    </Sidebar>
+
+    <section id="page-content" aria-label="Main content">
+        <h2>Widget Pro</h2>
+        <p>
+            This page demonstrates a typical page layout with a header, breadcrumb navigation,
+            sidebar, main content area, and footer. All layout elements are composed from
+            headless components styled with NHS UK design tokens.
+        </p>
+    </section>
+</div>
+
+<Footer Label="Site footer">
+    <p>&copy; 2025 Example Organisation. All rights reserved.</p>
+    <nav aria-label="Footer links">
+        <a href="#">Privacy policy</a>
+        <a href="#">Terms of service</a>
+    </nav>
+</Footer>
