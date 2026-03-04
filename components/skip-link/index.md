@@ -12,8 +12,7 @@ Use SkipLink as the very first focusable element on a page. When a keyboard user
 - Consumer is responsible for styling the link (typically visually hidden until `:focus`)
 - Consumer must ensure the target element exists with a matching `id` attribute
 - Spreads `restProps` onto the anchor for consumer customization
-- Uses Svelte 5 `$props()` with TypeScript typing
-- No Snippet import needed since this component does not use children
+- No slot import needed since this component does not use children
 
 ## Props
 
@@ -23,11 +22,11 @@ Use SkipLink as the very first focusable element on a page. When a keyboard user
 
 ## Usage
 
-```svelte
+```html
 <SkipLink />
 ```
 
-```svelte
+```html
 <SkipLink href="#main" label="Skip to main content" />
 ```
 

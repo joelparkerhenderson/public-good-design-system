@@ -22,7 +22,7 @@ When a caption is provided, the component renders a `<figure>` containing the `<
 
 ## Usage
 
-```svelte
+```html
 <!-- Basic image with alt text -->
 <Image src="/photo.jpg" alt="A sunset over the ocean" />
 

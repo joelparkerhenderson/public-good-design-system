@@ -18,11 +18,11 @@ The component renders a `<span>` with `role="img"` and a required `aria-label`, 
 
 ## Usage
 
-```svelte
+```html
 <Emoji emoji="👍" label="Thumbs up" />
 ```
 
-```svelte
+```html
 <Emoji emoji="⚠️" label="Warning" />
 ```
 

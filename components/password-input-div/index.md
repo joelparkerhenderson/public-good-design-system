@@ -8,8 +8,8 @@ This component is useful for login forms, registration forms, account settings, 
 
 - Renders a wrapper `<div>` containing the password input and an optional toggle button
 - The input type dynamically switches between `"password"` and `"text"` based on the `visible` state
-- Uses `$state(false)` to track password visibility internally
-- Uses `$bindable("")` for the `value` prop, enabling two-way binding
+- Uses reactive state to track password visibility internally
+- Supports two-way binding on the `value` prop
 - The toggle button uses `aria-pressed` to indicate the current visibility state
 - Includes `autocomplete="current-password"` on the input for browser password manager support
 - Supports `required` and `disabled` boolean states on the input
@@ -18,7 +18,7 @@ This component is useful for login forms, registration forms, account settings, 
 ## Props
 
 - `label`: string (required) -- accessible name for the password input via `aria-label`
-- `value`: string (default: `""`) -- current password value; bindable with `bind:value`
+- `value`: string (default: `""`) -- current password value; bindable with two-way `value` binding
 - `showToggle`: boolean (default: `true`) -- whether to render the show/hide toggle button
 - `toggleLabel`: string (default: `"Show password"`) -- accessible label for the toggle button
 - `required`: boolean (default: `false`) -- whether the input is required
@@ -27,8 +27,8 @@ This component is useful for login forms, registration forms, account settings, 
 
 ## Usage
 
-```svelte
-<PasswordInput label="Password" bind:value />
+```html
+<PasswordInput label="Password" value={value} />
 ```
 
 ## Keyboard Interactions

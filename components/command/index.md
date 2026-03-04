@@ -9,22 +9,22 @@ The component renders a search region containing a text input and a listbox for 
 - Wraps content in a `<div>` with `role="search"` and `aria-label` for semantic search region
 - Contains an `<input type="search">` with `autocomplete="off"` to prevent browser autocomplete interference
 - Contains a `<div>` with `role="listbox"` for displaying filtered results
-- Uses `$bindable()` for the `value` prop, enabling two-way binding with the parent component
-- Children snippet is rendered inside the listbox for consumer-controlled list items
+- Supports two-way binding on the `value` prop component
+- Children slot is rendered inside the listbox for consumer-controlled list items
 - Spreads `restProps` on the outer search container
 
 ## Props
 
 - `label`: string (required) -- accessible name for both the search region and the input
 - `placeholder`: string (default: `undefined`) -- placeholder text for the search input
-- `value`: string (default: `""`, bindable) -- current search text, supports two-way binding via `bind:value`
-- `children`: Snippet (required) -- listbox content, typically option or command items
+- `value`: string (default: `""`, bindable) -- current search text, supports two-way binding via two-way `value` binding
+- `children`: slot (required) -- listbox content, typically option or command items
 - `...restProps`: any additional HTML attributes spread onto the outer `<div>`
 
 ## Usage
 
-```svelte
-<Command label="Command palette" placeholder="Search commands..." bind:value={query}>
+```html
+<Command label="Command palette" placeholder="Search commands..." value={query}>
     {#each filteredCommands as cmd}
         <div role="option">{cmd.name}</div>
     {/each}

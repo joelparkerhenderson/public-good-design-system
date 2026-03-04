@@ -7,7 +7,7 @@ URL inputs are commonly used in profile forms, link submission pages, and any co
 ## Implementation Notes
 
 - Renders a single `<input type="url">` element for semantic URL input with built-in validation
-- Uses `$bindable()` for the `value` prop enabling two-way data binding with `bind:value`
+- Supports two-way binding for the `value` prop enabling two-way data binding with two-way `value` binding
 - The `aria-label` prop provides an accessible name since there is no visible `<label>` element
 - Supports rest props via `...restProps` for extensibility (e.g., `id`, `name`, `placeholder`, `pattern`, `class`)
 - Browser-native validation requires a valid URL format (including protocol) on form submission when `required` is set
@@ -15,19 +15,19 @@ URL inputs are commonly used in profile forms, link submission pages, and any co
 ## Props
 
 - `label`: string (required) -- accessible name applied via `aria-label`
-- `value`: string (default: "") -- current URL value, bindable with `bind:value`
+- `value`: string (default: "") -- current URL value, bindable with two-way `value` binding
 - `required`: boolean (default: false) -- whether the field must be filled before form submission
 - `disabled`: boolean (default: false) -- whether the input is disabled
 - `...restProps`: spread onto the `<input>` element
 
 ## Usage
 
-```svelte
-<UrlInput label="Website URL" bind:value />
+```html
+<UrlInput label="Website URL" value={value} />
 ```
 
-```svelte
-<UrlInput label="Portfolio link" bind:value={portfolioUrl} required />
+```html
+<UrlInput label="Portfolio link" value={portfolioUrl} required />
 ```
 
 ## Keyboard Interactions

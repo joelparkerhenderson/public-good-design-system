@@ -9,7 +9,7 @@ This component renders as a `<div>` with `role="menuitem"` and `tabindex="-1"`,
 following the WAI-ARIA menu pattern. The `tabindex="-1"` removes the item from
 the normal tab order so that the parent menu can manage focus
 programmatically using Arrow keys. The consumer provides the menu item content
-(action label, keyboard shortcut hint, etc.) through the children snippet.
+(action label, keyboard shortcut hint, etc.) through the children slot.
 Menu items should be placed within a container with `role="menu"` or
 `role="menubar"`. Items that open submenus can use `aria-haspopup` and
 `aria-expanded` attributes.
@@ -20,20 +20,16 @@ Menu items should be placed within a container with `role="menu"` or
 - `tabindex="-1"` supports roving focus managed by the parent menu
 - Should be placed inside a `role="menu"` or `role="menubar"` container
 - Focus management (ArrowUp/ArrowDown) is handled by the parent menu component
-- All content provided through children snippet; no hardcoded strings
+- All content provided through children slot; no hardcoded strings
 
 ## Props
 
-- `children`: Snippet -- menu item content
+- `children`: slot -- menu item content
 - `...restProps`: Any additional HTML attributes spread onto the `<div>`
 
 ## Usage
 
-```svelte
-<script>
-  import MenuItem from "./MenuItem.svelte";
-</script>
-
+```html
 <div role="menu">
   <MenuItem>New File</MenuItem>
   <MenuItem>Open File</MenuItem>
@@ -44,7 +40,7 @@ Menu items should be placed within a container with `role="menu"` or
 
 With click handlers:
 
-```svelte
+```html
 <div role="menu">
   <MenuItem onclick={() => handleNew()}>New File</MenuItem>
   <MenuItem onclick={() => handleOpen()}>Open File</MenuItem>
@@ -54,13 +50,13 @@ With click handlers:
 
 Disabled menu item:
 
-```svelte
+```html
 <MenuItem aria-disabled="true">Paste</MenuItem>
 ```
 
 Submenu trigger:
 
-```svelte
+```html
 <MenuItem aria-haspopup="true" aria-expanded={submenuOpen}>Recent Files</MenuItem>
 ```
 

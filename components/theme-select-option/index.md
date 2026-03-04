@@ -8,18 +8,14 @@ Use ThemeSelectOption for individual theme choices within a ThemeSelect dropdown
 
 ## Syntax
 
-```svelte
-<script>
-  import ThemeSelectOption from "./ThemeSelectOption.svelte";
-</script>
-
+```html
 <ThemeSelectOption value="...">Label</ThemeSelectOption>
 ```
 
 ## Usage
 
-```svelte
-<ThemeSelect label="Theme" bind:value>
+```html
+<ThemeSelect label="Theme" value={value}>
   <ThemeSelectOption value="light">Light</ThemeSelectOption>
   <ThemeSelectOption value="dark">Dark</ThemeSelectOption>
 </ThemeSelect>
@@ -31,15 +27,15 @@ Use ThemeSelectOption for individual theme choices within a ThemeSelect dropdown
 | -------------- | --------------- | ---------- | -------------------------------------------------------- |
 | `value`        | `string`        | `""`       | The value submitted when this option is selected         |
 | `disabled`     | `boolean`       | `false`    | Whether this option is disabled                          |
-| `children`     | `Snippet`       | (required) | Display text for the option                              |
+| `children`     | `slot`       | (required) | Display text for the option                              |
 | `...restProps` | HTML attributes |            | Additional attributes spread onto the `<option>` element |
 
 ## Examples
 
 With disabled option:
 
-```svelte
-<ThemeSelect label="Theme" bind:value>
+```html
+<ThemeSelect label="Theme" value={value}>
   <ThemeSelectOption value="" disabled>Choose a theme...</ThemeSelectOption>
   <ThemeSelectOption value="light">Light</ThemeSelectOption>
   <ThemeSelectOption value="dark">Dark</ThemeSelectOption>
@@ -56,16 +52,6 @@ With disabled option:
 
 - Native `<option>` element provides built-in accessibility semantics
 - `disabled` attribute communicates disabled state to assistive technology
-
-## Claude Rules
-
-- Always use `ThemeSelectOption` (not `ThemeOption`)
-- Always place inside a ThemeSelect container
-- Always provide a `value` prop
-- Always provide children text for the display label
-- Use Svelte 5 patterns (Snippet for children)
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - MDN option element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option

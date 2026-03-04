@@ -10,18 +10,18 @@ The component renders as a `<span>` with `role="status"`, creating an ARIA live 
 - `data-type` attribute exposes variant for consumer CSS styling
 - `aria-label` provides expanded context when badge text alone is insufficient
 - Five semantic variants: default, info, success, warning, error
-- Content is provided through the Svelte 5 `children` Snippet
+- Content is provided through child elements
 
 ## Props
 
 - `type`: "default" | "info" | "success" | "warning" | "error" (default: "default") -- badge variant for semantic meaning
 - `label`: string (optional) -- accessible label for screen readers
-- `children`: Snippet (required) -- badge content (text, number, etc.)
+- `children`: slot (required) -- badge content (text, number, etc.)
 - `...restProps`: Any additional HTML attributes passed to the `<span>` element
 
 ## Usage
 
-```svelte
+```html
 <Badge>New</Badge>
 <Badge label="3 unread messages">3</Badge>
 <Badge type="warning">Alert</Badge>

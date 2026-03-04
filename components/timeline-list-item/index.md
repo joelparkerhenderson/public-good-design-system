@@ -8,11 +8,7 @@ Use TimelineListItem for individual entries within a TimelineList. Common scenar
 
 ## Syntax
 
-```svelte
-<script>
-  import TimelineListItem from "./TimelineListItem.svelte";
-</script>
-
+```html
 <TimelineListItem>
   <!-- event content -->
 </TimelineListItem>
@@ -20,7 +16,7 @@ Use TimelineListItem for individual entries within a TimelineList. Common scenar
 
 ## Usage
 
-```svelte
+```html
 <TimelineList label="Project milestones">
   <TimelineListItem>Project kickoff - Jan 2024</TimelineListItem>
   <TimelineListItem>Alpha release - Mar 2024</TimelineListItem>
@@ -29,7 +25,7 @@ Use TimelineListItem for individual entries within a TimelineList. Common scenar
 
 With semantic `<time>` elements:
 
-```svelte
+```html
 <TimelineList label="Order history">
   <TimelineListItem>
     <time datetime="2024-01-15">January 15, 2024</time>
@@ -46,14 +42,14 @@ With semantic `<time>` elements:
 
 | Prop           | Type            | Default    | Description                                          |
 | -------------- | --------------- | ---------- | ---------------------------------------------------- |
-| `children`     | `Snippet`       | (required) | Content for the timeline entry                       |
+| `children`     | `slot`       | (required) | Content for the timeline entry                       |
 | `...restProps` | HTML attributes |            | Additional attributes spread onto the `<li>` element |
 
 ## Examples
 
 Activity feed item:
 
-```svelte
+```html
 <TimelineListItem data-status="completed">
   <time datetime="2024-03-01T10:30">10:30 AM</time>
   <p>User completed onboarding</p>
@@ -69,15 +65,6 @@ Activity feed item:
 
 - Semantic `<li>` element within an `<ol>` conveys ordered list item semantics
 - Consumers should use `<time>` elements with `datetime` attributes for machine-readable dates
-
-## Claude Rules
-
-- Always use `TimelineListItem` (not `TimelineItem`)
-- Always place inside a TimelineList container
-- Use `<time>` elements with `datetime` for dates when possible
-- Use Svelte 5 patterns (Snippet for children)
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - HTML `<li>` element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li

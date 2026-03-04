@@ -10,18 +10,17 @@ Use RadioGroup when you need a set of mutually exclusive options, such as select
 - The `aria-label` attribute on the fieldset provides an accessible name for the group
 - Consumer provides radio button children (typically `<label>` elements wrapping `<input type="radio">`)
 - Spreads `restProps` onto the fieldset for consumer customization
-- Uses Svelte 5 `$props()` with TypeScript typing for all props
 - No internal state management; radio selection is handled by native radio input behavior
 
 ## Props
 
 - `label`: string (required) -- accessible label for the radio group, applied via `aria-label`
-- `children`: Snippet (required) -- radio button elements to render inside the fieldset
+- `children`: slot (required) -- radio button elements to render inside the fieldset
 - `...restProps`: unknown -- additional attributes spread onto the `<fieldset>` element
 
 ## Usage
 
-```svelte
+```html
 <RadioGroup label="Size">
   <label><input type="radio" name="size" value="s" /> Small</label>
   <label><input type="radio" name="size" value="m" /> Medium</label>

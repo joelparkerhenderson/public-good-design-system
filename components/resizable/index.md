@@ -11,18 +11,17 @@ Use Resizable when you need a panel, pane, or content area that users can resize
 - Exposes a `data-resize` attribute with the value of the `direction` prop (`"both"`, `"horizontal"`, or `"vertical"`)
 - Consumer is responsible for applying CSS `resize` and `overflow` properties based on the `data-resize` attribute
 - Spreads `restProps` onto the div for consumer customization
-- Uses Svelte 5 `$props()` with TypeScript typing
 
 ## Props
 
 - `label`: string (required) -- accessible label for the resizable region, applied via `aria-label`
 - `direction`: `"both" | "horizontal" | "vertical"` (default: `"both"`) -- which directions the container can be resized
-- `children`: Snippet (required) -- content to render inside the resizable container
+- `children`: slot (required) -- content to render inside the resizable container
 - `...restProps`: unknown -- additional attributes spread onto the `<div>` element
 
 ## Usage
 
-```svelte
+```html
 <Resizable label="Resizable panel" direction="both">
   <p>Content</p>
 </Resizable>

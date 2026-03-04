@@ -7,23 +7,23 @@ The component renders its content within a semantic container that screen reader
 ## Implementation Notes
 
 - Renders a `<div>` with `role="note"` to semantically indicate supplementary content.
-- Content is passed via the `children` snippet, allowing any markup structure inside the inset.
+- Content is passed via the `children` slot, allowing any markup structure inside the inset.
 - Spreads `restProps` onto the container for consumer customization.
 - No internal state management; this is a purely presentational container.
 - Inspired by the GOV.UK and NHS England design system "inset text" pattern.
 
 ## Props
 
-- `children`: Snippet (required) -- content to display inside the inset text block.
+- `children`: slot (required) -- content to display inside the inset text block.
 - `...restProps`: unknown -- additional attributes spread onto the container `<div>`.
 
 ## Usage
 
-```svelte
+```html
 <InsetText>It can take up to 8 weeks to process.</InsetText>
 ```
 
-```svelte
+```html
 <InsetText>
     <p>You must apply before the deadline. Late applications will not be accepted.</p>
 </InsetText>

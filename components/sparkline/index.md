@@ -7,18 +7,18 @@ This headless component provides a semantic container with `role="img"` and an a
 ## Implementation Notes
 
 - Renders a `<div>` with `role="img"` to semantically represent a graphical image
-- Consumer provides all chart rendering (SVG, canvas, etc.) via the `children` snippet
+- Consumer provides all chart rendering (SVG, canvas, etc.) via the `children` slot
 - Accepts `...restProps` for forwarding additional attributes to the container
 - No internal state or effects -- purely a structural wrapper
 
 ## Props
 
 - `label`: string (required) -- accessible name describing the sparkline data, applied via `aria-label`
-- `children`: Snippet (required) -- the visualization content to render inside the container
+- `children`: slot (required) -- the visualization content to render inside the container
 
 ## Usage
 
-```svelte
+```html
 <Sparkline label="Sales trend over past 7 days">
     <svg><!-- your sparkline SVG here --></svg>
 </Sparkline>

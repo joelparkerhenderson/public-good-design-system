@@ -8,9 +8,9 @@ The component manages the input value and dropdown open state as bindable props,
 
 - Renders a wrapper `<div>` containing an `<input>` with `role="combobox"` and a conditionally rendered `<div>` with `role="listbox"`.
 - Generates a unique `listboxId` using random string for the `aria-controls` relationship between input and listbox.
-- The `value` prop uses `$bindable("")` for two-way binding of the input text.
-- The `open` prop uses `$bindable(false)` for two-way binding of dropdown visibility.
-- The listbox is conditionally rendered with `{#if open}` to hide it from the DOM when closed.
+- The `value` prop uses two-way binding of the input text.
+- The `open` prop uses two-way binding of dropdown visibility.
+- The listbox is conditionally rendered with conditional rendering to hide it from the DOM when closed.
 - Escape key closes the dropdown via an `onkeydown` handler on the input.
 - Spreads `restProps` onto the outer wrapper `<div>`.
 
@@ -19,26 +19,19 @@ The component manages the input value and dropdown open state as bindable props,
 - `label`: string (required) -- accessible name applied via `aria-label` on both the input and listbox.
 - `value`: string (default: `""`) -- bindable current text input value.
 - `open`: boolean (default: `false`) -- bindable dropdown visibility state.
-- `children`: Snippet (required) -- option elements rendered inside the listbox dropdown.
+- `children`: slot (required) -- option elements rendered inside the listbox dropdown.
 - `...restProps`: unknown -- additional attributes spread onto the wrapper `<div>`.
 
 ## Usage
 
-```svelte
-<Combobox label="Search" bind:value bind:open>
+```html
+<Combobox label="Search" value={value} open={open}>
     <div role="option" tabindex="-1">Option 1</div>
 </Combobox>
 ```
 
-```svelte
-<script lang="ts">
-    let value = $state("");
-    let open = $state(false);
-    let options = ["Apple", "Banana", "Cherry"];
-    let filtered = $derived(options.filter(o => o.toLowerCase().includes(value.toLowerCase())));
-</script>
-
-<Combobox label="Select a fruit" bind:value bind:open>
+```html
+<Combobox label="Select a fruit" value={value} open={open}>
     {#each filtered as option}
         <div role="option" tabindex="-1" onclick={() => { value = option; open = false; }}>
             {option}

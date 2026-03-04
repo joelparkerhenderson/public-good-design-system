@@ -8,19 +8,19 @@ This component is useful for displaying notices, tips, warnings, beta feature an
 
 - Renders an `<aside>` element with `role="note"` for semantic supplementary content
 - Uses `aria-label` to provide an accessible name describing the nature of the callout
-- Accepts a `children` Snippet for flexible callout content
+- Accepts a `children` slot for flexible callout content
 - Spreads `restProps` onto the aside for consumer customization
-- Svelte 5 pattern: standard `$props()` destructuring with typed props
+- pattern: standard props destructuring with typed props
 
 ## Props
 
 - `label`: string (required) -- accessible name for the callout via `aria-label`
-- `children`: Snippet (required) -- callout content to display
+- `children`: slot (required) -- callout content to display
 - `...restProps`: unknown -- additional attributes spread onto the `<aside>` element
 
 ## Usage
 
-```svelte
+```html
 <InformationCallout label="Note">
   <p>This feature is in beta.</p>
 </InformationCallout>

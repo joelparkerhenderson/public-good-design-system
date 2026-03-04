@@ -9,7 +9,7 @@ The component supports two-way data binding through a bindable `value` prop, all
 - Renders as a single `<input type="tel">` element
 - Uses `aria-label` for accessible naming (no visible label element included; consumers can wrap with their own `<label>`)
 - `autocomplete="tel"` enables browser and password manager autofill for phone numbers
-- Bindable `value` prop uses Svelte 5 `$bindable()` for two-way data binding
+- Bindable `value` prop uses two-way binding for two-way data binding
 - Supports `required` and `disabled` HTML attributes natively
 - Spreads `...restProps` onto the `<input>` for additional attributes like `placeholder`, `pattern`, `maxlength`, etc.
 
@@ -23,12 +23,12 @@ The component supports two-way data binding through a bindable `value` prop, all
 
 ## Usage
 
-```svelte
-<TelInput label="Phone number" bind:value />
+```html
+<TelInput label="Phone number" value={value} />
 ```
 
-```svelte
-<TelInput label="Mobile" bind:value required />
+```html
+<TelInput label="Mobile" value={value} required />
 ```
 
 ## Keyboard Interactions

@@ -8,7 +8,7 @@ This component is ideal when you need a bare checkbox that you will wrap in your
 
 - Renders a single `<input type="checkbox">` element with no wrapper
 - Uses `aria-label` for accessible naming instead of a wrapping `<label>` element
-- Uses Svelte 5 `$bindable()` for two-way binding on the `checked` prop
+- Supports two-way binding on the `checked` prop
 - Spreads `restProps` onto the input element for consumer extensibility
 
 ## Props
@@ -24,16 +24,16 @@ This component is ideal when you need a bare checkbox that you will wrap in your
 
 ## Usage
 
-```svelte
-<CheckboxInput label="Accept terms" bind:checked />
+```html
+<CheckboxInput label="Accept terms" checked={checked} />
 ```
 
-```svelte
-<CheckboxInput label="Subscribe to newsletter" bind:checked={subscribed} disabled={!hasEmail} />
+```html
+<CheckboxInput label="Subscribe to newsletter" checked={subscribed} disabled={!hasEmail} />
 ```
 
-```svelte
-<CheckboxInput label="Required field" bind:checked required name="agree" value="yes" />
+```html
+<CheckboxInput label="Required field" checked={checked} required name="agree" value="yes" />
 ```
 
 ## Keyboard Interactions

@@ -8,19 +8,19 @@ This component is useful for settings pages, preference panels, or any interface
 
 - Renders a `<fieldset>` element with `role="radiogroup"` for semantic grouping of radio options
 - Uses `aria-label` for an accessible name describing the radio group
-- Accepts a `children` Snippet for rendering radio button options inside the fieldset
+- Accepts a `children` slot for rendering radio button options inside the fieldset
 - Spreads `restProps` onto the fieldset for consumer customization
-- Svelte 5 pattern: standard `$props()` destructuring with typed props
+- pattern: standard props destructuring with typed props
 
 ## Props
 
 - `label`: string (required) -- accessible name for the radio group via `aria-label`
-- `children`: Snippet (required) -- radio button option elements to render inside the fieldset
+- `children`: slot (required) -- radio button option elements to render inside the fieldset
 - `...restProps`: unknown -- additional attributes spread onto the `<fieldset>` element
 
 ## Usage
 
-```svelte
+```html
 <ThemePicker label="Theme">
   <label><input type="radio" name="theme" value="light" /> Light</label>
   <label><input type="radio" name="theme" value="dark" /> Dark</label>

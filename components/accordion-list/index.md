@@ -8,11 +8,7 @@ Use AccordionList as the list container inside an AccordionNav. It holds Accordi
 
 ## Syntax
 
-```svelte
-<script>
-  import AccordionList from "./AccordionList.svelte";
-</script>
-
+```html
 <AccordionList>
   <!-- AccordionListItem children -->
 </AccordionList>
@@ -20,7 +16,7 @@ Use AccordionList as the list container inside an AccordionNav. It holds Accordi
 
 ## Usage
 
-```svelte
+```html
 <AccordionNav label="FAQ">
   <AccordionList>
     <AccordionListItem summary="Question 1">Answer 1</AccordionListItem>
@@ -33,14 +29,14 @@ Use AccordionList as the list container inside an AccordionNav. It holds Accordi
 
 | Prop           | Type            | Default    | Description                                          |
 | -------------- | --------------- | ---------- | ---------------------------------------------------- |
-| `children`     | `Snippet`       | (required) | AccordionListItem elements to render inside the list |
+| `children`     | `slot`       | (required) | AccordionListItem elements to render inside the list |
 | `...restProps` | HTML attributes |            | Additional attributes spread onto the `<ol>` element |
 
 ## Examples
 
 Settings panel:
 
-```svelte
+```html
 <AccordionNav label="Settings">
   <AccordionList>
     <AccordionListItem summary="Account">Account settings content</AccordionListItem>
@@ -58,15 +54,6 @@ None -- this component is a passive list container. Keyboard interactions are ha
 
 - Semantic `<ol>` element provides ordered list semantics for assistive technology
 - List structure conveys that the accordion sections are related and ordered
-
-## Claude Rules
-
-- Always use `AccordionList` (not `AccordionAreaList`)
-- Always place inside an AccordionNav container
-- Always use AccordionListItem as children
-- Use Svelte 5 patterns (Snippet for children)
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - WAI-ARIA Accordion Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/accordion/

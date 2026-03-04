@@ -8,7 +8,7 @@ Action links are useful when you want to draw attention to a key navigational st
 
 - Renders as a simple semantic `<a>` element
 - Supports `aria-label` override via the `label` prop for when the visible link text is insufficient for screen readers
-- Uses Svelte 5 `Snippet` for children content (text, mixed content, etc.)
+- Uses `slot` for children content (text, mixed content, etc.)
 - Passes through all additional HTML anchor attributes via `...restProps`
 - No hardcoded user-facing strings; all text comes through children and props
 
@@ -16,11 +16,11 @@ Action links are useful when you want to draw attention to a key navigational st
 
 - `href`: string (required) -- the URL the link points to
 - `label`: string (optional) -- accessible label override for screen readers via aria-label
-- `children`: Snippet (required) -- the link content (text or mixed content)
+- `children`: slot (required) -- the link content (text or mixed content)
 
 ## Usage
 
-```svelte
+```html
 <ActionLink href="/next-step">Continue to next step</ActionLink>
 ```
 

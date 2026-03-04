@@ -2,13 +2,13 @@
 
 A textarea is a headless component that wraps the native HTML `<textarea>` element, providing a multi-line text input area. It is commonly used in forms for comments, messages, descriptions, feedback, code input, and any scenario where users need to enter extended text content.
 
-Unlike a single-line text input, a textarea provides a larger, scrollable text area that supports multiple lines. The component uses `aria-label` for accessible naming and supports two-way binding on the value via Svelte 5 `$bindable()`.
+Unlike a single-line text input, a textarea provides a larger, scrollable text area that supports multiple lines. The component uses `aria-label` for accessible naming and supports two-way binding on the value.
 
 ## Implementation Notes
 
 - Renders a single `<textarea>` element with no wrapper
 - Uses `aria-label` for accessible naming instead of a visible `<label>` element
-- Uses Svelte 5 `$bindable()` for two-way binding on the `value` prop
+- Supports two-way binding on the `value` prop
 - The `rows` prop controls the visible height of the text area
 - Spreads `restProps` onto the textarea element for consumer extensibility
 
@@ -23,16 +23,16 @@ Unlike a single-line text input, a textarea provides a larger, scrollable text a
 
 ## Usage
 
-```svelte
-<Textarea label="Comments" bind:value rows={5} />
+```html
+<Textarea label="Comments" value={value} rows={5} />
 ```
 
-```svelte
-<Textarea label="Description" bind:value={description} required />
+```html
+<Textarea label="Description" value={description} required />
 ```
 
-```svelte
-<Textarea label="Notes" bind:value disabled={isReadOnly} />
+```html
+<Textarea label="Notes" value={value} disabled={isReadOnly} />
 ```
 
 ## Keyboard Interactions

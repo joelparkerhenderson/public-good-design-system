@@ -7,7 +7,7 @@ Switch inputs are commonly used for settings, preferences, and feature toggles w
 ## Implementation Notes
 
 - Renders a `<button type="button">` element with `role="switch"` for switch semantics
-- Uses `$bindable()` for the `checked` prop enabling two-way data binding with `bind:checked`
+- Supports two-way binding for the `checked` prop enabling two-way data binding with two-way `checked` binding
 - Click handler toggles `checked` when not disabled
 - Custom `onkeydown` handler processes the Space key to toggle state, with `preventDefault()` to avoid scrolling
 - The `type="button"` prevents accidental form submission
@@ -16,18 +16,18 @@ Switch inputs are commonly used for settings, preferences, and feature toggles w
 ## Props
 
 - `label`: string (required) -- accessible name applied via `aria-label`
-- `checked`: boolean (default: false) -- whether the switch is on, bindable with `bind:checked`
+- `checked`: boolean (default: false) -- whether the switch is on, bindable with two-way `checked` binding
 - `disabled`: boolean (default: false) -- whether the switch is disabled
 - `...restProps`: spread onto the `<button>` element
 
 ## Usage
 
-```svelte
-<SwitchInput label="Enable notifications" bind:checked />
+```html
+<SwitchInput label="Enable notifications" checked={checked} />
 ```
 
-```svelte
-<SwitchInput label="Dark mode" bind:checked={darkMode} disabled={locked} />
+```html
+<SwitchInput label="Dark mode" checked={darkMode} disabled={locked} />
 ```
 
 ## Keyboard Interactions

@@ -15,18 +15,18 @@ The component supports a `disabled` prop that disables all child form controls a
 
 - `legend`: string (required) -- text for the `<legend>` element describing the group
 - `disabled`: boolean (default: false) -- whether all controls in the fieldset are disabled
-- `children`: Snippet (required) -- grouped form controls
+- `children`: slot (required) -- grouped form controls
 
 ## Usage
 
-```svelte
+```html
 <Fieldset legend="Contact info">
   <label>Email <input type="email" /></label>
   <label>Phone <input type="tel" /></label>
 </Fieldset>
 ```
 
-```svelte
+```html
 <Fieldset legend="Shipping address" disabled={usesBillingAddress}>
   <label>Street <input type="text" /></label>
   <label>City <input type="text" /></label>

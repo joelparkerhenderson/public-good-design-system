@@ -7,7 +7,7 @@ The component manages vertical focus movement between menu items via arrow keys,
 ## Implementation Notes
 
 - Renders a `<div>` with `role="menu"` and an accessible label.
-- Uses `$state` to track the `menuRef` element reference for querying child items.
+- Uses reactive state to track the `menuRef` element reference for querying child items.
 - Keyboard navigation queries all child elements with `[role='menuitem']` to build the navigable item list.
 - Arrow keys wrap around: pressing ArrowDown on the last item moves focus to the first, and vice versa.
 - Home and End keys jump to the first and last menu item respectively.
@@ -17,19 +17,19 @@ The component manages vertical focus movement between menu items via arrow keys,
 ## Props
 
 - `label`: string (required) -- accessible name applied via `aria-label`.
-- `children`: Snippet (required) -- menu item elements to render inside the menu (should have `role="menuitem"` and `tabindex="-1"`).
+- `children`: slot (required) -- menu item elements to render inside the menu (should have `role="menuitem"` and `tabindex="-1"`).
 - `...restProps`: unknown -- additional attributes spread onto the container `<div>`.
 
 ## Usage
 
-```svelte
+```html
 <Menu label="Actions">
     <div role="menuitem" tabindex="-1">Cut</div>
     <div role="menuitem" tabindex="-1">Copy</div>
 </Menu>
 ```
 
-```svelte
+```html
 <Menu label="File actions">
     {#each actions as action}
         <div role="menuitem" tabindex="-1" onclick={() => handleAction(action)}>

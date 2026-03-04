@@ -10,11 +10,7 @@ Use Avatar as the outer container for user avatars. It renders either an AvatarI
 
 ## Syntax
 
-```svelte
-<script>
-  import Avatar from "./Avatar.svelte";
-</script>
-
+```html
 <Avatar alt="..." src="..." initials="..." />
 ```
 
@@ -22,19 +18,19 @@ Use Avatar as the outer container for user avatars. It renders either an AvatarI
 
 With image:
 
-```svelte
+```html
 <Avatar src="/photo.jpg" alt="Jane Doe" />
 ```
 
 With initials fallback:
 
-```svelte
+```html
 <Avatar initials="JD" alt="Jane Doe" />
 ```
 
 With both (image with initials fallback on error):
 
-```svelte
+```html
 <Avatar src="/photo.jpg" alt="Jane Doe" initials="JD" />
 ```
 
@@ -51,7 +47,7 @@ With both (image with initials fallback on error):
 
 Team member list:
 
-```svelte
+```html
 <Avatar src="/team/alice.jpg" alt="Alice Smith" initials="AS" />
 <Avatar src="/team/bob.jpg" alt="Bob Jones" initials="BJ" />
 <Avatar alt="Charlie Brown" initials="CB" />
@@ -66,16 +62,6 @@ Team member list:
 - `role="img"` -- on the outer container, conveying that the entire avatar is an image representation
 - `aria-label` -- set from the `alt` prop, providing the accessible name for the avatar
 - `aria-hidden="true"` -- on the inner initials `<span>`, preventing duplicate announcements since the outer element already has `aria-label`
-
-## Claude Rules
-
-- Always use `Avatar` (not `Avatar`)
-- Always include the required `alt` prop
-- Provide `initials` as a fallback when `src` may fail
-- Pair with AvatarImage and AvatarText as children
-- Use Svelte 5 patterns (`$state` for error tracking, `$derived` for show logic)
-- Component is headless/unstyled -- consumer provides all styling (e.g. `border-radius: 50%`)
-
 ## References
 
 - WAI-ARIA Img Role: https://www.w3.org/TR/wai-aria-1.2/#img

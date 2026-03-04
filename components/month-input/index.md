@@ -8,23 +8,23 @@ This component is useful for date-related forms where the user needs to select a
 
 - Renders a native `<input type="month">` element
 - Uses `aria-label` for an accessible name describing the input purpose
-- The `value` prop uses `$bindable("")` for two-way binding, storing the month in `YYYY-MM` format
+- The `value` prop uses two-way binding, storing the month in `YYYY-MM` format
 - Supports `required` and `disabled` boolean states
 - Spreads `restProps` onto the input for consumer customization (e.g., `min`, `max`, `id`, `name`)
-- Svelte 5 pattern: `$bindable` for the value prop
+- pattern: `two-way binding` for the value prop
 
 ## Props
 
 - `label`: string (required) -- accessible name for the input via `aria-label`
-- `value`: string (default: `""`) -- current month value in `YYYY-MM` format; bindable with `bind:value`
+- `value`: string (default: `""`) -- current month value in `YYYY-MM` format; bindable with two-way `value` binding
 - `required`: boolean (default: `false`) -- whether the input is required
 - `disabled`: boolean (default: `false`) -- whether the input is disabled
 - `...restProps`: unknown -- additional attributes spread onto the `<input>` element
 
 ## Usage
 
-```svelte
-<MonthInput label="Start month" bind:value />
+```html
+<MonthInput label="Start month" value={value} />
 ```
 
 ## Keyboard Interactions

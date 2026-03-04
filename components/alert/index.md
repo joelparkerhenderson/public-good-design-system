@@ -29,34 +29,30 @@ emphasis without assuming a heading level.
 - `heading`: string (optional) -- heading text for the alert
 - `role`: "alert" | "status" (default: "alert") -- ARIA role
 - `live`: "assertive" | "polite" | "off" (optional) -- override for aria-live politeness
-- `children`: Snippet (required) -- the alert content
+- `children`: slot (required) -- the alert content
 - `...restProps`: Any additional HTML attributes spread onto the `<div>`
 
 ## Usage
 
-```svelte
-<script>
-  import Alert from "./Alert.svelte";
-</script>
-
+```html
 <Alert>Something happened.</Alert>
 ```
 
 With heading and error type:
 
-```svelte
+```html
 <Alert type="error" heading="Error">Something went wrong. Please try again.</Alert>
 ```
 
 Success notification:
 
-```svelte
+```html
 <Alert type="success" heading="Saved">Your changes have been saved successfully.</Alert>
 ```
 
 Polite status message using role="status":
 
-```svelte
+```html
 <Alert role="status">Loading complete.</Alert>
 ```
 

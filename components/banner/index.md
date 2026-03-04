@@ -7,13 +7,13 @@ Banners may be persistent or dismissible, depending on the message's importance.
 ## Implementation Notes
 
 - Renders as `<div role="region" aria-live="polite">` for screen reader announcements
-- Uses Svelte 5 `$state()` rune to track visibility; dismissing sets `visible` to `false`
+- Uses reactive state rune to track visibility; dismissing sets `visible` to `false`
 - Dismissible banners render a `<button type="button">` with a configurable `aria-label`
 - `data-type` attribute exposes the variant (info, success, warning, error) for consumer CSS
 - The `dismiss()` function sets visibility to false and calls the `onclose` callback
-- Uses `children` Snippet for flexible banner content rendering
+- Uses `children` slot for flexible banner content rendering
 - Spreads `...restProps` on the root `<div>` element for consumer extensibility
-- Entire banner is conditionally rendered with `{#if visible}`
+- Entire banner is conditionally rendered with conditional rendering
 - No hardcoded user-facing strings; all text comes through props and children
 
 ## Props
@@ -22,16 +22,16 @@ Banners may be persistent or dismissible, depending on the message's importance.
 - `dismissible`: boolean (default: `false`) -- whether the banner can be dismissed
 - `onclose`: `() => void` (optional) -- callback invoked when the banner is dismissed
 - `closeLabel`: string (optional) -- accessible label for the dismiss button via `aria-label`
-- `children`: Snippet (required) -- the banner content
+- `children`: slot (required) -- the banner content
 - `...restProps`: any additional HTML attributes spread onto the root `<div>` element
 
 ## Usage
 
-```svelte
+```html
 <Banner>Important announcement here.</Banner>
 ```
 
-```svelte
+```html
 <Banner type="warning" dismissible closeLabel="Dismiss" onclose={handleDismiss}>
     Your session will expire soon.
 </Banner>

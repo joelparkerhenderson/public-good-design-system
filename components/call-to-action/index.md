@@ -10,7 +10,7 @@ This component renders as an `<a>` element when an `href` is provided (for navig
 - Dual-mode: link for navigation CTAs, button for action CTAs
 - `disabled` only applies in button mode (links cannot be disabled natively)
 - Optional `aria-label` for screen reader text override when visible text is insufficient
-- Content is provided through the Svelte 5 `children` Snippet
+- Content is provided through child elements
 - All user-facing text comes through props and children for internationalization
 
 ## Props
@@ -19,12 +19,12 @@ This component renders as an `<a>` element when an `href` is provided (for navig
 - `label`: string (optional) -- `aria-label` override for screen readers
 - `disabled`: boolean (default: false) -- disables the button (button mode only)
 - `onclick`: (event: MouseEvent) => void (optional) -- click handler (button mode)
-- `children`: Snippet (required) -- the CTA content
+- `children`: slot (required) -- the CTA content
 - `...restProps`: Any additional HTML attributes passed to the element
 
 ## Usage
 
-```svelte
+```html
 <CallToAction href="/signup">Sign Up Now</CallToAction>
 <CallToAction onclick={handleAction}>Get Started</CallToAction>
 ```

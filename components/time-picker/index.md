@@ -7,7 +7,7 @@ This headless component wraps a native `<input type="time">` element with an acc
 ## Implementation Notes
 
 - Uses a native `<input type="time">` element for built-in browser time selection behavior
-- Supports `$bindable()` for two-way binding of the `value` prop
+- Supports two-way binding on the `value` prop
 - Native input handles 12-hour/24-hour format based on browser locale
 - Accepts `...restProps` for forwarding additional attributes to the input element
 
@@ -20,12 +20,12 @@ This headless component wraps a native `<input type="time">` element with an acc
 
 ## Usage
 
-```svelte
-<TimePicker label="Appointment time" bind:value />
+```html
+<TimePicker label="Appointment time" value={value} />
 ```
 
-```svelte
-<TimePicker label="Departure time" bind:value required />
+```html
+<TimePicker label="Departure time" value={value} required />
 ```
 
 ## Keyboard Interactions

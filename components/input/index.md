@@ -8,7 +8,7 @@ The component supports bindable value state, required and disabled attributes, a
 
 - Renders a single `<input>` element with the specified `type` attribute.
 - Uses `aria-label` for accessible naming since there is no built-in visible `<label>` element.
-- The `value` prop uses `$bindable("")` for two-way binding of the input text.
+- The `value` prop uses two-way binding of the input text.
 - The `type` prop defaults to `"text"` but accepts any valid HTML input type string.
 - Supports native `required` and `disabled` attributes.
 - Spreads `restProps` onto the `<input>` for consumer customization (e.g., `placeholder`, `maxlength`, `pattern`).
@@ -24,16 +24,16 @@ The component supports bindable value state, required and disabled attributes, a
 
 ## Usage
 
-```svelte
-<Input label="Search" bind:value />
+```html
+<Input label="Search" value={value} />
 ```
 
-```svelte
-<Input label="Name" bind:value type="text" required />
+```html
+<Input label="Name" value={value} type="text" required />
 ```
 
-```svelte
-<Input label="Email address" bind:value type="email" required disabled={isSubmitting} />
+```html
+<Input label="Email address" value={value} type="email" required disabled={isSubmitting} />
 ```
 
 ## Keyboard Interactions

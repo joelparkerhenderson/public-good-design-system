@@ -14,15 +14,15 @@ By default the flair is treated as decorative (`aria-hidden="true"`), meaning sc
 ## Props
 
 - `label`: string (default: undefined) -- accessible label; omit for decorative flair, provide for meaningful flair
-- `children`: Snippet (required) -- flair content text
+- `children`: slot (required) -- flair content text
 
 ## Usage
 
-```svelte
+```html
 <Flair>New</Flair>
 ```
 
-```svelte
+```html
 <Flair label="Status: new">New</Flair>
 ```
 

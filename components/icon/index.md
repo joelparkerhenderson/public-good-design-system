@@ -11,18 +11,18 @@ This component is useful in buttons, menus, toolbars, and navigation where visua
 - Uses `aria-hidden="true"` for decorative icons that should be ignored by screen readers
 - When `decorative` is true, the `role` attribute is omitted entirely
 - Supports rest props spread for consumer customization
-- Consumer provides icon content via the `children` snippet
+- Consumer provides icon content via the `children` slot
 
 ## Props
 
 - `label`: string (optional) -- accessible name announced by screen readers for meaningful icons
 - `decorative`: boolean (default: false) -- when true, hides the icon from assistive technology and removes the img role
-- `children`: Snippet (required) -- the icon content (text, SVG, or other markup)
+- `children`: slot (required) -- the icon content (text, SVG, or other markup)
 - `...restProps`: unknown -- additional attributes spread onto the `<span>` element
 
 ## Usage
 
-```svelte
+```html
 <!-- Meaningful icon with accessible label -->
 <Icon label="Close">x</Icon>
 

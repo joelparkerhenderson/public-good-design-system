@@ -8,24 +8,24 @@ This headless component renders a `<figure>` element with `role="img"` and an ac
 
 - Renders a `<figure>` element with `role="img"` for semantic figure representation
 - The `<figure>` element provides a natural container for graphical content
-- Consumer provides all figure rendering (SVG, canvas, D3, Figure.js, etc.) via the `children` snippet
+- Consumer provides all figure rendering (SVG, canvas, D3, Figure.js, etc.) via the `children` slot
 - Accepts `...restProps` for forwarding additional attributes to the figure element
 - No internal state -- purely a structural wrapper
 
 ## Props
 
 - `label`: string (required) -- accessible name describing what the figure represents, applied via `aria-label`
-- `children`: Snippet (required) -- the figure visualization content
+- `children`: slot (required) -- the figure visualization content
 
 ## Usage
 
-```svelte
+```html
 <Figure label="Monthly revenue for 2024">
     <svg><!-- bar figure SVG here --></svg>
 </Figure>
 ```
 
-```svelte
+```html
 <Figure label="User growth trend">
     <canvas><!-- canvas figure here --></canvas>
 </Figure>

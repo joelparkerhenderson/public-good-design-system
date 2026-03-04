@@ -14,11 +14,11 @@ The component renders a `<ul>` with `role="list"` and delegates item rendering t
 ## Props
 
 - `label`: string (default: undefined) -- accessible name for the checklist via `aria-label`
-- `children`: Snippet (required) -- list items to render inside the `<ul>`
+- `children`: slot (required) -- list items to render inside the `<ul>`
 
 ## Usage
 
-```svelte
+```html
 <Checklist label="Onboarding tasks">
   <li><input type="checkbox" /> Create account</li>
   <li><input type="checkbox" /> Set up profile</li>

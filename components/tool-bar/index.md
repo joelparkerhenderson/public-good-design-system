@@ -11,18 +11,18 @@ The component queries focusable children via `button`, `[role='button']`, and `[
 - Home/End keys jump to first/last toolbar item
 - Focus wraps around from last item to first and vice versa
 - Queries focusable items via `button`, `[role='button']`, and `[tabindex]` selectors
-- Uses `$state()` for the toolbar element reference and `bind:this` for DOM access
+- Uses reactive state for the toolbar element reference and two-way `this` binding for DOM access
 - Accessible name is set via `aria-label` from the `label` prop
 
 ## Props
 
 - `label`: string (required) -- accessible name for the toolbar via `aria-label`
-- `children`: Snippet (required) -- toolbar item elements
+- `children`: slot (required) -- toolbar item elements
 - `...restProps`: Any additional HTML attributes passed to the `<div>` element
 
 ## Usage
 
-```svelte
+```html
 <ToolBar label="Editor tools">
   <button>Bold</button>
   <button>Italic</button>

@@ -11,17 +11,16 @@ Use SegmentGroup when you need a set of visually distinct toggle buttons where o
 - Consumer provides segment button children, each with `role="radio"` and `aria-checked`
 - Consumer is responsible for managing selection state (toggling `aria-checked` on children)
 - Spreads `restProps` onto the div for consumer customization
-- Uses Svelte 5 `$props()` with TypeScript typing
 
 ## Props
 
 - `label`: string (required) -- accessible label for the segment group, applied via `aria-label`
-- `children`: Snippet (required) -- segment button elements to render inside the group
+- `children`: slot (required) -- segment button elements to render inside the group
 - `...restProps`: unknown -- additional attributes spread onto the `<div>` element
 
 ## Usage
 
-```svelte
+```html
 <SegmentGroup label="View">
   <button role="radio" aria-checked="true">Grid</button>
   <button role="radio" aria-checked="false">List</button>

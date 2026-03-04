@@ -8,16 +8,16 @@ This component is useful for quantity selectors, age inputs, price fields, confi
 
 - Renders a native `<input type="number">` element
 - Uses `aria-label` for an accessible name describing the input purpose
-- The `value` prop uses `$bindable(undefined)` for two-way binding with an initial undefined state
+- The `value` prop uses two-way binding with an initial undefined state
 - Supports optional `min`, `max`, and `step` constraints
 - Supports `required` and `disabled` boolean states
 - Spreads `restProps` onto the input for consumer customization (e.g., `id`, `name`, `placeholder`)
-- Svelte 5 pattern: `$bindable` for the value prop
+- pattern: `two-way binding` for the value prop
 
 ## Props
 
 - `label`: string (required) -- accessible name for the input via `aria-label`
-- `value`: number | undefined (default: `undefined`) -- current numeric value; bindable with `bind:value`
+- `value`: number | undefined (default: `undefined`) -- current numeric value; bindable with two-way `value` binding
 - `min`: number (optional) -- minimum allowed value
 - `max`: number (optional) -- maximum allowed value
 - `step`: number (optional) -- increment/decrement step size
@@ -27,8 +27,8 @@ This component is useful for quantity selectors, age inputs, price fields, confi
 
 ## Usage
 
-```svelte
-<NumberInput label="Quantity" bind:value min={0} max={100} step={1} />
+```html
+<NumberInput label="Quantity" value={value} min={0} max={100} step={1} />
 ```
 
 ## Keyboard Interactions

@@ -18,8 +18,8 @@ states, and provides accessible labeling for screen readers.
 - Pattern: `[0-9]{3}-[0-9]{2}-[0-9]{4}` (XXX-XX-XXXX)
 - `inputmode="numeric"` for numeric keyboard on mobile
 - `autocomplete="off"` to protect sensitive PII
-- Supports `bind:value` for two-way binding via `$bindable()`
-- Pattern is defined as a constant to avoid Svelte template expression parsing of curly braces
+- Supports two-way binding
+- Pattern is defined as a constant for validation
 
 ## Props
 
@@ -31,31 +31,25 @@ states, and provides accessible labeling for screen readers.
 
 ## Usage
 
-```svelte
-<script>
-  import UnitedStatesSocialSecurityNumberInput from "./UnitedStatesSocialSecurityNumberInput.svelte";
-
-  let ssn = $state("");
-</script>
-
+```html
 <UnitedStatesSocialSecurityNumberInput label="Social Security Number" />
 ```
 
 With two-way binding:
 
-```svelte
-<UnitedStatesSocialSecurityNumberInput label="SSN" bind:value={ssn} />
+```html
+<UnitedStatesSocialSecurityNumberInput label="SSN" value={ssn} />
 ```
 
 Required field in a form:
 
-```svelte
+```html
 <UnitedStatesSocialSecurityNumberInput label="Social Security Number" required />
 ```
 
 Disabled state:
 
-```svelte
+```html
 <UnitedStatesSocialSecurityNumberInput label="Social Security Number" disabled />
 ```
 

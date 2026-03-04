@@ -7,7 +7,7 @@ The component auto-generates IDs for linking the label to its input and for asso
 ## Implementation Notes
 
 - Renders a `<div>` wrapper containing a `<label>`, consumer-provided children, optional description `<p>`, and optional error `<p>`
-- Auto-generates a unique ID using `$derived()` if `inputId` is not provided
+- Auto-generates a unique ID using derived value if `inputId` is not provided
 - Derives `descId` and `errorId` from the field ID for ARIA linking
 - The `<label>` uses `for={fieldId}` to link to the consumer's input element
 - Required indicator asterisk uses `aria-hidden="true"` to avoid screen reader noise
@@ -21,17 +21,17 @@ The component auto-generates IDs for linking the label to its input and for asso
 - `error`: string (default: undefined) -- error message displayed below the input
 - `required`: boolean (default: false) -- whether the field is required, adds a visual asterisk
 - `inputId`: string (default: undefined) -- ID of the input to link the label to; auto-generated if omitted
-- `children`: Snippet (required) -- form control (input, select, textarea, etc.)
+- `children`: slot (required) -- form control (input, select, textarea, etc.)
 
 ## Usage
 
-```svelte
+```html
 <Field label="Name" description="Enter full name">
   <input id="name-input" />
 </Field>
 ```
 
-```svelte
+```html
 <Field label="Email" required error="Email is required">
   <input id="email-input" type="email" />
 </Field>

@@ -27,20 +27,14 @@ tabindex pattern where only the selected tab participates in the tab order.
 
 - `selected`: boolean (default: false) -- whether this tab is active
 - `controls`: string (required) -- id of the associated tabpanel
-- `children`: Snippet -- tab label content
+- `children`: slot -- tab label content
 - `...restProps`: Any additional HTML attributes
 
 ## Usage
 
 Basic tab within a tablist:
 
-```svelte
-<script lang="ts">
-  import TabBarButton from './TabBarButton.svelte';
-
-  let activeTabBarButton = $state("dashboard");
-</script>
-
+```html
 <div role="tablist" aria-label="Main navigation">
   <TabBarButton
     selected={activeTabBarButton === "dashboard"}

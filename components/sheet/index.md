@@ -11,22 +11,22 @@ Use Sheet when you need a temporary panel that slides in from the top, right, bo
 - Sets `tabindex="-1"` to allow programmatic focus on the dialog container
 - Exposes a `data-side` attribute with the value of the `side` prop for CSS targeting
 - Handles Escape key via an `onkeydown` handler that sets `open` to `false`
-- Uses Svelte 5 `$bindable()` for the `open` prop, enabling `bind:open` from the parent
+- Supports two-way binding for the `open` prop, enabling two-way `open` binding from the parent
 - Consumer is responsible for focus management (moving focus into the sheet when opened)
 - Spreads `restProps` onto the dialog div for consumer customization
 
 ## Props
 
 - `label`: string (required) -- accessible label for the sheet dialog, applied via `aria-label`
-- `open`: boolean (default: `false`) -- whether the sheet is visible; bindable via `bind:open`
+- `open`: boolean (default: `false`) -- whether the sheet is visible; two-way bindable via `open`
 - `side`: `"left" | "right" | "top" | "bottom"` (default: `"right"`) -- which edge the sheet appears from
-- `children`: Snippet (required) -- content to render inside the sheet
+- `children`: slot (required) -- content to render inside the sheet
 - `...restProps`: unknown -- additional attributes spread onto the `<div>` element
 
 ## Usage
 
-```svelte
-<Sheet label="Settings" bind:open side="right">
+```html
+<Sheet label="Settings" open={open} side="right">
   <p>Sheet content</p>
 </Sheet>
 ```

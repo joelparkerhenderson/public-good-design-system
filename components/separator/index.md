@@ -19,15 +19,15 @@ Separators help organize content into logical groups and improve visual hierarch
 
 ## Usage
 
-```svelte
+```html
 <Separator />
 ```
 
-```svelte
+```html
 <Separator label="Section break" />
 ```
 
-```svelte
+```html
 <h2>Introduction</h2>
 <p>...</p>
 <Separator label="End of introduction" />

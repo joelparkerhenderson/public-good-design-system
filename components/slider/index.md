@@ -7,7 +7,7 @@ This headless component wraps a native `<input type="range">` element with confi
 ## Implementation Notes
 
 - Uses a native `<input type="range">` element for built-in browser slider behavior
-- Supports `$bindable()` for two-way binding of the `value` prop
+- Supports two-way binding on the `value` prop
 - Accepts `...restProps` for forwarding additional attributes to the input element
 - No internal state management beyond the bindable value -- relies on native input behavior
 
@@ -22,8 +22,8 @@ This headless component wraps a native `<input type="range">` element with confi
 
 ## Usage
 
-```svelte
-<Slider label="Volume" bind:value min={0} max={100} step={5} />
+```html
+<Slider label="Volume" value={value} min={0} max={100} step={5} />
 ```
 
 ## Keyboard Interactions

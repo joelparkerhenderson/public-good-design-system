@@ -17,7 +17,7 @@ position (e.g., "Digit 1 of 4") to support screen reader users.
 ## Implementation Notes
 
 - Renders as `<div role="group">` containing individual single-digit `<input>` elements
-- Uses `$state()` for internal digits array and `$bindable()` for combined value
+- Uses reactive state for internal digits array and two-way binding for combined value
 - Auto-focuses next input on digit entry
 - Backspace in empty input moves focus to previous input
 - ArrowLeft/ArrowRight navigate between inputs
@@ -37,39 +37,27 @@ position (e.g., "Digit 1 of 4") to support screen reader users.
 
 Basic 4-digit PIN input:
 
-```svelte
-<script lang="ts">
-  import PinInput from './PinInput.svelte';
-
-  let pin = $state("");
-</script>
-
-<PinInput label="Enter PIN" bind:value={pin} />
+```html
+<PinInput label="Enter PIN" value={pin} />
 <p>Entered PIN: {pin}</p>
 ```
 
 6-digit verification code:
 
-```svelte
-<script lang="ts">
-  import PinInput from './PinInput.svelte';
-
-  let code = $state("");
-</script>
-
-<PinInput label="Verification Code" length={6} bind:value={code} />
+```html
+<PinInput label="Verification Code" length={6} value={code} />
 ```
 
 Disabled state:
 
-```svelte
+```html
 <PinInput label="Locked PIN" disabled />
 ```
 
 With additional HTML attributes:
 
-```svelte
-<PinInput label="OTP" bind:value={otp} data-form="login" />
+```html
+<PinInput label="OTP" value={otp} data-form="login" />
 ```
 
 ## Keyboard Interactions

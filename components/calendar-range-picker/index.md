@@ -14,11 +14,11 @@ This headless component renders a `<div>` with `role="application"` and an acces
 ## Props
 
 - `label`: string (required) -- accessible name describing the picker purpose, applied via `aria-label`
-- `children`: Snippet (required) -- the calendar grid content including date cells and navigation controls
+- `children`: slot (required) -- the calendar grid content including date cells and navigation controls
 
 ## Usage
 
-```svelte
+```html
 <CalendarRangePicker label="Select travel dates">
     <!-- calendar grid with date cells -->
 </CalendarRangePicker>

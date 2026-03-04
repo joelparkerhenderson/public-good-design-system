@@ -7,7 +7,7 @@ This headless component renders a `<ul>` with `role="tree"` and provides keyboar
 ## Implementation Notes
 
 - Renders a `<ul>` element with `role="tree"` for tree view semantics
-- Uses `$state()` to track the tree element reference for keyboard navigation
+- Uses reactive state to track the tree element reference for keyboard navigation
 - Queries `[role="treeitem"]` descendants to build the navigable item list
 - Arrow key navigation wraps around from last to first item and vice versa
 - Consumer provides `<li role="treeitem">` children with `tabindex="-1"` for focusability
@@ -16,11 +16,11 @@ This headless component renders a `<ul>` with `role="tree"` and provides keyboar
 ## Props
 
 - `label`: string (required) -- accessible name applied via `aria-label`
-- `children`: Snippet (required) -- tree item elements, expected to be `<li role="treeitem">` elements
+- `children`: slot (required) -- tree item elements, expected to be `<li role="treeitem">` elements
 
 ## Usage
 
-```svelte
+```html
 <TreeMenu label="Navigation">
     <li role="treeitem" tabindex="-1">Home</li>
     <li role="treeitem" tabindex="-1">About</li>

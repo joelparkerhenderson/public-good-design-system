@@ -8,8 +8,8 @@ This component is useful for scheduling interfaces, appointment forms, event pla
 
 - Renders a native `<input type="time">` element
 - Uses `aria-label` for accessible naming (no visible label element included; consumers can add their own)
-- Uses `$bindable()` for the `value` prop, enabling `bind:value` in the parent
-- Uses Svelte `bind:value` internally for reactive two-way binding
+- Supports two-way binding for the `value` prop, enabling two-way `value` binding in the parent
+- Supports two-way binding on the `value` prop
 - Value format is HH:MM (24-hour time string, e.g., "14:30")
 - Supports standard HTML form attributes: `required`, `disabled`
 - Spreads `restProps` for consumer customization (e.g., `min`, `max`, `step`)
@@ -24,16 +24,16 @@ This component is useful for scheduling interfaces, appointment forms, event pla
 
 ## Usage
 
-```svelte
-<TimeInput label="Start time" bind:value />
+```html
+<TimeInput label="Start time" value={value} />
 ```
 
-```svelte
-<TimeInput label="Meeting time" bind:value={meetingTime} required={true} />
+```html
+<TimeInput label="Meeting time" value={meetingTime} required={true} />
 ```
 
-```svelte
-<TimeInput label="Deadline" bind:value={deadline} min="09:00" max="17:00" />
+```html
+<TimeInput label="Deadline" value={deadline} min="09:00" max="17:00" />
 ```
 
 ## Keyboard Interactions

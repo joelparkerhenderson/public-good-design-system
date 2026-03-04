@@ -10,19 +10,19 @@ This component uses `role="alert"` to ensure screen readers announce the error s
 - Uses `aria-labelledby` to associate the container with its heading
 - Contains an `<h2>` element with a randomly generated ID for the `aria-labelledby` reference
 - `tabindex="-1"` allows programmatic focus but does not place the element in the tab order
-- Children snippet is rendered after the heading for the error list content
+- Children slot is rendered after the heading for the error list content
 - Spreads `restProps` on the outer `<div>` element
 - Heading ID is generated with `Math.random().toString(36).slice(2, 9)` to avoid collisions
 
 ## Props
 
 - `title`: string (required) -- heading text for the error summary (e.g., "There is a problem")
-- `children`: Snippet (required) -- error list content, typically a `<ul>` with `<li>` items containing anchor links to error fields
+- `children`: slot (required) -- error list content, typically a `<ul>` with `<li>` items containing anchor links to error fields
 - `...restProps`: any additional HTML attributes spread onto the outer `<div>`
 
 ## Usage
 
-```svelte
+```html
 <ErrorSummary title="There is a problem">
     <ul>
         <li><a href="#name">Enter your name</a></li>
@@ -31,7 +31,7 @@ This component uses `role="alert"` to ensure screen readers announce the error s
 </ErrorSummary>
 ```
 
-```svelte
+```html
 <ErrorSummary title="Please fix the following errors">
     <ul>
         <li><a href="#password">Password must be at least 8 characters</a></li>

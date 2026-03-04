@@ -7,15 +7,15 @@ This component is ideal for forms that require date input with validation feedba
 ## Implementation Notes
 
 - Renders a `<div>` wrapper containing a `<label>`, `<input type="date">`, optional description `<p>`, and optional error `<p>`
-- Auto-generates a unique ID for the input if none is provided, using `$derived()` for reactivity
+- Auto-generates a unique ID for the input if none is provided, using derived value for reactivity
 - Derives `descriptionId` and `errorId` from the input ID for ARIA linking
-- Uses `$bindable()` for two-way binding on the `value` prop
+- Supports two-way binding on the `value` prop
 - Error paragraph uses `role="alert"` for live announcement to screen readers
 
 ## Props
 
 - `label`: string (required) -- visible label text for the date field
-- `value`: string (default: "") -- current date value in YYYY-MM-DD format, bindable via `bind:value`
+- `value`: string (default: "") -- current date value in YYYY-MM-DD format, two-way bindable via `value`
 - `description`: string (default: undefined) -- helper text displayed below the input
 - `error`: string (default: undefined) -- error message displayed when validation fails
 - `required`: boolean (default: false) -- whether the field is required
@@ -24,16 +24,16 @@ This component is ideal for forms that require date input with validation feedba
 
 ## Usage
 
-```svelte
-<DateField label="Start date" bind:value />
+```html
+<DateField label="Start date" value={value} />
 ```
 
-```svelte
-<DateField label="End date" bind:value error="Required" required />
+```html
+<DateField label="End date" value={value} error="Required" required />
 ```
 
-```svelte
-<DateField label="Birthday" bind:value description="Format: YYYY-MM-DD" />
+```html
+<DateField label="Birthday" value={value} description="Format: YYYY-MM-DD" />
 ```
 
 ## Keyboard Interactions

@@ -8,8 +8,8 @@ This headless component toggles between a display state (`<span role="button">`)
 
 - Display mode renders a `<span>` with `role="button"` and `tabindex="0"` for keyboard activation
 - Edit mode renders an `<input type="text">` bound to an internal draft value
-- Uses `$bindable()` for both `value` and `editing` props
-- Uses `$state()` for the internal draft value during editing
+- Supports two-way binding for both `value` and `editing` props
+- Uses reactive state for the internal draft value during editing
 - Enter key in edit mode calls `confirm()` which copies draft to value
 - Escape key in edit mode calls `cancel()` which restores draft from value
 - Display mode responds to click, Enter, and Space for activation
@@ -25,12 +25,12 @@ This headless component toggles between a display state (`<span role="button">`)
 
 ## Usage
 
-```svelte
-<Editable label="Name" bind:value />
+```html
+<Editable label="Name" value={value} />
 ```
 
-```svelte
-<Editable label="Title" bind:value bind:editing />
+```html
+<Editable label="Title" value={value} editing={editing} />
 ```
 
 ## Keyboard Interactions

@@ -13,29 +13,25 @@ bars) to enhance user clarity and motivation.
 This component renders as an unordered list (`<ul>`) with `role="list"` and an
 accessible label. The explicit `role="list"` ensures screen readers announce the
 list semantics even when CSS removes default list styling. The consumer provides
-task items as `<li>` children through the children snippet.
+task items as `<li>` children through the children slot.
 
 ## Implementation Notes
 
 - Renders as `<ul role="list" aria-label={label}>` for task list semantics
 - Explicit `role="list"` ensures list semantics when CSS removes default styling
-- All task content provided through children snippet (should be `<li>` elements)
+- All task content provided through children slot (should be `<li>` elements)
 - Consumers can use checkboxes within `<li>` for completable tasks
 - No hardcoded strings; all text content comes through props and children
 
 ## Props
 
 - `label`: string (required) -- accessible label via aria-label
-- `children`: Snippet -- task items (should be `<li>` elements)
+- `children`: slot -- task items (should be `<li>` elements)
 - `...restProps`: Any additional HTML attributes spread onto the `<ul>`
 
 ## Usage
 
-```svelte
-<script>
-  import TaskList from "./TaskList.svelte";
-</script>
-
+```html
 <TaskList label="Today's tasks">
   <li>Review pull requests</li>
   <li>Update documentation</li>
@@ -45,7 +41,7 @@ task items as `<li>` children through the children snippet.
 
 With checkboxes for completable tasks:
 
-```svelte
+```html
 <TaskList label="Onboarding checklist">
   <li>
     <label>

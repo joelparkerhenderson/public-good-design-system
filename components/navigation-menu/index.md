@@ -8,26 +8,26 @@ This component is suitable for primary navigation bars, sidebar navigation, foot
 
 - Renders a native `<nav>` element, which is automatically recognized as a navigation landmark by screen readers.
 - Uses `aria-label` to distinguish this navigation from other `<nav>` elements on the same page (e.g., "Main navigation" vs. "Footer navigation").
-- Content is passed via the `children` snippet, allowing any markup structure (links, lists, nested menus).
+- Content is passed via the `children` slot, allowing any markup structure (links, lists, nested menus).
 - Spreads `restProps` onto the `<nav>` for consumer customization.
 - No internal state or keyboard handling; relies on native link and focus behavior.
 
 ## Props
 
 - `label`: string (required) -- accessible name applied via `aria-label` to distinguish this nav landmark.
-- `children`: Snippet (required) -- navigation content to render inside the `<nav>` element.
+- `children`: slot (required) -- navigation content to render inside the `<nav>` element.
 - `...restProps`: unknown -- additional attributes spread onto the `<nav>` element.
 
 ## Usage
 
-```svelte
+```html
 <NavigationMenu label="Main navigation">
     <a href="/">Home</a>
     <a href="/about">About</a>
 </NavigationMenu>
 ```
 
-```svelte
+```html
 <NavigationMenu label="Footer navigation">
     <ul>
         <li><a href="/privacy">Privacy Policy</a></li>

@@ -7,7 +7,7 @@ A form component wraps a native HTML `<form>` element with accessible labeling, 
 - Renders a native `<form>` element with `aria-label` for accessible naming
 - Automatically calls `event.preventDefault()` on submit before invoking the `onsubmit` callback
 - Passes the raw `onreset` callback directly to the form (no default prevention)
-- Accepts a `children` Snippet for form content (inputs, buttons, etc.)
+- Accepts a `children` slot for form content (inputs, buttons, etc.)
 - Spreads `restProps` for consumer customization
 
 ## Props
@@ -15,12 +15,12 @@ A form component wraps a native HTML `<form>` element with accessible labeling, 
 - `label`: string (required) -- accessible name for the form via `aria-label`
 - `onsubmit`: function (default: `undefined`) -- callback receiving `SubmitEvent` (default already prevented)
 - `onreset`: function (default: `undefined`) -- callback receiving `Event` on form reset
-- `children`: Snippet (required) -- form content to render inside
+- `children`: slot (required) -- form content to render inside
 - `...restProps`: unknown -- additional attributes spread onto the `<form>`
 
 ## Usage
 
-```svelte
+```html
 <Form label="Login" onsubmit={handleLogin}>
   <input name="email" />
   <button type="submit">Sign in</button>

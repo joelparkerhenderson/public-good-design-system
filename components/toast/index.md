@@ -10,28 +10,28 @@ Toasts are similar to notifications but are generally more ephemeral and less in
 - Uses conditional role assignment: `role="status"` for normal messages, `role="alert"` for urgent ones
 - Uses conditional `aria-live`: `"polite"` waits for a pause in speech, `"assertive"` interrupts immediately
 - The `urgent` prop controls both the role and aria-live behavior simultaneously
-- Accepts a `children` Snippet for flexible toast content
+- Accepts a `children` slot for flexible toast content
 - Supports rest props via `...restProps` for extensibility (e.g., `id`, `class`)
-- Svelte 5 Snippet pattern used for the `children` prop (imported from "svelte")
+- slot pattern used for the `children` prop (imported from "svelte")
 
 ## Props
 
 - `label`: string (default: undefined) -- optional accessible label applied via `aria-label`
 - `urgent`: boolean (default: false) -- when true, uses `role="alert"` and `aria-live="assertive"` instead of `role="status"` and `aria-live="polite"`
-- `children`: Snippet (required) -- the toast message content
+- `children`: slot (required) -- the toast message content
 - `...restProps`: spread onto the `<div>` element
 
 ## Usage
 
-```svelte
+```html
 <Toast label="Success">Your changes have been saved.</Toast>
 ```
 
-```svelte
+```html
 <Toast label="Error" urgent>Something went wrong.</Toast>
 ```
 
-```svelte
+```html
 <Toast label="Info">
   <p>3 new messages in your inbox.</p>
 </Toast>

@@ -11,19 +11,19 @@ This component renders the structural markup and ARIA attributes for a custom sc
 - Includes `aria-valuenow`, `aria-valuemin`, and `aria-valuemax` for position tracking
 - Initial values are set to 0/0/100; consumer should update these dynamically
 - The `label` prop provides the accessible name via `aria-label`
-- Consumer provides the scrollbar thumb or track content via the `children` snippet
+- Consumer provides the scrollbar thumb or track content via the `children` slot
 - Rest props are spread onto the `<div>` element
 
 ## Props
 
 - `orientation`: "vertical" | "horizontal" (default: "vertical") -- the scrollbar direction, reflected in `aria-orientation`
 - `label`: string (required) -- accessible name for the scrollbar via `aria-label`
-- `children`: Snippet (required) -- scrollbar content, typically the draggable thumb element
+- `children`: slot (required) -- scrollbar content, typically the draggable thumb element
 - `...restProps`: unknown -- additional attributes spread onto the `<div>` element
 
 ## Usage
 
-```svelte
+```html
 <!-- Vertical scrollbar -->
 <ScrollBar orientation="vertical" label="Page scroll">
   <div><!-- thumb element --></div>

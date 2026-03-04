@@ -9,16 +9,16 @@ This headless component lets consumers control all visual presentation while ens
 - Renders as a semantic `<figcaption>` element
 - Designed for use within a `<figure>` parent element for proper semantic association
 - Can be referenced via `id` and `aria-describedby` from other elements
-- Uses Svelte 5 `Snippet` for children content
+- Uses `slot` for children content
 - Spreads `...restProps` on the root `<figcaption>` element for consumer customization
 
 ## Props
 
-- `children`: Snippet (required) -- the caption text or content to display
+- `children`: slot (required) -- the caption text or content to display
 
 ## Usage
 
-```svelte
+```html
 <Caption>Photo of a sunset over the ocean.</Caption>
 <Caption id="chart-caption">Figure 1: Revenue growth over time.</Caption>
 ```

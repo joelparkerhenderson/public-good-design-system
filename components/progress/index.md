@@ -21,15 +21,15 @@ The component supports both determinate progress (with a known value and maximum
 
 ## Usage
 
-```svelte
+```html
 <Progress label="Upload progress" value={50} max={100} />
 ```
 
-```svelte
+```html
 <Progress label="Loading" />
 ```
 
-```svelte
+```html
 <Progress label="Installation" value={3} max={5} />
 ```
 

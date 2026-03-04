@@ -6,7 +6,7 @@ This component is designed to work alongside form inputs where the consumer link
 
 ## Implementation Notes
 
-- Renders a `<p>` element containing the children snippet
+- Renders a `<p>` element containing the children slot
 - Accepts an optional `id` prop for `aria-describedby` linking with form controls
 - Spreads `restProps` onto the `<p>` for consumer customization
 - The consumer is responsible for adding `aria-describedby` to the associated input
@@ -14,16 +14,16 @@ This component is designed to work alongside form inputs where the consumer link
 ## Props
 
 - `id`: string (default: undefined) -- ID for linking via `aria-describedby` on the associated form control
-- `children`: Snippet (required) -- hint text content
+- `children`: slot (required) -- hint text content
 
 ## Usage
 
-```svelte
+```html
 <Hint id="email-hint">Enter your work email</Hint>
 <input aria-describedby="email-hint" />
 ```
 
-```svelte
+```html
 <Hint id="password-hint">Must be at least 8 characters</Hint>
 <input type="password" aria-describedby="password-hint" />
 ```

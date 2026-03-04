@@ -8,27 +8,27 @@ Tags help users quickly scan and identify relevant information, and are presente
 
 - Renders as a `<span>` element with `role="status"` and `aria-label`
 - `role="status"` creates an implicit live region, so screen readers announce content changes
-- All visible content is provided through the `children` snippet
-- Uses Svelte 5 `$props()` for prop destructuring with rest props spread
+- All visible content is provided through the `children` slot
+- Uses props for prop destructuring with rest props spread
 - No hardcoded strings; all text comes through props for internationalization
 
 ## Props
 
 - `label`: string (required) -- accessible label for screen readers via `aria-label`
-- `children`: Snippet (required) -- the tag's visible content (text, etc.)
+- `children`: slot (required) -- the tag's visible content (text, etc.)
 - `...restProps`: any -- additional HTML attributes spread onto the `<span>` element
 
 ## Usage
 
-```svelte
+```html
 <Tag label="Category">Design</Tag>
 ```
 
-```svelte
+```html
 <Tag label="Status">Active</Tag>
 ```
 
-```svelte
+```html
 <Tag label="Priority: High">High</Tag>
 ```
 

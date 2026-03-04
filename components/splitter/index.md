@@ -13,7 +13,6 @@ Use Splitter between two adjacent panels to provide a visual and interactive han
 - Consumer should update `aria-valuenow` dynamically as the user drags the splitter
 - Consumer is responsible for implementing keyboard handlers (arrow keys to adjust position) and pointer/drag handlers
 - Spreads `restProps` onto the div for consumer customization
-- Uses Svelte 5 `$props()` with TypeScript typing
 
 ## Props
 
@@ -23,7 +22,7 @@ Use Splitter between two adjacent panels to provide a visual and interactive han
 
 ## Usage
 
-```svelte
+```html
 <Splitter label="Resize panels" orientation="vertical" />
 ```
 

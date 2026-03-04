@@ -15,11 +15,11 @@ This headless component renders a `<table>` element with `role="grid"` and an ac
 ## Props
 
 - `label`: string (required) -- accessible name describing the calendar period (e.g., month and year), applied via `aria-label`
-- `children`: Snippet (required) -- table rows and cells representing the calendar grid
+- `children`: slot (required) -- table rows and cells representing the calendar grid
 
 ## Usage
 
-```svelte
+```html
 <CalendarTable label="January 2025">
     <thead>
         <tr><th>Sun</th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th></tr>

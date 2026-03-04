@@ -8,26 +8,26 @@ This component renders a semantically labeled unordered list with `role="list"` 
 
 - Renders a `<ul>` element with explicit `role="list"` to preserve list semantics
 - Uses `aria-label` to provide an accessible name (defaults to "Do")
-- Children snippet is rendered inside the list; each child should be an `<li>` element
+- Children slot is rendered inside the list; each child should be an `<li>` element
 - Label prop has a sensible default but can be overridden for internationalization
 - Spreads `restProps` on the `<ul>` element
 
 ## Props
 
 - `label`: string (default: `"Do"`) -- accessible name for the list
-- `children`: Snippet (required) -- list items, each should be an `<li>` element
+- `children`: slot (required) -- list items, each should be an `<li>` element
 - `...restProps`: any additional HTML attributes spread onto the `<ul>` element
 
 ## Usage
 
-```svelte
+```html
 <DoList>
     <li>Write clear labels</li>
     <li>Use semantic HTML</li>
 </DoList>
 ```
 
-```svelte
+```html
 <DoList label="Recommended">
     <li>Provide alt text for images</li>
     <li>Use sufficient color contrast</li>

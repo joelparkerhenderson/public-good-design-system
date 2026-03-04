@@ -17,7 +17,7 @@ An email link displays an email as a clickable mailto link. When clicked, it ope
 
 ## Usage
 
-```svelte
+```html
 <EmailAddressView email="alice@example.com" />
 ```
 

@@ -14,17 +14,17 @@ This headless component renders an `<aside>` element with `role="alert"`, which 
 ## Props
 
 - `label`: string (optional) -- accessible name applied via `aria-label`; useful when multiple alerts exist on the same page
-- `children`: Snippet (required) -- the warning content to display
+- `children`: slot (required) -- the warning content to display
 
 ## Usage
 
-```svelte
+```html
 <WarningCallout label="Warning">
     <p>Your session is about to expire.</p>
 </WarningCallout>
 ```
 
-```svelte
+```html
 <WarningCallout>
     <p>Unsaved changes will be lost.</p>
 </WarningCallout>

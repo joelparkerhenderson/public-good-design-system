@@ -8,18 +8,18 @@ Focus management is delegated to the parent MenuBar, which uses roving tabindex 
 
 - Renders as a `<div>` with `role="menuitem"` for ARIA menubar semantics
 - Uses `tabindex="-1"` so focus is managed programmatically by the parent MenuBar
-- Content is provided through the Svelte 5 `children` Snippet
+- Content is provided through child elements
 - Passes through all additional HTML attributes via `...restProps`
 - Designed to be placed inside a MenuBar container with `role="menubar"`
 
 ## Props
 
-- `children`: Snippet (required) -- content of the menu bar item
+- `children`: slot (required) -- content of the menu bar item
 - `...restProps`: Any additional HTML attributes passed to the `<div>` element
 
 ## Usage
 
-```svelte
+```html
 <MenuBarItem>File</MenuBarItem>
 ```
 

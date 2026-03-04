@@ -8,7 +8,7 @@ This component is useful for scheduling interfaces, event creation forms, appoin
 
 - Renders a single `<input type="datetime-local">` element with no wrapper
 - Uses `aria-label` for accessible naming instead of a visible `<label>` element
-- Uses Svelte 5 `$bindable()` for two-way binding on the `value` prop
+- Supports two-way binding on the `value` prop
 - The browser provides the native datetime picker UI
 - Spreads `restProps` onto the input element for consumer extensibility
 
@@ -24,16 +24,16 @@ This component is useful for scheduling interfaces, event creation forms, appoin
 
 ## Usage
 
-```svelte
-<DatetimeLocalInput label="Event start" bind:value />
+```html
+<DatetimeLocalInput label="Event start" value={value} />
 ```
 
-```svelte
-<DatetimeLocalInput label="Appointment" bind:value min="2024-01-01T08:00" max="2024-12-31T18:00" />
+```html
+<DatetimeLocalInput label="Appointment" value={value} min="2024-01-01T08:00" max="2024-12-31T18:00" />
 ```
 
-```svelte
-<DatetimeLocalInput label="Departure time" bind:value required disabled={isLocked} />
+```html
+<DatetimeLocalInput label="Departure time" value={value} required disabled={isLocked} />
 ```
 
 ## Keyboard Interactions

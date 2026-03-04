@@ -9,22 +9,22 @@ This component is commonly used alongside TagGroup to build tag management inter
 - Renders a native `<input type="text">` element for tag entry
 - Uses `aria-label` for accessible identification
 - Handles Enter key via an `onkeydown` handler that calls `onadd` with the trimmed value and resets the input
-- Uses `$bindable("")` for the `value` prop, enabling two-way binding
+- Supports two-way binding on the `value` prop
 - Supports `disabled` state to prevent interaction
 - Spreads `restProps` onto the input for consumer customization
 
 ## Props
 
 - `label`: string (required) -- accessible name for the input via `aria-label`
-- `value`: string (default: `""`) -- current input text; bindable with `bind:value`
+- `value`: string (default: `""`) -- current input text; bindable with two-way `value` binding
 - `onadd`: `(value: string) => void` (optional) -- callback fired when Enter is pressed with a non-empty trimmed value
 - `disabled`: boolean (default: `false`) -- whether the input is disabled
 - `...restProps`: unknown -- additional attributes spread onto the `<input>` element
 
 ## Usage
 
-```svelte
-<TagInput label="Add tag" bind:value onadd={(tag) => tags.push(tag)} />
+```html
+<TagInput label="Add tag" value={value} onadd={(tag) => tags.push(tag)} />
 ```
 
 ## Keyboard Interactions

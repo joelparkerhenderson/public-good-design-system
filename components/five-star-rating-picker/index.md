@@ -5,7 +5,7 @@ A five-star rating input allows users to select a rating from 1 to 5 stars using
 ## Implementation Notes
 
 - Renders a `<fieldset>` with `role="radiogroup"` containing 5 `<label>`/`<input type="radio">` pairs
-- Uses `$bindable()` for the selected rating value (1-5, with 0 meaning no selection)
+- Supports two-way binding for the selected rating value (1-5, with 0 meaning no selection)
 - Each radio label reads "1 star", "2 stars", "3 stars", etc. for screen reader clarity
 - The `name` prop groups the radio buttons for form submission
 - Supports `disabled` state on the fieldset level
@@ -13,15 +13,15 @@ A five-star rating input allows users to select a rating from 1 to 5 stars using
 ## Props
 
 - `label`: string (required) -- accessible name for the rating group via `aria-label`
-- `value`: number (default: `0`) -- current rating (1-5, 0 = none), bindable via `bind:value`
+- `value`: number (default: `0`) -- current rating (1-5, 0 = none), two-way bindable via `value`
 - `name`: string (default: `"rating"`) -- radio group name for form submission
 - `disabled`: boolean (default: `false`) -- whether the entire group is disabled
 - `...restProps`: unknown -- additional attributes spread onto the `<fieldset>`
 
 ## Usage
 
-```svelte
-<FiveStarRatingInput label="Rate this" bind:value />
+```html
+<FiveStarRatingInput label="Rate this" value={value} />
 ```
 
 ## Keyboard Interactions

@@ -7,7 +7,7 @@ The component manages focus movement between options via arrow keys, with Home a
 ## Implementation Notes
 
 - Renders a `<div>` with `role="listbox"` and an accessible label.
-- Uses `$state` to track the `listRef` element reference for querying child options.
+- Uses reactive state to track the `listRef` element reference for querying child options.
 - Keyboard navigation queries all child elements with `[role='option']` to build the navigable item list.
 - Arrow keys wrap around: pressing ArrowDown on the last item moves focus to the first, and vice versa.
 - Home and End keys jump to the first and last option respectively.
@@ -16,19 +16,19 @@ The component manages focus movement between options via arrow keys, with Home a
 ## Props
 
 - `label`: string (required) -- accessible name applied via `aria-label`.
-- `children`: Snippet (required) -- option elements to render inside the listbox (should have `role="option"` and `tabindex="-1"`).
+- `children`: slot (required) -- option elements to render inside the listbox (should have `role="option"` and `tabindex="-1"`).
 - `...restProps`: unknown -- additional attributes spread onto the container `<div>`.
 
 ## Usage
 
-```svelte
+```html
 <Listbox label="Fruits">
     <div role="option" tabindex="-1">Apple</div>
     <div role="option" tabindex="-1">Banana</div>
 </Listbox>
 ```
 
-```svelte
+```html
 <Listbox label="Select a color">
     {#each colors as color}
         <div

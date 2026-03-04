@@ -6,9 +6,9 @@ This component manages menu visibility, keyboard navigation, and focus. When ope
 
 ## Implementation Notes
 
-- Renders a `<div>` with `role="menu"` and `aria-label`, conditionally shown via `{#if open}`
-- Uses `$bindable(false)` for the `open` prop for two-way binding
-- `$state()` tracks the menu element reference for focus management
+- Renders a `<div>` with `role="menu"` and `aria-label`, conditionally shown via conditional rendering
+- Supports two-way binding on the `open` prop
+- reactive state tracks the menu element reference for focus management
 - `$effect()` focuses the first `[role="menuitem"]` when the menu opens
 - Keyboard handler navigates items with ArrowDown/ArrowUp (wrapping), Home/End, and Escape to close
 - Spreads `restProps` onto the menu container
@@ -17,12 +17,12 @@ This component manages menu visibility, keyboard navigation, and focus. When ope
 
 - `label`: string (required) -- accessible name for the context menu via `aria-label`
 - `open`: boolean (default: false) -- whether the menu is visible; bindable for two-way control
-- `children`: Snippet (required) -- menu item content (should include `role="menuitem"` elements)
+- `children`: slot (required) -- menu item content (should include `role="menuitem"` elements)
 
 ## Usage
 
-```svelte
-<ContextMenu label="Actions" bind:open>
+```html
+<ContextMenu label="Actions" open={open}>
   <li role="menuitem" tabindex="-1">Cut</li>
   <li role="menuitem" tabindex="-1">Copy</li>
   <li role="menuitem" tabindex="-1">Paste</li>

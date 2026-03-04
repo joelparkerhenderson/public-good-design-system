@@ -7,9 +7,9 @@ The native `<details>` element provides built-in accessibility support without r
 ## Implementation Notes
 
 - Renders native `<details>` and `<summary>` HTML elements for built-in browser accessibility
-- Uses `$bindable()` on the `open` prop with Svelte's `bind:open` directive for two-way state synchronization
+- Supports two-way binding on the `open` prop for two-way state synchronization on the `open` prop
 - The `summary` prop provides the clickable toggle text
-- Accepts a `children` Snippet for the expandable content area
+- Accepts a `children` slot for the expandable content area
 - Spreads `restProps` onto the `<details>` element for consumer customization
 - Similar to Collapsible but uses a more generic, standards-based API
 
@@ -17,22 +17,18 @@ The native `<details>` element provides built-in accessibility support without r
 
 - `summary`: string (required) -- text displayed in the summary toggle
 - `open`: boolean (default: false) -- whether the details section is expanded; bindable
-- `children`: Snippet (required) -- content revealed when expanded
+- `children`: slot (required) -- content revealed when expanded
 
 ## Usage
 
-```svelte
+```html
 <Details summary="More information">
   <p>Additional details shown when expanded.</p>
 </Details>
 ```
 
-```svelte
-<script lang="ts">
-  let showAdvanced = $state(false);
-</script>
-
-<Details summary="Advanced options" bind:open={showAdvanced}>
+```html
+<Details summary="Advanced options" open={showAdvanced}>
   <p>Configure advanced settings here.</p>
 </Details>
 

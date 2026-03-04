@@ -6,22 +6,22 @@ This component renders as a semantic `<dl>` (description list) element with an a
 
 ## Implementation Notes
 
-- Renders as `<dl aria-label={label}>` (description list) with a `children` Snippet
+- Renders as `<dl aria-label={label}>` (description list) with a `children` slot
 - Children typically contain `<dt>` (term) and `<dd>` (description) element pairs
 - Semantic `<dl>` element provides description list semantics for key-value pairs
-- Uses Svelte 5 `$props()` rune for prop destructuring
+- Uses props rune for prop destructuring
 - Spreads `...restProps` on the `<dl>` element for consumer extensibility
 - No hardcoded user-facing strings; all text comes through props and children
 
 ## Props
 
 - `label`: string (required) -- accessible label for the description list via `aria-label`
-- `children`: Snippet (required) -- list content, typically `<dt>`/`<dd>` pairs
+- `children`: slot (required) -- list content, typically `<dt>`/`<dd>` pairs
 - `...restProps`: any additional HTML attributes spread onto the `<dl>` element
 
 ## Usage
 
-```svelte
+```html
 <SummaryList label="Order summary">
     <dt>Product</dt><dd>Widget</dd>
     <dt>Quantity</dt><dd>3</dd>

@@ -12,7 +12,7 @@ This component is useful for displaying disk usage, battery level, password stre
 - The `min` and `max` props default to 0 and 100 respectively
 - `low`, `high`, and `optimum` are optional and default to undefined
 - Spreads `restProps` onto the meter for consumer customization
-- Svelte 5 pattern: standard `$props()` destructuring with typed props
+- pattern: standard props destructuring with typed props
 
 ## Props
 
@@ -27,7 +27,7 @@ This component is useful for displaying disk usage, battery level, password stre
 
 ## Usage
 
-```svelte
+```html
 <Meter label="Disk space" value={45} max={100} />
 ```
 

@@ -7,8 +7,8 @@ Tooltips are used to clarify the function or meaning of an element without clutt
 ## Implementation Notes
 
 - Renders a `<div>` with `role="tooltip"` when visible, removed from the DOM when hidden
-- Uses `{#if visible}` for conditional rendering, so the tooltip is fully removed from the DOM when not shown
-- Uses Svelte 5 `$bindable()` for two-way binding on the `visible` prop
+- Uses conditional rendering, so the tooltip is fully removed from the DOM when not shown
+- Supports two-way binding on the `visible` prop
 - The consumer is responsible for managing visibility (e.g., on hover/focus of a trigger element)
 - The `id` prop enables linking the tooltip to its trigger element via `aria-describedby`
 - Spreads `restProps` onto the div element for consumer extensibility
@@ -22,7 +22,7 @@ Tooltips are used to clarify the function or meaning of an element without clutt
 
 ## Usage
 
-```svelte
+```html
 <button aria-describedby="tip"
   onmouseenter={() => showTip = true}
   onmouseleave={() => showTip = false}
@@ -31,10 +31,10 @@ Tooltips are used to clarify the function or meaning of an element without clutt
 >
   Hover me
 </button>
-<Tooltip id="tip" label="Additional info" bind:visible={showTip} />
+<Tooltip id="tip" label="Additional info" visible={showTip} />
 ```
 
-```svelte
+```html
 <Tooltip id="help-tip" label="Click to submit your form" visible={true} />
 ```
 

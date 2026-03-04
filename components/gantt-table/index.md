@@ -15,11 +15,11 @@ This headless component renders a `<table>` element with `role="grid"` and an ac
 ## Props
 
 - `label`: string (required) -- accessible name describing the Gantt chart content, applied via `aria-label`
-- `children`: Snippet (required) -- table rows and cells representing tasks and timelines
+- `children`: slot (required) -- table rows and cells representing tasks and timelines
 
 ## Usage
 
-```svelte
+```html
 <GanttChart label="Project Alpha timeline">
     <thead>
         <tr><th>Task</th><th>Week 1</th><th>Week 2</th><th>Week 3</th></tr>

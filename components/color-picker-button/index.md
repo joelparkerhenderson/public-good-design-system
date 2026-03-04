@@ -24,15 +24,15 @@ This component is useful in color palette UIs, theme builders, product customiza
 
 ## Usage
 
-```svelte
+```html
 <ColorPicker color="#ff0000" label="Red" onclick={handleSelect} />
 ```
 
-```svelte
+```html
 <ColorPicker color="#0066cc" label="Blue" selected={true} onclick={handleSelect} />
 ```
 
-```svelte
+```html
 <ColorPicker color="#cccccc" label="Gray" disabled={true} />
 ```
 

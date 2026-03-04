@@ -9,18 +9,18 @@ This component is useful for initials, status indicators, rating symbols, decora
 - Renders as a `<span>` wrapper around the character content
 - Uses `role="img"` with `aria-label` for meaningful characters so assistive technology announces the character's purpose
 - Uses `role="presentation"` with `aria-hidden="true"` for decorative characters to hide from screen readers
-- Uses Svelte 5 `Snippet` for children content
+- Uses `slot` for children content
 - Spreads `...restProps` on the root `<span>` element for consumer customization
 
 ## Props
 
 - `label`: string (optional) -- accessible description of the character for screen readers
 - `decorative`: boolean (default: false) -- when true, hides the character from assistive technology
-- `children`: Snippet (required) -- the character to display
+- `children`: slot (required) -- the character to display
 
 ## Usage
 
-```svelte
+```html
 <Character label="Check mark">✓</Character>
 <Character label="Warning symbol">⚠</Character>
 <Character decorative>★</Character>

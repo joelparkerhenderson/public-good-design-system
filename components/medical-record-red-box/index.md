@@ -10,20 +10,20 @@ This component is designed for healthcare applications where patient safety info
 - Designed for critical patient safety information such as life-threatening allergies
 - `aria-label` provides the accessible name for the alert region
 - `role="alert"` creates an implicit assertive live region (equivalent to `aria-live="assertive"`)
-- Uses Svelte 5 `$props()` rune for prop destructuring
-- Uses `children` Snippet for flexible content rendering
+- Uses props rune for prop destructuring
+- Uses `children` slot for flexible content rendering
 - Spreads `...restProps` on the root `<aside>` element for consumer extensibility
 - No hardcoded user-facing strings; all text comes through props and children
 
 ## Props
 
 - `label`: string (required) -- accessible name for the danger box via `aria-label`
-- `children`: Snippet (required) -- the danger box content
+- `children`: slot (required) -- the danger box content
 - `...restProps`: any additional HTML attributes spread onto the `<aside>` element
 
 ## Usage
 
-```svelte
+```html
 <MedicalRecordRedBox.md label="Critical allergy">
     <p>Patient has a life-threatening allergy to latex.</p>
 </MedicalRecordRedBox.md>

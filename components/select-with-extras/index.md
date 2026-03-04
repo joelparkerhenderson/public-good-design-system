@@ -6,29 +6,29 @@ Use SelectWithExtras when you need a native select dropdown with additional visu
 
 ## Implementation Notes
 
-- Renders a wrapper `<div>` containing optional `before` snippet, a native `<select>`, and optional `after` snippet
-- The `<select>` element receives `aria-label` for accessibility, with `bind:value` for two-way binding
+- Renders a wrapper `<div>` containing optional `before` slot, a native `<select>`, and optional `after` slot
+- The `<select>` element receives `aria-label` for accessibility, with two-way binding
 - Supports `required` and `disabled` attributes on the native select
-- Uses Svelte 5 `$bindable()` for the `value` prop, enabling `bind:value` from the parent
-- The `before` and `after` snippets are conditionally rendered only when provided
+- Supports two-way binding for the `value` prop, enabling two-way `value` binding from the parent
+- The `before` and `after` slots are conditionally rendered only when provided
 - Spreads `restProps` onto the wrapper div for consumer customization
 
 ## Props
 
 - `label`: string (required) -- accessible label for the select element, applied via `aria-label`
-- `value`: string (default: `""`) -- the currently selected value; bindable via `bind:value`
+- `value`: string (default: `""`) -- the currently selected value; two-way bindable via `value`
 - `required`: boolean (default: `false`) -- whether the select is required for form validation
 - `disabled`: boolean (default: `false`) -- whether the select is disabled
-- `children`: Snippet (required) -- `<option>` elements for the select
-- `before`: Snippet (optional) -- content rendered before the select element
-- `after`: Snippet (optional) -- content rendered after the select element
+- `children`: slot (required) -- `<option>` elements for the select
+- `before`: slot (optional) -- content rendered before the select element
+- `after`: slot (optional) -- content rendered after the select element
 - `...restProps`: unknown -- additional attributes spread onto the wrapper `<div>` element
 
 ## Usage
 
-```svelte
-<SelectWithExtras label="Country" bind:value>
-  {#snippet before()}<span>Flag:</span>{/snippet}
+```html
+<SelectWithExtras label="Country" value={value}>
+  <span>Flag:</span>
   <option value="us">USA</option>
   <option value="uk">United Kingdom</option>
 </SelectWithExtras>

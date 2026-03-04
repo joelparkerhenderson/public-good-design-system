@@ -7,7 +7,7 @@ Search inputs are commonly used for site-wide search bars, filtering lists, and 
 ## Implementation Notes
 
 - Renders a single `<input type="search">` element for semantic search behavior
-- Uses `$bindable()` for the `value` prop enabling two-way data binding with `bind:value`
+- Supports two-way binding for the `value` prop enabling two-way data binding with two-way `value` binding
 - The `aria-label` prop provides an accessible name since there is no visible `<label>` element
 - Supports rest props via `...restProps` for extensibility (e.g., `id`, `name`, `placeholder`, `class`)
 - The search type may trigger browser-native clear buttons and search-specific behaviors
@@ -15,19 +15,19 @@ Search inputs are commonly used for site-wide search bars, filtering lists, and 
 ## Props
 
 - `label`: string (required) -- accessible name applied via `aria-label`
-- `value`: string (default: "") -- current search text, bindable with `bind:value`
+- `value`: string (default: "") -- current search text, bindable with two-way `value` binding
 - `required`: boolean (default: false) -- whether the field must be filled before form submission
 - `disabled`: boolean (default: false) -- whether the input is disabled
 - `...restProps`: spread onto the `<input>` element
 
 ## Usage
 
-```svelte
-<SearchInput label="Search" bind:value />
+```html
+<SearchInput label="Search" value={value} />
 ```
 
-```svelte
-<SearchInput label="Filter products" bind:value={query} required />
+```html
+<SearchInput label="Filter products" value={query} required />
 ```
 
 ## Keyboard Interactions

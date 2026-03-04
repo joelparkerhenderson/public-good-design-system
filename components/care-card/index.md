@@ -12,19 +12,19 @@ Each care card has a heading that describes the action and a body containing the
 - `aria-label` defaults to the heading text, overridable via the `label` prop
 - Uses `<h2>` for the heading element
 - `data-type` attribute exposes the urgency level for consumer CSS styling
-- Content is provided through the Svelte 5 `children` Snippet
+- Content is provided through child elements
 
 ## Props
 
 - `type`: "non-urgent" | "urgent" | "immediate" (default: "non-urgent") -- urgency level
 - `heading`: string (required) -- heading text for the care card
 - `label`: string (optional) -- `aria-label` override; defaults to heading text
-- `children`: Snippet (required) -- the care card body content
+- `children`: slot (required) -- the care card body content
 - `...restProps`: Any additional HTML attributes passed to the `<section>` element
 
 ## Usage
 
-```svelte
+```html
 <CareCard type="non-urgent" heading="Speak to a GP if:">
   <ul><li>you have symptoms</li></ul>
 </CareCard>

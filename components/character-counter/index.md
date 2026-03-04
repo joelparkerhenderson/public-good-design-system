@@ -7,7 +7,7 @@ The component uses `role="status"` with `aria-live="polite"` so screen readers a
 ## Implementation Notes
 
 - Renders as a `<span>` element with `role="status"` and `aria-live="polite"` for non-intrusive screen reader announcements
-- Uses `$derived()` to compute `remaining` count and `overLimit` boolean from `count` and `max` props
+- Uses derived value to compute `remaining` count and `overLimit` boolean from `count` and `max` props
 - Displays "count / max" when `max` is provided, otherwise displays just the count
 - Exposes data attributes for consumer CSS: `data-count`, `data-max`, `data-remaining`, `data-over-limit`
 - The `data-over-limit` attribute is only present when the count exceeds the max, enabling conditional styling
@@ -21,7 +21,7 @@ The component uses `role="status"` with `aria-live="polite"` so screen readers a
 
 ## Usage
 
-```svelte
+```html
 <CharacterCounter count={text.length} max={280} label="Characters" />
 ```
 

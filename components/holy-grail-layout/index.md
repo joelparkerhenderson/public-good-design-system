@@ -13,11 +13,11 @@ The component is intentionally minimal, serving as a structural container. All l
 
 ## Props
 
-- `children`: Snippet (required) -- layout content, typically header, nav, main, aside, and footer elements
+- `children`: slot (required) -- layout content, typically header, nav, main, aside, and footer elements
 
 ## Usage
 
-```svelte
+```html
 <HolyGrailLayout>
   <header>Site Header</header>
   <nav>Navigation</nav>

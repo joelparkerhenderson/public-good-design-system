@@ -8,24 +8,24 @@ The semantic `<header>` element helps assistive technologies identify the header
 
 - Renders a single `<header>` element as a semantic landmark
 - Uses an optional `aria-label` to provide an accessible name, which is helpful when a page has multiple header regions
-- Uses Svelte 5 Snippet for the `children` prop
+- Uses slot for the `children` prop
 - Spreads `restProps` onto the header element for consumer extensibility
 
 ## Props
 
 - `label`: string (default: undefined) -- optional accessible name applied via `aria-label`, useful for distinguishing multiple headers
-- `children`: Snippet (required) -- content rendered inside the header element
+- `children`: slot (required) -- content rendered inside the header element
 - `...restProps`: unknown -- additional attributes spread onto the header element
 
 ## Usage
 
-```svelte
+```html
 <Header label="Site header">
   <h1>My Site</h1>
 </Header>
 ```
 
-```svelte
+```html
 <Header>
   <h1>Page Title</h1>
   <nav>
@@ -35,7 +35,7 @@ The semantic `<header>` element helps assistive technologies identify the header
 </Header>
 ```
 
-```svelte
+```html
 <Header label="Article header">
   <h2>Article Title</h2>
   <p>Published on 2024-01-15</p>

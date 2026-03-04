@@ -8,7 +8,7 @@ This component is commonly used at the top of documentation pages, articles, or 
 
 - Renders a `<nav>` element with `aria-label` for accessible landmark identification
 - Contains an `<ol>` (ordered list) to convey the sequential nature of page sections
-- Children snippet is rendered inside the ordered list
+- Children slot is rendered inside the ordered list
 - Label prop is required for accessibility, distinguishing this navigation from others on the page
 - Spreads `restProps` on the outer `<nav>` element
 - This is a compound component; use with ContentsListItem for individual entries
@@ -16,12 +16,12 @@ This component is commonly used at the top of documentation pages, articles, or 
 ## Props
 
 - `label`: string (required) -- accessible name for the navigation landmark (e.g., "Contents", "On this page")
-- `children`: Snippet (required) -- list items, typically ContentsListItem components or `<li>` elements with links
+- `children`: slot (required) -- list items, typically ContentsListItem components or `<li>` elements with links
 - `...restProps`: any additional HTML attributes spread onto the `<nav>` element
 
 ## Usage
 
-```svelte
+```html
 <ContentsList label="Contents">
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#usage">Usage</a></li>

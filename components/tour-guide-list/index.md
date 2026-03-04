@@ -10,26 +10,22 @@ Use TourGuideList when you need to walk users through a sequence of steps in a m
 
 ## Syntax
 
-```svelte
-<script>
-  import TourGuideList from "./TourGuideList.svelte";
-</script>
-
-<TourGuideList label="..." bind:active>
+```html
+<TourGuideList label="..." active={active}>
   <!-- TourGuideListItem children -->
 </TourGuideList>
 ```
 
 ## Usage
 
-```svelte
-<TourGuideList label="Getting started" bind:active>
+```html
+<TourGuideList label="Getting started" active={active}>
   <p>Welcome to the app!</p>
 </TourGuideList>
 ```
 
-```svelte
-<TourGuideList label="Feature tour" bind:active={showTour}>
+```html
+<TourGuideList label="Feature tour" active={showTour}>
   <TourGuideListItem label="Welcome" current={step === 0} stepNumber={1} totalSteps={3}>
     <p>Welcome to the app!</p>
     <button onclick={() => step++}>Next</button>
@@ -51,25 +47,18 @@ Use TourGuideList when you need to walk users through a sequence of steps in a m
 | Prop           | Type            | Default    | Description                                                        |
 | -------------- | --------------- | ---------- | ------------------------------------------------------------------ |
 | `label`        | `string`        | (required) | Accessible name for the tour dialog via `aria-label`               |
-| `active`       | `boolean`       | `false`    | Whether the tour is currently visible; bindable with `bind:active` |
-| `children`     | `Snippet`       | (required) | Tour step content, navigation controls, and any additional UI      |
+| `active`       | `boolean`       | `false`    | Whether the tour is currently visible; bindable with two-way `active` binding |
+| `children`     | `slot`       | (required) | Tour step content, navigation controls, and any additional UI      |
 | `...restProps` | HTML attributes |            | Additional attributes spread onto the dialog `<div>`               |
 
 ## Examples
 
 With step management:
 
-```svelte
-<script>
-  import TourGuideList from "./TourGuideList.svelte";
-  import TourGuideListItem from "../tour-guide-list-item/TourGuideListItem.svelte";
-  let active = $state(false);
-  let step = $state(0);
-</script>
-
+```html
 <button onclick={() => { active = true; step = 0; }}>Start tour</button>
 
-<TourGuideList label="App walkthrough" bind:active>
+<TourGuideList label="App walkthrough" active={active}>
   <TourGuideListItem label="Step one" current={step === 0} stepNumber={1} totalSteps={2}>
     <p>First step content</p>
     <button onclick={() => step++}>Next</button>
@@ -91,15 +80,6 @@ With step management:
 - `aria-modal="true"` -- indicates the dialog is modal and content behind it is inert
 - `aria-label={label}` -- provides an accessible name describing the tour
 - `tabindex="-1"` -- allows the dialog element to receive focus for keyboard event handling
-
-## Claude Rules
-
-- Always use `TourGuideList` (not `Tour` or `TourGuide`)
-- Always include the required `label` prop
-- Pair with TourGuideListItem for individual steps
-- Use Svelte 5 patterns (`$bindable` for active, Snippet for children)
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - WAI-ARIA Dialog Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/

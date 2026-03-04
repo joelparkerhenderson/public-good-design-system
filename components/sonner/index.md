@@ -16,11 +16,11 @@ Unlike modal dialogs that interrupt workflow, toast notifications communicate fe
 ## Props
 
 - `label`: string (required) -- accessible name identifying the notification area, applied via `aria-label`
-- `children`: Snippet (required) -- the toast notification content
+- `children`: slot (required) -- the toast notification content
 
 ## Usage
 
-```svelte
+```html
 <Sonner label="Notifications">
     <div role="status">File saved successfully.</div>
 </Sonner>

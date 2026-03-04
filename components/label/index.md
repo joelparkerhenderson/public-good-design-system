@@ -8,19 +8,19 @@ Properly associated labels are essential for form usability. When a user clicks 
 
 - Renders a native `<label>` HTML element
 - Uses the `for` prop (mapped from the reserved keyword via `for: forProp`) to associate with a form control by ID
-- Content is provided via the `children` snippet
+- Content is provided via the `children` slot
 - Rest props are spread onto the `<label>` element for consumer customization
 - The `for` prop is optional, allowing labels to wrap their associated control directly
 
 ## Props
 
 - `for`: string (optional) -- the `id` of the associated form control, rendered as the HTML `for` attribute
-- `children`: Snippet (required) -- the label text content
+- `children`: slot (required) -- the label text content
 - `...restProps`: unknown -- additional attributes spread onto the `<label>` element
 
 ## Usage
 
-```svelte
+```html
 <!-- Label linked to a form control by ID -->
 <Label for="email">Email address</Label>
 <input id="email" type="email" />

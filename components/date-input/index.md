@@ -2,13 +2,13 @@
 
 A date input provides a headless native HTML date input element with accessible labelling via `aria-label`. It is a minimal wrapper for `<input type="date">` that leverages the browser's built-in date picker for date selection.
 
-This component is useful in forms where users need to enter a calendar date. The value is stored in ISO 8601 `YYYY-MM-DD` format. It supports min and max constraints to restrict the allowable date range, and integrates with Svelte 5 two-way binding for reactive form state.
+This component is useful in forms where users need to enter a calendar date. The value is stored in ISO 8601 `YYYY-MM-DD` format. It supports min and max constraints to restrict the allowable date range, and integrates with two-way binding for reactive form state.
 
 ## Implementation Notes
 
 - Renders a single `<input type="date">` element with no wrapper
 - Uses `aria-label` for accessible naming instead of a visible `<label>` element
-- Uses Svelte 5 `$bindable()` for two-way binding on the `value` prop
+- Supports two-way binding on the `value` prop
 - The browser provides the native date picker UI
 - Spreads `restProps` onto the input element for consumer extensibility
 
@@ -24,16 +24,16 @@ This component is useful in forms where users need to enter a calendar date. The
 
 ## Usage
 
-```svelte
-<DateInput label="Birth date" bind:value />
+```html
+<DateInput label="Birth date" value={value} />
 ```
 
-```svelte
-<DateInput label="Deadline" bind:value min="2024-01-01" max="2024-12-31" />
+```html
+<DateInput label="Deadline" value={value} min="2024-01-01" max="2024-12-31" />
 ```
 
-```svelte
-<DateInput label="Start date" bind:value required disabled={isLocked} />
+```html
+<DateInput label="Start date" value={value} required disabled={isLocked} />
 ```
 
 ## Keyboard Interactions

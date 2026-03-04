@@ -19,15 +19,15 @@ This component pairs with PostalCodeInput to form an Input/View pattern: PostalC
 
 ## Usage
 
-```svelte
+```html
 <PostalCodeView text="90210" />
 ```
 
-```svelte
+```html
 <PostalCodeView text="SW1A 1AA" />
 ```
 
-```svelte
+```html
 <p>Your postal code: <PostalCodeView text={postalCode} /></p>
 ```
 

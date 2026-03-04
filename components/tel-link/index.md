@@ -20,11 +20,11 @@ The component is useful for contact pages, business listings, user profiles, cus
 
 ## Usage
 
-```svelte
+```html
 <TelLink phone="+1-555-0100" />
 ```
 
-```svelte
+```html
 <TelLink phone="+1-555-0100" label="Call customer support" />
 ```
 

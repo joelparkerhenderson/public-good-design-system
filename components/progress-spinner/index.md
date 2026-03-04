@@ -7,18 +7,18 @@ A progress spinner indicates an ongoing loading or processing state where the co
 - Renders a `<div>` with `role="status"` for implicit live region semantics
 - Uses `aria-live="polite"` to ensure screen readers announce the loading state without interruption
 - Provides `aria-label` for accessible naming of the loading state
-- Accepts an optional `children` Snippet for content inside (e.g., loading text)
+- Accepts an optional `children` slot for content inside (e.g., loading text)
 - Spreads `restProps` for consumer customization
 
 ## Props
 
 - `label`: string (required) -- accessible name describing the loading state via `aria-label`
-- `children`: Snippet (default: `undefined`) -- optional content rendered inside (e.g., "Loading...")
+- `children`: slot (default: `undefined`) -- optional content rendered inside (e.g., "Loading...")
 - `...restProps`: unknown -- additional attributes spread onto the `<div>`
 
 ## Usage
 
-```svelte
+```html
 <ProgressSpinner label="Loading data" />
 ```
 

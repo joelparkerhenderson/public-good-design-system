@@ -7,7 +7,7 @@ This component is useful in applications that need custom file operation interfa
 ## Implementation Notes
 
 - Conditionally renders a `<dialog open>` element only when `open` is true
-- Uses `$bindable()` on the `open` prop for two-way state binding
+- Supports two-way binding on the `open` prop for two-way state binding
 - Uses the native `<dialog>` HTML element with the `open` attribute
 - Sets `tabindex="-1"` to allow the dialog to receive focus programmatically
 - Escape key handler sets `open` to `false`
@@ -16,13 +16,13 @@ This component is useful in applications that need custom file operation interfa
 ## Props
 
 - `label`: string (required) -- accessible name for the dialog, applied as `aria-label`
-- `open`: boolean (default: false) -- whether the dialog is visible, bindable via `bind:open`
-- `children`: Snippet (required) -- dialog content
+- `open`: boolean (default: false) -- whether the dialog is visible, two-way bindable via `open`
+- `children`: slot (required) -- dialog content
 
 ## Usage
 
-```svelte
-<FileDialog label="Open file" bind:open>
+```html
+<FileDialog label="Open file" open={open}>
   <ul>
     <li>document.txt</li>
     <li>image.png</li>

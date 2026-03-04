@@ -8,18 +8,18 @@ Typically, each breadcrumb list item contains a link for navigable ancestor page
 
 - Renders as a semantic `<li>` element for use inside a breadcrumb `<nav>` / `<ol>` structure
 - Supports `aria-current="page"` via the `current` prop to indicate the active page in the breadcrumb trail
-- Content is provided through the children snippet, typically an `<a>` link or plain text
+- Content is provided through the children slot, typically an `<a>` link or plain text
 - Passes through all additional HTML attributes via `...restProps`
-- Uses Svelte 5 `Snippet` for children content
+- Uses `slot` for children content
 
 ## Props
 
 - `current`: boolean (default: false) -- whether this item represents the current page in the breadcrumb trail
-- `children`: Snippet (required) -- breadcrumb content, typically a link or text
+- `children`: slot (required) -- breadcrumb content, typically a link or text
 
 ## Usage
 
-```svelte
+```html
 <BreadcrumbNavListItem><a href="/">Home</a></BreadcrumbNavListItem>
 <BreadcrumbNavListItem current>About</BreadcrumbNavListItem>
 ```

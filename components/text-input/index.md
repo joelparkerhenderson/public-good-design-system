@@ -8,8 +8,8 @@ This component is suitable for any form field requiring free-text entry. It supp
 
 - Renders a native `<input type="text">` element
 - Uses `aria-label` for accessible naming (no visible label element included; consumers can add their own)
-- Uses `$bindable()` for the `value` prop, enabling `bind:value` in the parent
-- Uses Svelte `bind:value` internally for reactive two-way binding
+- Supports two-way binding for the `value` prop, enabling two-way `value` binding in the parent
+- Supports two-way binding on the `value` prop
 - Supports standard HTML form attributes: `required`, `disabled`
 - Spreads `restProps` for consumer customization (e.g., `placeholder`, `maxlength`, `pattern`)
 
@@ -23,16 +23,16 @@ This component is suitable for any form field requiring free-text entry. It supp
 
 ## Usage
 
-```svelte
-<TextInput label="Full name" bind:value />
+```html
+<TextInput label="Full name" value={value} />
 ```
 
-```svelte
-<TextInput label="Email" bind:value={email} required={true} />
+```html
+<TextInput label="Email" value={email} required={true} />
 ```
 
-```svelte
-<TextInput label="Notes" bind:value={notes} disabled={true} />
+```html
+<TextInput label="Notes" value={notes} disabled={true} />
 ```
 
 ## Keyboard Interactions

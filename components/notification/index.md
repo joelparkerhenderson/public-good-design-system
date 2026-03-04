@@ -10,19 +10,19 @@ The component uses `role="status"` with `aria-live="polite"` for standard notifi
 - Uses `role="status"` and `aria-live="polite"` by default for non-urgent notifications
 - When `urgent` is true, switches to `role="alert"` and `aria-live="assertive"`
 - The `label` prop provides an accessible name via `aria-label`
-- Content is provided via the `children` snippet
+- Content is provided via the `children` slot
 - Rest props are spread onto the `<div>` element
 
 ## Props
 
 - `label`: string (optional) -- accessible name for the notification region via `aria-label`
 - `urgent`: boolean (default: false) -- when true, uses `role="alert"` and `aria-live="assertive"` instead of `role="status"` and `aria-live="polite"`
-- `children`: Snippet (required) -- the notification message content
+- `children`: slot (required) -- the notification message content
 - `...restProps`: unknown -- additional attributes spread onto the `<div>` element
 
 ## Usage
 
-```svelte
+```html
 <!-- Non-urgent notification (polite) -->
 <Notification label="Success">Your changes have been saved.</Notification>
 

@@ -10,11 +10,7 @@ Use TreeNavList when you need a hierarchical list with keyboard navigation. Comm
 
 ## Syntax
 
-```svelte
-<script>
-  import TreeNavList from "./TreeNavList.svelte";
-</script>
-
+```html
 <TreeNavList label="...">
   <!-- TreeNavListItem children -->
 </TreeNavList>
@@ -22,7 +18,7 @@ Use TreeNavList when you need a hierarchical list with keyboard navigation. Comm
 
 ## Usage
 
-```svelte
+```html
 <TreeNavList label="File browser">
   <TreeNavListItem tabindex="0">Documents</TreeNavListItem>
   <TreeNavListItem tabindex="-1">Photos</TreeNavListItem>
@@ -34,14 +30,14 @@ Use TreeNavList when you need a hierarchical list with keyboard navigation. Comm
 | Prop           | Type            | Default    | Description                                                         |
 | -------------- | --------------- | ---------- | ------------------------------------------------------------------- |
 | `label`        | `string`        | (required) | Accessible name for the tree via `aria-label`                       |
-| `children`     | `Snippet`       | (required) | Tree item elements with `role="treeitem"` to render inside the list |
+| `children`     | `slot`       | (required) | Tree item elements with `role="treeitem"` to render inside the list |
 | `...restProps` | HTML attributes |            | Additional attributes spread onto the `<ul>` element                |
 
 ## Examples
 
 File browser with nesting:
 
-```svelte
+```html
 <TreeNavList label="Project files">
   <TreeNavListItem tabindex="0" aria-expanded="true">
     src
@@ -65,16 +61,6 @@ File browser with nesting:
 
 - `role="tree"` -- identifies the container as a tree widget for hierarchical data
 - `aria-label={label}` -- provides an accessible name describing the purpose of the tree
-
-## Claude Rules
-
-- Always use `TreeNavList` (not `Tree`)
-- Always include the required `label` prop
-- Pair with TreeNavListItem for individual items
-- Use Svelte 5 patterns (`$state` for refs, Snippet for children)
-- Children must have `role="treeitem"` and `tabindex` attributes
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - WAI-ARIA Tree View Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/treeview/

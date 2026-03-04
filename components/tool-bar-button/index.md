@@ -2,7 +2,7 @@
 
 A tool bar button is a single button within a toolbar, rendered as a native `<button>` element for proper keyboard and screen reader support. It is designed to be placed inside a ToolBar container that manages roving focus keyboard navigation.
 
-The component uses `<button type="button">` to avoid unintended form submissions and supports the `disabled` attribute for disabling interaction. Content is provided through the children snippet, allowing full flexibility in button content.
+The component uses `<button type="button">` to avoid unintended form submissions and supports the `disabled` attribute for disabling interaction. Content is provided through the children slot, allowing full flexibility in button content.
 
 ## Help
 
@@ -10,21 +10,17 @@ Use ToolBarButton for individual action buttons within a ToolBar. Common scenari
 
 ## Syntax
 
-```svelte
-<script>
-  import ToolBarButton from "./ToolBarButton.svelte";
-</script>
-
+```html
 <ToolBarButton>Label</ToolBarButton>
 ```
 
 ## Usage
 
-```svelte
+```html
 <ToolBarButton>Bold</ToolBarButton>
 ```
 
-```svelte
+```html
 <ToolBarButton disabled>Redo</ToolBarButton>
 ```
 
@@ -33,14 +29,14 @@ Use ToolBarButton for individual action buttons within a ToolBar. Common scenari
 | Prop           | Type            | Default    | Description                                            |
 | -------------- | --------------- | ---------- | ------------------------------------------------------ |
 | `disabled`     | `boolean`       | `false`    | Whether the button is disabled                         |
-| `children`     | `Snippet`       | (required) | Button content                                         |
+| `children`     | `slot`       | (required) | Button content                                         |
 | `...restProps` | HTML attributes |            | Additional attributes passed to the `<button>` element |
 
 ## Examples
 
 Inside a ToolBar:
 
-```svelte
+```html
 <ToolBar label="Text formatting">
   <ToolBarButton>Bold</ToolBarButton>
   <ToolBarButton>Italic</ToolBarButton>
@@ -59,15 +55,6 @@ Inside a ToolBar:
 
 - Implicit `button` role from the `<button>` element
 - `disabled` attribute communicates disabled state to assistive technology
-
-## Claude Rules
-
-- Always use `ToolBarButton` (not `ToolBarItem`)
-- Always place inside a ToolBar container
-- Always provide children content for the button label
-- Use Svelte 5 patterns (Snippet for children)
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - WAI-ARIA Toolbar Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/toolbar/

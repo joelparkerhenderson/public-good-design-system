@@ -16,11 +16,11 @@ The component prevents default form submission behavior, allowing the consumer's
 - `label`: string (required) -- accessible name for the filter region, applied as `aria-label`
 - `onsubmit`: (event: SubmitEvent) => void (default: undefined) -- callback when the filter form is submitted
 - `onreset`: (event: Event) => void (default: undefined) -- callback when the filter form is reset
-- `children`: Snippet (required) -- filter controls rendered inside the form
+- `children`: slot (required) -- filter controls rendered inside the form
 
 ## Usage
 
-```svelte
+```html
 <DataFilterForm label="Filter results" onsubmit={applyFilters}>
   <label>Category <select>...</select></label>
   <button type="submit">Apply</button>

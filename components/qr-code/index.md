@@ -14,11 +14,11 @@ The component serves as a semantic container that consumers populate with their 
 ## Props
 
 - `label`: string (required) -- accessible description of the QR code content via `aria-label`
-- `children`: Snippet (required) -- QR code rendering (SVG, canvas, or other visual output)
+- `children`: slot (required) -- QR code rendering (SVG, canvas, or other visual output)
 
 ## Usage
 
-```svelte
+```html
 <QrCode label="Scan to visit example.com">
   <svg><!-- QR code SVG paths --></svg>
 </QrCode>

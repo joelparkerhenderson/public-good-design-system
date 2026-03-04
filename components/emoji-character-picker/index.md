@@ -15,11 +15,11 @@ This headless component renders a `<div>` with `role="grid"` and an accessible l
 ## Props
 
 - `label`: string (required) -- accessible name describing the picker, applied via `aria-label`
-- `children`: Snippet (required) -- the grid content containing emoji characters
+- `children`: slot (required) -- the grid content containing emoji characters
 
 ## Usage
 
-```svelte
+```html
 <EmojiCharacterPicker label="Choose an emoji">
     <div role="row">
         <button role="gridcell">😀</button>

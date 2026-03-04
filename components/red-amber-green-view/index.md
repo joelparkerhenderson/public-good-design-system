@@ -9,7 +9,7 @@ The component renders as a `<span>` element with an accessible label, making the
 - Renders as `<span aria-label={label}>` displaying the RAG status value as text content
 - Read-only display component, not interactive
 - Value defaults to an empty string when not provided
-- Uses Svelte 5 `$props()` rune for prop destructuring
+- Uses props rune for prop destructuring
 - Spreads `...restProps` on the `<span>` element for consumer extensibility
 - No hardcoded user-facing strings; label and value are fully configurable
 
@@ -21,11 +21,11 @@ The component renders as a `<span>` element with an accessible label, making the
 
 ## Usage
 
-```svelte
+```html
 <RedAmberGreenView label="Project status" value="green" />
 ```
 
-```svelte
+```html
 <RedAmberGreenView label="Health check" value={status} />
 ```
 

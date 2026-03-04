@@ -22,11 +22,11 @@ The consumer can override the accepted file types, control required/disabled sta
 
 ## Usage
 
-```svelte
+```html
 <ImageFileInput label="Upload profile photo" />
 ```
 
-```svelte
+```html
 <ImageFileInput label="Upload document scan" accept="image/png, image/jpeg" required />
 ```
 

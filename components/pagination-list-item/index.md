@@ -7,17 +7,17 @@ Consumers are responsible for adding `aria-current="page"` on the active page li
 ## Implementation Notes
 
 - Renders as a semantic `<li>` element for use inside a PaginationList `<ul>` / `<nav>` structure
-- Content is provided through the children snippet, typically a link or button for a page number
+- Content is provided through the children slot, typically a link or button for a page number
 - Passes through all additional HTML attributes via `...restProps`
-- Uses Svelte 5 `Snippet` for children content
+- Uses `slot` for children content
 
 ## Props
 
-- `children`: Snippet (required) -- item content, typically a link (e.g., `<a href="/page/2">2</a>`) or button
+- `children`: slot (required) -- item content, typically a link (e.g., `<a href="/page/2">2</a>`) or button
 
 ## Usage
 
-```svelte
+```html
 <PaginationListItem><a href="/page/1">1</a></PaginationListItem>
 ```
 

@@ -14,11 +14,11 @@ The component serves as a semantic container that consumers populate with their 
 ## Props
 
 - `label`: string (required) -- accessible description of the signature field via `aria-label`
-- `children`: Snippet (required) -- drawing surface (canvas, SVG, or other input mechanism)
+- `children`: slot (required) -- drawing surface (canvas, SVG, or other input mechanism)
 
 ## Usage
 
-```svelte
+```html
 <SignaturePad label="Sign to accept terms">
   <canvas width="400" height="200"></canvas>
 </SignaturePad>

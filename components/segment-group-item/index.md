@@ -12,19 +12,18 @@ Use SegmentGroupItem inside a SegmentGroup to build custom segmented controls su
 - `data-value` attribute exposes the segment value for CSS styling or JS queries
 - Supports `disabled` prop to prevent interaction
 - Spreads `restProps` onto the button for consumer customization
-- Uses Svelte 5 `$props()` with TypeScript typing
 
 ## Props
 
 - `checked`: boolean (default `false`) -- whether this segment is currently selected
 - `value`: string (default `""`) -- value associated with this segment, exposed as `data-value`
 - `disabled`: boolean (default `false`) -- whether the segment is disabled
-- `children`: Snippet (required) -- label content to render inside the button
+- `children`: slot (required) -- label content to render inside the button
 - `...restProps`: unknown -- additional attributes spread onto the `<button>` element
 
 ## Usage
 
-```svelte
+```html
 <SegmentGroup label="View">
   <SegmentGroupItem checked={mode === 'grid'} value="grid" onclick={() => mode = 'grid'}>
     Grid

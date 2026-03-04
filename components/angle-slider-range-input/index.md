@@ -14,10 +14,10 @@ like 15 or 45 degrees.
 ## Implementation Notes
 
 - Built on native `<input type="range">` for inherent slider behavior
-- Uses `$bindable()` for two-way value binding
+- Supports two-way binding for two-way value binding
 - `aria-valuetext` provides human-readable angle text (e.g., "90") for screen readers
 - Customizable suffix via `valueTextSuffix` prop (default "°", can be " degrees" etc.)
-- `$derived()` computes valueText reactively from value and suffix
+- derived value computes valueText reactively from value and suffix
 
 ## Props
 
@@ -36,35 +36,23 @@ like 15 or 45 degrees.
 
 Basic angle slider range input:
 
-```svelte
-<script lang="ts">
-  import AngleSliderRangeInput from './AngleSliderRangeInput.svelte';
-
-  let angle = $state(0);
-</script>
-
-<AngleSliderRangeInput label="Rotation" bind:value={angle} />
+```html
+<AngleSliderRangeInput label="Rotation" value={angle} />
 <p>Angle: {angle} degrees</p>
 ```
 
 With step snapping (every 15 degrees):
 
-```svelte
-<script lang="ts">
-  import AngleSliderRangeInput from './AngleSliderRangeInput.svelte';
-
-  let direction = $state(90);
-</script>
-
-<AngleSliderRangeInput label="Direction" bind:value={direction} step={15} />
+```html
+<AngleSliderRangeInput label="Direction" value={direction} step={15} />
 ```
 
 Custom range and suffix:
 
-```svelte
+```html
 <AngleSliderRangeInput
   label="Tilt"
-  bind:value={tilt}
+  value={tilt}
   min={-90}
   max={90}
   valueTextSuffix=" degrees"
@@ -73,15 +61,15 @@ Custom range and suffix:
 
 Disabled slider:
 
-```svelte
+```html
 <AngleSliderRangeInput label="Locked rotation" value={45} disabled />
 ```
 
 Within a form:
 
-```svelte
+```html
 <form>
-  <AngleSliderRangeInput label="Gradient angle" bind:value={angle} name="gradient-angle" id="gradient" />
+  <AngleSliderRangeInput label="Gradient angle" value={angle} name="gradient-angle" id="gradient" />
 </form>
 ```
 

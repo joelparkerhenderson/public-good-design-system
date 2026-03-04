@@ -10,11 +10,7 @@ Use AccordionNav as the outermost container for an accordion component. Common s
 
 ## Syntax
 
-```svelte
-<script>
-  import AccordionNav from "./AccordionNav.svelte";
-</script>
-
+```html
 <AccordionNav label="...">
   <!-- AccordionList with AccordionListItem children -->
 </AccordionNav>
@@ -22,7 +18,7 @@ Use AccordionNav as the outermost container for an accordion component. Common s
 
 ## Usage
 
-```svelte
+```html
 <AccordionNav label="FAQ">
   <AccordionList>
     <AccordionListItem>
@@ -38,14 +34,14 @@ Use AccordionNav as the outermost container for an accordion component. Common s
 | Prop           | Type            | Default    | Description                                               |
 | -------------- | --------------- | ---------- | --------------------------------------------------------- |
 | `label`        | `string`        | (required) | Accessible name for the accordion region via `aria-label` |
-| `children`     | `Snippet`       | (required) | Accordion content to render inside the container          |
+| `children`     | `slot`       | (required) | Accordion content to render inside the container          |
 | `...restProps` | HTML attributes |            | Additional attributes spread onto the outer `<div>`       |
 
 ## Examples
 
 FAQ section:
 
-```svelte
+```html
 <AccordionNav label="Frequently asked questions">
   <AccordionList>
     <AccordionListItem summary="What is your return policy?">
@@ -66,15 +62,6 @@ None -- this component is a passive container. Keyboard interactions are handled
 
 - `role="region"` -- identifies the accordion as a landmark region
 - `aria-label` -- provides an accessible name for the region, allowing screen readers to announce it
-
-## Claude Rules
-
-- Always use `AccordionNav` (not `AccordionAreaNav` or `Accordion`)
-- Always include the required `label` prop
-- Pair with AccordionList, AccordionListItem, AccordionSummary, AccordionDetails
-- Use Svelte 5 patterns (Snippet for children)
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - WAI-ARIA Accordion Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/accordion/

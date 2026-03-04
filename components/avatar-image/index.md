@@ -8,17 +8,13 @@ Use AvatarImage inside an Avatar to display a user's photo. The parent Avatar ty
 
 ## Syntax
 
-```svelte
-<script>
-  import AvatarImage from "./AvatarImage.svelte";
-</script>
-
+```html
 <AvatarImage src="..." alt="..." />
 ```
 
 ## Usage
 
-```svelte
+```html
 <Avatar alt="Jane Doe" initials="JD">
   <AvatarImage src="/photo.jpg" alt="Jane Doe" />
 </Avatar>
@@ -26,7 +22,7 @@ Use AvatarImage inside an Avatar to display a user's photo. The parent Avatar ty
 
 Standalone:
 
-```svelte
+```html
 <AvatarImage src="/team/alice.jpg" alt="Alice Smith" />
 ```
 
@@ -42,7 +38,7 @@ Standalone:
 
 With custom sizing:
 
-```svelte
+```html
 <AvatarImage src="/photo.jpg" alt="Jane Doe" width="48" height="48" />
 ```
 
@@ -54,15 +50,6 @@ With custom sizing:
 
 - Native `<img>` element with `alt` text provides accessible image semantics
 - When inside an Avatar, the parent's `aria-label` provides the primary accessible name
-
-## Claude Rules
-
-- Always use `AvatarImage` (not `AvatarImage`)
-- Always include the required `src` and `alt` props
-- Place inside an Avatar container for proper fallback behavior
-- Use Svelte 5 patterns
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - HTML img element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img

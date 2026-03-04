@@ -14,7 +14,7 @@ consumers to apply their own visual styling.
 ## Implementation Notes
 
 - Renders as `<select aria-label={label}>` with five options: red, orange, yellow, green, blue
-- The `value` prop is `$bindable()` for two-way binding with `bind:value`
+- The `value` prop is two-way binding
 - Uses native select keyboard navigation
 
 ## Props
@@ -35,29 +35,23 @@ consumers to apply their own visual styling.
 
 Basic ROYGB status selection:
 
-```svelte
-<script lang="ts">
-  import RedOrangeYellowGreenBluePicker from './RedOrangeYellowGreenBluePicker.svelte';
-
-  let level = $state("");
-</script>
-
-<RedOrangeYellowGreenBluePicker label="Risk level" bind:value={level} />
+```html
+<RedOrangeYellowGreenBluePicker label="Risk level" value={level} />
 <p>Current level: {level}</p>
 ```
 
 Pre-selected value:
 
-```svelte
+```html
 <RedOrangeYellowGreenBluePicker label="Alert status" value="green" />
 ```
 
 With additional HTML attributes:
 
-```svelte
+```html
 <RedOrangeYellowGreenBluePicker
   label="Project health"
-  bind:value={level}
+  value={level}
   data-dashboard="main"
 />
 ```

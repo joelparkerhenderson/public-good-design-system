@@ -6,7 +6,7 @@ A progress circle indicates completion status using a `<div>` with ARIA Progress
 
 - Renders a `<div>` with `role="Progress"` and full ARIA value attributes
 - Provides `aria-valuenow`, `aria-valuemin`, and `aria-valuemax` to communicate progress to screen readers
-- Accepts an optional `children` Snippet for content inside the circle (e.g., percentage text)
+- Accepts an optional `children` slot for content inside the circle (e.g., percentage text)
 - Uses `aria-label` for accessible naming
 - Spreads `restProps` for consumer customization
 
@@ -16,12 +16,12 @@ A progress circle indicates completion status using a `<div>` with ARIA Progress
 - `value`: number (default: `0`) -- current progress value
 - `min`: number (default: `0`) -- minimum value of the progress range
 - `max`: number (default: `100`) -- maximum value of the progress range
-- `children`: Snippet (default: `undefined`) -- optional content rendered inside (e.g., percentage text)
+- `children`: slot (default: `undefined`) -- optional content rendered inside (e.g., percentage text)
 - `...restProps`: unknown -- additional attributes spread onto the `<div>`
 
 ## Usage
 
-```svelte
+```html
 <ProgressCircle label="Upload" value={75}>
   <span>75%</span>
 </ProgressCircle>

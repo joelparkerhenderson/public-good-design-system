@@ -20,15 +20,15 @@ Reset inputs are useful in forms where users may want to clear all entered data 
 
 ## Usage
 
-```svelte
+```html
 <ResetInput />
 ```
 
-```svelte
+```html
 <ResetInput value="Clear form" />
 ```
 
-```svelte
+```html
 <ResetInput value="Start over" disabled={!formDirty} />
 ```
 

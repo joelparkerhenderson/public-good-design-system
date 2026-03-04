@@ -7,8 +7,8 @@ The component manages its own focus lifecycle: when the menu opens, focus moves 
 ## Implementation Notes
 
 - Renders a wrapper `<div>` containing a `<button>` trigger and a conditionally rendered menu `<div>`
-- Uses `$bindable()` on the `open` prop for two-way binding with the parent
-- Uses `$state()` to track the `menuRef` DOM reference for querying menu items
+- Supports two-way binding on the `open` prop with the parent
+- Uses reactive state to track the `menuRef` DOM reference for querying menu items
 - Uses `$effect()` to auto-focus the first `[role="menuitem"]` element when the menu opens
 - Menu items are discovered dynamically via `querySelectorAll("[role='menuitem']")`
 - ArrowDown/ArrowUp navigation wraps around from last to first and first to last
@@ -21,29 +21,20 @@ The component manages its own focus lifecycle: when the menu opens, focus moves 
 
 - `label`: string (required) -- accessible name for the menu button, also displayed as button text
 - `open`: boolean (default: false) -- whether the menu is visible; bindable
-- `children`: Snippet (required) -- menu items, each should have `role="menuitem"` and `tabindex="-1"`
+- `children`: slot (required) -- menu items, each should have `role="menuitem"` and `tabindex="-1"`
 
 ## Usage
 
-```svelte
-<DropdownMenu label="Options" bind:open>
+```html
+<DropdownMenu label="Options" open={open}>
   <li role="menuitem" tabindex="-1">Edit</li>
   <li role="menuitem" tabindex="-1">Duplicate</li>
   <li role="menuitem" tabindex="-1">Delete</li>
 </DropdownMenu>
 ```
 
-```svelte
-<script lang="ts">
-  let menuOpen = $state(false);
-
-  function handleAction(action: string) {
-    console.log(action);
-    menuOpen = false;
-  }
-</script>
-
-<DropdownMenu label="Actions" bind:open={menuOpen}>
+```html
+<DropdownMenu label="Actions" open={menuOpen}>
   <li role="menuitem" tabindex="-1" onclick={() => handleAction('edit')}>Edit</li>
   <li role="menuitem" tabindex="-1" onclick={() => handleAction('delete')}>Delete</li>
 </DropdownMenu>

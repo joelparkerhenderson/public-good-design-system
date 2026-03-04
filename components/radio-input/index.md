@@ -11,7 +11,7 @@ This component is useful in custom-designed radio groups, card selection interfa
 - Supports `name` attribute for grouping radio buttons into a mutually exclusive set
 - Supports `value` attribute for identifying which option is selected
 - Supports `checked` and `disabled` states
-- Does not use `$bindable()` for checked state; consumers can use event handlers or bind directly
+- Does not use two-way binding for checked state; consumers can use event handlers or bind directly
 - Spreads `restProps` for consumer customization (e.g., `onchange`, `id`)
 
 ## Props
@@ -25,17 +25,17 @@ This component is useful in custom-designed radio groups, card selection interfa
 
 ## Usage
 
-```svelte
+```html
 <RadioInput label="Option A" name="choice" value="a" />
 ```
 
-```svelte
+```html
 <RadioInput label="Small" name="size" value="small" checked={true} />
 <RadioInput label="Medium" name="size" value="medium" />
 <RadioInput label="Large" name="size" value="large" />
 ```
 
-```svelte
+```html
 <RadioInput label="Unavailable option" name="plan" value="enterprise" disabled={true} />
 ```
 

@@ -8,25 +8,25 @@ The consumer is responsible for providing the slide content as children and impl
 
 - Renders a `<div>` with `role="region"` and `aria-roledescription="carousel"` to communicate the carousel pattern to screen readers.
 - The `aria-label` prop provides an accessible name for the region.
-- Slide content is passed via the `children` snippet, allowing any markup structure.
+- Slide content is passed via the `children` slot, allowing any markup structure.
 - Spreads `restProps` onto the container for consumer customization.
 - No internal state management for active slide; consumers manage slide state externally.
 
 ## Props
 
 - `label`: string (required) -- accessible name for the carousel region, applied via `aria-label`.
-- `children`: Snippet (required) -- slide content to render inside the carousel container.
+- `children`: slot (required) -- slide content to render inside the carousel container.
 - `...restProps`: unknown -- additional attributes spread onto the container `<div>`.
 
 ## Usage
 
-```svelte
+```html
 <Carousel label="Photo gallery">
     <div role="group" aria-label="Slide 1">...</div>
 </Carousel>
 ```
 
-```svelte
+```html
 <Carousel label="Featured products">
     {#each slides as slide, i}
         <div role="group" aria-roledescription="slide" aria-label="Slide {i + 1} of {slides.length}">

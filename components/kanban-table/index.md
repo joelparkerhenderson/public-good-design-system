@@ -15,11 +15,11 @@ This headless component renders a `<div>` with `role="region"` and an accessible
 ## Props
 
 - `label`: string (required) -- accessible name describing the board, applied via `aria-label`
-- `children`: Snippet (required) -- the board content including columns and cards
+- `children`: slot (required) -- the board content including columns and cards
 
 ## Usage
 
-```svelte
+```html
 <Kanban label="Sprint 5 board">
     <div>
         <h3>To Do</h3>

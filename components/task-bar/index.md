@@ -8,19 +8,19 @@ Task bars are commonly used to provide quick access to frequently performed acti
 
 - Renders as a `<div>` element with `role="toolbar"` to identify it as a toolbar widget
 - Accessible name is set via `aria-label` from the required `label` prop
-- Content is provided through the children snippet, typically TaskBarItem components or buttons
+- Content is provided through the children slot, typically TaskBarItem components or buttons
 - Does not implement arrow key navigation itself; consumers can add keyboard navigation as needed
 - Passes through all additional HTML attributes via `...restProps`
-- Uses Svelte 5 `Snippet` for children content
+- Uses `slot` for children content
 
 ## Props
 
 - `label`: string (required) -- accessible name for the toolbar via aria-label
-- `children`: Snippet (required) -- task bar item elements
+- `children`: slot (required) -- task bar item elements
 
 ## Usage
 
-```svelte
+```html
 <TaskBar label="Tasks">
   <button>New</button>
   <button>Open</button>

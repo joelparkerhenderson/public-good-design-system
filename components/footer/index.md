@@ -13,17 +13,17 @@ The component uses the native `<footer>` element, which is automatically recogni
 ## Props
 
 - `label`: string (default: undefined) -- optional accessible name via `aria-label`, useful when multiple footers exist
-- `children`: Snippet (required) -- footer content
+- `children`: slot (required) -- footer content
 
 ## Usage
 
-```svelte
+```html
 <Footer label="Site footer">
   <p>Copyright 2024</p>
 </Footer>
 ```
 
-```svelte
+```html
 <Footer>
   <nav aria-label="Footer navigation">
     <a href="/privacy">Privacy</a>

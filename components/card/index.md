@@ -10,7 +10,7 @@ The component renders as an `<article>` element for standalone content grouping.
 - Heading level is configurable (2-6) for proper document outline structure
 - When `href` is provided, the heading text wraps in an `<a>` element for navigation
 - Optional `aria-label` for named landmark identification
-- Content is provided through the Svelte 5 `children` Snippet
+- Content is provided through child elements
 - Passes through all additional HTML attributes via `...restProps`
 
 ## Props
@@ -19,12 +19,12 @@ The component renders as an `<article>` element for standalone content grouping.
 - `headingLevel`: 2 | 3 | 4 | 5 | 6 (default: 3) -- HTML heading level
 - `href`: string (optional) -- makes the heading a link
 - `label`: string (optional) -- `aria-label` for the article
-- `children`: Snippet (required) -- card body content
+- `children`: slot (required) -- card body content
 - `...restProps`: Any additional HTML attributes passed to the `<article>` element
 
 ## Usage
 
-```svelte
+```html
 <Card><h3>Title</h3><p>Content</p></Card>
 <Card heading="Product" href="/products/1"><p>Description</p></Card>
 ```

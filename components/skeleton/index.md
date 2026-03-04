@@ -6,21 +6,21 @@ A skeleton is a loading placeholder that indicates content is in the process of 
 
 - Renders a `<div>` with `aria-hidden="true"` so screen readers completely skip the placeholder
 - Uses `aria-busy="true"` to signal to assistive technology that the region is loading
-- Accepts an optional `children` Snippet for placeholder shapes (e.g., lines, circles, rectangles)
+- Accepts an optional `children` slot for placeholder shapes (e.g., lines, circles, rectangles)
 - Spreads `restProps` for consumer customization (e.g., sizing, data attributes)
 
 ## Props
 
-- `children`: Snippet (default: `undefined`) -- optional placeholder content (e.g., skeleton line shapes)
+- `children`: slot (default: `undefined`) -- optional placeholder content (e.g., skeleton line shapes)
 - `...restProps`: unknown -- additional attributes spread onto the `<div>`
 
 ## Usage
 
-```svelte
+```html
 <Skeleton />
 ```
 
-```svelte
+```html
 <Skeleton>
   <div class="skeleton-line"></div>
 </Skeleton>

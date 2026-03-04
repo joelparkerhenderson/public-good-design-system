@@ -8,12 +8,12 @@ session timeouts, countdowns, stopwatches, cooking timers, exam time limits,
 and any scenario where users need to track the passage of time. This headless
 component provides the semantic structure and accessibility features while the
 consumer manages the actual timer logic and provides formatted display content
-through the children snippet.
+through the children slot.
 
 ## Implementation Notes
 
 - Renders as `<time role="timer" aria-label={label} aria-live="polite">`
-- Children snippet provides the formatted timer display text
+- Children slot provides the formatted timer display text
 - `aria-live="polite"` ensures screen readers announce updates without interrupting
 - Consumer manages timer logic (intervals, countdowns); this component only provides structure and accessibility
 - Optional `datetime` attribute can be passed via restProps for machine-readable duration (e.g. `datetime="PT5M30S"`)
@@ -21,42 +21,24 @@ through the children snippet.
 ## Props
 
 - `label`: string (required) -- accessible label for screen readers
-- `children`: Snippet (required) -- formatted timer display content
+- `children`: slot (required) -- formatted timer display content
 - `...restProps`: Any additional HTML attributes spread onto the `<time>` element
 
 ## Usage
 
-```svelte
-<script>
-  import Timer from "./Timer.svelte";
-</script>
-
+```html
 <Timer label="Countdown">05:30</Timer>
 ```
 
 With dynamic elapsed time:
 
-```svelte
-<script>
-  import Timer from "./Timer.svelte";
-
-  let elapsed = $state(0);
-  let formatted = $derived(
-    `${Math.floor(elapsed / 60).toString().padStart(2, "0")}:${(elapsed % 60).toString().padStart(2, "0")}`
-  );
-
-  $effect(() => {
-    const interval = setInterval(() => elapsed++, 1000);
-    return () => clearInterval(interval);
-  });
-</script>
-
+```html
 <Timer label="Elapsed time">{formatted}</Timer>
 ```
 
 With machine-readable datetime attribute:
 
-```svelte
+```html
 <Timer label="Session timeout" datetime="PT5M30S">5:30</Timer>
 ```
 

@@ -10,7 +10,7 @@ This component is commonly paired with ThemePicker in an Input/View pattern. Whi
 - Uses `aria-label` to provide an accessible name for the displayed value
 - Both `label` and `value` are required props
 - Spreads `restProps` onto the span for consumer customization
-- Svelte 5 pattern: standard `$props()` destructuring with typed props
+- pattern: standard props destructuring with typed props
 
 ## Props
 
@@ -20,7 +20,7 @@ This component is commonly paired with ThemePicker in an Input/View pattern. Whi
 
 ## Usage
 
-```svelte
+```html
 <ThemeView label="Current theme" value="dark" />
 ```
 

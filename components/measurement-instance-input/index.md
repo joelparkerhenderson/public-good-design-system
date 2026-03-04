@@ -8,7 +8,7 @@ The component uses `aria-label` for accessible labeling in a headless context, a
 
 - Uses `<input type="text">` with `aria-label` for accessible naming
 - A measurement instance is a specific measured value (e.g., "72 kg", "98.6 F")
-- Bindable `value` prop for two-way data binding via `$bindable()`
+- Bindable `value` prop for two-way data binding via two-way binding
 - Supports `required` and `disabled` HTML attributes
 - Spreads `...restProps` on the root `<input>` element
 - All text content comes through props for internationalization
@@ -23,9 +23,9 @@ The component uses `aria-label` for accessible labeling in a headless context, a
 
 ## Usage
 
-```svelte
-<MeasurementInstanceInput label="Weight" bind:value />
-<MeasurementInstanceInput label="Temperature" bind:value required />
+```html
+<MeasurementInstanceInput label="Weight" value={value} />
+<MeasurementInstanceInput label="Temperature" value={value} required />
 ```
 
 ## Keyboard Interactions

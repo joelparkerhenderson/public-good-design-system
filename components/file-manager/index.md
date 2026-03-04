@@ -15,11 +15,11 @@ This headless component renders a `<div>` with `role="region"` and an accessible
 ## Props
 
 - `label`: string (required) -- accessible name describing the file manager, applied via `aria-label`
-- `children`: Snippet (required) -- the file browser content
+- `children`: slot (required) -- the file browser content
 
 ## Usage
 
-```svelte
+```html
 <FileManager label="Project files">
     <ul>
         <li>document.pdf</li>

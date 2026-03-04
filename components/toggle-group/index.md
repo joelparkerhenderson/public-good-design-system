@@ -8,19 +8,19 @@ This component is useful for text formatting toolbars (bold, italic, underline),
 
 - Renders a `<div>` with `role="group"` to semantically group child toggle buttons
 - Uses `aria-label` for an accessible name describing the group
-- Accepts a `children` Snippet for rendering toggle button elements inside the group
+- Accepts a `children` slot for rendering toggle button elements inside the group
 - Spreads `restProps` onto the container for consumer customization
-- Svelte 5 pattern: standard `$props()` destructuring with typed props
+- pattern: standard props destructuring with typed props
 
 ## Props
 
 - `label`: string (required) -- accessible name for the group via `aria-label`
-- `children`: Snippet (required) -- toggle button elements to render inside the group
+- `children`: slot (required) -- toggle button elements to render inside the group
 - `...restProps`: unknown -- additional attributes spread onto the container `<div>`
 
 ## Usage
 
-```svelte
+```html
 <ToggleGroup label="Text formatting">
   <button aria-pressed="true">Bold</button>
   <button aria-pressed="false">Italic</button>

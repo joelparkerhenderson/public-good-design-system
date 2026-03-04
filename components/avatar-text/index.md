@@ -8,17 +8,13 @@ Use AvatarText inside an Avatar to show initials when a photo is unavailable. Th
 
 ## Syntax
 
-```svelte
-<script>
-  import AvatarText from "./AvatarText.svelte";
-</script>
-
+```html
 <AvatarText>JD</AvatarText>
 ```
 
 ## Usage
 
-```svelte
+```html
 <Avatar alt="Jane Doe">
   <AvatarText>JD</AvatarText>
 </Avatar>
@@ -26,7 +22,7 @@ Use AvatarText inside an Avatar to show initials when a photo is unavailable. Th
 
 Standalone:
 
-```svelte
+```html
 <AvatarText aria-hidden="true">JD</AvatarText>
 ```
 
@@ -34,14 +30,14 @@ Standalone:
 
 | Prop           | Type            | Default    | Description                                            |
 | -------------- | --------------- | ---------- | ------------------------------------------------------ |
-| `children`     | `Snippet`       | (required) | Initials or short text to display                      |
+| `children`     | `slot`       | (required) | Initials or short text to display                      |
 | `...restProps` | HTML attributes |            | Additional attributes spread onto the `<span>` element |
 
 ## Examples
 
 Various initials:
 
-```svelte
+```html
 <Avatar alt="Alice Smith">
   <AvatarText>AS</AvatarText>
 </Avatar>
@@ -59,15 +55,6 @@ Various initials:
 
 - Typically marked `aria-hidden="true"` when inside an Avatar, since the parent's `aria-label` already provides the accessible name
 - When used standalone, ensure the text is accessible or the parent provides an accessible label
-
-## Claude Rules
-
-- Always use `AvatarText` (not `AvatarText` or `AvatarInitials`)
-- Place inside an Avatar container for proper accessibility
-- Mark `aria-hidden="true"` when parent already has `aria-label`
-- Use Svelte 5 patterns (Snippet for children)
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - WAI-ARIA Img Role: https://www.w3.org/TR/wai-aria-1.2/#img

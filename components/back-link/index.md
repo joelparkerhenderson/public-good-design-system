@@ -9,19 +9,19 @@ Back links are especially important in mobile and multi-step interfaces, helping
 - Renders as a semantic `<a>` element for backward navigation
 - Same HTML pattern as a standard link but semantically represents "going back"
 - Supports an optional `aria-label` override for more descriptive screen reader text
-- All link text is provided through the children snippet
+- All link text is provided through the children slot
 - Spreads `...restProps` onto the `<a>` element
 
 ## Props
 
 - `href`: string (required) -- the URL to navigate back to
 - `label`: string (optional, default: undefined) -- accessible label override via `aria-label`
-- `children`: Snippet (required) -- the link text/content
+- `children`: slot (required) -- the link text/content
 - `...restProps`: Any additional HTML attributes spread onto the `<a>`
 
 ## Usage
 
-```svelte
+```html
 <BackLink href="/previous-page">Back to previous page</BackLink>
 <BackLink href="/dashboard" label="Return to dashboard">Back</BackLink>
 ```

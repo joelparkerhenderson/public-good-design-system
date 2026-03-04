@@ -7,7 +7,7 @@ Week inputs are useful for scheduling applications, time tracking systems, repor
 ## Implementation Notes
 
 - Renders a single `<input type="week">` element for native week picker behavior
-- Uses `$bindable()` for the `value` prop enabling two-way data binding with `bind:value`
+- Supports two-way binding for the `value` prop enabling two-way data binding with two-way `value` binding
 - Values follow the ISO 8601 week format: YYYY-Www (e.g., "2024-W01" for the first week of 2024)
 - The `aria-label` prop provides an accessible name since there is no visible `<label>` element
 - Supports rest props via `...restProps` for extensibility (e.g., `id`, `name`, `min`, `max`, `class`)
@@ -16,19 +16,19 @@ Week inputs are useful for scheduling applications, time tracking systems, repor
 ## Props
 
 - `label`: string (required) -- accessible name applied via `aria-label`
-- `value`: string (default: "") -- current week value in YYYY-Www format, bindable with `bind:value`
+- `value`: string (default: "") -- current week value in YYYY-Www format, bindable with two-way `value` binding
 - `required`: boolean (default: false) -- whether the field must be filled before form submission
 - `disabled`: boolean (default: false) -- whether the input is disabled
 - `...restProps`: spread onto the `<input>` element
 
 ## Usage
 
-```svelte
-<WeekInput label="Select week" bind:value />
+```html
+<WeekInput label="Select week" value={value} />
 ```
 
-```svelte
-<WeekInput label="Report week" bind:value={selectedWeek} required />
+```html
+<WeekInput label="Report week" value={selectedWeek} required />
 ```
 
 ## Keyboard Interactions

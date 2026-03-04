@@ -5,8 +5,8 @@ A floating panel is a container that overlays page content, typically used for t
 ## Implementation Notes
 
 - Renders a `<div>` with `role="region"` only when the `open` prop is true
-- Uses Svelte `{#if open}` block for conditional rendering (fully removed from DOM when closed)
-- Accepts a `children` Snippet for panel content
+- Uses conditional rendering (fully removed from DOM when closed)
+- Accepts a `children` slot for panel content
 - Provides `aria-label` for accessible naming of the panel region
 - Spreads `restProps` for consumer customization (e.g., positioning attributes)
 
@@ -14,12 +14,12 @@ A floating panel is a container that overlays page content, typically used for t
 
 - `open`: boolean (default: `false`) -- whether the panel is visible
 - `label`: string (required) -- accessible name for the panel region via `aria-label`
-- `children`: Snippet (required) -- panel content to render inside
+- `children`: slot (required) -- panel content to render inside
 - `...restProps`: unknown -- additional attributes spread onto the `<div>`
 
 ## Usage
 
-```svelte
+```html
 <FloatingPanel open={showPanel} label="Options">
   <p>Panel content</p>
 </FloatingPanel>

@@ -10,7 +10,7 @@ The component renders as a `<span>` element with an accessible label, making the
 - Five-level status scale: red, orange, yellow, green, blue
 - Read-only display component, not interactive
 - Value defaults to an empty string when not provided
-- Uses Svelte 5 `$props()` rune for prop destructuring
+- Uses props rune for prop destructuring
 - Spreads `...restProps` on the `<span>` element for consumer extensibility
 - No hardcoded user-facing strings; label and value are fully configurable
 
@@ -22,11 +22,11 @@ The component renders as a `<span>` element with an accessible label, making the
 
 ## Usage
 
-```svelte
+```html
 <RedOrangeYellowGreenBlueView label="Risk level" value="yellow" />
 ```
 
-```svelte
+```html
 <RedOrangeYellowGreenBlueView label="Alert status" value={level} />
 ```
 

@@ -8,7 +8,7 @@ This headless component renders a `<fieldset>` containing two native `<input typ
 
 - Renders a `<fieldset>` to semantically group the paired date inputs
 - Uses two native `<input type="date">` elements for built-in browser date selection
-- Both `start` and `end` use `$bindable()` for two-way binding
+- Both `start` and `end` use two-way binding
 - Each input has its own `aria-label` for individual identification
 - Accepts `...restProps` for forwarding additional attributes to the fieldset
 
@@ -22,13 +22,13 @@ This headless component renders a `<fieldset>` containing two native `<input typ
 
 ## Usage
 
-```svelte
+```html
 <DateRange
     label="Trip dates"
     startLabel="Departure"
     endLabel="Return"
-    bind:start
-    bind:end
+    start={start}
+    end={end}
 />
 ```
 

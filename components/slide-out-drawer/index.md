@@ -11,14 +11,14 @@ easy access to extended functionality.
 
 This component renders as a `<div>` with `role="dialog"`, `aria-label`, and
 `aria-modal="true"` when open, and is completely removed from the DOM when
-closed. The `open` prop is `$bindable()` for two-way binding, and the Escape key
+closed. The `open` prop is two-way binding, and the Escape key
 closes the drawer.
 
 ## Implementation Notes
 
 - Renders as `<div role="dialog" aria-label={label} aria-modal="true">` when open
-- Conditionally rendered with `{#if open}` -- not in the DOM when closed
-- The `open` prop is `$bindable()` for two-way binding
+- Conditionally rendered with conditional rendering -- not in the DOM when closed
+- The `open` prop is two-way binding
 - Escape key closes the drawer via a keydown handler
 - `tabindex="-1"` allows the dialog div to receive focus programmatically
 
@@ -26,21 +26,15 @@ closes the drawer.
 
 - `label`: string (required) -- accessible label for the dialog
 - `open`: boolean (default: false) -- whether the drawer is visible, bindable
-- `children`: Snippet (required) -- drawer content
+- `children`: slot (required) -- drawer content
 - `...restProps`: Any additional HTML attributes spread onto the `<div>`
 
 ## Usage
 
-```svelte
-<script>
-  import SlideOutDrawer from "./SlideOutDrawer.svelte";
-
-  let isOpen = $state(false);
-</script>
-
+```html
 <button onclick={() => (isOpen = true)}>Open menu</button>
 
-<SlideOutDrawer label="Navigation menu" bind:open={isOpen}>
+<SlideOutDrawer label="Navigation menu" open={isOpen}>
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
@@ -54,16 +48,10 @@ closes the drawer.
 
 Settings panel:
 
-```svelte
-<script>
-  import SlideOutDrawer from "./SlideOutDrawer.svelte";
-
-  let settingsOpen = $state(false);
-</script>
-
+```html
 <button onclick={() => (settingsOpen = true)}>Settings</button>
 
-<SlideOutDrawer label="Settings panel" bind:open={settingsOpen}>
+<SlideOutDrawer label="Settings panel" open={settingsOpen}>
   <h2>Settings</h2>
   <form>
     <label>

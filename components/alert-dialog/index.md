@@ -16,8 +16,8 @@ critical error messages that require acknowledgment.
 
 - Uses native HTML `<dialog>` element with the `open` attribute for visibility
 - `role="alertdialog"` distinguishes from regular dialogs -- indicates critical content requiring acknowledgment
-- `$bindable()` open prop for two-way binding of dialog visibility
-- Conditionally rendered with `{#if open}` to remove from DOM when closed
+- two-way binding on the `open` prop for dialog visibility
+- Conditionally rendered with conditional rendering to remove from DOM when closed
 - `aria-modal="true"` signals modal behavior to assistive technologies
 - Title rendered in a `<p><strong>` element, referenced by `aria-labelledby`
 - Description rendered in a `<p>` element, referenced by `aria-describedby` when present
@@ -28,33 +28,18 @@ critical error messages that require acknowledgment.
 - `open`: boolean (default: false, bindable) -- whether the dialog is visible
 - `title`: string (required) -- dialog heading, referenced by aria-labelledby
 - `description`: string (optional) -- dialog message, referenced by aria-describedby
-- `children`: Snippet -- action buttons and additional content
+- `children`: slot -- action buttons and additional content
 - `...restProps`: Any additional HTML attributes
 
 ## Usage
 
 Basic confirmation dialog:
 
-```svelte
-<script lang="ts">
-  import AlertDialog from './AlertDialog.svelte';
-
-  let showDialog = $state(false);
-
-  function handleConfirm() {
-    // perform action
-    showDialog = false;
-  }
-
-  function handleCancel() {
-    showDialog = false;
-  }
-</script>
-
+```html
 <button onclick={() => showDialog = true}>Delete item</button>
 
 <AlertDialog
-  bind:open={showDialog}
+  open={showDialog}
   title="Confirm Deletion"
   description="Are you sure you want to delete this item? This action cannot be undone."
 >
@@ -65,14 +50,8 @@ Basic confirmation dialog:
 
 Simple acknowledgment dialog without description:
 
-```svelte
-<script lang="ts">
-  import AlertDialog from './AlertDialog.svelte';
-
-  let showAlert = $state(false);
-</script>
-
-<AlertDialog bind:open={showAlert} title="Session Expired">
+```html
+<AlertDialog open={showAlert} title="Session Expired">
   <button onclick={() => showAlert = false}>OK</button>
 </AlertDialog>
 ```

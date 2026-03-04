@@ -8,20 +8,20 @@ The component renders a `<p>` element with `role="alert"`, making it an assertiv
 
 - Renders a `<p>` element with `role="alert"` for immediate screen reader announcement
 - The alert role creates an implicit `aria-live="assertive"` region
-- Children provide the error text content via a Snippet
+- Children provide the error text content via a slot
 - Spreads `restProps` onto the `<p>` element for consumer customization
 
 ## Props
 
-- `children`: Snippet (required) -- error message text content
+- `children`: slot (required) -- error message text content
 
 ## Usage
 
-```svelte
+```html
 <ErrorMessage>Password is required</ErrorMessage>
 ```
 
-```svelte
+```html
 {#if error}
   <ErrorMessage>{error}</ErrorMessage>
 {/if}

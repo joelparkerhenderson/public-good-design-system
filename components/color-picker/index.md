@@ -7,7 +7,7 @@ This component is useful for advanced color pickers where the user needs fine-gr
 ## Implementation Notes
 
 - Renders a `<div>` with `role="slider"` for ARIA slider semantics
-- Uses `$bindable()` for both `x` and `y` coordinates (range 0-100)
+- Supports two-way binding for both `x` and `y` coordinates (range 0-100)
 - Implements `onkeydown` handler for arrow key navigation with step size of 1 (or 10 with Shift)
 - Home key resets `x` to 0; End key sets `x` to 100
 - Exposes `data-x` and `data-y` attributes for CSS positioning of a visual cursor
@@ -16,16 +16,16 @@ This component is useful for advanced color pickers where the user needs fine-gr
 
 ## Props
 
-- `x`: number (default: `0`) -- horizontal position (0-100, saturation), bindable via `bind:x`
-- `y`: number (default: `0`) -- vertical position (0-100, brightness), bindable via `bind:y`
+- `x`: number (default: `0`) -- horizontal position (0-100, saturation), two-way bindable via `x`
+- `y`: number (default: `0`) -- vertical position (0-100, brightness), two-way bindable via `y`
 - `label`: string (required) -- accessible name via `aria-label`
 - `disabled`: boolean (default: `false`) -- whether the control is disabled
 - `...restProps`: unknown -- additional attributes spread onto the `<div>`
 
 ## Usage
 
-```svelte
-<ColorPicker label="Color saturation and brightness" bind:x bind:y />
+```html
+<ColorPicker label="Color saturation and brightness" x={x} y={y} />
 ```
 
 ## Keyboard Interactions

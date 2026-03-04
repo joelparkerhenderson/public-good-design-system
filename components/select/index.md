@@ -2,14 +2,14 @@
 
 A select is a headless component that wraps the native HTML `<select>` element, providing a dropdown menu for choosing one option from a list. It is commonly used in forms for selecting a country, category, status, or any other value from a predefined set of choices.
 
-The consumer provides `<option>` elements as children, giving full control over the available choices. The component uses `aria-label` for accessible naming and supports two-way binding on the selected value via Svelte 5 `$bindable()`.
+The consumer provides `<option>` elements as children, giving full control over the available choices. The component uses `aria-label` for accessible naming and supports two-way binding on the selected value.
 
 ## Implementation Notes
 
 - Renders a single `<select>` element containing consumer-provided `<option>` children
 - Uses `aria-label` for accessible naming instead of a visible `<label>` element
-- Uses Svelte 5 `$bindable()` for two-way binding on the `value` prop
-- Uses Svelte 5 Snippet for the `children` prop to render `<option>` elements
+- Supports two-way binding on the `value` prop
+- Uses slot for the `children` prop to render `<option>` elements
 - Spreads `restProps` onto the select element for consumer extensibility
 
 ## Props
@@ -18,20 +18,20 @@ The consumer provides `<option>` elements as children, giving full control over 
 - `value`: string (default: "") -- bindable string representing the currently selected value
 - `required`: boolean (default: false) -- whether the select is required for form submission
 - `disabled`: boolean (default: false) -- whether the select is disabled
-- `children`: Snippet (required) -- `<option>` elements to render inside the select
+- `children`: slot (required) -- `<option>` elements to render inside the select
 - `...restProps`: unknown -- additional attributes spread onto the select element
 
 ## Usage
 
-```svelte
-<Select label="Country" bind:value>
+```html
+<Select label="Country" value={value}>
   <option value="us">United States</option>
   <option value="uk">United Kingdom</option>
 </Select>
 ```
 
-```svelte
-<Select label="Priority" bind:value={priority} required>
+```html
+<Select label="Priority" value={priority} required>
   <option value="">Select priority...</option>
   <option value="low">Low</option>
   <option value="medium">Medium</option>
@@ -39,8 +39,8 @@ The consumer provides `<option>` elements as children, giving full control over 
 </Select>
 ```
 
-```svelte
-<Select label="Status" bind:value disabled={isReadOnly}>
+```html
+<Select label="Status" value={value} disabled={isReadOnly}>
   <option value="active">Active</option>
   <option value="inactive">Inactive</option>
 </Select>

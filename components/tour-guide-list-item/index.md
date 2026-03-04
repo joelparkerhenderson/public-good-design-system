@@ -10,11 +10,7 @@ Use TourGuideListItem for each individual step in a TourGuideList walkthrough. C
 
 ## Syntax
 
-```svelte
-<script>
-  import TourGuideListItem from "./TourGuideListItem.svelte";
-</script>
-
+```html
 <TourGuideListItem label="..." current={...}>
   <!-- step content -->
 </TourGuideListItem>
@@ -22,7 +18,7 @@ Use TourGuideListItem for each individual step in a TourGuideList walkthrough. C
 
 ## Usage
 
-```svelte
+```html
 <TourGuideListItem label="Welcome" current={step === 0} stepNumber={1} totalSteps={3}>
   <p>Welcome to the app!</p>
   <button onclick={() => step++}>Next</button>
@@ -37,15 +33,15 @@ Use TourGuideListItem for each individual step in a TourGuideList walkthrough. C
 | `current`      | `boolean`       | `false`    | Whether this step is the currently visible step         |
 | `stepNumber`   | `number`        | (optional) | 1-based step number (e.g. 1, 2, 3)                      |
 | `totalSteps`   | `number`        | (optional) | Total number of steps in the tour                       |
-| `children`     | `Snippet`       | (required) | Step content                                            |
+| `children`     | `slot`       | (required) | Step content                                            |
 | `...restProps` | HTML attributes |            | Additional attributes spread onto the container `<div>` |
 
 ## Examples
 
 Multi-step tour:
 
-```svelte
-<TourGuideList label="Getting started" bind:active>
+```html
+<TourGuideList label="Getting started" active={active}>
   <TourGuideListItem label="Welcome" current={step === 0} stepNumber={1} totalSteps={3}>
     <p>Welcome to the app!</p>
     <button onclick={() => step++}>Next</button>
@@ -74,16 +70,6 @@ Multi-step tour:
 - `aria-current="step"` -- indicates the currently active step
 - `aria-hidden="true"` -- hides inactive steps from assistive technology
 - `hidden` -- hides inactive steps from visual rendering
-
-## Claude Rules
-
-- Always use `TourGuideListItem` (not `TourGuideStep` or `TourGuideItem`)
-- Always include the required `label` prop
-- Always place inside a TourGuideList container
-- Use `stepNumber` and `totalSteps` together for progress information
-- Use Svelte 5 patterns (Snippet for children)
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - WAI-ARIA Group Role: https://www.w3.org/TR/wai-aria-1.2/#group

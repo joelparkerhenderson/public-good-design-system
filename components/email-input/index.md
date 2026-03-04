@@ -5,7 +5,7 @@ An email input wraps a native `<input type="email">` with accessible labeling. A
 ## Implementation Notes
 
 - Renders a native `<input type="email">` element for browser-native email validation
-- Uses `bind:value` with `$bindable()` for two-way binding of the email string
+- Supports two-way binding of the email string
 - Provides `aria-label` for screen reader accessibility
 - Supports `required` and `disabled` for standard form behavior
 - Spreads `restProps` for consumer customization
@@ -14,15 +14,15 @@ An email input wraps a native `<input type="email">` with accessible labeling. A
 ## Props
 
 - `label`: string (required) -- accessible name via `aria-label`
-- `value`: string (default: `""`) -- current email value, bindable via `bind:value`
+- `value`: string (default: `""`) -- current email value, two-way bindable via `value`
 - `required`: boolean (default: `false`) -- whether the field is required
 - `disabled`: boolean (default: `false`) -- whether the field is disabled
 - `...restProps`: unknown -- additional attributes spread onto the `<input>`
 
 ## Usage
 
-```svelte
-<EmailInput label="Your email" bind:value />
+```html
+<EmailInput label="Your email" value={value} />
 ```
 
 ## Keyboard Interactions

@@ -7,7 +7,7 @@ Range inputs are commonly used for volume controls, brightness settings, price f
 ## Implementation Notes
 
 - Renders a single `<input type="range">` element for native slider behavior
-- Uses `$bindable()` for the `value` prop enabling two-way data binding with `bind:value`
+- Supports two-way binding for the `value` prop enabling two-way data binding with two-way `value` binding
 - Supports rest props via `...restProps` for extensibility (e.g., `id`, `name`, `class`)
 - The `aria-label` prop provides an accessible name since there is no visible `<label>` element
 - Default value is 50, centered in the default 0-100 range
@@ -15,7 +15,7 @@ Range inputs are commonly used for volume controls, brightness settings, price f
 ## Props
 
 - `label`: string (required) -- accessible name applied via `aria-label`
-- `value`: number (default: 50) -- current numeric value, bindable with `bind:value`
+- `value`: number (default: 50) -- current numeric value, bindable with two-way `value` binding
 - `min`: number (default: 0) -- minimum allowed value
 - `max`: number (default: 100) -- maximum allowed value
 - `step`: number (default: 1) -- increment between selectable values
@@ -24,12 +24,12 @@ Range inputs are commonly used for volume controls, brightness settings, price f
 
 ## Usage
 
-```svelte
-<RangeInput label="Volume" bind:value min={0} max={100} />
+```html
+<RangeInput label="Volume" value={value} min={0} max={100} />
 ```
 
-```svelte
-<RangeInput label="Price range" bind:value={price} min={10} max={500} step={10} />
+```html
+<RangeInput label="Price range" value={price} min={10} max={500} step={10} />
 ```
 
 ## Keyboard Interactions

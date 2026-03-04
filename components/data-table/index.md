@@ -16,18 +16,18 @@ The component supports two labelling strategies: a visible `<caption>` element f
 
 - `caption`: string (default: undefined) -- visible caption text displayed above the table
 - `label`: string (default: undefined) -- accessible label used when `caption` is not provided
-- `children`: Snippet (required) -- table content including thead, tbody, tr, th, td elements
+- `children`: slot (required) -- table content including thead, tbody, tr, th, td elements
 
 ## Usage
 
-```svelte
+```html
 <DataTable caption="User accounts">
   <thead><tr><th scope="col">Name</th><th scope="col">Email</th></tr></thead>
   <tbody><tr><td>Alice</td><td>alice@example.com</td></tr></tbody>
 </DataTable>
 ```
 
-```svelte
+```html
 <DataTable label="Sales data">
   <thead><tr><th scope="col">Month</th><th scope="col">Revenue</th></tr></thead>
   <tbody><tr><td>January</td><td>$10,000</td></tr></tbody>

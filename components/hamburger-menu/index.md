@@ -10,21 +10,21 @@ When activated, the button toggles the visibility of a navigation region contain
 - The button uses `aria-expanded` and `aria-controls` to communicate state to assistive technologies
 - The navigation region uses `role="navigation"` with `aria-label` for landmark identification
 - A unique `menuId` is generated using `Math.random()` for the `aria-controls`/`id` link
-- Uses Svelte 5 `$bindable()` for two-way binding on the `open` prop
-- Navigation content is conditionally rendered with `{#if open}`, removing it from the DOM when closed
-- Uses Svelte 5 Snippet for the `children` prop
+- Supports two-way binding on the `open` prop
+- Navigation content is conditionally rendered with conditional rendering, removing it from the DOM when closed
+- Uses slot for the `children` prop
 
 ## Props
 
 - `label`: string (default: "Menu") -- accessible name for the toggle button and the navigation region
 - `open`: boolean (default: false) -- bindable boolean controlling whether the navigation panel is visible
-- `children`: Snippet (required) -- navigation content rendered when the menu is open
+- `children`: slot (required) -- navigation content rendered when the menu is open
 - `...restProps`: unknown -- additional attributes spread onto the outer `<div>` wrapper
 
 ## Usage
 
-```svelte
-<HamburgerMenu label="Main menu" bind:open>
+```html
+<HamburgerMenu label="Main menu" open={open}>
   <nav>
     <ul>
       <li><a href="/">Home</a></li>
@@ -34,8 +34,8 @@ When activated, the button toggles the visibility of a navigation region contain
 </HamburgerMenu>
 ```
 
-```svelte
-<HamburgerMenu bind:open={menuOpen}>
+```html
+<HamburgerMenu open={menuOpen}>
   <ul>
     <li><a href="/dashboard">Dashboard</a></li>
     <li><a href="/settings">Settings</a></li>

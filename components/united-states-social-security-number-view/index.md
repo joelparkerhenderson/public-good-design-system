@@ -9,7 +9,7 @@ This component renders the SSN as an inline `<span>` element with an accessible 
 - Renders as a `<span>` element with `aria-label` for accessible naming
 - Displays the SSN value as inline text content
 - Read-only display component (not an input); pairs with an Input component for editing
-- Uses Svelte 5 `$props()` for prop destructuring with rest props spread
+- Uses props for prop destructuring with rest props spread
 - No formatting, masking, or validation logic; the consumer provides the value pre-formatted
 - No hardcoded strings; all text comes through props for internationalization
 
@@ -21,11 +21,11 @@ This component renders the SSN as an inline `<span>` element with an accessible 
 
 ## Usage
 
-```svelte
+```html
 <UnitedStatesSocialSecurityNumberView label="SSN" value="123-45-6789" />
 ```
 
-```svelte
+```html
 <UnitedStatesSocialSecurityNumberView label="Social Security Number" value={ssn} />
 ```
 

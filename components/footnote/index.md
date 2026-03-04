@@ -8,21 +8,21 @@ This component renders as a semantic `<aside>` element with `role="note"`, givin
 
 - Renders as `<aside>` with `role="note"` for semantic supplementary content
 - The `id` prop serves double duty: it identifies the element for in-page linking and provides the `aria-label` value
-- Accepts a `children` Snippet for flexible footnote content (text, links, citations)
+- Accepts a `children` slot for flexible footnote content (text, links, citations)
 - Spreads `restProps` onto the `<aside>` element for consumer customization
 
 ## Props
 
 - `id`: string (required) -- unique footnote identifier, used for the element id and aria-label
-- `children`: Snippet (required) -- footnote content to render inside the aside
+- `children`: slot (required) -- footnote content to render inside the aside
 
 ## Usage
 
-```svelte
+```html
 <Footnote id="fn1">Source: Example et al., 2024</Footnote>
 ```
 
-```svelte
+```html
 <!-- In-page link from main content to footnote -->
 <p>This claim is supported by research.<a href="#fn1"><sup>1</sup></a></p>
 

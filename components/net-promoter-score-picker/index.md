@@ -14,7 +14,7 @@ styling.
 
 - Renders as `<fieldset role="radiogroup">` with 11 radio buttons (0-10)
 - Each radio has `aria-label` with its numeric value for screen readers
-- The `value` prop is `$bindable()` for two-way binding
+- The `value` prop is two-way binding
 - Default radio group name is "nps", customizable via `name` prop
 - Radio values are strings ("0" through "10")
 
@@ -29,33 +29,27 @@ styling.
 
 Basic NPS rating input:
 
-```svelte
-<script lang="ts">
-  import NetPromotorScoreRatingInput from './NetPromotorScoreRatingInput.svelte';
-
-  let score = $state("");
-</script>
-
-<NetPromotorScoreRatingInput label="How likely are you to recommend us?" bind:value={score} />
+```html
+<NetPromotorScoreRatingInput label="How likely are you to recommend us?" value={score} />
 <p>Selected score: {score}</p>
 ```
 
 With a custom radio group name:
 
-```svelte
+```html
 <NetPromotorScoreRatingInput
   label="Rate our service"
-  bind:value={score}
+  value={score}
   name="service-nps"
 />
 ```
 
 With additional HTML attributes:
 
-```svelte
+```html
 <NetPromotorScoreRatingInput
   label="Customer satisfaction"
-  bind:value={score}
+  value={score}
   data-section="feedback"
 />
 ```

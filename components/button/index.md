@@ -25,34 +25,20 @@ accessibility and keyboard support. It supports toggle button semantics via the
 - `pressed`: boolean | undefined (default: undefined) -- toggle button state
 - `label`: string (optional) -- accessible label override
 - `onclick`: callback (optional) -- click handler
-- `children`: Snippet -- button content
+- `children`: slot -- button content
 - `...restProps`: Any additional HTML attributes
 
 ## Usage
 
 Basic action button:
 
-```svelte
-<script lang="ts">
-  import Button from './Button.svelte';
-
-  function handleClick() {
-    console.log("clicked");
-  }
-</script>
-
+```html
 <Button onclick={handleClick}>Click me</Button>
 ```
 
 Submit button in a form:
 
-```svelte
-<script lang="ts">
-  import Button from './Button.svelte';
-
-  let isSubmitting = $state(false);
-</script>
-
+```html
 <form>
   <Button type="submit" disabled={isSubmitting}>Submit</Button>
 </form>
@@ -60,19 +46,13 @@ Submit button in a form:
 
 Toggle button with pressed state:
 
-```svelte
-<script lang="ts">
-  import Button from './Button.svelte';
-
-  let isBold = $state(false);
-</script>
-
+```html
 <Button pressed={isBold} onclick={() => isBold = !isBold}>Bold</Button>
 ```
 
 With accessible label override:
 
-```svelte
+```html
 <Button label="Close dialog" onclick={handleClose}>X</Button>
 ```
 

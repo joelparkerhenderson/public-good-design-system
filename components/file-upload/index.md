@@ -6,7 +6,7 @@ A file upload component provides a button-triggered file picker for uploading fi
 
 - Renders a `<div>` container with a `<button>`, hidden `<input type="file">`, and a status `<span>`
 - The button triggers the hidden file input via `click()` on the input ref
-- Uses `$state()` for the input element reference (`inputRef`) and the selected file count (`fileCount`)
+- Uses reactive state for the input element reference (`inputRef`) and the selected file count (`fileCount`)
 - The status `<span>` uses `aria-live="polite"` to announce file selection changes to screen readers
 - Exposes a `data-file-count` attribute on the status span for consumer CSS or testing
 - The `onchange` callback receives the native `FileList` object
@@ -23,7 +23,7 @@ A file upload component provides a button-triggered file picker for uploading fi
 
 ## Usage
 
-```svelte
+```html
 <FileUpload label="Upload files" accept=".pdf" onchange={handleFiles} />
 ```
 

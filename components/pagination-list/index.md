@@ -16,12 +16,12 @@ This component is commonly used in search results, product listings, and data ta
 ## Props
 
 - `label`: string (required) -- accessible name for the pagination navigation region via `aria-label`
-- `children`: Snippet (required) -- pagination list items, typically `<li>` elements containing links or buttons
+- `children`: slot (required) -- pagination list items, typically `<li>` elements containing links or buttons
 - `...restProps`: unknown -- additional attributes spread onto the `<nav>` element
 
 ## Usage
 
-```svelte
+```html
 <PaginationList label="Pagination">
   <li><a href="/page/1">1</a></li>
   <li><a href="/page/2" aria-current="page">2</a></li>

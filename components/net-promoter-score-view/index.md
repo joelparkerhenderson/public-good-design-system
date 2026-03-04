@@ -9,7 +9,7 @@ This headless component renders as a `<span>` element with an accessible label, 
 - Renders as a `<span>` element with `aria-label` for accessible naming
 - Displays the NPS score value as inline text content
 - Read-only display component, not interactive
-- Uses Svelte 5 `$props()` for prop destructuring with rest props spread
+- Uses props for prop destructuring with rest props spread
 - Value defaults to empty string when not provided
 - No score validation or classification logic; consumers handle categorization and styling
 - No hardcoded strings; all text comes through props for internationalization
@@ -22,11 +22,11 @@ This headless component renders as a `<span>` element with an accessible label, 
 
 ## Usage
 
-```svelte
+```html
 <NetPromotorScoreRatingView label="NPS Score" value="8" />
 ```
 
-```svelte
+```html
 <NetPromotorScoreRatingView label="Customer rating" value={score} />
 ```
 

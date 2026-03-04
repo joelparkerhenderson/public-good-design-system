@@ -8,21 +8,21 @@ This component is useful for user profile previews, link previews, contextual he
 
 - Conditionally renders a `<div>` with `role="tooltip"` when `open` is true
 - Uses `aria-label` for an accessible name describing the card content
-- Uses `$bindable(false)` for the `open` prop, enabling two-way binding
-- Accepts a `children` Snippet for flexible card content
+- Supports two-way binding on the `open` prop
+- Accepts a `children` slot for flexible card content
 - Spreads `restProps` onto the container for consumer customization
 - The consumer is responsible for managing hover/focus events on the trigger element to toggle `open`
 
 ## Props
 
 - `label`: string (required) -- accessible name for the hover card via `aria-label`
-- `open`: boolean (default: `false`) -- whether the hover card is currently visible; bindable with `bind:open`
-- `children`: Snippet (required) -- content to display inside the hover card
+- `open`: boolean (default: `false`) -- whether the hover card is currently visible; bindable with two-way `open` binding
+- `children`: slot (required) -- content to display inside the hover card
 - `...restProps`: unknown -- additional attributes spread onto the container `<div>`
 
 ## Usage
 
-```svelte
+```html
 <button
   onmouseenter={() => open = true}
   onmouseleave={() => open = false}
@@ -31,7 +31,7 @@ This component is useful for user profile previews, link previews, contextual he
 >
   Hover me
 </button>
-<HoverCard label="User info" bind:open>
+<HoverCard label="User info" open={open}>
   <p>Profile details here</p>
 </HoverCard>
 ```

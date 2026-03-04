@@ -7,7 +7,7 @@ The summary text is always visible and acts as the toggle trigger. The content b
 ## Implementation Notes
 
 - Uses native `<details>` and `<summary>` elements for built-in accessibility support
-- The `open` prop uses `$bindable(false)` for two-way binding with `bind:open`
+- The `open` prop uses two-way binding
 - No custom ARIA attributes needed because native elements handle all announcements
 - Spreads `restProps` onto the `<details>` element for consumer customization
 
@@ -15,18 +15,18 @@ The summary text is always visible and acts as the toggle trigger. The content b
 
 - `summary`: string (required) -- the clickable summary text shown as the toggle trigger
 - `open`: boolean (default: false) -- whether the content is expanded; bindable for two-way control
-- `children`: Snippet (required) -- the collapsible content revealed when expanded
+- `children`: slot (required) -- the collapsible content revealed when expanded
 
 ## Usage
 
-```svelte
+```html
 <Collapsible summary="More info">
   <p>Hidden content revealed on expand.</p>
 </Collapsible>
 ```
 
-```svelte
-<Collapsible summary="Advanced settings" bind:open={showAdvanced}>
+```html
+<Collapsible summary="Advanced settings" open={showAdvanced}>
   <p>Advanced configuration options here.</p>
 </Collapsible>
 ```

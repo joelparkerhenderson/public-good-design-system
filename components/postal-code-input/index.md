@@ -9,8 +9,8 @@ This component is useful in address forms, checkout flows, shipping calculators,
 - Renders a native `<input type="text">` element (not `type="number"`, since postal codes may contain letters or dashes)
 - Uses `autocomplete="postal-code"` to hint browser autofill for postal/ZIP code fields
 - Uses `aria-label` for accessible naming (no visible label element included; consumers can add their own)
-- Uses `$bindable()` for the `value` prop, enabling `bind:value` in the parent
-- Uses Svelte `bind:value` internally for reactive two-way binding
+- Supports two-way binding for the `value` prop, enabling two-way `value` binding in the parent
+- Supports two-way binding on the `value` prop
 - Supports standard HTML form attributes: `required`, `disabled`
 - Spreads `restProps` for consumer customization (e.g., `placeholder`, `pattern`, `maxlength`)
 
@@ -24,16 +24,16 @@ This component is useful in address forms, checkout flows, shipping calculators,
 
 ## Usage
 
-```svelte
-<PostalCodeInput label="Postal code" bind:value />
+```html
+<PostalCodeInput label="Postal code" value={value} />
 ```
 
-```svelte
-<PostalCodeInput label="ZIP code" bind:value={zipCode} required={true} />
+```html
+<PostalCodeInput label="ZIP code" value={zipCode} required={true} />
 ```
 
-```svelte
-<PostalCodeInput label="Postcode" bind:value={postcode} placeholder="SW1A 1AA" />
+```html
+<PostalCodeInput label="Postcode" value={postcode} placeholder="SW1A 1AA" />
 ```
 
 ## Keyboard Interactions

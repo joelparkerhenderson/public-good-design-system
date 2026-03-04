@@ -10,17 +10,16 @@ Use ScrollArea when you have content that may overflow its container, such as lo
 - Sets `tabindex="0"` to make the container focusable, enabling keyboard scrolling (arrow keys, Page Up/Down, Home/End)
 - Consumer must apply CSS `overflow` and dimension properties to enable actual scrolling behavior
 - Spreads `restProps` onto the div for consumer customization
-- Uses Svelte 5 `$props()` with TypeScript typing
 
 ## Props
 
 - `label`: string (required) -- accessible label for the scrollable region, applied via `aria-label`
-- `children`: Snippet (required) -- scrollable content to render inside the container
+- `children`: slot (required) -- scrollable content to render inside the container
 - `...restProps`: unknown -- additional attributes spread onto the `<div>` element
 
 ## Usage
 
-```svelte
+```html
 <ScrollArea label="Scrollable content">
   <p>Long content...</p>
 </ScrollArea>

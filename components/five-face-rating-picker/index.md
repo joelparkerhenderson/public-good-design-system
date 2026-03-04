@@ -5,7 +5,7 @@ A five-face rating input allows users to select a rating from 1 to 5 using label
 ## Implementation Notes
 
 - Renders a `<fieldset>` with `role="radiogroup"` containing 5 `<label>`/`<input type="radio">` pairs
-- Uses `$bindable()` for the selected rating value (1-5, with 0 meaning no selection)
+- Supports two-way binding for the selected rating value (1-5, with 0 meaning no selection)
 - Default face labels are "Very bad", "Bad", "Okay", "Good", "Very good" -- customizable via the `labels` prop
 - Each radio button displays the corresponding label text for screen readers and visual users
 - The `name` prop groups the radio buttons for form submission
@@ -14,7 +14,7 @@ A five-face rating input allows users to select a rating from 1 to 5 using label
 ## Props
 
 - `label`: string (required) -- accessible name for the rating group via `aria-label`
-- `value`: number (default: `0`) -- current rating (1-5, 0 = none), bindable via `bind:value`
+- `value`: number (default: `0`) -- current rating (1-5, 0 = none), two-way bindable via `value`
 - `name`: string (default: `"face-rating"`) -- radio group name for form submission
 - `labels`: string[] (default: `["Very bad", "Bad", "Okay", "Good", "Very good"]`) -- accessible labels for each face
 - `disabled`: boolean (default: `false`) -- whether the entire group is disabled
@@ -22,8 +22,8 @@ A five-face rating input allows users to select a rating from 1 to 5 using label
 
 ## Usage
 
-```svelte
-<FiveFaceRatingInput label="How was your experience?" bind:value />
+```html
+<FiveFaceRatingInput label="How was your experience?" value={value} />
 ```
 
 ## Keyboard Interactions

@@ -18,8 +18,8 @@ accessible labeling for screen readers.
 - Pattern: `[0-9]{3} [0-9]{3} [0-9]{4}` (XXX XXX XXXX)
 - `inputmode="numeric"` for numeric keyboard on mobile
 - `autocomplete="off"` to protect sensitive health identifiers
-- Supports `bind:value` for two-way binding via `$bindable()`
-- Pattern is defined as a constant to avoid Svelte template expression parsing of curly braces
+- Supports two-way binding
+- Pattern is defined as a constant for validation
 
 ## Props
 
@@ -31,31 +31,25 @@ accessible labeling for screen readers.
 
 ## Usage
 
-```svelte
-<script>
-  import UnitedKingdomNationalHealthServiceNumberInput from "./UnitedKingdomNationalHealthServiceNumberInput.svelte";
-
-  let nhsNumber = $state("");
-</script>
-
+```html
 <UnitedKingdomNationalHealthServiceNumberInput label="NHS Number" />
 ```
 
 With two-way binding:
 
-```svelte
-<UnitedKingdomNationalHealthServiceNumberInput label="NHS Number" bind:value={nhsNumber} />
+```html
+<UnitedKingdomNationalHealthServiceNumberInput label="NHS Number" value={nhsNumber} />
 ```
 
 Required field in a form:
 
-```svelte
+```html
 <UnitedKingdomNationalHealthServiceNumberInput label="NHS Number" required />
 ```
 
 Disabled state:
 
-```svelte
+```html
 <UnitedKingdomNationalHealthServiceNumberInput label="NHS Number" disabled />
 ```
 

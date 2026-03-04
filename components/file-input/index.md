@@ -24,15 +24,15 @@ This component is useful in upload forms, profile editors, document management i
 
 ## Usage
 
-```svelte
+```html
 <FileInput label="Upload photo" accept="image/*" />
 ```
 
-```svelte
+```html
 <FileInput label="Attach documents" accept=".pdf,.doc,.docx" multiple={true} />
 ```
 
-```svelte
+```html
 <FileInput label="Profile picture" accept="image/png,image/jpeg" required={true} />
 ```
 

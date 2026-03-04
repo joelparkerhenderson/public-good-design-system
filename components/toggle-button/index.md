@@ -10,22 +10,18 @@ Use ToggleButton when you need a binary on/off control with button semantics. Co
 
 ## Syntax
 
-```svelte
-<script>
-  import ToggleButton from "./ToggleButton.svelte";
-</script>
-
-<ToggleButton label="..." bind:pressed />
+```html
+<ToggleButton label="..." pressed={pressed} />
 ```
 
 ## Usage
 
-```svelte
-<ToggleButton label="Dark mode" bind:pressed />
+```html
+<ToggleButton label="Dark mode" pressed={pressed} />
 ```
 
-```svelte
-<ToggleButton label="Mute audio" bind:pressed={muted} disabled={locked} />
+```html
+<ToggleButton label="Mute audio" pressed={muted} disabled={locked} />
 ```
 
 ## Props
@@ -33,7 +29,7 @@ Use ToggleButton when you need a binary on/off control with button semantics. Co
 | Prop           | Type            | Default    | Description                                              |
 | -------------- | --------------- | ---------- | -------------------------------------------------------- |
 | `label`        | `string`        | (required) | Accessible name applied via `aria-label`                 |
-| `pressed`      | `boolean`       | `false`    | Whether the toggle is on; bindable with `bind:pressed`   |
+| `pressed`      | `boolean`       | `false`    | Whether the toggle is on; bindable with two-way `pressed` binding   |
 | `disabled`     | `boolean`       | `false`    | Whether the toggle is disabled                           |
 | `...restProps` | HTML attributes |            | Additional attributes spread onto the `<button>` element |
 
@@ -41,13 +37,8 @@ Use ToggleButton when you need a binary on/off control with button semantics. Co
 
 Feature flag control:
 
-```svelte
-<script>
-  import ToggleButton from "./ToggleButton.svelte";
-  let betaFeatures = $state(false);
-</script>
-
-<ToggleButton label="Enable beta features" bind:pressed={betaFeatures} />
+```html
+<ToggleButton label="Enable beta features" pressed={betaFeatures} />
 ```
 
 ## Keyboard Interactions
@@ -60,15 +51,6 @@ Feature flag control:
 - `role="switch"` -- identifies the element as a two-state toggle switch
 - `aria-checked={pressed}` -- communicates whether the toggle is currently on (`true`) or off (`false`)
 - `aria-label={label}` -- provides the accessible name for the toggle control
-
-## Claude Rules
-
-- Always use `ToggleButton` (not `Toggle`)
-- Always include the required `label` prop
-- Use `pressed` (not `checked`) for the state prop
-- Use Svelte 5 patterns (`$bindable` for pressed)
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - WAI-ARIA Switch Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/switch/

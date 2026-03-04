@@ -8,7 +8,7 @@ The component uses `aria-label` for accessible labeling in a headless context, a
 
 - Uses `<input type="text">` with `aria-label` for accessible naming
 - A measurement system is a collection of units (e.g., "metric", "imperial", "SI")
-- Bindable `value` prop for two-way data binding via `$bindable()`
+- Bindable `value` prop for two-way data binding via two-way binding
 - Supports `required` and `disabled` HTML attributes
 - Spreads `...restProps` on the root `<input>` element
 - All text content comes through props for internationalization
@@ -23,9 +23,9 @@ The component uses `aria-label` for accessible labeling in a headless context, a
 
 ## Usage
 
-```svelte
-<MeasurementSystemInput label="Measurement system" bind:value />
-<MeasurementSystemInput label="System" bind:value required />
+```html
+<MeasurementSystemInput label="Measurement system" value={value} />
+<MeasurementSystemInput label="System" value={value} required />
 ```
 
 ## Keyboard Interactions

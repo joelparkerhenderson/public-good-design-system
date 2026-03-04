@@ -20,7 +20,7 @@ This component is useful whenever a form needs to carry data that the user shoul
 
 ## Usage
 
-```svelte
+```html
 <HiddenInput name="csrf" value={token} />
 ```
 

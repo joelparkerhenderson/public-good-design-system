@@ -10,27 +10,27 @@ This component is useful for progressive disclosure patterns such as FAQ section
 - The button uses `aria-expanded` and `aria-controls` to communicate state to assistive technologies
 - The content region uses `role="region"` with `aria-label` matching the button label
 - A unique `contentId` is generated using `Math.random()` for the `aria-controls`/`id` link
-- Uses Svelte 5 `$bindable()` for two-way binding on the `expanded` prop
-- Content is conditionally rendered with `{#if expanded}`, removing it from the DOM when collapsed
-- Uses Svelte 5 Snippet for the `children` prop
+- Supports two-way binding on the `expanded` prop
+- Content is conditionally rendered with conditional rendering, removing it from the DOM when collapsed
+- Uses slot for the `children` prop
 
 ## Props
 
 - `label`: string (required) -- button text and accessible name for both the button and the content region
 - `expanded`: boolean (default: false) -- bindable boolean controlling whether the content is visible
-- `children`: Snippet (required) -- expandable content rendered when expanded is true
+- `children`: slot (required) -- expandable content rendered when expanded is true
 - `...restProps`: unknown -- additional attributes spread onto the outer `<div>` wrapper
 
 ## Usage
 
-```svelte
-<Expander label="Show details" bind:expanded>
+```html
+<Expander label="Show details" expanded={expanded}>
   <p>Details here...</p>
 </Expander>
 ```
 
-```svelte
-<Expander label="Advanced settings" bind:expanded={showAdvanced}>
+```html
+<Expander label="Advanced settings" expanded={showAdvanced}>
   <form>...</form>
 </Expander>
 ```

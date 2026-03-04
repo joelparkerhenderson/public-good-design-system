@@ -6,14 +6,14 @@ This component uses the native `<dialog>` HTML element with conditional renderin
 
 ## Implementation Notes
 
-- Renders a native `<dialog>` element conditionally using `{#if open}`
-- Uses `$bindable()` on the `open` prop for two-way binding with the parent
+- Renders a native `<dialog>` element conditionally via conditional rendering
+- Supports two-way binding on the `open` prop with the parent
 - The `open` HTML attribute is set directly on the dialog element (not using `.showModal()`)
 - `tabindex="-1"` is set on the dialog to ensure it can receive focus and keyboard events
 - Escape key handler sets `open` to false and prevents default browser behavior
 - The `modal` prop controls whether `aria-modal` is set (defaults to true)
 - When `modal` is false, `aria-modal` is omitted entirely (set to `undefined`)
-- Accepts a `children` Snippet for dialog content including buttons, forms, or text
+- Accepts a `children` slot for dialog content including buttons, forms, or text
 - Spreads `restProps` onto the `<dialog>` element for consumer customization
 
 ## Props
@@ -21,27 +21,23 @@ This component uses the native `<dialog>` HTML element with conditional renderin
 - `open`: boolean (default: false) -- whether the dialog is visible; bindable
 - `label`: string (required) -- accessible name for the dialog
 - `modal`: boolean (default: true) -- whether the dialog behaves as a modal
-- `children`: Snippet (required) -- dialog body content
+- `children`: slot (required) -- dialog body content
 
 ## Usage
 
-```svelte
-<script lang="ts">
-  let showDialog = $state(false);
-</script>
-
+```html
 <button onclick={() => showDialog = true}>Open Dialog</button>
 
-<Dialog label="Confirm action" bind:open={showDialog}>
+<Dialog label="Confirm action" open={showDialog}>
   <p>Are you sure you want to proceed?</p>
   <button onclick={() => showDialog = false}>Cancel</button>
   <button onclick={() => { handleConfirm(); showDialog = false; }}>Confirm</button>
 </Dialog>
 ```
 
-```svelte
+```html
 <!-- Non-modal dialog -->
-<Dialog label="Notification" bind:open={showNotice} modal={false}>
+<Dialog label="Notification" open={showNotice} modal={false}>
   <p>Your file has been saved.</p>
 </Dialog>
 ```

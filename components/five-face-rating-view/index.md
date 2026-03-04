@@ -5,7 +5,7 @@ A read-only five-face rating display that shows a text label corresponding to a 
 ## Implementation Notes
 
 - Renders a `<span>` with `role="img"` to indicate it represents a visual rating
-- Uses `$derived()` to look up the face label from the `labels` array based on the `value`
+- Uses derived value to look up the face label from the `labels` array based on the `value`
 - Exposes `data-value` attribute for consumer CSS or testing
 - Default labels are "Very bad", "Bad", "Okay", "Good", "Very good" -- customizable via the `labels` prop
 - Spreads `restProps` for consumer customization
@@ -19,7 +19,7 @@ A read-only five-face rating display that shows a text label corresponding to a 
 
 ## Usage
 
-```svelte
+```html
 <FiveFaceRatingView value={4} label="Good rating" />
 ```
 

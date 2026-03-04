@@ -9,7 +9,7 @@ This component renders the NHS number as an inline `<span>` element with an acce
 - Renders as a `<span>` element with `aria-label` for accessible naming
 - Displays the NHS number value as inline text content
 - Read-only display component (not an input); pairs with an Input component for editing
-- Uses Svelte 5 `$props()` for prop destructuring with rest props spread
+- Uses props for prop destructuring with rest props spread
 - No formatting or validation logic; the consumer provides the value pre-formatted
 - No hardcoded strings; all text comes through props for internationalization
 
@@ -21,11 +21,11 @@ This component renders the NHS number as an inline `<span>` element with an acce
 
 ## Usage
 
-```svelte
+```html
 <UnitedKingdomNationalHealthServiceNumberView label="NHS Number" value="123 456 7890" />
 ```
 
-```svelte
+```html
 <UnitedKingdomNationalHealthServiceNumberView label="Patient NHS Number" value={nhsNumber} />
 ```
 

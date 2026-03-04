@@ -20,7 +20,7 @@ The component supports an optional `aria-label` for additional accessible contex
 
 ## Usage
 
-```svelte
+```html
 <MeasurementUnitView value="kg" />
 <MeasurementUnitView value="lb" label="Pounds" />
 ```

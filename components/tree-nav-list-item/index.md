@@ -8,17 +8,13 @@ Use TreeNavListItem for individual entries within a TreeNavList. Common scenario
 
 ## Syntax
 
-```svelte
-<script>
-  import TreeNavListItem from "./TreeNavListItem.svelte";
-</script>
-
+```html
 <TreeNavListItem label="...">Label</TreeNavListItem>
 ```
 
 ## Usage
 
-```svelte
+```html
 <TreeNavList label="File browser">
   <TreeNavListItem tabindex="0">Documents</TreeNavListItem>
   <TreeNavListItem tabindex="-1">Photos</TreeNavListItem>
@@ -28,7 +24,7 @@ Use TreeNavListItem for individual entries within a TreeNavList. Common scenario
 
 With expandable items:
 
-```svelte
+```html
 <TreeNavList label="File browser">
   <TreeNavListItem tabindex="0" aria-expanded="true">
     Documents
@@ -45,14 +41,14 @@ With expandable items:
 
 | Prop           | Type            | Default    | Description                                                                                          |
 | -------------- | --------------- | ---------- | ---------------------------------------------------------------------------------------------------- |
-| `children`     | `Snippet`       | (required) | Content for the tree item                                                                            |
+| `children`     | `slot`       | (required) | Content for the tree item                                                                            |
 | `...restProps` | HTML attributes |            | Additional attributes spread onto the `<li>` element (including `role`, `tabindex`, `aria-expanded`) |
 
 ## Examples
 
 Navigation tree:
 
-```svelte
+```html
 <TreeNavList label="Site navigation">
   <TreeNavListItem tabindex="0" aria-expanded="false">
     Products
@@ -79,17 +75,6 @@ Navigation tree:
 - `tabindex` -- manages focus: `0` for the active item, `-1` for others (roving tabindex)
 - `aria-expanded` -- indicates whether an expandable item is open (`true`) or closed (`false`); omit for leaf nodes
 - `aria-selected` -- indicates whether the item is selected (optional)
-
-## Claude Rules
-
-- Always use `TreeNavListItem` (not `TreeItem`)
-- Always place inside a TreeNavList container
-- Always include `role="treeitem"` (provided by default)
-- Always set `tabindex` (`0` for the focused item, `-1` for others)
-- Use `aria-expanded` only on expandable branch nodes
-- Use Svelte 5 patterns (Snippet for children)
-- Component is headless/unstyled -- consumer provides all styling
-
 ## References
 
 - WAI-ARIA Tree View Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/treeview/

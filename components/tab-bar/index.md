@@ -7,26 +7,26 @@ Use TabBar when building a tabbed interface where users switch between different
 ## Implementation Notes
 
 - Renders a `<div>` element with `role="tablist"` for ARIA semantics
-- Uses `bind:this` to capture a reference to the tablist element for DOM queries
+- Uses two-way `this` binding to capture a reference to the tablist element for DOM queries
 - Queries all child elements with `[role='tab']` to build the list of navigable tabs
 - Implements keyboard navigation via an `onkeydown` handler:
   - ArrowRight moves focus to the next tab (wraps to first)
   - ArrowLeft moves focus to the previous tab (wraps to last)
   - Home moves focus to the first tab
   - End moves focus to the last tab
-- Uses Svelte 5 `$state()` for the internal DOM reference (`tablistRef`)
+- Uses reactive state for the internal DOM reference (`tablistRef`)
 - Consumer is responsible for managing `aria-selected` state on tab buttons and displaying corresponding tab panels
 - Spreads `restProps` onto the div for consumer customization
 
 ## Props
 
 - `label`: string (required) -- accessible label for the tab list, applied via `aria-label`
-- `children`: Snippet (required) -- tab button elements to render inside the tablist
+- `children`: slot (required) -- tab button elements to render inside the tablist
 - `...restProps`: unknown -- additional attributes spread onto the `<div>` element
 
 ## Usage
 
-```svelte
+```html
 <TabBar label="Settings">
   <button role="tab" aria-selected="true">General</button>
   <button role="tab" aria-selected="false">Advanced</button>

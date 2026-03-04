@@ -21,15 +21,15 @@ Submit inputs provide a simple, semantic way to add form submission capability t
 
 ## Usage
 
-```svelte
+```html
 <SubmitInput />
 ```
 
-```svelte
+```html
 <SubmitInput value="Send" />
 ```
 
-```svelte
+```html
 <SubmitInput value="Save changes" disabled={!formValid} />
 ```
 

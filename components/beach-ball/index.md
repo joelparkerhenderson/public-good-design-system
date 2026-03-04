@@ -10,7 +10,7 @@ This headless component renders a `<div>` with `role="status"` and `aria-live="p
 - `aria-busy` reflects the `active` prop, signaling to assistive technologies whether loading is in progress
 - `data-active` attribute mirrors the active state for CSS state selectors (e.g., `[data-active="true"]`)
 - Inner `<span aria-hidden="true">` is only rendered when active; consumers target it for spinning/animation CSS
-- Uses Svelte 5 `$props()` for prop destructuring with rest props spread
+- Uses props for prop destructuring with rest props spread
 - No hardcoded strings; all text comes through props for internationalization
 
 ## Props
@@ -21,11 +21,11 @@ This headless component renders a `<div>` with `role="status"` and `aria-live="p
 
 ## Usage
 
-```svelte
+```html
 <BeachBall label="Loading content" />
 ```
 
-```svelte
+```html
 <BeachBall label="Processing request" active={isLoading} />
 ```
 

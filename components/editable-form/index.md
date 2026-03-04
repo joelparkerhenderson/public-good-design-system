@@ -7,7 +7,7 @@ The form is only rendered when the `editing` prop is true. Submitting the form a
 ## Implementation Notes
 
 - Conditionally renders a `<form>` only when `editing` is true
-- Uses `$bindable()` on the `editing` prop for two-way state binding
+- Supports two-way binding on the `editing` prop for two-way state binding
 - Calls `event.preventDefault()` on submit to allow consumer-controlled save logic
 - Sets `editing` to `false` on both submit and Escape key press
 - Sets `tabindex="-1"` on the form to allow programmatic focus management
@@ -16,22 +16,22 @@ The form is only rendered when the `editing` prop is true. Submitting the form a
 ## Props
 
 - `label`: string (required) -- accessible name for the form, applied as `aria-label`
-- `editing`: boolean (default: false) -- whether the form is in edit mode, bindable via `bind:editing`
+- `editing`: boolean (default: false) -- whether the form is in edit mode, two-way bindable via `editing`
 - `onsubmit`: (event: SubmitEvent) => void (default: undefined) -- callback when the form is submitted
 - `oncancel`: () => void (default: undefined) -- callback when editing is cancelled
-- `children`: Snippet (required) -- form content (inputs, buttons, etc.)
+- `children`: slot (required) -- form content (inputs, buttons, etc.)
 
 ## Usage
 
-```svelte
-<EditableForm label="Edit profile" bind:editing onsubmit={save}>
+```html
+<EditableForm label="Edit profile" editing={editing} onsubmit={save}>
   <input name="name" value={name} />
   <button type="submit">Save</button>
 </EditableForm>
 ```
 
-```svelte
-<EditableForm label="Rename item" bind:editing onsubmit={rename} oncancel={revert}>
+```html
+<EditableForm label="Rename item" editing={editing} onsubmit={rename} oncancel={revert}>
   <input name="title" value={title} />
   <button type="submit">OK</button>
   <button type="button" onclick={() => editing = false}>Cancel</button>

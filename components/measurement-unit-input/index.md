@@ -8,7 +8,7 @@ The component uses `aria-label` for accessible labeling in a headless context, a
 
 - Uses `<input type="text">` with `aria-label` for accessible naming
 - A measurement unit is a standard quantity (e.g., "kg", "lb", "cm", "inch")
-- Bindable `value` prop for two-way data binding via `$bindable()`
+- Bindable `value` prop for two-way data binding via two-way binding
 - Supports `required` and `disabled` HTML attributes
 - Spreads `...restProps` on the root `<input>` element
 - All text content comes through props for internationalization
@@ -23,9 +23,9 @@ The component uses `aria-label` for accessible labeling in a headless context, a
 
 ## Usage
 
-```svelte
-<MeasurementUnitInput label="Unit" bind:value />
-<MeasurementUnitInput label="Unit of measure" bind:value required />
+```html
+<MeasurementUnitInput label="Unit" value={value} />
+<MeasurementUnitInput label="Unit of measure" value={value} required />
 ```
 
 ## Keyboard Interactions

@@ -8,19 +8,19 @@ Panels are commonly used in dashboards, settings pages, sidebars, and multi-sect
 
 - Renders a `<section>` HTML element, which creates a landmark region when labelled
 - The `label` prop is required and applied via `aria-label` to name the region
-- Content is provided via the `children` snippet
+- Content is provided via the `children` slot
 - Rest props are spread onto the `<section>` element
 - A `<section>` with `aria-label` becomes a navigable region in screen reader landmark lists
 
 ## Props
 
 - `label`: string (required) -- accessible name for the panel region via `aria-label`
-- `children`: Snippet (required) -- the panel content
+- `children`: slot (required) -- the panel content
 - `...restProps`: unknown -- additional attributes spread onto the `<section>` element
 
 ## Usage
 
-```svelte
+```html
 <!-- Basic panel with labeled region -->
 <Panel label="Settings">
   <p>Adjust your preferences below.</p>

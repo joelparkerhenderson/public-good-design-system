@@ -7,7 +7,7 @@ The `side` prop indicates which edge the drawer enters from via a `data-side` at
 ## Implementation Notes
 
 - Conditionally renders a `<div>` with `role="dialog"` only when `open` is true
-- Uses `$bindable()` on the `open` prop for two-way state binding
+- Supports two-way binding on the `open` prop for two-way state binding
 - Sets `aria-modal="true"` to indicate the drawer is a modal dialog
 - Exposes `data-side` attribute for consumer CSS positioning (left, right, top, bottom)
 - Sets `tabindex="-1"` to allow the drawer to receive focus programmatically
@@ -15,21 +15,21 @@ The `side` prop indicates which edge the drawer enters from via a `data-side` at
 
 ## Props
 
-- `open`: boolean (default: false) -- whether the drawer is visible, bindable via `bind:open`
+- `open`: boolean (default: false) -- whether the drawer is visible, two-way bindable via `open`
 - `label`: string (required) -- accessible name for the drawer
 - `side`: "left" | "right" | "top" | "bottom" (default: "left") -- which edge the drawer enters from
-- `children`: Snippet (required) -- drawer content
+- `children`: slot (required) -- drawer content
 
 ## Usage
 
-```svelte
-<Drawer label="Navigation" bind:open side="left">
+```html
+<Drawer label="Navigation" open={open} side="left">
   <nav>...</nav>
 </Drawer>
 ```
 
-```svelte
-<Drawer label="Filters" bind:open={showFilters} side="right">
+```html
+<Drawer label="Filters" open={showFilters} side="right">
   <form>...</form>
 </Drawer>
 ```

@@ -1,6 +1,6 @@
 # Button Input
 
-A button input is a form component that wraps the native HTML `<input type="button">` element. Unlike the Button component which uses `<button>` and can contain rich content (icons, formatted text) via children snippets, the button input displays its label as the `value` attribute and renders only plain text.
+A button input is a form component that wraps the native HTML `<input type="button">` element. Unlike the Button component which uses `<button>` and can contain rich content (icons, formatted text) via children slots, the button input displays its label as the `value` attribute and renders only plain text.
 
 This component is useful in form contexts where the native input semantics are preferred, or when interacting with systems that expect `<input>` elements. It supports disabling, form field naming, and an optional `aria-label` override for screen readers. The button input inherits all standard keyboard interactions from the native element -- Enter and Space to activate.
 
@@ -8,8 +8,8 @@ This component is useful in form contexts where the native input semantics are p
 
 - Wraps the native `<input type="button">` element for form-native button semantics
 - Label is the `value` attribute (plain text only, no rich content)
-- Distinguished from the Button component: Button uses `<button>` with children Snippets
-- Uses Svelte 5 `$props()` rune for prop destructuring
+- Distinguished from the Button component: Button uses `<button>` with children slots
+- Uses props rune for prop destructuring
 - Spreads `...restProps` on the `<input>` element for consumer extensibility
 - Supports `disabled`, `name`, and `onclick` for standard form interactions
 - No hardcoded user-facing strings; label text comes through `value` and `label` props
@@ -25,15 +25,15 @@ This component is useful in form contexts where the native input semantics are p
 
 ## Usage
 
-```svelte
+```html
 <ButtonInput value="Click me" onclick={handleClick} />
 ```
 
-```svelte
+```html
 <ButtonInput value="Submit" disabled />
 ```
 
-```svelte
+```html
 <ButtonInput value="Save" name="action" label="Save changes" />
 ```
 

@@ -13,7 +13,7 @@ allowing consumers to apply their own visual styling.
 ## Implementation Notes
 
 - Renders as `<select aria-label={label}>` with three options: red, amber, green
-- The `value` prop is `$bindable()` for two-way binding with `bind:value`
+- The `value` prop is two-way binding
 - Uses native select keyboard navigation
 
 ## Props
@@ -32,29 +32,23 @@ allowing consumers to apply their own visual styling.
 
 Basic RAG status selection:
 
-```svelte
-<script lang="ts">
-  import RedAmberGreenPicker from './RedAmberGreenPicker.svelte';
-
-  let status = $state("");
-</script>
-
-<RedAmberGreenPicker label="Project status" bind:value={status} />
+```html
+<RedAmberGreenPicker label="Project status" value={status} />
 <p>Current status: {status}</p>
 ```
 
 Pre-selected value:
 
-```svelte
+```html
 <RedAmberGreenPicker label="Health check" value="green" />
 ```
 
 With additional HTML attributes:
 
-```svelte
+```html
 <RedAmberGreenPicker
   label="Sprint status"
-  bind:value={status}
+  value={status}
   data-project="alpha"
 />
 ```

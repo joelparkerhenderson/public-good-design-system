@@ -20,7 +20,7 @@ The component supports an optional `aria-label` for additional accessible contex
 
 ## Usage
 
-```svelte
+```html
 <MeasurementSystemView value="metric" />
 <MeasurementSystemView value="SI" label="International System" />
 ```

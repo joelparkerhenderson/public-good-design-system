@@ -6,8 +6,8 @@ The component supports `selected` for pre-selecting an option and `disabled` for
 
 ## Implementation Notes
 
-- Wraps native `<option>` element with Svelte 5 runes
-- Uses `children` Snippet for label text content
+- Wraps native `<option>` element with runes
+- Uses `children` slot for label text content
 - Supports `selected` and `disabled` HTML attributes
 - Spreads `...restProps` on the root `<option>` element
 - All text content comes through children and props for internationalization
@@ -17,12 +17,12 @@ The component supports `selected` for pre-selecting an option and `disabled` for
 - `value`: string (required) -- the option value submitted with the form
 - `selected`: boolean (default: false) -- whether this option is pre-selected
 - `disabled`: boolean (default: false) -- whether this option is disabled
-- `children`: Snippet (required) -- option label text
+- `children`: slot (required) -- option label text
 - `...restProps`: Any additional HTML attributes passed to the `<option>` element
 
 ## Usage
 
-```svelte
+```html
 <select>
   <Option value="us">United States</Option>
   <Option value="uk">United Kingdom</Option>
