@@ -2,6 +2,20 @@
 
 [CSS style sheet template](css-style-sheet-template.css)
 
+Subprojects for headless components:
+
+- [Public Good Design System: Svelte headless](public-good-design-system-svelte-headless)
+- [Public Good Design System: Blazor headless](public-good-design-system-blazor-headless)
+- [Public Good Design System: React headless](public-good-design-system-react-headless)
+- [Public Good Design System: Vue headless](public-good-design-system-vue-headless)
+
+Subprojects for web app examples:
+
+- [Public Good Design System: Svelte SvelteKit examples](public-good-design-system-svelte-sveltekit-examples)
+- [Public Good Design System: Blazor Web examples](public-good-design-system-blazor-web-examples)
+- [Public Good Design System: React Next.js examples](public-good-design-system-react-next-examples)
+- [Public Good Design System: Vue Nuxt.js examples](public-good-design-system-vue-nuxt-examples)
+
 ## Components
 
 - accordion:
@@ -28,13 +42,13 @@
 - button = Button = a generic clickable button element
 - button-input = ButtonInput = an input element of type button for form actions
 - calendar-table:
-  - calendar-table = CalendarTable = a calendar table interactive grid for mananging dates, days, etc.
-  - calendar-table-head = CalendarTableHead = a calendar table interactive grid thead for mananging dates, days, etc.
-  - calendar-table-body = CalendarTableBody = a calendar table interactive grid tbody for mananging dates, days, etc.
-  - calendar-table-foot = CalendarTableFoot = a calendar table interactive grid tfoot for mananging dates, days, etc.
-  - calendar-table-col = CalendarTableCol = a calendar table interactive grid column for mananging dates, days, etc.
-  - calendar-table-row = CalendarTableRow = a calendar table interactive grid row for mananging dates, days, etc.
-  - calendar-table-data = CalendarTableData = a calendar table interactive grid data cell for mananging dates, days, etc.
+  - calendar-table = CalendarTable = a calendar table interactive grid for managing dates, days, etc.
+  - calendar-table-head = CalendarTableHead = a calendar table interactive grid thead for managing dates, days, etc.
+  - calendar-table-body = CalendarTableBody = a calendar table interactive grid tbody for managing dates, days, etc.
+  - calendar-table-foot = CalendarTableFoot = a calendar table interactive grid tfoot for managing dates, days, etc.
+  - calendar-table-col = CalendarTableCol = a calendar table interactive grid column for managing dates, days, etc.
+  - calendar-table-row = CalendarTableRow = a calendar table interactive grid row for managing dates, days, etc.
+  - calendar-table-data = CalendarTableData = a calendar table interactive grid data cell for managing dates, days, etc.
 - calendar-range-picker = CalendarRangePicker = a picker for selecting a date range on a calendar
 - call-to-action = CallToAction = a prominent prompt encouraging user action
 - caption = Caption = a caption for a table or figure element
@@ -328,3 +342,49 @@
 - TableData suffix = <td> tag
 - Select suffix = <select> tag
 - Span suffix = <span> tag
+
+## Component Composition Patterns
+
+### Form pattern: Form → Field → Input
+
+```tsx
+<Form label="Contact" onSubmit={handleSubmit}>
+  <Field label="Name" required error={errors.name}>
+    <TextInput label="Name" value={name} onChange={setName} />
+  </Field>
+  <ErrorSummary title="Errors">
+    <ul>...</ul>
+  </ErrorSummary>
+  <Button type="submit">Submit</Button>
+</Form>
+```
+
+### Navigation pattern: Nav → List → ListItem
+
+```tsx
+<BreadcrumbNav label="Breadcrumb">
+  <BreadcrumbNavList>
+    <BreadcrumbNavListItem>
+      <a href="/">Home</a>
+    </BreadcrumbNavListItem>
+    <BreadcrumbNavListItem current>Page</BreadcrumbNavListItem>
+  </BreadcrumbNavList>
+</BreadcrumbNav>
+```
+
+### Table pattern: Table → Head/Body → Row → Data
+
+```tsx
+<DataTable label="Users">
+  <DataTableHead>
+    <DataTableRow>
+      <th>Name</th>
+    </DataTableRow>
+  </DataTableHead>
+  <DataTableBody>
+    <DataTableRow>
+      <DataTableData>Item</DataTableData>
+    </DataTableRow>
+  </DataTableBody>
+</DataTable>
+```

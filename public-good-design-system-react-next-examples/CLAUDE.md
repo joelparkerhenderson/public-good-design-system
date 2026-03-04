@@ -1,4 +1,4 @@
-# Public Good Design System &rarr; React Next Examples
+# Public Good Design System - React Next Examples
 
 ## Metadata
 
@@ -15,8 +15,10 @@ React 19 + Next.js 15 example application demonstrating all 236 components from 
 ## Related Projects
 
 - [Public Good Design System](../) — Parent project
-- [Public Good Design System: Components](../components/) — Component specifications
-- [Public Good Design System React Headless](../public-good-design-system-react-headless/) — 236 headless React components (source library)
+- [Public Good Design System: React headless](../public-good-design-system-react-headless/)
+- [Public Good Design System: Blazor Web examples](../public-good-design-system-blazor-web-examples/)
+- [Public Good Design System: Svelte SvelteKit examples](../public-good-design-system-svelte-sveltekit-examples/)
+- [Public Good Design System: Vue Nuxt examples](../public-good-design-system-vue-nuxt-examples/)
 
 ## NHS UK Design System References
 

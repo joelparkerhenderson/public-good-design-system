@@ -146,6 +146,18 @@ dotnet test
 
 Test files with tests covering element rendering, CSS base classes, and child content.
 
+## Related Projects
+
+- [Public Good Design System](https://github.com/joelparkerhenderson/public-good-design-system) — Parent project
+- [Blazor Web Examples](../public-good-design-system-blazor-web-examples/) — Example app with NHS UK styling
+- [Svelte Headless](../public-good-design-system-svelte-headless/) — Svelte equivalent
+- [React Headless](../public-good-design-system-react-headless/) — React equivalent
+- [Vue Headless](../public-good-design-system-vue-headless/) — Vue equivalent
+
 ## License
 
-See LICENSE file.
+MIT or Apache-2.0 or GPL-2.0 or GPL-3.0, or contact us for more options.
+
+## Contact
+
+Joel Parker Henderson (joel@joelparkerhenderson.com)

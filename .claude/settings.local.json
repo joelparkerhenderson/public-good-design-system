@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(grep -r \"Typscript\\\\|Aaccessibility\\\\|mananging\\\\|&rarr;\" /Users/jph/git/joelparkerhenderson/public-good-design-system --include=\"*.md\" 2>/dev/null | grep -v node_modules | head -20)"
+    ]
+  }
+}

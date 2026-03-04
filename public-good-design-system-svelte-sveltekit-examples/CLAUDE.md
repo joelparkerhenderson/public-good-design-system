@@ -1,4 +1,4 @@
-# Public Good Design System &rarr; Svelte SvelteKit Examples
+# Public Good Design System - Svelte SvelteKit Examples
 
 ## Metadata
 
@@ -10,16 +10,17 @@
 
 ## Overview
 
-This project is Svelte SvelteKit examples of the Public Good Design System Svelte headless component library and using NHS UK design system styles and colors.
+Svelte 5 + SvelteKit 2 example application demonstrating all 236 components from the Public Good Design System headless component library, styled with NHS UK design system colors, typography, spacing, and focus states.
 
-Think carefully. Use high effort. Create plan.md file.
+## Related Projects
 
-Research related:
-
-- [Public Good Design System: Components](../components/)
+- [Public Good Design System](../) — Parent project
 - [Public Good Design System: Svelte headless](../public-good-design-system-svelte-headless/)
+- [Public Good Design System: Blazor Web examples](../public-good-design-system-blazor-web-examples/)
+- [Public Good Design System: React Next.js examples](../public-good-design-system-react-next-examples/)
+- [Public Good Design System: Vue Nuxt examples](../public-good-design-system-vue-nuxt-examples/)
 
-Research design system styles and colors by NHS UK:
+## NHS UK Design System References
 
 - [NHS UK - Design system](https://service-manual.nhs.uk/design-system)
 - [NHS UK - Design system - Styles - Focus State](https://service-manual.nhs.uk/design-system/styles/focus-state)
@@ -29,7 +30,7 @@ Research design system styles and colors by NHS UK:
 - [NHS UK - Design system - Styles - Spacing](https://service-manual.nhs.uk/design-system/styles/spacing)
 - [NHS UK - Design system - Styles - Typography](https://service-manual.nhs.uk/design-system/styles/typography)
 - [NHS UK - Design system - Styles - Use Frutiger Font](https://service-manual.nhs.uk/design-system/styles/use-frutiger-font)
-- [NHS UK - Aaccessibilty - Design](https://service-manual.nhs.uk/accessibility/design)
+- [NHS UK - Accessibility - Design](https://service-manual.nhs.uk/accessibility/design)
 - [NHS UK - NHS Identity - Identity Guidelines - Colours](https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/)
 
 ## IMPORTANT Architecture
@@ -73,7 +74,7 @@ Research design system styles and colors by NHS UK:
 ### Stack
 
 - **vitest** (not Jest) — `npm test` runs `vitest run`
-- **@testing-library/react** — render and query
+- **@testing-library/svelte** — render and query
 - **@testing-library/user-event** — user interaction simulation
 - **jsdom** — DOM environment
 
@@ -107,26 +108,15 @@ expect(button).toBeDisabled();
 
 ### Common Patterns
 
-- `<label htmlFor={id}>` — link labels to inputs
+- `<label for={id}>` — link labels to inputs
 - `aria-labelledby` / `aria-describedby` — link related elements
 - `aria-invalid` + `aria-errormessage` — error state
 - `role="alert"` — announce dynamic content
 - `role="group"` with `aria-label` — group related controls
-- Roving tabindex (`tabIndex={selected ? 0 : -1}`) — grid navigation
+- Roving tabindex (`tabindex={selected ? 0 : -1}`) — grid navigation
 - `aria-pressed` — toggle button state
 - `aria-expanded` — expandable sections
 - `aria-current` — current item in navigation
-
-### Auto-Generated IDs
-
-Components auto-generate unique IDs for ARIA linking:
-
-```tsx
-const generatedId = `component-${Math.random().toString(36).slice(2, 9)}`;
-const inputId = id ?? generatedId;
-const descriptionId = `${inputId}-desc`;
-const errorId = `${inputId}-error`;
-```
 
 ## Internationalization
 

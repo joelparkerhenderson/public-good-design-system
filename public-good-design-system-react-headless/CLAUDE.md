@@ -1,4 +1,4 @@
-# Public Good Design System React Headless
+# Public Good Design System - React Headless
 
 ## Project Overview
 

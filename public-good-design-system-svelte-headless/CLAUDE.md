@@ -1,4 +1,4 @@
-# Public Good Design System &rarr; Svelte headless
+# Public Good Design System - Svelte Headless
 
 ## Metadata
 
@@ -35,13 +35,13 @@
 - button = Button = a generic clickable button element
 - button-input = ButtonInput = an input element of type button for form actions
 - calendar-table:
-  - calendar-table = CalendarTable = a calendar table interactive grid for mananging dates, days, etc.
-  - calendar-table-head = CalendarTableHead = a calendar table interactive grid thead for mananging dates, days, etc.
-  - calendar-table-body = CalendarTableBody = a calendar table interactive grid tbody for mananging dates, days, etc.
-  - calendar-table-foot = CalendarTableFoot = a calendar table interactive grid tfoot for mananging dates, days, etc.
-  - calendar-table-col = CalendarTableCol = a calendar table interactive grid column for mananging dates, days, etc.
-  - calendar-table-row = CalendarTableRow = a calendar table interactive grid row for mananging dates, days, etc.
-  - calendar-table-data = CalendarTableData = a calendar table interactive grid data cell for mananging dates, days, etc.
+  - calendar-table = CalendarTable = a calendar table interactive grid for managing dates, days, etc.
+  - calendar-table-head = CalendarTableHead = a calendar table interactive grid thead for managing dates, days, etc.
+  - calendar-table-body = CalendarTableBody = a calendar table interactive grid tbody for managing dates, days, etc.
+  - calendar-table-foot = CalendarTableFoot = a calendar table interactive grid tfoot for managing dates, days, etc.
+  - calendar-table-col = CalendarTableCol = a calendar table interactive grid column for managing dates, days, etc.
+  - calendar-table-row = CalendarTableRow = a calendar table interactive grid row for managing dates, days, etc.
+  - calendar-table-data = CalendarTableData = a calendar table interactive grid data cell for managing dates, days, etc.
 - calendar-range-picker = CalendarRangePicker = a picker for selecting a date range on a calendar
 - call-to-action = CallToAction = a prominent prompt encouraging user action
 - caption = Caption = a caption for a table or figure element
@@ -430,7 +430,7 @@ Prohibit `@testing-library/jest-dom`. All tests use vitest built-in matchers onl
 - `expect(el.getAttribute('role')).toBe('button')` instead of `expect(el).toHaveAttribute('role', 'button')`
 - `expect(el.textContent).toContain('text')` instead of `expect(el).toHaveTextContent('text')`
 
-## Accessbility
+## Accessibility
 
 - Semantic HTML, alt text, link text, form labels, scoping, table row headings, table column headings.
 - Provide keyboard navigation, screen readers, color contrast, etc.

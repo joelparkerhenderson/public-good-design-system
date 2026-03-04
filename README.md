@@ -6,6 +6,20 @@ This is brand new work and we welcome collaboration, and guidance, and feedback.
 
 Contact <joel@joelparkerhenderson.com>
 
+Examples:
+
+- [Svelte SvelteKit examples](public-good-design-system-svelte-sveltekit-examples)
+- [React Next.js examples](public-good-design-system-react-next-examples)
+- [Vue Nuxt.js examples](public-good-design-system-vue-nuxt-examples)
+- [Blazor Web examples](public-good-design-system-blazor-web-examples)
+
+Headless versions if you prefer to bring your own theming:
+
+- [Svelte headless](public-good-design-system-svelte-headless)
+- [Blazor headless](public-good-design-system-blazor-headless)
+- [React headless](public-good-design-system-react-headless)
+- [Vue headless](public-good-design-system-vue-headless)
+
 ## Components
 
 - **accordion**:
@@ -32,13 +46,13 @@ Contact <joel@joelparkerhenderson.com>
 - **button**: a generic clickable button element
 - **button-input**: an input element of type button for form actions
 - **calendar-table**:
-  - **calendar-table**: a calendar table interactive grid for mananging dates, days, etc.
-  - **calendar-table-head**: a calendar table interactive grid thead for mananging dates, days, etc.
-  - **calendar-table-body**: a calendar table interactive grid tbody for mananging dates, days, etc.
-  - **calendar-table-foot**: a calendar table interactive grid tfoot for mananging dates, days, etc.
-  - **calendar-table-col**: a calendar table interactive grid column for mananging dates, days, etc.
-  - **calendar-table-row**: a calendar table interactive grid row for mananging dates, days, etc.
-  - **calendar-table-data**: a calendar table interactive grid data cell for mananging dates, days, etc.
+  - **calendar-table**: a calendar table interactive grid for managing dates, days, etc.
+  - **calendar-table-head**: a calendar table interactive grid thead for managing dates, days, etc.
+  - **calendar-table-body**: a calendar table interactive grid tbody for managing dates, days, etc.
+  - **calendar-table-foot**: a calendar table interactive grid tfoot for managing dates, days, etc.
+  - **calendar-table-col**: a calendar table interactive grid column for managing dates, days, etc.
+  - **calendar-table-row**: a calendar table interactive grid row for managing dates, days, etc.
+  - **calendar-table-data**: a calendar table interactive grid data cell for managing dates, days, etc.
 - **calendar-range-picker**: a picker for selecting a date range on a calendar
 - **call-to-action**: a prominent prompt encouraging user action
 - **caption**: a caption for a table or figure element
@@ -261,6 +275,13 @@ Contact <joel@joelparkerhenderson.com>
 - **warning-callout**: a callout box highlighting a warning message
 - **week-input**: an input for selecting a week and year
 
+## Design Principles
+
+- **Headless**: No CSS, no styles, no opinions on visual design. Consumers provide all styling.
+- **Accessible**: Semantic HTML elements, ARIA roles/attributes, and keyboard navigation built in. WCAG 2.2 AAA.
+- **Composable**: Compound components (e.g., Nav + NavList + NavListItem) snap together.
+- **Internationalization-ready**: No hardcoded user-facing strings. All text comes through props.
+
 ## Component name patterns
 
 - \*Bar \*BarButton
@@ -334,3 +355,11 @@ Contact <joel@joelparkerhenderson.com>
 | table-data | `<td>`       |
 | select     | `<select>`   |
 | span       | `<span>`     |
+
+## License
+
+MIT or Apache-2.0 or GPL-2.0 or GPL-3.0, or contact us for more options.
+
+## Contact
+
+Joel Parker Henderson (joel@joelparkerhenderson.com)

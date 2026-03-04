@@ -1,6 +1,4 @@
-# CLAUDE.md
-
-Instructions for AI assistants working on this codebase.
+# Public Good Design System - Blazor Headless
 
 ## Project Overview
 

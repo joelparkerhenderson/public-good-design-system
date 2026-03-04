@@ -1,4 +1,4 @@
-# Public Good Design System &rarr; Vue Nuxt Examples
+# Public Good Design System - Vue Nuxt Examples
 
 ## Metadata
 
@@ -14,9 +14,11 @@ Vue 3 + Nuxt 3 example application demonstrating all 236 components from the Pub
 
 ### Related Projects
 
-- [Public Good Design System: Components](../components/)
+- [Public Good Design System](../) — Parent project
 - [Public Good Design System: Vue headless](../public-good-design-system-vue-headless/)
+- [Public Good Design System: Blazor Web examples](../public-good-design-system-blazor-web-examples/)
 - [Public Good Design System: React Next.js examples](../public-good-design-system-react-next-examples/)
+- [Public Good Design System: Svelte SvelteKit examples](../public-good-design-system-svelte-sveltekit-examples/)
 
 ### NHS UK Design System References
 

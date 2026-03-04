@@ -180,6 +180,7 @@ npx vitest run tests/components/Button    # Run a specific test
 
 - [Public Good Design System](https://github.com/joelparkerhenderson/public-good-design-system) — Parent project
 - [Vue Headless](../public-good-design-system-vue-headless/) — 236 headless Vue components
+- [Blazor Web Examples](../public-good-design-system-blazor-web-examples/) — Blazor equivalent
 - [React Next.js Examples](../public-good-design-system-react-next-examples/) — React equivalent
 - [Svelte SvelteKit Examples](../public-good-design-system-svelte-sveltekit-examples/) — Svelte equivalent
 

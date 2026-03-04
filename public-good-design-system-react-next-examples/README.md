@@ -173,7 +173,9 @@ npx vitest run tests/components # Run component tests only
 
 - [Public Good Design System](https://github.com/joelparkerhenderson/public-good-design-system) - Parent project
 - [React Headless](../public-good-design-system-react-headless/) - 236 headless React components
+- [Blazor Web Examples](../public-good-design-system-blazor-web-examples/) - Blazor equivalent
 - [Svelte SvelteKit Examples](../public-good-design-system-svelte-sveltekit-examples/) - Svelte equivalent
+- [Vue Nuxt Examples](../public-good-design-system-vue-nuxt-examples/) - Vue equivalent
 
 ## NHS UK Design System References
 

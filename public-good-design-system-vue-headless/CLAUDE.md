@@ -1,115 +1,63 @@
-# Public Good Design System - Blazor Web Examples
+# Public Good Design System - Vue Headless
 
 ## Metadata
 
-- **Package**: public-good-design-system-blazor-web-examples
+- **Package**: public-good-design-system-vue-headless
 - **Version**: 0.1.0
 - **Created**: 2026-03-03
-- **Updated**: 2026-03-04
 - **License**: MIT or Apache-2.0 or GPL-2.0 or GPL-3.0 or contact us for more
 - **Contact**: Joel Parker Henderson (joel@joelparkerhenderson.com)
 
-## Overview
+## Project Overview
 
-Blazor Web App examples of the Public Good Design System Blazor headless component library, styled with NHS UK design system colors, typography, spacing, and focus states.
+A headless Vue 3 component library with 236 accessible, unstyled components.
 
-## Related Projects
+## IMPORTANT Architecture
 
-- [Public Good Design System](../) — Parent project
-- [Public Good Design System: Blazor headless](../public-good-design-system-blazor-headless/)
-- [Public Good Design System: React Next.js examples](../public-good-design-system-react-next-examples/)
-- [Public Good Design System: Svelte SvelteKit examples](../public-good-design-system-svelte-sveltekit-examples/)
-- [Public Good Design System: Vue Nuxt examples](../public-good-design-system-vue-nuxt-examples/)
+- Vue 3 with Composition API and TypeScript
+- `<script setup lang="ts">` syntax for all components
+- Headless design: zero CSS, zero styles
+- WCAG 2.2 AAA accessibility
+- Each component: `.vue` + `.test.ts` + `.md`
+- All files in `components/` directory (flat structure)
 
-## NHS UK Design System References
+## STRICT Prohibitions
 
-- [NHS UK - Design system](https://service-manual.nhs.uk/design-system)
-- [NHS UK - Design system - Styles - Focus State](https://service-manual.nhs.uk/design-system/styles/focus-state)
-- [NHS UK - Design system - Styles - Icons](https://service-manual.nhs.uk/design-system/styles/icons)
-- [NHS UK - Design system - Styles - Layout](https://service-manual.nhs.uk/design-system/styles/layout)
-- [NHS UK - Design system - Styles - Page Template](https://service-manual.nhs.uk/design-system/styles/page-template)
-- [NHS UK - Design system - Styles - Spacing](https://service-manual.nhs.uk/design-system/styles/spacing)
-- [NHS UK - Design system - Styles - Typography](https://service-manual.nhs.uk/design-system/styles/typography)
-- [NHS UK - Design system - Styles - Use Frutiger Font](https://service-manual.nhs.uk/design-system/styles/use-frutiger-font)
-- [NHS UK - Accessibility - Design](https://service-manual.nhs.uk/accessibility/design)
-- [NHS UK - NHS Identity - Identity Guidelines - Colours](https://www.england.nhs.uk/nhsidentity/identity-guidelines/colours/)
+- **No Nuxt** — pure Vue only
+- **No @testing-library/jest-dom** — use vitest matchers only
+- **No CSS/styles** — no Tailwind, no built-in styles
+- **No images, icons, or fonts** — consumers provide these
+- **No hardcoded user-facing strings** — all text through props
 
-## Tech Stack
+## Component Patterns
 
-- .NET 10.0 with C#
-- Blazor Web App with Interactive Server rendering
-- ProjectReference to `../public-good-design-system-blazor-headless/`
-- NHS UK CSS custom properties for styling
+### File Naming
 
-## Build & Run Commands
-
-```bash
-dotnet build                                              # Build the project
-dotnet run --project src/PublicGoodDesignSystemBlazorWebExamples  # Start dev server
-dotnet publish -c Release                                 # Publish for production
+Each component has exactly three files:
+```
+{ComponentPascalCase}.vue       # Implementation
+{ComponentPascalCase}.test.ts   # Tests
+{ComponentPascalCase}.md        # Documentation
 ```
 
-## Project Structure
+### Root Element CSS Class
 
-```
-public-good-design-system-blazor-web-examples/
-├── CLAUDE.md
-├── README.md
-├── PublicGoodDesignSystemBlazorWebExamples.slnx
-├── src/PublicGoodDesignSystemBlazorWebExamples/
-│   ├── PublicGoodDesignSystemBlazorWebExamples.csproj
-│   ├── Program.cs
-│   ├── _Imports.razor
-│   ├── Components/
-│   │   ├── App.razor
-│   │   ├── Routes.razor
-│   │   ├── Layout/MainLayout.razor
-│   │   └── Pages/ (13 page files)
-│   └── wwwroot/
-│       ├── css/nhs.css
-│       └── js/headless-interop.js
+Every component's first HTML element sets a class with the kebab-case name:
+```vue
+<button class="button">
+<div class="banner">
+<nav class="breadcrumb-nav">
 ```
 
-## Example Pages
+### Vue Component Conventions
 
-| Page | Route | Key Components |
-|------|-------|----------------|
-| Home | `/` | Links to all examples |
-| Contact Form | `/contact-form` | Form, Field, TextInput, EmailInput, Textarea, Select, Option, Button, ErrorSummary |
-| Dashboard | `/dashboard` | Card, Progress, ProgressCircle, Badge, Banner, DataTable |
-| Dialog Flow | `/dialog-flow` | Dialog, AlertDialog, Drawer, Tooltip, Button |
-| File Upload | `/file-upload-form` | FileUpload, Progress, Button, Alert, Badge, Form, Field |
-| Navigation | `/navigation-and-menus` | NavigationMenu, MenuBar, ToolBar, HamburgerMenu, DropdownMenu, Separator |
-| Page Layout | `/page-layout` | Header, Footer, BreadcrumbNav, Sidebar, NavigationMenu |
-| Rating | `/rating-and-feedback` | FiveStarRatingPicker, FiveStarRatingView, FiveFaceRatingPicker, NetPromoterScorePicker |
-| Search | `/search-and-filter` | Combobox, SearchInput, TextInput, TagGroup, Tag, DataTable, Badge |
-| Settings | `/settings-page` | SwitchButton, RadioGroup, RadioInput, Select, Fieldset, Banner |
-| Tabs | `/tabbed-interface` | TabBar, TabBarButton, AccordionNav, AccordionNavList, AccordionNavListItem, Badge |
-| Tasks | `/task-management` | TaskList, TaskListItem, TextInput, CheckboxInput, Badge, Progress |
-| Timeline | `/timeline-and-cards` | TimelineList, TimelineListItem, Card, DateRange, ReviewDate, SummaryList |
+- `defineProps<{}>()` with `withDefaults()` for prop definitions
+- `defineModel()` for two-way bindable props (v-model)
+- `computed()` for derived values
+- `v-bind="$attrs"` for pass-through attributes
+- Emit events instead of callback props (Vue convention)
 
-## Blazor Translation Patterns
-
-| React | Blazor |
-|-------|--------|
-| `useState(val)` | `private type field = val;` |
-| `onChange={fn}` | `ValueChanged="v => field = v"` or `@bind-Value` |
-| `onClick={() => ...}` | `@onclick="() => ..."` |
-| `{cond && <X/>}` | `@if (cond) { <X /> }` |
-| `{items.map(...)}` | `@foreach (var i in items) { ... }` |
-| `setTimeout(fn, ms)` | `await Task.Delay(ms); StateHasChanged();` |
-| `setInterval(fn, ms)` | `System.Timers.Timer` + `InvokeAsync(StateHasChanged)` |
-
-## Key Component APIs
-
-- **Two-way binding**: `Value`/`ValueChanged` (TextInput, Select), `Checked`/`CheckedChanged` (SwitchButton, CheckboxInput), `Open`/`OpenChanged` (Dialog, Drawer)
-- **Events**: `OnSubmit` (Form), `@onclick` on component passes through `AdditionalAttributes`
-- **CSS**: Each component outputs its kebab-case base class (e.g., `"form"`, `"field"`, `"button"`) which NHS CSS targets
-- **Tooltip**: Is a sibling element, not a wrapper. Use `aria-describedby` on trigger, `Visible`/`VisibleChanged` to toggle
-- **AccordionNavListItem**: Renders `<details>`, requires `<summary>` as first child
-- **TagInput.Onadd**: Is `string` type, not a callback. Use `TextInput` with `@onkeydown` wrapper for tag-add functionality
-
-## Suffix → HTML Element Mapping
+### Suffix → HTML Element Mapping
 
 | Suffix    | Element      | Example                                          |
 | --------- | ------------ | ------------------------------------------------ |
@@ -137,6 +85,44 @@ public-good-design-system-blazor-web-examples/
 | TableRow  | `<tr>`       | DataTableRow                                     |
 | TableData | `<td>`       | DataTableData                                    |
 
+## Testing
+
+### Stack
+
+- **vitest** (not Jest) — `npm test` runs `vitest run`
+- **Vue Testing Library** — render and query
+- **@testing-library/user-event** — user interaction simulation
+- **jsdom** — DOM environment
+
+### Matcher Rules (CRITICAL)
+
+Vitest built-in matchers ONLY. Never use jest-dom matchers:
+
+```ts
+// CORRECT — vitest matchers
+expect(el).toBeTruthy();                           // element exists
+expect(el).toBeNull();                             // element doesn't exist
+expect(el.getAttribute("role")).toBe("button");     // check attribute
+expect(el.textContent).toContain("hello");          // check text
+expect(button.disabled).toBe(true);                 // check property
+
+// WRONG — jest-dom matchers (NEVER use)
+expect(el).toBeInTheDocument();
+expect(el).toHaveAttribute("role", "button");
+expect(el).toHaveTextContent("hello");
+```
+
+## Headless Design Principles
+
+- Semantic HTML structure
+- ARIA attributes for accessibility
+- Props and events for behavior
+- Consumers provide all CSS
+- No visual styling
+- No stylesheets
+- No CSS classes beyond semantic ones
+- No built-in styles
+
 ## Accessibility
 
 ### Standards
@@ -147,20 +133,59 @@ public-good-design-system-blazor-web-examples/
 
 ### Common Patterns
 
-- `aria-describedby` / `aria-labelledby` — link related elements
-- `aria-invalid` + `aria-errormessage` — error state
+- `<label :for="id">` — link labels to inputs
+- `aria-labelledby` / `aria-describedby` — link related elements
+- `:aria-invalid` + `:aria-errormessage` — error state
 - `role="alert"` — announce dynamic content
 - `role="group"` with `aria-label` — group related controls
-- Roving tabindex (`tabindex="@(selected ? 0 : -1)"`) — grid navigation
-- `aria-pressed` — toggle button state
-- `aria-expanded` — expandable sections
+- Roving tabindex (`:tabindex="selected ? 0 : -1"`) — grid navigation
+- `:aria-pressed` — toggle button state
+- `:aria-expanded` — expandable sections
 - `aria-current` — current item in navigation
 
 ## Internationalization
 
-- All text content through component parameters — no hardcoded strings
+- All text content through props — no hardcoded strings
 - Labels, descriptions, error messages all configurable
-- Consumer provides localized text via parameters
+- Consumer provides localized text via props
+
+## Component Composition Patterns
+
+### Form pattern: Form → Field → Input
+
+```vue
+<Form label="Contact" @submit="handleSubmit">
+  <Field label="Name" required :error="errors.name">
+    <TextInput label="Name" v-model="name" />
+  </Field>
+  <ErrorSummary title="Errors"><ul>...</ul></ErrorSummary>
+  <Button type="submit">Submit</Button>
+</Form>
+```
+
+### Navigation pattern: Nav → List → ListItem
+
+```vue
+<BreadcrumbNav label="Breadcrumb">
+  <BreadcrumbNavList>
+    <BreadcrumbNavListItem><a href="/">Home</a></BreadcrumbNavListItem>
+    <BreadcrumbNavListItem current>Page</BreadcrumbNavListItem>
+  </BreadcrumbNavList>
+</BreadcrumbNav>
+```
+
+### Table pattern: Table → Head/Body → Row → Data
+
+```vue
+<DataTable label="Users">
+  <DataTableHead>
+    <DataTableRow><th>Name</th></DataTableRow>
+  </DataTableHead>
+  <DataTableBody>
+    <DataTableRow><DataTableData>Alice</DataTableData></DataTableRow>
+  </DataTableBody>
+</DataTable>
+```
 
 ## Components
 
@@ -189,12 +214,12 @@ public-good-design-system-blazor-web-examples/
 - button-input = ButtonInput = an input element of type button for form actions
 - calendar-table:
   - calendar-table = CalendarTable = a calendar table interactive grid for managing dates, days, etc.
-  - calendar-table-head = CalendarTableHead = a calendar table interactive grid thead
-  - calendar-table-body = CalendarTableBody = a calendar table interactive grid tbody
-  - calendar-table-foot = CalendarTableFoot = a calendar table interactive grid tfoot
-  - calendar-table-col = CalendarTableCol = a calendar table interactive grid column
-  - calendar-table-row = CalendarTableRow = a calendar table interactive grid row
-  - calendar-table-data = CalendarTableData = a calendar table interactive grid data cell
+  - calendar-table-head = CalendarTableHead = a calendar table interactive grid thead for managing dates, days, etc.
+  - calendar-table-body = CalendarTableBody = a calendar table interactive grid tbody for managing dates, days, etc.
+  - calendar-table-foot = CalendarTableFoot = a calendar table interactive grid tfoot for managing dates, days, etc.
+  - calendar-table-col = CalendarTableCol = a calendar table interactive grid column for managing dates, days, etc.
+  - calendar-table-row = CalendarTableRow = a calendar table interactive grid row for managing dates, days, etc.
+  - calendar-table-data = CalendarTableData = a calendar table interactive grid data cell for managing dates, days, etc.
 - calendar-range-picker = CalendarRangePicker = a picker for selecting a date range on a calendar
 - call-to-action = CallToAction = a prominent prompt encouraging user action
 - caption = Caption = a caption for a table or figure element
@@ -221,12 +246,12 @@ public-good-design-system-blazor-web-examples/
 - data-filter-form = DataFilterForm = a form for filtering data by criteria
 - data-table:
   - data-table = DataTable = a data table interactive grid for displaying and sorting tabular data
-  - data-table-head = DataTableHead = a data table interactive grid thead
-  - data-table-body = DataTableBody = a data table interactive grid tbody
-  - data-table-foot = DataTableFoot = a data table interactive grid tfoot
-  - data-table-col = DataTableCol = a data table interactive grid column
-  - data-table-row = DataTableRow = a data table interactive grid row
-  - data-table-data = DataTableData = a data table interactive grid data cell
+  - data-table-head = DataTableHead = a data table interactive grid thead for displaying and sorting tabular data
+  - data-table-body = DataTableBody = a data table interactive grid tbody for displaying and sorting tabular data
+  - data-table-foot = DataTableFoot = a data table interactive grid tfoot for displaying and sorting tabular data
+  - data-table-col = DataTableCol = a data table interactive grid column for displaying and sorting tabular data
+  - data-table-row = DataTableRow = a data table interactive grid row for displaying and sorting tabular data
+  - data-table-data = DataTableData = a data table interactive grid data cell for displaying and sorting tabular data
 - date-field = DateField = a structured field for entering date components
 - date-input = DateInput = an input for entering a date value
 - date-range = DateRange = a display of a start and end date range
@@ -271,12 +296,12 @@ public-good-design-system-blazor-web-examples/
 - form = Form = a form element for collecting and submitting user data
 - gantt-table:
   - gantt-table = GanttTable = a Gantt chart table interactive grid for planning schedule visualization
-  - gantt-table-head = GanttTableHead = a Gantt chart table interactive grid thead
-  - gantt-table-body = GanttTableBody = a Gantt chart table interactive grid tbody
-  - gantt-table-foot = GanttTableFoot = a Gantt chart table interactive grid tfoot
-  - gantt-table-col = GanttTableCol = a Gantt chart table interactive grid column
-  - gantt-table-row = GanttTableRow = a Gantt chart table interactive grid row
-  - gantt-table-data = GanttTableData = a Gantt chart table interactive grid data cell
+  - gantt-table-head = GanttTableHead = a Gantt chart table interactive grid thead for planning schedule visualization
+  - gantt-table-body = GanttTableBody = a Gantt chart table interactive grid tbody for planning schedule visualization
+  - gantt-table-foot = GanttTableFoot = a Gantt chart table interactive grid tfoot for planning schedule visualization
+  - gantt-table-col = GanttTableCol = a Gantt chart table interactive grid column for planning schedule visualization
+  - gantt-table-row = GanttTableRow = a Gantt chart table interactive grid row for planning schedule visualization
+  - gantt-table-data = GanttTableData = a Gantt chart table interactive grid data cell for planning schedule visualization
 - hamburger-menu = HamburgerMenu = a toggle button that opens a mobile navigation menu
 - header = Header = a page or section header area
 - hidden-input = HiddenInput = a hidden input for including data in form submission
@@ -291,12 +316,12 @@ public-good-design-system-blazor-web-examples/
 - inset-text = InsetText = indented text to distinguish it from surrounding content
 - kanban-table:
   - kanban-table = KanbanTable = a kanban board table interactive grid for organizing items by status
-  - kanban-table-head = KanbanTableHead = a kanban board table interactive grid thead
-  - kanban-table-body = KanbanTableBody = a kanban board table interactive grid tbody
-  - kanban-table-foot = KanbanTableFoot = a kanban board table interactive grid tfoot
-  - kanban-table-col = KanbanTableCol = a kanban board table interactive grid column
-  - kanban-table-row = KanbanTableRow = a kanban board table interactive grid row
-  - kanban-table-data = KanbanTableData = kanban board table interactive grid data cell
+  - kanban-table-head = KanbanTableHead = a kanban board table interactive grid thead for organizing items by status
+  - kanban-table-body = KanbanTableBody = a kanban board table interactive grid tbody for organizing items by status
+  - kanban-table-foot = KanbanTableFoot = a kanban board table interactive grid tfoot for organizing items by status
+  - kanban-table-col = KanbanTableCol = a kanban board table interactive grid column for organizing items by status
+  - kanban-table-row = KanbanTableRow = a kanban board table interactive grid row for organizing items by status
+  - kanban-table-data = KanbanTableData = kanban board table interactive grid data cell for organizing items by status
 - label = Label = a label associated with a form input
 - listbox = Listbox = a list of selectable options with keyboard navigation
 - measurement:

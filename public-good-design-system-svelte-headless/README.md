@@ -1,4 +1,4 @@
-# Public Good Design System &rarr; Svelte headless
+# Public Good Design System - Svelte Headless
 
 A headless Svelte 5 component library with 236 components. All components are headless (no built-in styles), fully accessible (WCAG 2.2 AAA), and use Svelte 5 runes.
 
@@ -28,13 +28,13 @@ A headless Svelte 5 component library with 236 components. All components are he
 - **button**: a generic clickable button element
 - **button-input**: an input element of type button for form actions
 - **calendar-table**:
-  - **calendar-table**: a calendar table interactive grid for mananging dates, days, etc.
-  - **calendar-table-head**: a calendar table interactive grid thead for mananging dates, days, etc.
-  - **calendar-table-body**: a calendar table interactive grid tbody for mananging dates, days, etc.
-  - **calendar-table-foot**: a calendar table interactive grid tfoot for mananging dates, days, etc.
-  - **calendar-table-col**: a calendar table interactive grid column for mananging dates, days, etc.
-  - **calendar-table-row**: a calendar table interactive grid row for mananging dates, days, etc.
-  - **calendar-table-data**: a calendar table interactive grid data cell for mananging dates, days, etc.
+  - **calendar-table**: a calendar table interactive grid for managing dates, days, etc.
+  - **calendar-table-head**: a calendar table interactive grid thead for managing dates, days, etc.
+  - **calendar-table-body**: a calendar table interactive grid tbody for managing dates, days, etc.
+  - **calendar-table-foot**: a calendar table interactive grid tfoot for managing dates, days, etc.
+  - **calendar-table-col**: a calendar table interactive grid column for managing dates, days, etc.
+  - **calendar-table-row**: a calendar table interactive grid row for managing dates, days, etc.
+  - **calendar-table-data**: a calendar table interactive grid data cell for managing dates, days, etc.
 - **calendar-range-picker**: a picker for selecting a date range on a calendar
 - **call-to-action**: a prominent prompt encouraging user action
 - **caption**: a caption for a table or figure element
@@ -349,11 +349,33 @@ npm run test:ui   # open vitest UI
 npm run test:watch # watch mode
 ```
 
-## Tracking
+## Accessibility
 
-- Package: public-good-design-system-svelte-headless
-- Version: 0.2.0
-- Created: 2021-03-30T15:47:49Z
-- Updated: 2026-03-01T19:15:49Z
-- License: MIT or Apache-2.0 or GPL-2.0 or GPL-3.0 or contact us for more
-- Contact: Joel Parker Henderson (joel@joelparkerhenderson.com)
+All components follow WCAG 2.2 AAA guidelines:
+
+- **Semantic HTML**: Proper element usage (`<button>`, `<nav>`, `<dialog>`, etc.)
+- **ARIA attributes**: Roles, labels, states, and properties
+- **Keyboard navigation**: Full keyboard support for all interactive components
+- **Screen readers**: Proper announcements via aria-live, role="alert", etc.
+- **Focus management**: Logical focus order and visible focus indicators
+- **Error handling**: Accessible error messages linked via aria-errormessage
+
+## Internationalization
+
+No strings are hardcoded in any component. All user-facing text comes through props. Labels, placeholders, and error messages are all configurable by the consumer.
+
+## Related Projects
+
+- [Public Good Design System](https://github.com/joelparkerhenderson/public-good-design-system) — Parent project
+- [Svelte SvelteKit Examples](../public-good-design-system-svelte-sveltekit-examples/) — Example app with NHS UK styling
+- [React Headless](../public-good-design-system-react-headless/) — React equivalent
+- [Vue Headless](../public-good-design-system-vue-headless/) — Vue equivalent
+- [Blazor Headless](../public-good-design-system-blazor-headless/) — Blazor equivalent
+
+## License
+
+MIT or Apache-2.0 or GPL-2.0 or GPL-3.0, or contact us for more options.
+
+## Contact
+
+Joel Parker Henderson (joel@joelparkerhenderson.com)
