@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "Bash(grep -r \"Typscript\\\\|Aaccessibility\\\\|mananging\\\\|&rarr;\" /Users/jph/git/joelparkerhenderson/public-good-design-system --include=\"*.md\" 2>/dev/null | grep -v node_modules | head -20)"
+      "Bash(grep -r \"Typscript\\\\|Aaccessibility\\\\|mananging\\\\|&rarr;\" /Users/jph/git/joelparkerhenderson/public-good-design-system --include=\"*.md\" 2>/dev/null | grep -v node_modules | head -20)",
+      "Bash(ls -d /Users/jph/git/joelparkerhenderson/public-good-design-system/components/*/ | wc -l)",
+      "Bash(ls -d /Users/jph/git/joelparkerhenderson/public-good-design-system/components/*five-star* | head -5)",
+      "Bash(ls -d /Users/jph/git/joelparkerhenderson/public-good-design-system/components/switch* 2>/dev/null | head -5)",
+      "Bash(grep -c '```svelte' /Users/jph/git/joelparkerhenderson/public-good-design-system/components/*/index.md | grep -v ':0' | wc -l)",
+      "Bash(find /Users/jph/git/joelparkerhenderson/public-good-design-system/components -maxdepth 2 -name \"index.md\" -type f -exec wc -l {} + | sort -rn | head -30)",
+      "Bash(find /Users/jph/git/joelparkerhenderson/public-good-design-system/components -maxdepth 2 -name \"index.md\" -type f -exec wc -l {} +)"
     ]
   }
 }

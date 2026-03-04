@@ -1,0 +1,38 @@
+# Breadcrumb Nav List Item
+
+A breadcrumb list item represents a single step in a breadcrumb navigation trail. It renders as a semantic `<li>` element designed to be placed inside a BreadcrumbNavList component (which provides the parent `<nav>` and `<ol>` structure). The component supports `aria-current="page"` to indicate when the item represents the user's current location in the site hierarchy.
+
+Typically, each breadcrumb list item contains a link for navigable ancestor pages, while the final item (current page) contains plain text and is marked with the `current` prop.
+
+## Implementation Notes
+
+- Renders as a semantic `<li>` element for use inside a breadcrumb `<nav>` / `<ol>` structure
+- Supports `aria-current="page"` via the `current` prop to indicate the active page in the breadcrumb trail
+- Content is provided through the children snippet, typically an `<a>` link or plain text
+- Passes through all additional HTML attributes via `...restProps`
+- Uses Svelte 5 `Snippet` for children content
+
+## Props
+
+- `current`: boolean (default: false) -- whether this item represents the current page in the breadcrumb trail
+- `children`: Snippet (required) -- breadcrumb content, typically a link or text
+
+## Usage
+
+```svelte
+<BreadcrumbNavListItem><a href="/">Home</a></BreadcrumbNavListItem>
+<BreadcrumbNavListItem current>About</BreadcrumbNavListItem>
+```
+
+## Keyboard Interactions
+
+None directly -- keyboard interaction is handled by the contained links.
+
+## ARIA
+
+- Implicit `listitem` role from the semantic `<li>` element
+- `aria-current="page"` -- set when `current` is true, indicating the user's current location in the breadcrumb trail
+
+## References
+
+- WAI-ARIA Breadcrumb Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/breadcrumb/
