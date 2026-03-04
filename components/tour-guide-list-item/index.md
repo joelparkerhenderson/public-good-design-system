@@ -70,6 +70,25 @@ Multi-step tour:
 - `aria-current="step"` -- indicates the currently active step
 - `aria-hidden="true"` -- hides inactive steps from assistive technology
 - `hidden` -- hides inactive steps from visual rendering
+## When to Use
+
+- Use TourGuideListItem for each individual step within a TourGuideList guided tour.
+- Use when each step needs independent visibility control and step progress information.
+- Avoid using TourGuideListItem outside of a TourGuideList parent; it relies on the parent dialog for modal behavior and Escape key handling.
+
+## Headless
+
+This headless component provides a `<div>` with `role="group"`, `aria-roledescription="step"`, `aria-label` (with optional step progress), `aria-current`, and `hidden`/`aria-hidden` for conditional visibility. The consumer provides all step content, navigation buttons, and all visual styling.
+
+## Advice
+
+- **Designers**: Make the current step visually prominent and clearly indicate progress (e.g., step dots, "Step N of M" text) so users know where they are in the tour.
+- **Developers**: Provide `stepNumber` and `totalSteps` props for accessible step progress labels. Use the `current` prop to control which step is visible.
+
+## Composition
+
+TourGuideListItem is a child of TourGuideList, following the Guide/GuideList/GuideListItem pattern. The parent TourGuideList provides the modal dialog overlay, and each TourGuideListItem manages its own visibility based on the `current` prop.
+
 ## References
 
 - WAI-ARIA Group Role: https://www.w3.org/TR/wai-aria-1.2/#group

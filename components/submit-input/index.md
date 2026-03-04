@@ -44,6 +44,22 @@ Note: keyboard interactions are provided natively by the `<input type="submit">`
 
 No additional ARIA attributes are needed. The native `<input type="submit">` element has an implicit `button` role and the `value` attribute serves as its accessible name.
 
+## When to Use
+
+- Use as the primary submission trigger inside HTML forms to trigger built-in browser validation and form submission.
+- Use when you need a simple, semantic submit button without custom children content.
+- Avoid when you need rich content (icons, multiple elements) inside the button; use a Button with `type="submit"` instead.
+- Consider a ResetInput alongside SubmitInput when the form should also offer a reset option.
+
+## Headless
+
+This headless component renders a native `<input type="submit">` element with configurable `value` text and `disabled` state. It provides built-in form submission and validation behavior with no additional ARIA needed. The consumer provides all visual styling including colors, padding, borders, and hover/focus states.
+
+## Advice
+
+- **Designers**: Use a clear, action-oriented label (e.g., "Save changes", "Send message") rather than generic text like "Submit". Visually distinguish the submit button from other form controls.
+- **Developers**: Disable the submit button while the form is processing to prevent duplicate submissions. Place the SubmitInput at the end of the form for a logical tab order.
+
 ## References
 
 - MDN input type="submit": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/submit

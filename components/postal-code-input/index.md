@@ -44,6 +44,25 @@ None beyond native input behavior -- standard text editing keys (typing, backspa
 
 - `aria-label={label}` -- provides an accessible name for the input since no visible `<label>` element is included
 
+## When to Use
+
+- Use PostalCodeInput in address forms, checkout flows, and shipping calculators where users need to enter a postal or ZIP code.
+- Use PostalCodeInput when you want browser autofill support via `autocomplete="postal-code"`.
+- Avoid using PostalCodeInput for general text or numeric fields; use TextInput or NumberInput instead.
+
+## Headless
+
+The PostalCodeInput headless component provides a native `<input type="text">` with `autocomplete="postal-code"`, `aria-label` for accessible naming, and two-way value binding. The consumer provides all visual styling, validation patterns, placeholder text, and layout.
+
+## Advice
+
+- **Designers**: Size the input field to match the expected postal code format for your target locale, and include a placeholder showing the expected format (e.g., "SW1A 1AA" or "90210").
+- **Developers**: Use the `pattern` attribute via `restProps` to validate locale-specific postal code formats, and pair with PostalCodeView for read-only display contexts.
+
+## Composition
+
+PostalCodeInput is the editable counterpart of PostalCodeView. Use PostalCodeInput for data entry and PostalCodeView for read-only display of the same postal code value.
+
 ## References
 
 - HTML autocomplete attribute: https://developer.mozilla.org/en-US/docs/Web/HTML/Attributes/autocomplete

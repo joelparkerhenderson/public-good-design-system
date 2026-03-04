@@ -45,6 +45,25 @@ None directly -- keyboard interaction is handled by the contained checkbox input
 - Implicit `listitem` role from the semantic `<li>` element
 - Checkbox semantics are provided by the consumer-supplied `<input type="checkbox">` element
 
+## When to Use
+
+- Use a CheckListItem inside a CheckList to represent a single task or item that can be marked as completed.
+- Use a CheckListItem when each list entry needs its own checkbox for independent completion tracking.
+- Avoid using a CheckListItem outside of a CheckList container; it requires a parent `<ul>` for valid HTML structure.
+
+## Headless
+
+This headless CheckListItem component provides a semantic `<li>` element for use within a CheckList. The consumer provides all visual styling including checkbox appearance, label formatting, completed-state effects (such as strikethrough or dimming), and spacing between items.
+
+## Advice
+
+- **Designers**: Ensure each item has enough touch target area for the checkbox. Use visual feedback (such as color change or strikethrough) when an item is checked.
+- **Developers**: Pair each checkbox input with a `<label>` linked by matching `id` and `for` attributes. Manage the checked state externally via the consumer.
+
+## Composition
+
+CheckListItem is the child component in the CheckList/CheckListItem composition pattern. It renders as an `<li>` and should be placed inside a CheckList container. Provide a checkbox input and label text as children content.
+
 ## References
 
 - WAI-ARIA Listbox Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/listbox/

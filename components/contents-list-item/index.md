@@ -39,3 +39,22 @@ Contents list items are used as children of ordered or unordered lists within a 
 
 - Semantic `<li>` provides implicit `listitem` role
 - Supports `aria-current="page"` or `aria-current="true"` on the `<li>` for indicating the current page in a navigation context
+
+## When to Use
+
+- Use a ContentsListItem for each entry in a table of contents or section navigation list.
+- Use a ContentsListItem with nested lists to represent hierarchical document structures with subsections.
+- Avoid using a ContentsListItem outside of a ContentsList or `<ol>`/`<ul>` parent; it requires a list container for valid HTML.
+
+## Headless
+
+This headless ContentsListItem component provides a semantic `<li>` element with support for `aria-current` and nesting. The consumer provides all visual styling including link appearance, active-section highlighting, indentation for nested items, and hover/focus states.
+
+## Advice
+
+- **Designers**: Highlight the currently active section link to help users orient themselves on long pages. Use consistent indentation for nested subsections.
+- **Developers**: Set `aria-current="true"` on the active item to communicate the current section to screen readers. Nest a `<ul>` inside a ContentsListItem to create subsection levels.
+
+## Composition
+
+ContentsListItem is the child component in the ContentsNav/ContentsList/ContentsListItem composition pattern. Place ContentsListItem components inside a ContentsList. Each item typically contains an anchor link. For hierarchical structures, nest a `<ul>` with additional ContentsListItem components inside a parent item.

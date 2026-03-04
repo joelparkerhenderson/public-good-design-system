@@ -44,6 +44,29 @@ This component is designed to be used as a child element within a Kanban column 
 - `role="listitem"` -- identifies this as an item within a list container (the parent Kanban column with `role="list"`)
 - `aria-label` -- optional accessible name for the card, set from the `label` prop, allowing screen readers to identify individual cards
 
+## When to Use
+
+- Use to represent a single work item or task card within a Kanban board column.
+- Use when each card needs an accessible label and listitem semantics within a list container.
+- Avoid using KanbanTableData outside of a column container with `role="list"`; it relies on that parent context.
+
+## Headless
+
+This headless component provides semantic listitem structure with `role="listitem"` and optional `aria-label` for accessible card identification. The consumer provides all visual styling, including card layout, colors, shadows, drag handles, and any interactive affordances.
+
+## Advice
+
+- **Designers**: Design cards with a clear visual hierarchy so that the title, assignee, and priority are scannable at a glance across columns.
+- **Developers**: Always provide a descriptive `label` prop so screen reader users can distinguish individual cards without reading all card content.
+
+## Composition
+
+KanbanTableData is the leaf component in the KanbanTable compound pattern. It is placed inside column containers within KanbanTableBody, where each column uses `role="list"`.
+
+```
+KanbanTable → KanbanTableBody → column (role="list") → KanbanTableData (role="listitem")
+```
+
 ## References
 
 - WAI-ARIA Listitem Role: https://www.w3.org/TR/wai-aria-1.2/#listitem

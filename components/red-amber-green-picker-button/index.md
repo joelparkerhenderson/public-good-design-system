@@ -43,6 +43,21 @@ Red indicates a critical problem needing immediate attention, amber signals caut
 - `aria-label` -- provides the accessible name for the button (e.g., "Amber - Caution")
 - `data-value` -- carries the status value for CSS-based styling (e.g., `data-value="red"`)
 
+## When to Use
+
+- Use RedAmberGreenPickerButton inside a RedAmberGreenPicker to represent one traffic-light status option (red, amber, or green).
+- Use RedAmberGreenPickerButton when you need a button-based RAG picker instead of a select dropdown.
+- Avoid using RedAmberGreenPickerButton outside of a RedAmberGreenPicker container.
+
+## Headless
+
+The RedAmberGreenPickerButton headless component provides a `<button>` with `aria-pressed` for toggle state, `aria-label` for accessible naming, and `data-value` for CSS targeting. The consumer provides all visual styling, including color indicators and selected-state appearance.
+
+## Advice
+
+- **Designers**: Make the selected state visually prominent with a border, background fill, or scale change, and ensure each button has a text label alongside any color indicator.
+- **Developers**: Use the `data-value` attribute for CSS selectors to apply status-specific colors (e.g., `[data-value="red"] { background: red; }`).
+
 ## References
 
 - WAI-ARIA Button Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/button/

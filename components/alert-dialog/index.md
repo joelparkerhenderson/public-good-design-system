@@ -68,6 +68,22 @@ Simple acknowledgment dialog without description:
 - `aria-labelledby` references the title element
 - `aria-describedby` references the description element (when present)
 
+## When to Use
+
+- Use for critical confirmations that require user acknowledgment, such as confirming a destructive action ("Delete this item?"), warning about unsaved changes, or displaying errors that block further interaction.
+- Use when the dialog content demands immediate attention and must be addressed before the user can continue.
+- Avoid for non-urgent informational messages -- use Alert or Dialog instead.
+- Consider Dialog instead when the content is interactive but does not require urgent acknowledgment.
+
+## Headless
+
+This component provides `role="alertdialog"`, `aria-modal`, `aria-labelledby`, and `aria-describedby` attributes on a native `<dialog>` element with zero visual styling. The consumer is responsible for all CSS including backdrop overlay, dialog positioning, sizing, padding, button styles, and focus trap implementation.
+
+## Advice
+
+- **Designers**: Ensure the dialog has a clear title, a concise description of the action, and distinguishable confirm/cancel buttons with appropriate visual weight (e.g., a destructive action button should appear more prominent and cautionary).
+- **Developers**: The consumer must implement focus trapping and Escape key handling. Set initial focus on the least destructive action button (e.g., "Cancel") to prevent accidental confirmations.
+
 ## References
 
 - WAI-ARIA alertdialog role: https://www.w3.org/TR/wai-aria-1.2/#alertdialog

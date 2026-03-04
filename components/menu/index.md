@@ -52,6 +52,29 @@ The component manages vertical focus movement between menu items via arrow keys,
 - `aria-label` -- provides an accessible name describing the purpose of the menu.
 - Child elements should use `role="menuitem"` with `tabindex="-1"` for focusable menu items.
 
+## When to Use
+
+- Use to present a list of actions or commands triggered by a button, such as context menus or action dropdowns.
+- Use when each item is a discrete action (e.g., Cut, Copy, Paste) rather than a selectable option.
+- Consider using Listbox instead when the purpose is selecting one or more options from a list.
+
+## Headless
+
+This headless component provides the ARIA menu role, keyboard navigation (arrow keys with wrapping, Home, End), and focus management for child menuitem elements. The consumer provides all visual styling, including menu positioning, item appearance, hover states, and animations.
+
+## Advice
+
+- **Designers**: Provide clear hover and focus indicators for menu items, and group related actions visually with separators when the menu is long.
+- **Developers**: Ensure each child element uses `role="menuitem"` with `tabindex="-1"`. Use the MenuItem component for consistent markup.
+
+## Composition
+
+Menu is a compound component that contains MenuItem children. Each MenuItem provides `role="menuitem"` semantics, while Menu provides the `role="menu"` container with keyboard navigation.
+
+```
+Menu (role="menu") → MenuItem (role="menuitem")
+```
+
 ## References
 
 - WAI-ARIA Menu Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/menu/

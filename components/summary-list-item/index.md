@@ -39,6 +39,25 @@ None -- this is a passive informational display, not an interactive element.
 - Screen readers announce term-description pairs naturally
 - The `<div>` wrapper is transparent to assistive technology and does not interfere with list semantics
 
+## When to Use
+
+- Use inside a SummaryList to present a single key-value pair with proper description list semantics.
+- Use when each term-description pair needs individual styling or attribute targeting via the `<div>` wrapper.
+- Avoid using outside of a SummaryList `<dl>` container, as the `<dt>`/`<dd>` elements require a description list parent.
+
+## Headless
+
+This headless component renders a `<div>` wrapper containing a `<dt>` and `<dd>` element for a single key-value pair. It provides semantic description list item structure that is transparent to assistive technology. The consumer provides all visual styling for the wrapper, term, and description elements.
+
+## Advice
+
+- **Designers**: Keep term labels concise and consistent in width to maintain alignment across rows. Use visual weight (bold or color) to distinguish terms from descriptions.
+- **Developers**: Use the `term` prop for the key text and the `children` slot for the value content, which can include rich HTML. Use `restProps` on the wrapper `<div>` for per-row styling hooks.
+
+## Composition
+
+SummaryListItem is designed to be used as a child of SummaryList. The SummaryList provides the outer `<dl>` container, and each SummaryListItem provides one `<div>`-wrapped `<dt>`/`<dd>` pair within it.
+
 ## References
 
 - MDN dl element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl

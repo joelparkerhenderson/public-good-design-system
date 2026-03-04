@@ -64,6 +64,26 @@ Disabled state:
 - `required` and `disabled` states conveyed to assistive technology
 - `inputmode="numeric"` hints mobile assistive technology to present a numeric keyboard
 
+## When to Use
+
+- Use UnitedStatesSocialSecurityNumberInput when a form requires entry of a US Social Security Number in the standard XXX-XX-XXXX format.
+- Use in tax forms, government applications, financial services, or any system that processes SSNs.
+- Avoid using a generic text input for SSNs; this component provides pattern validation, numeric keyboard hints, and disabled autocomplete for security.
+- Consider UnitedStatesSocialSecurityNumberView for displaying an existing SSN in a read-only context.
+
+## Headless
+
+This headless component provides an `<input type="text">` with SSN pattern validation, `inputmode="numeric"`, `autocomplete="off"`, `aria-label`, and support for `required`/`disabled` states. The consumer provides all visual styling, surrounding labels, hints, and error messages.
+
+## Advice
+
+- **Designers**: Display a format hint (e.g., "XXX-XX-XXXX") near the input and consider a password-style masking option for privacy. Use clear error messaging for invalid formats.
+- **Developers**: The component enforces the pattern `[0-9]{3}-[0-9]{2}-[0-9]{4}` on form submission. Consider adding a masking toggle for sensitive display and server-side validation for the SSN format.
+
+## Composition
+
+UnitedStatesSocialSecurityNumberInput is the editable input counterpart to UnitedStatesSocialSecurityNumberView, following the Input/View pattern. Use the Input for data entry and the View for read-only display.
+
 ## References
 
 - Social Security Number format: https://www.ssa.gov/employer/randomization.html

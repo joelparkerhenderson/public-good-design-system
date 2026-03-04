@@ -88,6 +88,21 @@ Within a form:
 - `aria-valuemin`, `aria-valuemax`, `aria-valuenow`
 - `aria-valuetext` for human-readable angle (e.g., "90°")
 
+## When to Use
+
+- Use for selecting an angular value such as rotation controls, compass direction selectors, gradient angle pickers, or tilt adjustments.
+- Use when you need a slider with degree-specific semantics and screen reader value text (e.g., "90 degrees").
+- Avoid for general numeric input without angular meaning -- use RangeInput or NumberInput instead.
+
+## Headless
+
+This component provides a native `<input type="range">` with ARIA slider attributes (`aria-valuetext` with degree formatting, `aria-label`, `aria-valuemin`, `aria-valuemax`) and zero visual styling. The consumer is responsible for all CSS including track appearance, thumb styling, tick marks, and any visual degree indicator or dial overlay.
+
+## Advice
+
+- **Designers**: Consider pairing the slider with a visual degree indicator (circular dial or angle preview) so users can see the selected angle. Ensure the thumb has a minimum 44x44px touch target on mobile.
+- **Developers**: Use the `step` prop to snap to common increments (15, 45, 90 degrees) when fine-grained control is not needed. Test that `aria-valuetext` announcements are clear with screen readers.
+
 ## References
 
 - WAI-ARIA Slider Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/slider/

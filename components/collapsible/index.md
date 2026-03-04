@@ -39,6 +39,21 @@ The summary text is always visible and acts as the toggle trigger. The content b
 
 - No custom ARIA attributes required -- native `<details>`/`<summary>` elements provide built-in expanded/collapsed state announcements to screen readers
 
+## When to Use
+
+- Use a Collapsible to hide secondary content that users may optionally expand, such as advanced settings, additional details, or FAQ answers.
+- Use a Collapsible to reduce visual clutter on content-heavy pages while keeping information accessible.
+- Avoid using a Collapsible for critical content that all users must see; keep essential information visible by default.
+
+## Headless
+
+This headless Collapsible component provides native `<details>` and `<summary>` elements with built-in keyboard support and screen reader announcements, plus a bindable `open` prop for programmatic control. The consumer provides all visual styling including summary appearance, expand/collapse icons, transition animations, and content padding.
+
+## Advice
+
+- **Designers**: Include a clear visual indicator (such as a chevron or plus/minus icon) showing whether the section is expanded or collapsed. Ensure the summary text clearly describes the hidden content.
+- **Developers**: Use the bindable `open` prop to programmatically control or observe the expanded state. The native `<details>` element handles all accessibility announcements automatically.
+
 ## References
 
 - WAI-ARIA Disclosure Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/disclosure/

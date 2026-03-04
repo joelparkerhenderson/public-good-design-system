@@ -40,6 +40,21 @@ Each care card has a heading that describes the action and a body containing the
 - `aria-label` -- set from `label` prop or `heading` prop for screen reader identification
 - `data-type` -- exposes urgency level for consumer styling hooks
 
+## When to Use
+
+- Use a care card to communicate healthcare advice at a specific urgency level, such as non-urgent GP visits, urgent A&E attendance, or immediate 999 calls.
+- Use a care card when medical guidance needs to be visually distinct from surrounding content with clear urgency indicators.
+- Avoid using a care card for non-medical alerts or status messages; consider Alert or WarningCallout instead.
+
+## Headless
+
+This headless CareCard component provides the semantic `<section>` with `role="region"`, accessible labeling from the heading, and a `data-type` attribute exposing the urgency level. The consumer provides all visual styling including urgency-specific colors (e.g., blue for non-urgent, red for immediate), card borders, spacing, and typography.
+
+## Advice
+
+- **Designers**: Use distinct, high-contrast colors for each urgency level so users can quickly identify severity. Follow NHS design patterns for familiarity in healthcare contexts.
+- **Developers**: Always set the `type` prop explicitly to match the clinical urgency. Use the `data-type` attribute in your CSS selectors to apply urgency-specific styling.
+
 ## References
 
 - NHS England Care Cards: https://service-manual.nhs.uk/design-system/components/care-cards

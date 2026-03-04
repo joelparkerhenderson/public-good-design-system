@@ -46,6 +46,21 @@ This component is useful in forms where users need to enter a calendar date. The
 
 - `aria-label={label}` -- provides an accessible name for the date input since there is no visible `<label>` element
 
+## When to Use
+
+- Use a DateInput for a bare date input with `aria-label` when you need full control over label placement and surrounding layout.
+- Use a DateInput in compact forms or table cells where a full DateField with visible label would take too much space.
+- Avoid using a DateInput without providing an accessible name; always set the `label` prop. Consider a DateField when you need a visible label and error handling built in.
+
+## Headless
+
+This headless DateInput component provides a native `<input type="date">` with `aria-label` for accessible naming, two-way binding on the `value` prop, and `min`/`max` constraints for date range validation. The consumer provides all visual styling including input appearance, calendar icon, and any surrounding label or helper text.
+
+## Advice
+
+- **Designers**: Ensure the date input is wide enough to display the full date format. Consider showing the expected format (e.g., YYYY-MM-DD) as placeholder or helper text nearby.
+- **Developers**: Use ISO 8601 `YYYY-MM-DD` format for `value`, `min`, and `max` props. The browser provides the native date picker UI, which varies across browsers and platforms.
+
 ## References
 
 - MDN date input: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date

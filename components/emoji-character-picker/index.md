@@ -38,6 +38,22 @@ None built-in -- the consumer should implement grid keyboard navigation on cells
 - `role="grid"` -- identifies the container as a grid widget for structured cell navigation
 - `aria-label={label}` -- provides an accessible name for the emoji picker
 
+## When to Use
+
+- Use in messaging apps, comment systems, or rich text editors where users need to browse and select emoji characters.
+- Use when a structured grid of emoji organized by category provides a better experience than typing emoji names.
+- Avoid for simple inline emoji display; use the Emoji component instead.
+- Consider a text-based emoji search input when the full grid picker is too heavy for the interface.
+
+## Headless
+
+This headless component provides a `<div>` with `role="grid"` and accessible labeling via `aria-label`, defining the semantic structure for emoji grid navigation. The consumer provides all visual styling, emoji grid content, category navigation, selection behavior, and keyboard navigation on cells.
+
+## Advice
+
+- **Designers**: Organize emoji into clearly labeled categories (e.g., smileys, animals, food). Provide a search or filter mechanism for quick access to specific emoji.
+- **Developers**: Implement arrow key navigation on `role="gridcell"` elements for keyboard accessibility. Use Enter or Space for emoji selection and ensure focus management within the grid.
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

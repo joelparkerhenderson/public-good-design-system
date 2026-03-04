@@ -70,6 +70,22 @@ With accessible label override:
 - `aria-label` for screen reader text override
 - `aria-disabled` from native disabled attribute
 
+## When to Use
+
+- Use for triggering actions such as form submission, dialog opening, state changes, or toggling features.
+- Use when you need rich content inside the button (icons, formatted text) via children slots.
+- Avoid for navigation between pages -- use a link (`<a>`) or ActionLink instead.
+- Consider ButtonInput instead when you need an `<input type="button">` for form-native semantics with plain text labels.
+
+## Headless
+
+This component provides a native `<button>` element with optional `aria-pressed` for toggle state, `aria-label` override, and standard button types, all with zero visual styling. The consumer is responsible for all CSS including colors, padding, border, border-radius, hover states, focus indicators, disabled appearance, and icon layout.
+
+## Advice
+
+- **Designers**: Maintain a minimum 44x44px touch target. Use visual hierarchy (primary, secondary, ghost) to distinguish button importance. Ensure disabled buttons have sufficient contrast.
+- **Developers**: The default type is `"button"` (not `"submit"`) to prevent accidental form submissions. Only provide the `pressed` prop when implementing a toggle button pattern.
+
 ## References
 
 - WAI-ARIA Button Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/button/

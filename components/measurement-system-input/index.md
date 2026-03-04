@@ -35,3 +35,22 @@ The component uses `aria-label` for accessible labeling in a headless context, a
 ## ARIA
 
 - `aria-label` -- set from the `label` prop to provide an accessible name
+
+## When to Use
+
+- Use when the user needs to specify which measurement system applies, such as "metric", "imperial", or "SI".
+- Use in settings or configuration forms where measurement system selection affects how values are interpreted.
+- Consider using a Select or RadioGroup instead if the valid options are a fixed, known set.
+
+## Headless
+
+This headless component provides a text input with `aria-label` for accessible naming and two-way bindable value for reactive form integration. The consumer provides all visual styling, including input dimensions, borders, and any autocomplete or suggestion UI.
+
+## Advice
+
+- **Designers**: If the measurement system options are limited, consider pairing with a dropdown or autocomplete pattern for faster selection.
+- **Developers**: Validate system names on the consumer side if only specific values are acceptable, as this component accepts free-text input.
+
+## Composition
+
+MeasurementSystemInput is part of the measurement component family. It works alongside MeasurementSystemView, MeasurementUnitInput, MeasurementUnitView, MeasurementInstanceInput, and MeasurementInstanceView.

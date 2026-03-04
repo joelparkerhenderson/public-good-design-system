@@ -36,3 +36,18 @@ None -- this component is a passive display element.
 - `role="presentation"` -- applied when `decorative` is true, removing semantic meaning
 - `aria-label` -- provides the accessible name for meaningful characters; omitted when decorative
 - `aria-hidden="true"` -- applied when `decorative` is true, hiding the element from the accessibility tree
+
+## When to Use
+
+- Use a Character component for displaying a single glyph, symbol, or emoji that needs accessible context, such as a checkmark for success or a warning symbol.
+- Use a Character for decorative symbols like stars or flourishes where you want to hide them from assistive technology.
+- Avoid using a Character for multi-character text strings; use a standard `<span>` or text element instead.
+
+## Headless
+
+This headless Character component provides the semantic `<span>` with conditional `role="img"` and `aria-label` for meaningful characters, or `role="presentation"` with `aria-hidden` for decorative ones. The consumer provides all visual styling including font size, color, spacing, and any decorative effects.
+
+## Advice
+
+- **Designers**: Ensure meaningful characters have sufficient size and color contrast to be legible. Consider pairing symbols with supporting text for clarity.
+- **Developers**: Always provide a descriptive `label` for meaningful characters. Set `decorative` to true for purely visual symbols that add no information.

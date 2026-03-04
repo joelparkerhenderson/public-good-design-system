@@ -48,6 +48,29 @@ This component is commonly used in search results, product listings, and data ta
 - `<nav aria-label="...">` -- identifies the pagination as a navigation landmark with a descriptive label
 - `aria-current="page"` -- consumer applies this to the link representing the current page
 
+## When to Use
+
+- Use to provide page navigation for large data sets such as search results, product listings, or data tables.
+- Use when you need a semantic `<nav>` and `<ul>` structure for pagination links with an accessible label.
+- Consider using infinite scrolling or "Load more" patterns instead when pagination would interrupt the user's browsing flow.
+
+## Headless
+
+This headless component provides a `<nav>` wrapping a `<ul>` with `aria-label` for landmark identification and proper list semantics for pagination items. The consumer provides all visual styling, including page link appearance, active-page highlighting, previous/next button styling, and responsive layout.
+
+## Advice
+
+- **Designers**: Highlight the current page clearly and provide previous/next controls. Consider showing ellipsis for large page ranges to keep the pagination compact.
+- **Developers**: Apply `aria-current="page"` to the link for the currently active page. Use PaginationListItem for each page entry to maintain consistent markup.
+
+## Composition
+
+PaginationList is part of the PaginationNav compound component. It renders inside PaginationNav and contains PaginationListItem children.
+
+```
+PaginationNav → PaginationList (nav + ul) → PaginationListItem (li)
+```
+
 ## References
 
 - WAI-ARIA Practices - Pagination: https://www.w3.org/WAI/ARIA/apd/patterns/navigation/

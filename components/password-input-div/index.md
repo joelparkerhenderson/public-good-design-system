@@ -41,6 +41,21 @@ This component is useful for login forms, registration forms, account settings, 
 - `aria-label={toggleLabel}` -- provides an accessible name for the toggle button
 - `aria-pressed={visible}` -- indicates whether the password is currently visible (on the toggle button)
 
+## When to Use
+
+- Use PasswordInput for login forms, registration flows, and account settings where users enter a password.
+- Use PasswordInput when you want a show/hide toggle so users can verify their password entry.
+- Avoid using PasswordInput for non-sensitive text fields; use TextInput instead.
+
+## Headless
+
+The PasswordInput headless component provides a `<div>` wrapping a native `<input>` with dynamic type switching between `password` and `text`, `aria-label` for accessible naming, `aria-pressed` on the toggle button, and `autocomplete="current-password"`. The consumer provides all visual styling for the input, toggle button, and wrapper layout.
+
+## Advice
+
+- **Designers**: Position the show/hide toggle button clearly within or beside the input field, using a recognizable eye icon with sufficient contrast.
+- **Developers**: Set `autocomplete` to `"new-password"` for registration forms by overriding via `restProps` to help password managers distinguish between login and signup flows.
+
 ## References
 
 - HTML password input: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/password

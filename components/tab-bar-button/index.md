@@ -83,6 +83,25 @@ Basic tab within a tablist:
 - `aria-controls` links to the corresponding tabpanel
 - Roving `tabindex` (0 for selected, -1 for unselected)
 
+## When to Use
+
+- Use inside a TabBar to represent a single tab that switches the visible content panel.
+- Use when each tab controls a distinct panel of content within a tabbed interface.
+- Avoid using outside a `role="tablist"` container, as the `role="tab"` semantics require a tablist parent.
+
+## Headless
+
+This headless component renders a `<button>` with `role="tab"`, `aria-selected`, `aria-controls`, and roving `tabindex` for proper tab semantics and keyboard navigation. The consumer provides all visual styling including active/inactive states, typography, and spacing.
+
+## Advice
+
+- **Designers**: Visually differentiate the selected tab from unselected tabs using weight, color, or an underline indicator. Maintain consistent tab sizing so the layout does not shift on selection.
+- **Developers**: Set the `controls` prop to the `id` of the associated `role="tabpanel"` element. Manage the `selected` prop from the parent to keep tab and panel state synchronized.
+
+## Composition
+
+TabBarButton is designed to be used as a child of TabBar. The TabBar provides the `role="tablist"` container with arrow key navigation, and each TabBarButton provides an individual `role="tab"` button with selection state.
+
 ## References
 
 - WAI-ARIA TabBarButtons Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/tabs/

@@ -38,6 +38,21 @@ This headless component renders as a `<span>` element with an accessible label, 
 
 - `aria-label` -- provides the accessible name from the `label` prop so screen readers can announce the context of the displayed score
 
+## When to Use
+
+- Use to display a previously captured NPS score in dashboards, reports, or detail views.
+- Use when the score should be visible but not editable by the user.
+- Consider using NetPromoterScorePicker instead when the user needs to select or change the score.
+
+## Headless
+
+This headless component renders a `<span>` with the NPS score as text content and `aria-label` for accessible context. The consumer provides all visual styling, including typography, color coding by score range (Detractor, Passive, Promoter), and layout.
+
+## Advice
+
+- **Designers**: Color-code displayed scores by range (e.g., red for Detractors 0-6, yellow for Passives 7-8, green for Promoters 9-10) and display the category label alongside the number.
+- **Developers**: Provide a descriptive `label` prop (e.g., "Customer NPS score") so screen reader users understand the context of the displayed number.
+
 ## References
 
 - Net Promoter Score: https://en.wikipedia.org/wiki/Net_promoter_score

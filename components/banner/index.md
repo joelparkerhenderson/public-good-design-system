@@ -48,6 +48,22 @@ Banners may be persistent or dismissible, depending on the message's importance.
 - `aria-live="polite"` -- ensures screen readers announce banner content without interrupting the current reading
 - `aria-label={closeLabel}` -- provides the accessible name for the dismiss button when present
 
+## When to Use
+
+- Use for persistent, page-level messages such as announcements, cookie consent notices, system alerts, or promotional messages that span the full width of the interface.
+- Use when a dismissible message needs to remain visible until the user explicitly closes it.
+- Avoid for inline feedback tied to a specific form field or action -- use Alert instead.
+- Consider Toast or Notification instead for brief, auto-dismissing messages.
+
+## Headless
+
+This component provides `role="region"` with `aria-live="polite"`, a `data-type` attribute for semantic variants, optional dismiss button with `aria-label`, and visibility state management, all with zero visual styling. The consumer is responsible for all CSS including background colors, text styling, dismiss button appearance, full-width layout, and position (sticky, fixed, or static).
+
+## Advice
+
+- **Designers**: Ensure the dismiss button has a minimum 44x44px touch target and is visually distinct. Use color and an icon together so meaning is not conveyed by color alone.
+- **Developers**: Provide a meaningful `closeLabel` prop for the dismiss button so screen reader users understand its purpose. Handle the `onclose` callback to persist dismissal state if needed.
+
 ## References
 
 - WAI-ARIA banner role: https://www.w3.org/TR/wai-aria-1.2/#banner

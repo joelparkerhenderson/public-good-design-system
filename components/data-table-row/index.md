@@ -38,6 +38,25 @@ None -- this component is a passive container. Navigation within the table follo
 
 - Implicit `row` role from the `<tr>` element -- identifies a row of cells within the table
 
+## When to Use
+
+- Use a DataTableRow for each record or header row within a DataTableHead, DataTableBody, or DataTableFoot section.
+- Use a DataTableRow when you need to spread additional attributes like event handlers or data attributes onto a `<tr>`.
+- Avoid using a DataTableRow outside of a DataTable structure; it requires a parent `<thead>`, `<tbody>`, or `<tfoot>` for valid HTML.
+
+## Headless
+
+This headless DataTableRow component provides a semantic `<tr>` element with implicit `row` role for assistive technology. The consumer provides all visual styling including hover highlights, selected-row states, striped row backgrounds, and click interaction styles.
+
+## Advice
+
+- **Designers**: Use hover highlights to help users track which row they are reading. Consider a selected-row state for interactive tables.
+- **Developers**: Place `<td>`, `<th>`, or DataTableData elements as children. Use `restProps` to add click handlers or data attributes for interactive row selection.
+
+## Composition
+
+DataTableRow is part of the DataTable composition pattern. It sits inside DataTableHead, DataTableBody, or DataTableFoot and contains DataTableData or `<th>` elements. The full hierarchy is DataTable > DataTableHead/DataTableBody/DataTableFoot > DataTableRow > DataTableData.
+
 ## References
 
 - WAI-ARIA Table Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/table/

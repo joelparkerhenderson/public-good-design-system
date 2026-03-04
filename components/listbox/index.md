@@ -56,6 +56,21 @@ The component manages focus movement between options via arrow keys, with Home a
 - `aria-label` -- provides an accessible name describing the purpose of the listbox.
 - Child elements should use `role="option"` and optionally `aria-selected` to indicate selection state.
 
+## When to Use
+
+- Use when users need to select one or more items from a visible list of options, such as filter panels or settings.
+- Use instead of a `<select>` when all options should be visible simultaneously without opening a dropdown.
+- Consider using a Select or Combobox instead when space is limited or when the option list is very long.
+
+## Headless
+
+This headless component provides the ARIA listbox role, keyboard navigation (arrow keys, Home, End with wrapping), and focus management for child option elements. The consumer provides all visual styling, including option appearance, selected-state highlighting, scrolling behavior, and focus indicators.
+
+## Advice
+
+- **Designers**: Provide clear visual distinction for the selected and focused option states, using both color and a non-color indicator to support color-blind users.
+- **Developers**: Ensure each child option uses `role="option"` with `tabindex="-1"` and manage `aria-selected` on options to reflect the current selection state.
+
 ## References
 
 - WAI-ARIA Listbox Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/listbox/

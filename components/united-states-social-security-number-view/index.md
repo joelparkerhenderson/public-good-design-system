@@ -38,6 +38,25 @@ This component renders the SSN as an inline `<span>` element with an accessible 
 - `aria-label` -- provides the accessible name from the `label` prop so screen readers can announce the purpose of the displayed number
 - Screen readers announce the label followed by the text content (the number value)
 
+## When to Use
+
+- Use UnitedStatesSocialSecurityNumberView to display an SSN in a read-only context, such as personal records, confirmation screens, or account summaries.
+- Use when the SSN needs to be visible but not editable.
+- Avoid using this component when users need to enter or edit an SSN; use UnitedStatesSocialSecurityNumberInput instead.
+
+## Headless
+
+This headless component provides a `<span>` element with `aria-label` for accessible read-only display of a Social Security Number. The consumer provides the pre-formatted value and all visual styling.
+
+## Advice
+
+- **Designers**: Consider partially masking the SSN (e.g., "***-**-6789") for privacy in non-secure contexts. Display the number with clear hyphen separators for readability.
+- **Developers**: Ensure the `value` prop is pre-formatted before passing it to the component, as no formatting or masking logic is built in. Handle sensitive data carefully on the client side.
+
+## Composition
+
+UnitedStatesSocialSecurityNumberView is the read-only display counterpart to UnitedStatesSocialSecurityNumberInput, following the Input/View pattern. Use the View for display and the Input for data entry.
+
 ## References
 
 - Social Security Number: https://www.ssa.gov/history/ssn/geocard.html

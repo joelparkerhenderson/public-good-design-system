@@ -44,6 +44,22 @@ None beyond native input behavior -- the browser's built-in time picker handles 
 
 - `aria-label={label}` -- provides an accessible name for the input since no visible `<label>` element is included
 
+## When to Use
+
+- Use TimeInput when users need to enter a specific time value in a form, such as scheduling, appointments, or deadlines.
+- Use for straightforward time-of-day entry where the native browser time picker is sufficient.
+- Avoid using TimeInput for time duration or elapsed time; consider a custom duration input instead.
+- Consider TimePicker when you need additional time selection features beyond the native input.
+
+## Headless
+
+This headless component provides a native `<input type="time">` element with `aria-label`, two-way value binding, and support for `required` and `disabled` states. The browser provides the time picker UI. The consumer provides all visual styling and any surrounding label or hint text.
+
+## Advice
+
+- **Designers**: Pair the time input with a visible label and hint text showing the expected format, since native time picker appearance varies by browser.
+- **Developers**: Use `min` and `max` attributes via restProps to constrain valid time ranges (e.g., business hours). The value is always in 24-hour HH:MM format regardless of display locale.
+
 ## References
 
 - MDN input type="time": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time

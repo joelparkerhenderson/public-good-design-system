@@ -45,6 +45,21 @@ None -- this component is a passive announcement container. Notifications are an
 - `aria-live="polite"` -- default live region politeness; waits for user idle before announcing
 - `aria-live="assertive"` -- applied when `urgent` is true; announces immediately
 
+## When to Use
+
+- Use to announce events, updates, or action results to users, such as "Changes saved" or "New message received".
+- Use with `urgent` for critical messages that must immediately interrupt the user, such as errors or security alerts.
+- Avoid overusing urgent notifications; frequent assertive announcements degrade the screen reader experience.
+
+## Headless
+
+This headless component provides a `<div>` with ARIA live region semantics -- `role="status"` with `aria-live="polite"` by default, or `role="alert"` with `aria-live="assertive"` when urgent. The consumer provides all visual styling, including colors, icons, animations, positioning, and auto-dismiss behavior.
+
+## Advice
+
+- **Designers**: Use distinct visual styles for different notification types (success, error, warning, info) and ensure notifications do not obscure important page content.
+- **Developers**: Use the `urgent` prop only for messages requiring immediate attention. Polite notifications wait for the user to finish their current task before being announced.
+
 ## References
 
 - WAI-ARIA alert role: https://www.w3.org/TR/wai-aria-1.2/#alert

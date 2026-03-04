@@ -37,6 +37,25 @@ None -- this component is a passive navigation container. Keyboard navigation is
 
 - `aria-label={label}` -- provides an accessible name for the `<nav>` landmark, distinguishing it from other navigation regions on the page
 
+## When to Use
+
+- Use a ContentsNav as the navigation landmark wrapper for a table of contents on long documentation pages or articles.
+- Use a ContentsNav to provide a distinct navigation region that screen reader users can quickly jump to via landmark navigation.
+- Avoid using a ContentsNav for general page navigation; use NavigationMenu or BreadcrumbNav instead.
+
+## Headless
+
+This headless ContentsNav component provides a semantic `<nav>` element with `aria-label` for landmark identification, containing an `<ol>` for ordered section links. The consumer provides all visual styling including positioning (sticky sidebar or inline), borders, spacing, and link appearance.
+
+## Advice
+
+- **Designers**: Place the contents navigation in a consistent location, such as the top of the content area or a sticky sidebar. Ensure it is visually distinct from the main navigation.
+- **Developers**: Set the `label` prop to a descriptive name (e.g., "On this page") to differentiate this landmark from other `<nav>` elements. Use ContentsList and ContentsListItem as children.
+
+## Composition
+
+ContentsNav follows the Nav/List/ListItem composition pattern. Use ContentsNav as the outer `<nav>` landmark, ContentsList as the inner ordered list, and ContentsListItem for each section link entry. This three-level structure ensures proper semantics and landmark navigation for assistive technology users.
+
 ## References
 
 - WAI-ARIA Navigation Landmark: https://www.w3.org/WAI/ARIA/apd/practices/landmark-regions/

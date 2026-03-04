@@ -33,6 +33,22 @@ None -- this component is a passive container for data visualization.
 - `role="img"` -- identifies the container as a graphical image to assistive technologies
 - `aria-label={label}` -- provides an accessible name describing what the sparkline represents
 
+## When to Use
+
+- Use to display compact data trends inline within text, tables, or dashboards where a full chart would be too large.
+- Use when a quick at-a-glance visual of data patterns (e.g., sales trends, stock movement, performance over time) is more useful than raw numbers.
+- Avoid when users need to interact with or drill into the data; use a full chart or graph component instead.
+- Consider providing the underlying data in a table or tooltip for accessibility.
+
+## Headless
+
+This headless component provides a semantic container with `role="img"` and `aria-label` to identify the visualization for assistive technologies. The consumer provides the actual chart rendering (SVG, canvas, or a charting library) as children, along with all visual styling, dimensions, and colors.
+
+## Advice
+
+- **Designers**: Keep sparklines small and unadorned -- omit axes, labels, and gridlines to maintain their compact nature. Use a consistent color and line weight across all sparklines in the same context.
+- **Developers**: Write a descriptive `label` that conveys the data trend (e.g., "Sales up 12% over 7 days") rather than just a title. Ensure the SVG or canvas has appropriate dimensions and does not cause layout shift.
+
 ## References
 
 - WAI-ARIA img role: https://www.w3.org/TR/wai-aria-1.2/#img

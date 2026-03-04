@@ -32,6 +32,21 @@ None -- hidden inputs are not visible or focusable and have no keyboard interact
 
 None -- hidden inputs are not perceivable by users or assistive technologies, so no ARIA attributes are needed.
 
+## When to Use
+
+- Use to include non-visible data in form submissions, such as CSRF tokens, record IDs, or tracking metadata.
+- Use when the form needs to carry data that the user should not see or modify directly.
+- Avoid for data that should be visible or editable; use a standard Input component instead.
+
+## Headless
+
+This headless component provides a native `<input type="hidden">` element with `name` and `value` attributes for form submission. No ARIA or visual styling is needed because hidden inputs are not perceivable by any user or assistive technology.
+
+## Advice
+
+- **Designers**: No visual design is needed -- hidden inputs have no visual presence. Document which hidden values your forms require so developers include them.
+- **Developers**: Always set the `name` prop for form submission. Never store sensitive data in hidden inputs that could be inspected or modified by the user.
+
 ## References
 
 - HTML hidden input: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/hidden

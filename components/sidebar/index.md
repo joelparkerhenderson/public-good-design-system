@@ -34,6 +34,22 @@ None -- this component is a passive container. Keyboard navigation depends on th
 - Implicit `complementary` role via the `<aside>` element -- identifies the container as a complementary landmark
 - `aria-label={label}` -- provides an accessible name so screen readers can distinguish this sidebar from other landmarks on the page
 
+## When to Use
+
+- Use when content is tangentially related to the main content and benefits from being in a distinct, navigable landmark region (e.g., navigation menus, filters, related links).
+- Use when assistive technology users should be able to jump directly to this supplementary region.
+- Avoid for primary page content; use a `<main>` element instead.
+- Consider a Drawer or Sheet when the side content should be toggled on and off rather than persistently visible.
+
+## Headless
+
+This headless component renders a semantic `<aside>` element with an `aria-label` for landmark identification. It provides the complementary landmark role automatically. The consumer provides all visual styling including width, positioning, layout, and responsive behavior.
+
+## Advice
+
+- **Designers**: Keep sidebar width proportional to the main content area, typically 20-30% of the viewport. Provide clear visual separation from the main content using borders, background color, or spacing.
+- **Developers**: Use a descriptive `label` prop to distinguish this sidebar from other landmarks on the page. Avoid placing more than two sidebar landmarks on a single page to prevent landmark clutter.
+
 ## References
 
 - WAI-ARIA Complementary Role: https://www.w3.org/TR/wai-aria-1.2/#complementary

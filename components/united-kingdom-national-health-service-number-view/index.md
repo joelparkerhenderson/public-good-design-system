@@ -38,6 +38,25 @@ This component renders the NHS number as an inline `<span>` element with an acce
 - `aria-label` -- provides the accessible name from the `label` prop so screen readers can announce the purpose of the displayed number
 - Screen readers announce the label followed by the text content (the number value)
 
+## When to Use
+
+- Use UnitedKingdomNationalHealthServiceNumberView to display an NHS number in a read-only context, such as patient records, summaries, or confirmation screens.
+- Use when the NHS number needs to be visible but not editable.
+- Avoid using this component when users need to enter or edit an NHS number; use UnitedKingdomNationalHealthServiceNumberInput instead.
+
+## Headless
+
+This headless component provides a `<span>` element with `aria-label` for accessible read-only display of an NHS number. The consumer provides the pre-formatted value and all visual styling.
+
+## Advice
+
+- **Designers**: Display the NHS number in the standard XXX XXX XXXX format with adequate spacing for readability. Consider masking part of the number for privacy in non-clinical contexts.
+- **Developers**: Ensure the `value` prop is pre-formatted before passing it to the component, as no formatting logic is built in.
+
+## Composition
+
+UnitedKingdomNationalHealthServiceNumberView is the read-only display counterpart to UnitedKingdomNationalHealthServiceNumberInput, following the Input/View pattern. Use the View for display and the Input for data entry.
+
 ## References
 
 - NHS Number: https://www.nhs.uk/using-the-nhs/about-the-nhs/what-is-an-nhs-number/

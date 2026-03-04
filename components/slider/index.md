@@ -41,6 +41,22 @@ This headless component wraps a native `<input type="range">` element with confi
 
 - `aria-label={label}` -- provides an accessible name for the slider
 
+## When to Use
+
+- Use when users need to select a numeric value within a defined range by dragging a handle, such as volume, brightness, or price filters.
+- Use when approximate value selection is acceptable and a visual track provides helpful context.
+- Avoid when precise numeric entry is needed; use a NumberInput instead.
+- Consider a RangeInput when you need to select a range with two handles (min and max).
+
+## Headless
+
+This headless component wraps a native `<input type="range">` element with `aria-label`, configurable min/max/step values, and two-way binding. It provides full native slider keyboard navigation and accessibility. The consumer provides all visual styling for the track, thumb, and any value labels.
+
+## Advice
+
+- **Designers**: Display the current value near the slider thumb or in a nearby label so users can see the exact selection. Use a track fill color to indicate the selected portion of the range.
+- **Developers**: Use the `step` prop to constrain values to meaningful increments. Consider debouncing the bound value if the slider drives expensive operations like API calls.
+
 ## References
 
 - WAI-ARIA Slider Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/slider/

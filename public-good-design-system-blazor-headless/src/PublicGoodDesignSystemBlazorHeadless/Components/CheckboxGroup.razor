@@ -1,0 +1,9 @@
+@* CheckboxGroup.razor *@
+<fieldset
+    class="@CssClasses"
+    aria-label="@Label"
+    role="group"
+    disabled="@Disabled"
+    @attributes="AdditionalAttributes">
+    @ChildContent
+</fieldset>

@@ -37,6 +37,25 @@ None -- this component is a passive container. Navigation within the table follo
 
 - Implicit `rowgroup` role from the `<tbody>` element -- groups the body rows of the table
 
+## When to Use
+
+- Use a DataTableBody to wrap the main data rows of a DataTable, separating them from header and footer sections.
+- Use a DataTableBody for each logical group of data rows within a table.
+- Avoid using a DataTableBody outside of a DataTable; it requires a parent `<table>` for valid HTML.
+
+## Headless
+
+This headless DataTableBody component provides a semantic `<tbody>` element with implicit `rowgroup` role for assistive technology. The consumer provides all visual styling including row backgrounds, hover states, striping patterns, and spacing.
+
+## Advice
+
+- **Designers**: Use alternating row colors or subtle borders within the body section to help users track data across columns.
+- **Developers**: Place DataTableRow or `<tr>` elements as children. The `<tbody>` groups body rows separately from header and footer rows for assistive technology navigation.
+
+## Composition
+
+DataTableBody is part of the DataTable composition pattern. It sits inside a DataTable and contains DataTableRow components. The full hierarchy is DataTable > DataTableHead/DataTableBody/DataTableFoot > DataTableRow > DataTableData.
+
 ## References
 
 - WAI-ARIA Table Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/table/

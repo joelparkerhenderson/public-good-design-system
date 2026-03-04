@@ -38,6 +38,25 @@ Standard radio group keyboard behavior provided by the browser:
 - `role="radiogroup"` -- on the `<fieldset>`, identifies the group as a set of radio buttons
 - `aria-label="..."` -- provides an accessible name for the entire rating group
 
+## When to Use
+
+- Use for product reviews, content ratings, or feedback forms where users select a 1-5 star rating.
+- Use when you need a familiar, universally understood rating input pattern.
+- Avoid for non-numeric scales or satisfaction surveys where face-based ratings (FiveFaceRatingPicker) may be more expressive.
+
+## Headless
+
+This headless component provides a `<fieldset>` with `role="radiogroup"`, individual radio buttons with proper labels, and keyboard navigation. The consumer provides all visual styling including star shapes, colors, hover effects, and sizing.
+
+## Advice
+
+- **Designers**: Provide clear visual distinction between filled and unfilled stars, and include a hover/focus state so users know which rating they are about to select.
+- **Developers**: Use two-way binding on `value` to track the selected rating. The `name` prop is important for form submission.
+
+## Composition
+
+FiveStarRatingPicker uses the Picker/PickerButton pattern. It contains FiveStarRatingPickerButton children, where each button represents one star level. The picker manages the group semantics while each button handles individual selection state via `aria-pressed`.
+
 ## References
 
 - WAI-ARIA Radio Group Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/radiobutton/

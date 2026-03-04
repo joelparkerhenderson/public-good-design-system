@@ -38,6 +38,21 @@ None -- alerts are passive announcements, not interactive elements. Content with
 - `role="alert"` -- creates an assertive live region that immediately announces content to screen readers
 - `aria-label={label}` -- provides the accessible name for the alert region, set from the `label` prop
 
+## When to Use
+
+- Use to display critical patient safety information such as life-threatening allergies, dangerous drug interactions, or urgent clinical warnings.
+- Use when the information must immediately interrupt screen reader users via an assertive live region.
+- Avoid using for routine or non-critical information; overuse of `role="alert"` diminishes its urgency for assistive technology users.
+
+## Headless
+
+This headless component provides an `<aside>` with `role="alert"` for immediate assertive screen reader announcements and `aria-label` for accessible naming. The consumer provides all visual styling, including the red background, borders, iconography, and typography that convey urgency visually.
+
+## Advice
+
+- **Designers**: Use a bold red background with high-contrast white text and a warning icon to ensure the critical nature of the information is immediately apparent.
+- **Developers**: Reserve this component for genuinely critical information. Assertive alerts interrupt the user, so misuse degrades the experience for screen reader users.
+
 ## References
 
 - WAI-ARIA alert role: https://www.w3.org/TR/wai-aria-1.2/#alert

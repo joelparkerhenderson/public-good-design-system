@@ -37,6 +37,20 @@ None -- this component is a passive container. Keyboard navigation is handled by
 
 - Implicit `rowgroup` role from the `<tfoot>` element -- groups the footer rows of the grid
 
+## When to Use
+
+- Use as the footer section of a GanttTable to display milestone summaries, totals, or project-level notes.
+- Avoid when the Gantt chart has no summary data; the footer section is optional.
+
+## Headless
+
+This headless component provides a `<tfoot>` element with implicit `rowgroup` role for grouping footer rows within a Gantt chart grid. The consumer provides all visual styling including borders, background colors, and summary formatting.
+
+## Advice
+
+- **Designers**: Visually distinguish the footer from the body rows using a heavier border or different background color. Use the footer for milestone dates or completion summaries.
+- **Developers**: Place GanttTableRow elements as children containing summary cells. The footer renders at the bottom of the table regardless of source order.
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

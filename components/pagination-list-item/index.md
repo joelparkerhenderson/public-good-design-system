@@ -29,3 +29,26 @@ None directly -- keyboard interaction is handled by the contained links or butto
 
 - Implicit `listitem` role from the semantic `<li>` element
 - Consumer should set `aria-current="page"` on the active page link within the item
+
+## When to Use
+
+- Use as an individual page entry within a PaginationList, containing a page link, previous/next control, or ellipsis.
+- Use when each pagination item needs semantic `<li>` structure within the parent `<ul>`.
+- Avoid using PaginationListItem outside of a PaginationList; it relies on the parent list structure.
+
+## Headless
+
+This headless component renders a semantic `<li>` element with a children slot for page links or buttons. The consumer provides all visual styling, including link appearance, active-page highlighting, and spacing between items.
+
+## Advice
+
+- **Designers**: Ensure each page item has a large enough click/touch target and consistent spacing for easy navigation.
+- **Developers**: Place `aria-current="page"` on the link or button within the active page item, not on the `<li>` itself.
+
+## Composition
+
+PaginationListItem is the leaf component in the PaginationNav compound pattern. It is placed inside PaginationList as an `<li>` element.
+
+```
+PaginationNav → PaginationList → PaginationListItem (li) → link or button
+```

@@ -45,6 +45,22 @@ Use SelectWithExtras when you need a native select dropdown with additional visu
 
 - `aria-label={label}` -- provides an accessible name for the select element so screen readers announce its purpose
 
+## When to Use
+
+- Use when a native select dropdown needs supplementary visual context such as icons, flags, or unit labels alongside the options.
+- Use when you want to preserve full native select behavior (keyboard navigation, form submission, screen reader support) while adding decorative or informational elements.
+- Avoid when the extra content is interactive; use a Combobox instead for searchable or filterable dropdowns.
+- Consider a plain Select component when no additional visual context is needed.
+
+## Headless
+
+This headless component provides the semantic structure of a native `<select>` element wrapped in a container with optional before/after slots, along with proper `aria-label` for accessibility. The consumer provides all visual styling for the wrapper, the select element, and any supplementary content placed in the before/after slots.
+
+## Advice
+
+- **Designers**: Keep before/after content compact so it does not visually overwhelm the select control. Use consistent icon sizes and spacing across all SelectWithExtras instances.
+- **Developers**: Ensure the `before` and `after` slot content is decorative or supplementary only; interactive elements in these slots can confuse keyboard navigation. Use the `aria-label` prop rather than relying on before/after content for accessible naming.
+
 ## References
 
 - WAI-ARIA Listbox Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/listbox/

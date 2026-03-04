@@ -33,6 +33,22 @@ None -- this component is a passive container. Pointer-based interactions are ha
 - `role="application"` -- indicates a complex widget with custom pointer interactions, informing assistive technologies to pass keyboard events through to the application
 - `aria-label` -- provides an accessible description of the signature pad purpose
 
+## When to Use
+
+- Use when capturing a handwritten signature is required, such as for contracts, consent forms, delivery confirmations, or legal documents.
+- Use when a pen-on-paper signing experience is needed in a digital interface.
+- Avoid when a typed name or checkbox acknowledgment would suffice for the use case.
+- Consider providing a text-based alternative for users who cannot use pointer-based input.
+
+## Headless
+
+This headless component provides a semantic container with `role="application"` and `aria-label` for complex pointer interactions. The consumer provides the actual drawing surface (HTML canvas, SVG, or third-party library) as children, along with all visual styling, stroke handling, and signature data capture.
+
+## Advice
+
+- **Designers**: Provide a clear border and placeholder text (e.g., "Sign here") so users understand where to draw. Include a visible clear/reset button alongside the pad.
+- **Developers**: Offer a clear button to reset the signature and export the result as an image or data URL. Provide a keyboard-accessible alternative or fallback for users who cannot use pointer input.
+
 ## References
 
 - WAI-ARIA application Role: https://www.w3.org/TR/wai-aria-1.2/#application

@@ -52,6 +52,22 @@ With machine-readable datetime attribute:
 - `aria-label` from the label prop provides accessible name
 - `aria-live="polite"` for non-intrusive screen reader announcements of updates
 
+## When to Use
+
+- Use Timer to display a countdown or elapsed time that updates live, such as session timeouts, exam limits, or cooking timers.
+- Use when screen readers need to be informed of time changes via a live region.
+- Avoid using Timer for static time displays; use a plain `<time>` element instead.
+- Consider using a progress bar or meter when the time remaining is better represented as a proportion of a total.
+
+## Headless
+
+This headless component provides a `<time>` element with `role="timer"`, `aria-label`, and `aria-live="polite"` for accessible live-updating time display. The consumer manages all timer logic (intervals, countdowns) and provides formatted display content through the children slot, plus all visual styling.
+
+## Advice
+
+- **Designers**: Use a clear, monospaced or tabular font for the timer digits to prevent layout shifts as numbers change. Consider color changes as time runs low.
+- **Developers**: Provide a `datetime` attribute (e.g., `datetime="PT5M30S"`) via restProps for machine-readable duration. Manage cleanup of intervals on component unmount.
+
 ## References
 
 - WAI-ARIA timer role: https://www.w3.org/TR/wai-aria-1.2/#timer

@@ -38,6 +38,40 @@ None -- this component is a passive container. Keyboard navigation is handled by
 
 - Implicit `row` role from the `<tr>` element -- identifies a row of cells within the grid
 
+## When to Use
+
+- Use for each row within a CalendarTable section (head, body, or foot), where each row typically represents one week.
+- Use when you need a `<tr>` container for day cells or header cells in the calendar grid.
+- Avoid using outside of a CalendarTable structure -- the parent sections provide required grouping semantics.
+
+## Headless
+
+This component provides a semantic `<tr>` element with implicit `row` role and zero visual styling. The consumer is responsible for all CSS including row height, cell alignment, borders between rows, and any alternate-row shading.
+
+## Advice
+
+- **Designers**: Maintain consistent row heights across all weeks. Use subtle borders or spacing between rows to aid scanning.
+- **Developers**: Each row in the body should contain exactly 7 cells for a standard weekly view. Use CalendarTableCell for day cells and `<th>` for header cells.
+
+## Composition
+
+CalendarTableRow is part of the CalendarTable composition pattern:
+
+- **CalendarTable** -- outer `<table>` with `role="grid"`.
+- **CalendarTableHead/Body/Foot** -- section groupings.
+- **CalendarTableRow** -- `<tr>` representing one week or header row.
+- **CalendarTableCell** -- `<td>` representing one day.
+
+```html
+<CalendarTableBody>
+  <CalendarTableRow>
+    <CalendarTableCell>1</CalendarTableCell>
+    <CalendarTableCell>2</CalendarTableCell>
+    <CalendarTableCell>3</CalendarTableCell>
+  </CalendarTableRow>
+</CalendarTableBody>
+```
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

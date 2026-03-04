@@ -35,6 +35,25 @@ None -- this component is a passive container. Navigation within the table follo
 
 - Implicit `cell` role from the `<td>` element -- identifies the element as a cell within a table row
 
+## When to Use
+
+- Use a DataTableData for each data cell within a DataTableRow, representing a single field value in a record.
+- Use a DataTableData when you need to spread additional attributes like `colspan`, `rowspan`, or `headers` onto a `<td>`.
+- Avoid using a DataTableData for header cells; use a `<th>` element with `scope` instead.
+
+## Headless
+
+This headless DataTableData component provides a semantic `<td>` element with implicit `cell` role for assistive technology. The consumer provides all visual styling including text alignment, padding, borders, truncation, and responsive behavior.
+
+## Advice
+
+- **Designers**: Right-align numeric data and left-align text data for easy scanning. Use consistent padding and consider truncation with tooltips for long values.
+- **Developers**: Use `colspan` and `rowspan` via `restProps` for spanning cells. Link cells to their headers with the `headers` attribute for complex table structures.
+
+## Composition
+
+DataTableData is the leaf component in the DataTable composition pattern. It sits inside a DataTableRow. The full hierarchy is DataTable > DataTableHead/DataTableBody/DataTableFoot > DataTableRow > DataTableData.
+
 ## References
 
 - WAI-ARIA Table Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/table/

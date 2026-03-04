@@ -62,6 +62,33 @@ Team member list:
 - `role="img"` -- on the outer container, conveying that the entire avatar is an image representation
 - `aria-label` -- set from the `alt` prop, providing the accessible name for the avatar
 - `aria-hidden="true"` -- on the inner initials `<span>`, preventing duplicate announcements since the outer element already has `aria-label`
+## When to Use
+
+- Use for displaying a user's identity in profile headers, comment threads, chat interfaces, account menus, or team member lists.
+- Use when you need graceful fallback from an image to initials when the photo is unavailable or fails to load.
+- Avoid for decorative images that do not represent a person -- use Image instead.
+
+## Headless
+
+This component provides `role="img"`, `aria-label`, and image-to-initials fallback logic with zero visual styling. The consumer is responsible for all CSS including circular framing, sizing, background color for initials, font styling, border, and shadow effects.
+
+## Advice
+
+- **Designers**: Maintain consistent avatar sizes throughout the application. Use a contrasting background color behind initials text to ensure legibility.
+- **Developers**: Always provide the `alt` prop for accessibility. When using both `src` and `initials`, the component automatically falls back to initials if the image fails to load.
+
+## Composition
+
+Avatar follows a parent/child composition pattern:
+
+- **Avatar** -- outer `<span>` container with `role="img"` and `aria-label` for the accessible name.
+- **AvatarImage** -- `<img>` element displayed when a valid image source is available.
+- **AvatarText** -- `<span>` element displayed as a fallback with initials or short text.
+
+```html
+<Avatar src="/photo.jpg" alt="Jane Doe" initials="JD" />
+```
+
 ## References
 
 - WAI-ARIA Img Role: https://www.w3.org/TR/wai-aria-1.2/#img

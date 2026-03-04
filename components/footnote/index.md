@@ -41,6 +41,21 @@ None -- this component is a passive container. Keyboard navigation is handled by
 - `role="note"` -- indicates supplementary content that is related to the main content
 - `aria-label="{id}"` -- provides an accessible name derived from the footnote identifier
 
+## When to Use
+
+- Use for citations, source references, or supplementary clarifications in articles, academic content, or legal documents.
+- Use when the additional information should not interrupt the main content flow.
+- Avoid for critical information the user must read; use InformationCallout or Alert instead.
+
+## Headless
+
+This headless component provides an `<aside>` with `role="note"` and an `id` for in-page linking from superscript reference markers. The consumer provides all visual styling including indentation, font size, numbering, and separator lines.
+
+## Advice
+
+- **Designers**: Position footnotes at the bottom of the page or section with a clear visual separator. Use smaller text to distinguish footnotes from body content.
+- **Developers**: Ensure the `id` prop matches the `href` fragment on the in-page link (e.g., `<a href="#fn1">`) for proper jump-to-footnote navigation.
+
 ## References
 
 - WAI-ARIA note role: https://www.w3.org/TR/wai-aria-1.2/#note

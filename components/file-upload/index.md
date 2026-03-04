@@ -36,6 +36,22 @@ None beyond native button behavior -- Tab to focus the button, Enter or Space to
 - `aria-label="..."` -- provides an accessible name for the upload button
 - `aria-live="polite"` -- on the status span, announces file selection count without interrupting the user
 
+## When to Use
+
+- Use when you want a styled button-triggered file picker with a live status region announcing selected file count.
+- Use when a more polished upload experience is needed compared to a raw FileInput.
+- Avoid when a simple native file input is sufficient; use FileInput instead.
+- Consider a drag-and-drop area pattern when users should be able to drop files directly onto the page.
+
+## Headless
+
+This headless component provides a `<button>` trigger, a hidden `<input type="file">`, and a status `<span>` with `aria-live="polite"` that announces file selection changes. It manages the input ref and file count internally. The consumer provides all visual styling for the button, status text, and overall layout.
+
+## Advice
+
+- **Designers**: Style the upload button prominently and display the file count or file names near the button after selection. Include accepted file type hints in nearby text.
+- **Developers**: Use the `onchange` callback to receive the `FileList` for processing. The `data-file-count` attribute on the status span can be used for conditional CSS styling or testing.
+
 ## References
 
 - MDN `<input type="file">`: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file

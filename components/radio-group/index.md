@@ -38,6 +38,26 @@ Use RadioGroup when you need a set of mutually exclusive options, such as select
 - `role="radiogroup"` -- identifies the fieldset as a group of radio buttons
 - `aria-label={label}` -- provides an accessible name for the group so screen readers announce the purpose
 
+## When to Use
+
+- Use RadioGroup when users must select exactly one option from a small set of mutually exclusive choices (e.g., size, shipping method, plan).
+- Use RadioGroup when all options should be visible at once so users can compare them.
+- Avoid using RadioGroup for large option lists; use Select or Combobox instead.
+- Consider CheckboxInput when users can select multiple options.
+
+## Headless
+
+The RadioGroup headless component provides a `<fieldset>` with `role="radiogroup"` and `aria-label` for accessible group naming. It relies on native radio input behavior for selection and keyboard navigation. The consumer provides all visual styling for the fieldset, labels, and radio buttons.
+
+## Advice
+
+- **Designers**: Stack radio options vertically for readability, and use clear labels that distinguish each choice without ambiguity.
+- **Developers**: Ensure all radio inputs within the group share the same `name` attribute for proper mutual exclusion, and pre-select a sensible default when appropriate.
+
+## Composition
+
+RadioGroup is the container for RadioInput children. Use `<RadioGroup>` to wrap multiple `<RadioInput>` elements, providing the group-level accessible label while each RadioInput carries its own option label.
+
 ## References
 
 - WAI-ARIA Radio Group Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/radiobutton/

@@ -33,6 +33,21 @@ None -- keyboard behavior is provided by the browser-native color input.
 
 - `aria-label="..."` -- provides an accessible name for the color input since it has no visible `<label>` element
 
+## When to Use
+
+- Use a ColorInput when users need to select a color value using the browser's native color picker, such as in theme editors or settings panels.
+- Use a ColorInput for simple hex color selection where a full custom color picker is unnecessary.
+- Avoid using a ColorInput when you need fine-grained 2D color selection; consider a ColorPicker component instead.
+
+## Headless
+
+This headless ColorInput component provides a native `<input type="color">` with `aria-label` for accessible naming, two-way binding on the hex value, and support for `disabled` and form attributes. The consumer provides all visual styling including the swatch display size, border treatment, and any surrounding label or helper text layout.
+
+## Advice
+
+- **Designers**: Ensure the color swatch is large enough to be easily identifiable and clickable. Consider showing the hex value alongside the swatch for precision.
+- **Developers**: The value is always a 7-character hex string (e.g., "#ff0000"). Use the native color picker for broad browser support, and pair with a visible label element when needed.
+
 ## References
 
 - MDN `<input type="color">`: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/color

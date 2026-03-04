@@ -45,6 +45,21 @@ None at the component level. The consumer manages focus-based visibility on the 
 - `role="tooltip"` -- identifies the hover card as supplementary descriptive content
 - `aria-label={label}` -- provides an accessible name describing the hover card content
 
+## When to Use
+
+- Use for user profile previews, link previews, contextual help, or supplementary information triggered by hover or focus.
+- Use when the content is supplementary and does not require user interaction to dismiss.
+- Avoid for content that requires user interaction (buttons, forms); use Popover or Dialog instead.
+
+## Headless
+
+This headless component provides a `<div>` with `role="tooltip"` and `aria-label` that conditionally renders when `open` is true. The consumer provides all visual styling including positioning, shadows, borders, arrow indicators, and content layout.
+
+## Advice
+
+- **Designers**: Add a slight delay before showing and hiding the card to prevent flickering on accidental hover. Include an arrow pointing to the trigger element.
+- **Developers**: Manage hover/focus events on the trigger element to toggle `open`. Consider adding a delay to prevent the card from disappearing when the user moves the mouse between the trigger and the card.
+
 ## References
 
 - WAI-ARIA tooltip role: https://www.w3.org/TR/wai-aria-1.2/#tooltip

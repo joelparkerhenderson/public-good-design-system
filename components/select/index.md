@@ -60,6 +60,22 @@ The consumer provides `<option>` elements as children, giving full control over 
 - `aria-label={label}` -- provides an accessible name for the select element since there is no visible `<label>` element
 - The `<select>` element implicitly has `role="combobox"` or `role="listbox"` depending on the browser, with built-in accessible semantics
 
+## When to Use
+
+- Use Select for choosing one option from a predefined list, such as country, category, or status fields in forms.
+- Use Select when the list of options is moderate in length (roughly 5-15 items) and does not require filtering.
+- Avoid using Select for very short lists (2-3 options); use RadioGroup instead to show all options at once.
+- Consider Combobox or SelectWithExtras when users need to search or filter a large option list.
+
+## Headless
+
+The Select headless component provides a native `<select>` element with `aria-label` for accessible naming and two-way value binding. Consumer-provided `<option>` children define the available choices. The browser handles all keyboard navigation and dropdown behavior. The consumer provides all visual styling.
+
+## Advice
+
+- **Designers**: Include a placeholder option (e.g., "Select a country...") as the first item to guide users, and avoid overly long option lists that are hard to scan.
+- **Developers**: Set the placeholder option's `value` to an empty string and combine with the `required` prop to enforce selection, ensuring form validation works correctly.
+
 ## References
 
 - MDN select element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select

@@ -39,6 +39,21 @@ None -- this component is a passive display element with no interactive behavior
 
 - `aria-label={label}` -- provides an accessible name describing what the meter measures
 
+## When to Use
+
+- Use to display a scalar measurement within a known range, such as disk usage, battery level, or password strength.
+- Use when the value has defined minimum and maximum bounds and optionally low, high, and optimum thresholds.
+- Avoid using Meter for progress toward completion; use Progress instead. Meter is for static measurements, not task progress.
+
+## Headless
+
+This headless component renders a native `<meter>` element with `aria-label`, supporting `min`, `max`, `low`, `high`, and `optimum` attributes for threshold semantics. The consumer provides all visual styling, including gauge colors, threshold color changes, size, and layout.
+
+## Advice
+
+- **Designers**: Use color to indicate threshold regions (e.g., green for optimum, yellow for warning, red for critical) and always include a visible text label near the meter.
+- **Developers**: Set `low`, `high`, and `optimum` props to leverage the browser's built-in color hinting for the `<meter>` element. Provide a meaningful `label` for screen readers.
+
 ## References
 
 - HTML meter element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/meter

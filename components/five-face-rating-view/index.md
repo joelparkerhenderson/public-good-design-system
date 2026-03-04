@@ -32,6 +32,21 @@ None -- this component is a passive, read-only display.
 - `role="img"` -- indicates the span represents a visual/graphic element (the face rating)
 - `aria-label="..."` -- provides an accessible description of the rating for screen readers
 
+## When to Use
+
+- Use to display a previously submitted satisfaction rating as a text label (e.g., in review summaries, dashboards, or feedback lists).
+- Use when the rating should be read-only and not editable by the user.
+- Avoid when the user needs to select or change a rating; use FiveFaceRatingPicker instead.
+
+## Headless
+
+This headless component provides semantic HTML with `role="img"` and `aria-label` for accessible read-only rating display. The consumer provides all visual styling, including typography, colors, and any face/emoji iconography.
+
+## Advice
+
+- **Designers**: Ensure the visual treatment clearly communicates that this is a display-only element, not an interactive control. Use color or iconography that matches the rating sentiment.
+- **Developers**: Pair this component with FiveFaceRatingPicker for edit scenarios. Customize the `labels` prop when the default face labels do not match your application's rating scale.
+
 ## References
 
 - WAI-ARIA `img` role: https://www.w3.org/WAI/ARIA/apd/roles/img/

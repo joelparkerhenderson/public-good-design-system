@@ -63,6 +63,25 @@ Consumer CSS example using `data-completed`:
 - Semantic `<li>` provides implicit `listitem` role
 - `data-completed` communicates task state for consumer styling hooks
 
+## When to Use
+
+- Use inside a TaskList to represent a single task with optional completion state tracking.
+- Use when individual tasks need a `data-completed` attribute for CSS-driven visual state changes.
+- Avoid using outside a TaskList `<ul>` container, as the `<li>` element requires a list parent.
+
+## Headless
+
+This headless component renders a semantic `<li>` element with a `data-completed` attribute for CSS hooks. It provides list item semantics and completion state signaling. The consumer provides all visual styling including completion indicators (strikethrough, opacity), checkboxes, and task content.
+
+## Advice
+
+- **Designers**: Use visual differentiation (e.g., strikethrough, reduced opacity, or a checkmark) for completed tasks so users can quickly distinguish them from pending items.
+- **Developers**: Bind the `completed` prop to your task state and use the `data-completed` attribute in CSS selectors for styling (e.g., `[data-completed="true"] { text-decoration: line-through; }`).
+
+## Composition
+
+TaskListItem is designed to be used as a child of TaskList. The TaskList provides the outer `<ul>` container with `role="list"`, and each TaskListItem provides an individual `<li>` with completion tracking.
+
 ## References
 
 - MDN li element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li

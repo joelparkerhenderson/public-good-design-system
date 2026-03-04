@@ -37,6 +37,38 @@ The component uses a roving tabindex pattern where the selected cell has `tabind
 - `aria-selected` -- set to `true` when the cell is selected; omitted otherwise
 - `aria-current="date"` -- set when the cell represents today's date; omitted otherwise
 
+## When to Use
+
+- Use for individual day cells within a CalendarTableRow inside a CalendarTable grid.
+- Use when each cell needs selection state (`aria-selected`) and today indication (`aria-current="date"`) with roving tabindex.
+- Avoid using outside of a CalendarTable structure -- the parent grid provides required keyboard navigation context.
+
+## Headless
+
+This component provides a `<td>` with `role="gridcell"`, conditional `aria-selected`, conditional `aria-current="date"`, and roving tabindex pattern, all with zero visual styling. The consumer is responsible for all CSS including cell sizing, selected state highlight, today indicator, hover effects, focus ring, and disabled day styling.
+
+## Advice
+
+- **Designers**: Make the selected date and today's date visually distinct using different background colors or outlines. Ensure a visible focus indicator for keyboard navigation.
+- **Developers**: The roving tabindex pattern (`tabindex="0"` on selected, `-1` on others) enables the parent grid to manage focus. Ensure arrow key handlers on the grid move focus between cells.
+
+## Composition
+
+CalendarTableCell is part of the CalendarTable composition pattern:
+
+- **CalendarTable** -- outer `<table>` with `role="grid"`.
+- **CalendarTableHead/Body/Foot** -- section groupings.
+- **CalendarTableRow** -- `<tr>` representing one week.
+- **CalendarTableCell** -- `<td>` representing one day with selection and today state.
+
+```html
+<CalendarTableRow>
+  <CalendarTableCell>14</CalendarTableCell>
+  <CalendarTableCell today selected>15</CalendarTableCell>
+  <CalendarTableCell>16</CalendarTableCell>
+</CalendarTableRow>
+```
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

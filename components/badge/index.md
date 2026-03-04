@@ -35,3 +35,19 @@ The component renders as a `<span>` with `role="status"`, creating an ARIA live 
 
 - `role="status"` -- creates an ARIA live region for dynamic content announcements
 - `aria-label` -- optional expanded context for screen readers beyond the visible text
+
+## When to Use
+
+- Use for notification counts, status labels, or category indicators attached to icons, buttons, or list items.
+- Use when dynamic content changes need to be announced to screen readers via a live region.
+- Avoid for long text content -- use Alert or Banner instead.
+- Consider Tag instead when displaying static categorization labels that do not change dynamically.
+
+## Headless
+
+This component provides `role="status"` for ARIA live region announcements, a `data-type` attribute for semantic variants, and optional `aria-label` with zero visual styling. The consumer is responsible for all CSS including background color, text color, border radius, font size, padding, and positioning relative to the parent element.
+
+## Advice
+
+- **Designers**: Keep badge content to 1-3 characters for counts or short labels. Use consistent sizing and position (e.g., top-right of an icon) across the interface.
+- **Developers**: Use the `label` prop to provide expanded context for screen readers, e.g., `label="3 unread messages"` when the visible badge only shows "3".

@@ -11,7 +11,27 @@
       "Bash(python3 /tmp/fix_component_docs.py)",
       "Bash(python3 /tmp/fix_redundancy.py)",
       "Bash(python3 /tmp/fix_remaining.py)",
-      "Bash(python3 /tmp/fix_snippets.py)"
+      "Bash(python3 /tmp/fix_snippets.py)",
+      "Bash(find /Users/jph/git/joelparkerhenderson/public-good-design-system/components -maxdepth 2 -name \"index.md\" -not -empty | sed 's|/Users/jph/git/joelparkerhenderson/public-good-design-system/components/||;s|/index.md||' | sort | awk 'NR>=30 && NR<=58' | tr '\\\\n' ',' | sed 's/,$//')",
+      "Bash(find /Users/jph/git/joelparkerhenderson/public-good-design-system/components -maxdepth 2 -name \"index.md\" -not -empty | sed 's|/Users/jph/git/joelparkerhenderson/public-good-design-system/components/||;s|/index.md||' | sort | awk 'NR>=59 && NR<=87' | tr '\\\\n' ',' | sed 's/,$//')",
+      "Bash(find /Users/jph/git/joelparkerhenderson/public-good-design-system/components -maxdepth 2 -name \"index.md\" -not -empty | sed 's|/Users/jph/git/joelparkerhenderson/public-good-design-system/components/||;s|/index.md||' | sort | awk 'NR>=88 && NR<=116' | tr '\\\\n' ',' | sed 's/,$//')",
+      "Bash(find /Users/jph/git/joelparkerhenderson/public-good-design-system/components -maxdepth 2 -name \"index.md\" -not -empty | sed 's|/Users/jph/git/joelparkerhenderson/public-good-design-system/components/||;s|/index.md||' | sort | awk 'NR>=117 && NR<=145' | tr '\\\\n' ',' | sed 's/,$//')",
+      "Bash(find /Users/jph/git/joelparkerhenderson/public-good-design-system/components -maxdepth 2 -name \"index.md\" -not -empty | sed 's|/Users/jph/git/joelparkerhenderson/public-good-design-system/components/||;s|/index.md||' | sort | awk 'NR>=146 && NR<=174' | tr '\\\\n' ',' | sed 's/,$//')",
+      "Bash(find /Users/jph/git/joelparkerhenderson/public-good-design-system/components -maxdepth 2 -name \"index.md\" -not -empty | sed 's|/Users/jph/git/joelparkerhenderson/public-good-design-system/components/||;s|/index.md||' | sort | awk 'NR>=175 && NR<=204' | tr '\\\\n' ',' | sed 's/,$//')",
+      "Bash(find /Users/jph/git/joelparkerhenderson/public-good-design-system/components -maxdepth 2 -name \"index.md\" -not -empty | sed 's|/Users/jph/git/joelparkerhenderson/public-good-design-system/components/||;s|/index.md||' | sort | awk 'NR>=205' | tr '\\\\n' ',' | sed 's/,$//')",
+      "Bash(ls -d /Users/jph/git/joelparkerhenderson/public-good-design-system/components/time-picker* 2>/dev/null)",
+      "WebFetch(domain:blazorblueprintui.com)",
+      "Bash(test -f \"/Users/jph/git/joelparkerhenderson/public-good-design-system/components/index.md\" && echo \"EXISTS\" || echo \"DOES NOT EXIST\")",
+      "Bash(test -d \"/Users/jph/git/joelparkerhenderson/public-good-design-system/components/checkbox-group\" && echo \"EXISTS\" || echo \"DOES NOT EXIST\")",
+      "Bash(test -d \"/Users/jph/git/joelparkerhenderson/public-good-design-system/components/currency-input\" && echo \"EXISTS\" || echo \"DOES NOT EXIST\")",
+      "Bash(cd /Users/jph/git/joelparkerhenderson/public-good-design-system/components/checkbox-group && ln -sf index.md README.md)",
+      "WebFetch(domain:ui.shadcn.com)",
+      "Bash(find /Users/jph/git/joelparkerhenderson -type d -name \"*headless*\" 2>/dev/null | head -10)",
+      "Bash(cd /Users/jph/git/joelparkerhenderson/public-good-design-system && mkdir -p components/grail-layout components/grail-layout-top components/grail-layout-left components/grail-layout-center components/grail-layout-right components/grail-layout-bottom)",
+      "WebFetch(domain:carbondesignsystem.com)",
+      "WebSearch",
+      "Bash(cd /Users/jph/git/joelparkerhenderson/public-good-design-system/components/ai-label && ln -sf index.md README.md)",
+      "Bash(cd /Users/jph/git/joelparkerhenderson/public-good-design-system && mv components/grail-layout-top components/grail-layout-header && mv components/grail-layout-bottom components/grail-layout-footer && mv components/grail-layout-left components/grail-layout-left-aside && mv components/grail-layout-right components/grail-layout-right-aside)"
     ]
   }
 }

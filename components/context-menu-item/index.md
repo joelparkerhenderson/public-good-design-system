@@ -38,6 +38,25 @@ This component renders as a div with `role="menuitem"` and `tabindex="-1"`, foll
 - Supports `aria-disabled` for disabled state (added by consumer)
 - Supports `aria-keyshortcuts` for keyboard shortcut hints (added by consumer)
 
+## When to Use
+
+- Use a ContextMenuItem for each action or option within a ContextMenu, such as cut, copy, paste, or delete.
+- Use a ContextMenuItem when the action needs keyboard shortcut hints or icon labels alongside the action text.
+- Avoid using a ContextMenuItem outside of a ContextMenu container; it requires a parent with `role="menu"` for proper ARIA semantics.
+
+## Headless
+
+This headless ContextMenuItem component provides a `<div>` with `role="menuitem"` and `tabindex="-1"` for roving focus managed by the parent ContextMenu. The consumer provides all visual styling including text layout, icon placement, keyboard shortcut hints, hover/focus states, and disabled appearance.
+
+## Advice
+
+- **Designers**: Show keyboard shortcut hints right-aligned within each menu item for discoverability. Use a disabled visual state for unavailable actions.
+- **Developers**: Add `aria-disabled="true"` for disabled items and `aria-keyshortcuts` for keyboard shortcut hints. Focus management is handled by the parent ContextMenu.
+
+## Composition
+
+ContextMenuItem is the child component in the ContextMenu/ContextMenuItem composition pattern. Place ContextMenuItem components inside a ContextMenu. Each item receives focus programmatically via the parent's ArrowUp/ArrowDown keyboard navigation, so set `tabindex="-1"` to support roving focus.
+
 ## References
 
 - WAI-ARIA Menu Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/menu/

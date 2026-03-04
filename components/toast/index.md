@@ -49,6 +49,22 @@ None -- this component is a passive notification container. Toasts are announced
 - `aria-live="assertive"` -- (when `urgent` is true) screen reader interrupts current speech to announce the content
 - `aria-label={label}` -- optional descriptive label for the toast region
 
+## When to Use
+
+- Use Toast for brief, transient notifications that confirm actions (e.g., "Saved"), report errors, or provide status updates.
+- Use when the message does not require user interaction and can auto-dismiss after a short time.
+- Avoid using Toast for critical messages that require user acknowledgment; use AlertDialog instead.
+- Consider Notification for persistent messages or messages that need to remain visible until manually dismissed.
+
+## Headless
+
+This headless component provides a `<div>` with a live region role (`role="status"` or `role="alert"`) and appropriate `aria-live` behavior for screen reader announcements. The consumer provides all content, visual styling, positioning, animation, and auto-dismiss logic.
+
+## Advice
+
+- **Designers**: Position toasts consistently (e.g., bottom-right or top-center) and use color/icon cues to distinguish success, error, and informational messages.
+- **Developers**: Set `urgent={true}` only for error or time-sensitive messages. For normal confirmations, use the default polite behavior to avoid interrupting screen reader users.
+
 ## References
 
 - WAI-ARIA Alert Role: https://www.w3.org/TR/wai-aria-1.2/#alert

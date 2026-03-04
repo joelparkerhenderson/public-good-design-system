@@ -32,6 +32,21 @@ None -- this component is a passive, read-only display.
 - `aria-label="..."` -- provides the full rating description for screen readers
 - `aria-hidden="true"` -- on each inner star span, prevents screen readers from reading individual star characters
 
+## When to Use
+
+- Use to display a read-only star rating in product listings, review summaries, or user profiles.
+- Use when the rating value should be visible but not editable.
+- Avoid when the user needs to select or change a rating; use FiveStarRatingPicker instead.
+
+## Headless
+
+This headless component provides semantic HTML with `role="img"`, `aria-label`, and `aria-hidden` inner spans for accessible read-only star display. The consumer provides all visual styling including star characters, colors, and sizing.
+
+## Advice
+
+- **Designers**: Use clear visual distinction between filled and empty stars. Consider half-star displays for fractional ratings by styling at the consumer level.
+- **Developers**: The `data-filled` attribute on each star span enables CSS-only styling of filled vs. empty states without JavaScript.
+
 ## References
 
 - WAI-ARIA `img` role: https://www.w3.org/WAI/ARIA/apd/roles/img/

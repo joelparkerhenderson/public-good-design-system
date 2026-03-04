@@ -37,6 +37,21 @@ None -- this component is a passive container with no interactive behavior.
 
 - `role="note"` -- identifies the content as a note or supplementary information, so screen readers announce it with appropriate context.
 
+## When to Use
+
+- Use to highlight supplementary information, processing times, eligibility criteria, or important notices that need to stand out without using an alert.
+- Use in government or institutional interfaces where the inset text pattern is a recognized convention.
+- Avoid for critical warnings or errors; use WarningCallout or Alert instead. Avoid for general emphasis; use InformationCallout for tips and notes.
+
+## Headless
+
+This headless component provides a `<div>` with `role="note"` for semantic supplementary content. The consumer provides all visual styling including the characteristic left border, indentation, padding, and font treatment.
+
+## Advice
+
+- **Designers**: Use a thick left border (typically 4-10px) as the primary visual indicator. Keep inset text visually distinct from blockquotes and callouts.
+- **Developers**: Keep inset text content concise. Avoid nesting interactive elements inside the inset text; use it for informational content only.
+
 ## References
 
 - WAI-ARIA Note Role: https://www.w3.org/TR/wai-aria-1.2/#note

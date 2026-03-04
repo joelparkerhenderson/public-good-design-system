@@ -37,6 +37,21 @@ None -- this is a passive informational display, not an interactive element.
 
 - `aria-label={label}` -- provides the accessible name for the status display, allowing screen readers to announce the context of the value
 
+## When to Use
+
+- Use RedAmberGreenView to display a RAG status in read-only dashboards, reports, summary cards, or detail views.
+- Use RedAmberGreenView when the status has already been set and only needs to be presented, not edited.
+- Avoid using RedAmberGreenView when users need to change the status; use RedAmberGreenPicker instead.
+
+## Headless
+
+The RedAmberGreenView headless component provides a `<span>` with `aria-label` for accessible naming and displays the RAG status value as text content. The consumer provides all visual styling, including color-coded backgrounds, text colors, or badge indicators.
+
+## Advice
+
+- **Designers**: Pair the color indicator with a text label (e.g., "Green - On track") so the status is understandable without relying on color alone.
+- **Developers**: Apply CSS styles using the text content or a `data-*` attribute to dynamically color-code the display based on the status value.
+
 ## References
 
 - WAI-ARIA status role: https://www.w3.org/TR/wai-aria-1.2/#status

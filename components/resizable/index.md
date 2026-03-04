@@ -36,6 +36,22 @@ None -- this component is a passive container. The consumer is responsible for i
 - `role="region"` -- identifies the container as a landmark region for assistive technologies
 - `aria-label={label}` -- provides an accessible name describing the resizable area
 
+## When to Use
+
+- Use Resizable for adjustable panels such as code editors, sidebars, or preview areas where users benefit from controlling the content size.
+- Use Resizable when layout flexibility is important and content may need more or less space depending on the task.
+- Avoid using Resizable for fixed-layout content that should not change size.
+- Consider Splitter when resizing involves two adjacent panels that share available space.
+
+## Headless
+
+The Resizable headless component provides a `<div>` with `role="region"`, `aria-label`, `tabindex="0"` for keyboard focus, and a `data-resize` attribute indicating the allowed direction. The consumer provides all visual styling including CSS `resize` and `overflow` properties, drag handles, and dimension constraints.
+
+## Advice
+
+- **Designers**: Provide a visible resize handle or grip indicator so users know the area is resizable, and set sensible minimum/maximum dimensions.
+- **Developers**: Apply `overflow: auto` and the appropriate CSS `resize` value (`both`, `horizontal`, or `vertical`) based on the `data-resize` attribute.
+
 ## References
 
 - WAI-ARIA Region Role: https://www.w3.org/TR/wai-aria-1.2/#region

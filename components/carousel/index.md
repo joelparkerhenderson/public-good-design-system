@@ -46,6 +46,22 @@ None -- this component is a passive container. The consumer should implement key
 - `aria-roledescription="carousel"` -- overrides the default "region" announcement with "carousel" for clearer context.
 - `aria-label` -- provides an accessible name describing the carousel content.
 
+## When to Use
+
+- Use a carousel for cycling through a set of related content items such as image galleries, product showcases, or testimonials.
+- Use a carousel when horizontal space is limited and users benefit from browsing items one at a time.
+- Avoid using a carousel for critical content that all users must see; important information may be missed in later slides.
+- Consider a static grid or list layout instead when users need to compare all items simultaneously.
+
+## Headless
+
+This headless Carousel component provides the semantic container with `role="region"`, `aria-roledescription="carousel"`, and `aria-label` for screen reader identification. The consumer provides all visual styling, slide navigation controls (previous/next buttons, pagination dots), autoplay logic, transition animations, and slide layout.
+
+## Advice
+
+- **Designers**: Provide clear navigation indicators (dots or arrows) so users understand there is more content to view. Avoid autoplay or provide a visible pause control.
+- **Developers**: Mark each slide with `role="group"` and `aria-roledescription="slide"` with an `aria-label` indicating position (e.g., "Slide 1 of 5"). Implement keyboard navigation for slide controls.
+
 ## References
 
 - WAI-ARIA Carousel Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/carousel/

@@ -64,6 +64,26 @@ With theme application:
 ## ARIA
 
 - `aria-label={label}` -- provides an accessible name for the theme select since there is no visible `<label>` element
+## When to Use
+
+- Use ThemeSelect when users need to choose a theme from a compact dropdown, especially when there are more than two or three options.
+- Use when screen space is limited and a dropdown is preferable to radio buttons.
+- Avoid using ThemeSelect for a simple binary light/dark toggle; consider SwitchButton or ToggleButton instead.
+- Consider ThemePicker instead when you want all options visible at once as radio buttons.
+
+## Headless
+
+This headless component provides a native `<select>` element with an `aria-label` for accessible theme switching. Keyboard navigation and dropdown behavior come from the browser's native select. The consumer provides `<option>` children (or ThemeSelectOption components) and all visual styling.
+
+## Advice
+
+- **Designers**: Ensure the selected option clearly indicates the active theme. Consider showing a preview swatch next to each option label.
+- **Developers**: Apply the selected theme value to the document root (e.g., `data-theme` attribute or CSS class) and persist the choice across sessions.
+
+## Composition
+
+ThemeSelect contains ThemeSelectOption children (or plain `<option>` elements) following the Select/SelectOption pattern. ThemeSelect is also related to ThemePicker (radio-based approach) and ThemeView (read-only display).
+
 ## References
 
 - MDN select element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/select

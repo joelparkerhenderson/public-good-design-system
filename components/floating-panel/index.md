@@ -34,6 +34,21 @@ None -- this component is a passive container. Consumers should implement focus 
 - `role="region"` -- identifies the panel as a landmark region
 - `aria-label="..."` -- provides an accessible name for the region
 
+## When to Use
+
+- Use for tooltips, popovers, dropdown menus, or contextual UI that overlays page content.
+- Use when content should be conditionally visible based on a toggle or trigger interaction.
+- Avoid for persistent content that should always be visible; use Panel or Card instead.
+
+## Headless
+
+This headless component provides a `<div>` with `role="region"` and `aria-label` that conditionally renders based on the `open` prop. The consumer provides all visual styling including positioning, shadows, borders, and z-index layering.
+
+## Advice
+
+- **Designers**: Ensure the floating panel has sufficient contrast and shadow to distinguish it from underlying content. Consider adding an arrow or caret pointing to the trigger element.
+- **Developers**: Implement focus management and Escape-to-close behavior in your consumer code. Use CSS absolute/fixed positioning relative to the trigger element.
+
 ## References
 
 - WAI-ARIA Practices - Disclosure Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/disclosure/

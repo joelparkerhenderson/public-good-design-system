@@ -37,3 +37,18 @@ This component sets the CSS `aspect-ratio` property on a wrapper `<div>` element
 ## ARIA
 
 - None -- transparent layout container; content within maintains its own accessibility semantics
+
+## When to Use
+
+- Use for constraining images, videos, maps, or embedded content to a consistent aspect ratio regardless of viewport size.
+- Use when you need responsive media containers that maintain proportional dimensions (e.g., 16:9 for video, 1:1 for avatars).
+- Avoid for text-only content where natural height should determine the layout.
+
+## Headless
+
+This component provides a `<div>` wrapper with the CSS `aspect-ratio` property set via inline style and a `data-aspect-ratio` attribute for consumer selectors, with zero visual styling. The consumer is responsible for all CSS including overflow behavior, border radius, background, and how child content fills or fits within the container.
+
+## Advice
+
+- **Designers**: Choose standard aspect ratios (16:9, 4:3, 1:1, 21:9) for consistency across the interface. Ensure fallback behavior for content that cannot fill the container.
+- **Developers**: Use `ratio={16/9}` as a JavaScript expression rather than a string. Ensure child content uses `object-fit` or similar CSS to handle how it fills the container.

@@ -38,6 +38,26 @@ Use SegmentGroup when you need a set of visually distinct toggle buttons where o
 - `role="radiogroup"` -- identifies the container as a group of mutually exclusive radio-like options
 - `aria-label={label}` -- provides an accessible name for the group so screen readers announce its purpose
 
+## When to Use
+
+- Use SegmentGroup for visually distinct toggle controls where only one option can be active, such as view mode switches (grid/list), filter toggles, or display density controls.
+- Use SegmentGroup when you want a custom segmented control appearance beyond standard radio buttons.
+- Avoid using SegmentGroup for non-mutually-exclusive options; use ToggleGroup or CheckboxInput instead.
+- Consider RadioGroup when standard radio button appearance is acceptable.
+
+## Headless
+
+The SegmentGroup headless component provides a `<div>` with `role="radiogroup"` and `aria-label` for accessible group naming. It expects children with `role="radio"` and `aria-checked` attributes. The consumer provides all visual styling, selection state management, and keyboard navigation between segments.
+
+## Advice
+
+- **Designers**: Give the segmented control a clear visual boundary and ensure the active segment has a prominent selected state (e.g., filled background vs. outlined).
+- **Developers**: Implement arrow key navigation between segments following the WAI-ARIA radio group pattern, and manage roving tabindex so only the selected segment receives focus via Tab.
+
+## Composition
+
+SegmentGroup is the container for SegmentGroupItem children. Use `<SegmentGroup>` to wrap `<SegmentGroupItem>` elements, providing the group-level accessible label while each item carries its own value and checked state.
+
 ## References
 
 - WAI-ARIA Radio Group Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/radio/

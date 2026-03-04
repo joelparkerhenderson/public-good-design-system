@@ -39,6 +39,22 @@ None -- this component is a passive, read-only display.
 - `aria-valuemin` -- the minimum value of the progress range
 - `aria-valuemax` -- the maximum value of the progress range
 
+## When to Use
+
+- Use ProgressCircle for compact progress displays in dashboards, widgets, and cards where a radial indicator fits the layout.
+- Use ProgressCircle when you want to show a percentage inside the indicator via the children slot.
+- Avoid using ProgressCircle for indeterminate loading; use ProgressSpinner instead.
+- Consider Progress for standard linear progress bar layouts.
+
+## Headless
+
+The ProgressCircle headless component provides a `<div>` with `role="progressbar"` and full ARIA value attributes (`aria-valuenow`, `aria-valuemin`, `aria-valuemax`) plus `aria-label` for accessible naming. The consumer provides all visual styling, including the circular SVG or CSS rendering and any inner content.
+
+## Advice
+
+- **Designers**: Use a ring or arc visual with clear fill to indicate progress, and display the percentage value in the center of the circle for quick readability.
+- **Developers**: Use the ARIA value attributes to drive your CSS or SVG arc calculations, keeping the visual and semantic states synchronized.
+
 ## References
 
 - WAI-ARIA Meter Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/meter/

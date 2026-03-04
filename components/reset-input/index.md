@@ -43,6 +43,22 @@ Note: keyboard interactions are provided natively by the `<input type="reset">` 
 
 No additional ARIA attributes are needed. The native `<input type="reset">` element has an implicit `button` role and the `value` attribute serves as its accessible name.
 
+## When to Use
+
+- Use ResetInput in forms where users may want to clear all entered data and restore fields to their initial values.
+- Use ResetInput alongside SubmitInput to provide a complete set of form actions.
+- Avoid using ResetInput on forms with many fields or long workflows, as accidental resets can frustrate users.
+- Consider a confirmation dialog before resetting if the form contains significant user input.
+
+## Headless
+
+The ResetInput headless component provides a native `<input type="reset">` with configurable button text via the `value` prop and `disabled` state. The browser handles all form reset behavior natively. The consumer provides all visual styling for the button appearance.
+
+## Advice
+
+- **Designers**: Style the reset button with less visual emphasis than the submit button to reduce accidental clicks, and position it away from the primary action.
+- **Developers**: Use the `disabled` prop to disable reset when the form is in its initial state (not dirty), preventing unnecessary resets.
+
 ## References
 
 - MDN input type="reset": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/reset

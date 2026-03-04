@@ -41,6 +41,21 @@ A five-face rating picker button is an individual button within a FiveFaceRating
 - `aria-pressed` -- indicates whether this button is the currently selected rating (`true` when selected, `false` otherwise)
 - `aria-label` -- provides the accessible name for the button (e.g., "Very good")
 
+## When to Use
+
+- Use as a child of FiveFaceRatingPicker to represent one satisfaction level in a 1-5 face rating scale.
+- Use when each face rating option needs individual styling, icons, or interactive behavior.
+- Avoid using outside of a FiveFaceRatingPicker; it is designed to work within the picker container.
+
+## Headless
+
+This headless component provides a `<button>` with `aria-pressed` to indicate the selected state, `aria-label` for the face description, and click handling for selection. The consumer provides all visual styling, face icons or emoji, and hover/focus effects.
+
+## Advice
+
+- **Designers**: Make the selected state visually distinct (e.g., highlighted border, increased size, or color change). Ensure each face button has enough tap target size for touch devices.
+- **Developers**: Pass the `selected` prop to control `aria-pressed`. Use the `onclick` handler to update the parent picker's value. The `value` prop carries the numeric rating for form submission.
+
 ## References
 
 - WAI-ARIA Button Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/button/

@@ -36,6 +36,25 @@ None -- this component is a passive container. Keyboard behavior depends on the 
 - `role="group"` -- identifies the container as a semantic grouping of related elements
 - `aria-label={label}` -- provides an accessible name describing the purpose of the tag collection
 
+## When to Use
+
+- Use to group related Tag elements that share a common category, such as skills, technologies, article topics, or product attributes.
+- Use when assistive technologies should announce the tags as a related collection.
+- Avoid when tags are unrelated or scattered across different sections; group only semantically related tags.
+
+## Headless
+
+This headless component renders a `<div>` with `role="group"` and `aria-label` to semantically associate child tag elements. It provides grouping semantics for assistive technologies. The consumer provides all visual styling including layout (flex, grid, wrap), spacing, and gap between tags.
+
+## Advice
+
+- **Designers**: Use a horizontal flex-wrap layout with consistent gaps between tags. Consider a label or heading above the group to visually identify the tag category.
+- **Developers**: Use a descriptive `label` prop that names the collection (e.g., "Technologies", "Skills"). Pair TagGroup with Tag children for proper semantic structure.
+
+## Composition
+
+TagGroup uses the Group/Item composition pattern. Place Tag components as children inside TagGroup. The TagGroup provides the `role="group"` container with an accessible label, while each Tag provides an individual labeled element within the group.
+
 ## References
 
 - WAI-ARIA group role: https://www.w3.org/TR/wai-aria-1.2/#group

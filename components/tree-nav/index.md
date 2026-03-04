@@ -63,6 +63,26 @@ The `<nav>` element provides the navigation landmark, while the nested TreeNavLi
 - `<nav aria-label="...">` -- creates a navigation landmark with a descriptive label for the tree navigation region
 - Tree semantics (`role="tree"`, `role="treeitem"`) are provided by the child TreeNavList and TreeNavListItem components
 
+## When to Use
+
+- Use TreeNav for hierarchical site navigation with expandable branches, such as documentation sidebars, file browsers, or category navigation.
+- Use when the tree structure serves as a navigation landmark that screen readers should identify.
+- Avoid using TreeNav for non-navigation hierarchical displays; use TreeMenu instead.
+- Consider a flat NavigationMenu when the hierarchy is only one level deep.
+
+## Headless
+
+This headless component provides a `<nav>` element with `aria-label` for a navigation landmark. Tree semantics and keyboard navigation are provided by the child TreeNavList component. The consumer provides all visual styling including indentation, expansion indicators, and link styles.
+
+## Advice
+
+- **Designers**: Clearly distinguish expandable branches from leaf nodes using icons (e.g., chevrons for branches). Highlight the current page within the tree.
+- **Developers**: Nest TreeNavList inside TreeNav, with TreeNavListItem children. The `<nav>` landmark allows screen reader users to quickly jump to the tree navigation region.
+
+## Composition
+
+TreeNav contains a TreeNavList, which in turn contains TreeNavListItem children, following the Nav/List/ListItem pattern. TreeNav provides the `<nav>` landmark, TreeNavList provides `role="tree"` with keyboard navigation, and TreeNavListItem provides `role="treeitem"` for each node.
+
 ## References
 
 - WAI-ARIA Tree View Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/treeview/

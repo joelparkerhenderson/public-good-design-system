@@ -47,6 +47,22 @@ Note: keyboard interactions are provided natively by the `<input type="range">` 
 
 - `aria-label={label}` -- provides the accessible name for the slider control since no visible label element is associated
 
+## When to Use
+
+- Use RangeInput for selecting a value from a continuous numeric spectrum, such as volume, brightness, price filters, or zoom levels.
+- Use RangeInput when an approximate value selection is acceptable and the full range should be visually represented.
+- Avoid using RangeInput when an exact value is needed; use NumberInput instead.
+- Consider using two RangeInputs or a dedicated range slider for selecting a min/max range.
+
+## Headless
+
+The RangeInput headless component provides a native `<input type="range">` with `aria-label`, configurable `min`, `max`, and `step` values, and two-way value binding. The browser handles all slider keyboard interactions natively. The consumer provides all visual styling for the track, thumb, and labels.
+
+## Advice
+
+- **Designers**: Display the current value near the slider thumb or in a label, and consider adding tick marks at key intervals for better spatial reference.
+- **Developers**: Use the `step` prop to constrain values to meaningful increments, and debounce `oninput` handlers if the slider drives expensive updates.
+
 ## References
 
 - WAI-ARIA Slider Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/slider/

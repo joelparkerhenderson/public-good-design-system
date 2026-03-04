@@ -35,6 +35,21 @@ None at the component level. Keyboard behavior is handled natively by the browse
 
 - `aria-label={label}` -- provides an accessible name describing the purpose of the month input
 
+## When to Use
+
+- Use when the user needs to select a specific month and year, such as for credit card expiration, billing periods, or report dates.
+- Use when day-level precision is not needed and month granularity is sufficient.
+- Consider using DateInput instead when a full date (year, month, day) is required.
+
+## Headless
+
+This headless component wraps a native `<input type="month">` with `aria-label` for accessible naming and two-way bindable value in `YYYY-MM` format. The consumer provides all visual styling, including input dimensions, borders, calendar icon, and any custom picker UI for browsers without native month picker support.
+
+## Advice
+
+- **Designers**: Be aware that native month picker appearance varies widely across browsers; plan fallback styling or a custom picker for consistent cross-browser experience.
+- **Developers**: The value format is always `YYYY-MM`. Use `min` and `max` via restProps to constrain the selectable range when needed.
+
 ## References
 
 - HTML month input: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/month

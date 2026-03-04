@@ -32,6 +32,21 @@ None -- this component is a passive, read-only status indicator.
 - `aria-label="..."` -- provides an accessible name describing what is loading
 - `aria-live="polite"` -- ensures content changes are announced by screen readers at the next opportunity without interrupting
 
+## When to Use
+
+- Use ProgressSpinner for indeterminate loading states where the completion time is unknown, such as data fetching or background processing.
+- Use ProgressSpinner when you need a compact, inline loading indicator that announces its state to screen readers.
+- Avoid using ProgressSpinner when completion percentage is known; use Progress or ProgressCircle instead.
+
+## Headless
+
+The ProgressSpinner headless component provides a `<div>` with `role="status"`, `aria-live="polite"`, and `aria-label` for accessible naming. It announces loading state changes to screen readers without interrupting. The consumer provides all visual styling, including the spinning animation via CSS.
+
+## Advice
+
+- **Designers**: Keep the spinner visually simple and use smooth animation; pair with a visible "Loading..." label for clarity in larger content areas.
+- **Developers**: Place the spinner near the content it represents, and remove or hide it promptly when loading completes to avoid stale status announcements.
+
 ## References
 
 - WAI-ARIA `status` role: https://www.w3.org/WAI/ARIA/apd/roles/status/

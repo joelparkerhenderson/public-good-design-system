@@ -54,6 +54,21 @@ None -- passive structural element with no interactive behavior.
 
 - No explicit ARIA roles or attributes -- the `<col>` element is a structural table component that does not appear in the accessibility tree
 
+## When to Use
+
+- Use inside a `<colgroup>` within a GanttTable to define uniform column widths for time period columns.
+- Use when multiple columns should share the same width or styling without repeating attributes on each cell.
+- Avoid when columns need individual per-cell styling; apply styles directly to GanttTableData cells instead.
+
+## Headless
+
+This headless component provides a `<col>` element for column-level property definitions within a Gantt chart grid. The consumer provides all visual styling including column widths, background colors, and borders.
+
+## Advice
+
+- **Designers**: Use consistent column widths for time period columns to create a uniform grid. The task-name column is typically wider than time period columns.
+- **Developers**: Use the `span` attribute to apply a single `<col>` across multiple consecutive columns that share the same width.
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

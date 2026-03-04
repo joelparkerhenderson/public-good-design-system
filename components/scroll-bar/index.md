@@ -55,6 +55,21 @@ Note: The consumer is responsible for implementing keyboard event handlers that 
 - `aria-valuemin="0"` -- the minimum scroll value
 - `aria-valuemax="100"` -- the maximum scroll value
 
+## When to Use
+
+- Use ScrollBar when you need a custom-styled scrollbar that matches your design system, replacing or augmenting native scrollbars.
+- Use ScrollBar inside a ScrollArea to provide a visually consistent scroll indicator with full ARIA semantics.
+- Avoid using ScrollBar when native scrollbars are sufficient; custom scrollbars add implementation complexity.
+
+## Headless
+
+The ScrollBar headless component provides a `<div>` with `role="scrollbar"`, `aria-orientation`, `aria-valuenow`, `aria-valuemin`, `aria-valuemax`, and `aria-label` for full ARIA scrollbar semantics. The consumer provides the visual thumb element, drag interaction logic, and position synchronization with scrollable content.
+
+## Advice
+
+- **Designers**: Make the scrollbar thumb large enough to grab easily, and ensure sufficient contrast between the thumb and track for visibility.
+- **Developers**: Update `aria-valuenow` dynamically as the user scrolls, and implement keyboard event handlers for arrow keys, Page Up/Down, Home, and End.
+
 ## References
 
 - WAI-ARIA scrollbar role: https://www.w3.org/TR/wai-aria-1.2/#scrollbar

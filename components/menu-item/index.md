@@ -74,6 +74,29 @@ Submenu trigger:
 - Supports `aria-haspopup` for submenu triggers
 - Supports `aria-expanded` for items with open/closed submenus
 
+## When to Use
+
+- Use as an individual action or option within a Menu or ContextMenu.
+- Use when each item needs `role="menuitem"` semantics with roving tabindex focus management from the parent menu.
+- Avoid using MenuItem outside of a `role="menu"` or `role="menubar"` container; it relies on the parent for keyboard navigation.
+
+## Headless
+
+This headless component provides a `<div>` with `role="menuitem"` and `tabindex="-1"` for roving focus managed by the parent menu. The consumer provides all visual styling, including item appearance, hover states, disabled styling, keyboard shortcut hints, and icons.
+
+## Advice
+
+- **Designers**: Show keyboard shortcut hints (e.g., "Ctrl+S") right-aligned within menu items when applicable, and visually distinguish disabled items.
+- **Developers**: Use `aria-disabled="true"` instead of the `disabled` attribute for disabled menu items, and add `aria-haspopup` with `aria-expanded` for items that open submenus.
+
+## Composition
+
+MenuItem is a child component of Menu. The parent Menu provides `role="menu"` with vertical keyboard navigation, while MenuItem provides `role="menuitem"` for each action.
+
+```
+Menu (role="menu") → MenuItem (role="menuitem")
+```
+
 ## References
 
 - WAI-ARIA Menu Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/menu/

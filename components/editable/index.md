@@ -50,6 +50,22 @@ In edit mode:
 - `aria-disabled={disabled}` -- on the display span when disabled, communicates the disabled state
 - `tabindex="0"` / `tabindex="-1"` -- controls focusability based on disabled state
 
+## When to Use
+
+- Use for inline text editing where users can click or activate a value to edit it in place, such as renaming items, updating profile fields, or quick edits in tables.
+- Use when navigating to a separate edit page would be disruptive to the workflow.
+- Avoid for multi-field forms; use EditableForm or a standard Form instead.
+- Consider TextInput instead when the field is always in edit mode and does not toggle.
+
+## Headless
+
+This headless component provides a display mode (`<span>` with `role="button"`) and edit mode (`<input type="text">`) with full keyboard support (Enter to confirm, Escape to cancel), draft value management, two-way binding on both `value` and `editing`, and disabled state handling. The consumer provides all visual styling for both display and edit modes.
+
+## Advice
+
+- **Designers**: Make the display text visually distinct from static text (e.g., with an underline or hover effect) so users know it is editable. Provide clear visual feedback when entering and exiting edit mode.
+- **Developers**: Use the `editing` bind to coordinate with other components or show save/cancel buttons. The component manages a draft value internally, so cancellation safely reverts changes.
+
 ## References
 
 - WAI-ARIA Button Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/button/

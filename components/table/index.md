@@ -38,6 +38,22 @@ This headless table component renders a semantic `<table>` element with an acces
 - Semantic `<table>` element -- conveys tabular data structure to assistive technologies
 - Consumers should use `<th scope="col">` for column headers and `<th scope="row">` for row headers
 
+## When to Use
+
+- Use to display structured tabular data with rows and columns, such as reports, schedules, product lists, or comparison data.
+- Use when users need to scan, compare, or analyze data in a grid format.
+- Avoid for layout purposes; use CSS Grid or Flexbox for page layout instead.
+- Consider a DataTable when you need built-in sorting, filtering, or pagination capabilities.
+
+## Headless
+
+This headless component renders a semantic `<table>` element with `aria-label` for accessible naming. It provides the table structure and leaves all content (thead, tbody, tfoot, caption, colgroup) and visual styling to the consumer, including borders, striping, spacing, and responsive behavior.
+
+## Advice
+
+- **Designers**: Use alternating row colors or subtle borders to improve scannability. Ensure column headers are visually distinct from data cells.
+- **Developers**: Always use `<th scope="col">` for column headers and `<th scope="row">` for row headers to ensure screen readers announce headers correctly. Add a `<caption>` element for a visible table title when appropriate.
+
 ## References
 
 - WAI-ARIA Table Role: https://www.w3.org/WAI/ARIA/apd/patterns/table/

@@ -53,6 +53,21 @@ The component manages the input value and dropdown open state as bindable props,
 - `aria-autocomplete="list"` -- indicates the input provides autocomplete suggestions via a list.
 - `role="listbox"` -- on the dropdown container, identifies it as a list of selectable options.
 
+## When to Use
+
+- Use a Combobox when users need to filter and select from a large set of options by typing, such as search fields, address inputs, or tag selectors.
+- Use a Combobox when the option list is too long for a standard select dropdown and users benefit from type-ahead filtering.
+- Avoid using a Combobox for short option lists (fewer than 10 items); consider a Select or RadioGroup instead.
+
+## Headless
+
+This headless Combobox component provides an `<input>` with `role="combobox"`, `aria-expanded`, `aria-controls`, and `aria-autocomplete="list"`, paired with a conditionally rendered `role="listbox"` dropdown. The consumer provides all visual styling including input appearance, dropdown positioning, option highlighting, loading indicators, and animations.
+
+## Advice
+
+- **Designers**: Show a clear visual distinction between the input field and the dropdown list. Highlight the currently focused option and provide feedback when no results match.
+- **Developers**: Implement your own filtering logic by reacting to the bindable `value` prop. Provide `role="option"` elements as children and manage selection state externally.
+
 ## References
 
 - WAI-ARIA Combobox Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/combobox/

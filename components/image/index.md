@@ -42,6 +42,21 @@ None -- this component is a passive content element. Images are not interactive 
 - `alt="..."` -- provides the accessible name for the image, required for all non-decorative images
 - `<figure>` and `<figcaption>` -- when caption is present, these semantic HTML elements associate the caption with the image for assistive technology
 
+## When to Use
+
+- Use to display photographs, illustrations, diagrams, or other visual content within an interface.
+- Use with a `caption` prop when the image needs a visible descriptive caption (renders as `<figure>`/`<figcaption>`).
+- Avoid for purely decorative images that add no informational value; use a CSS background image instead.
+
+## Headless
+
+This headless component provides an `<img>` element with required `alt` text, optional `<figure>`/`<figcaption>` wrapping, and native `loading` attribute support. The consumer provides all visual styling including sizing, borders, rounded corners, and responsive behavior.
+
+## Advice
+
+- **Designers**: Define consistent aspect ratios and sizing for images across the application. Provide placeholder or skeleton states for slow-loading images.
+- **Developers**: Always write meaningful `alt` text that describes the image content. Use `loading="lazy"` for below-the-fold images to improve page performance.
+
 ## References
 
 - WAI Images Tutorial: https://www.w3.org/WAI/tutorials/images/

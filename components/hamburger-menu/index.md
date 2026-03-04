@@ -57,6 +57,21 @@ When activated, the button toggles the visibility of a navigation region contain
 - `role="navigation"` -- on the content container, identifies it as a navigation landmark
 - `aria-label={label}` -- on the navigation container, provides an accessible name for the landmark
 
+## When to Use
+
+- Use on mobile layouts and compact interfaces to hide primary navigation behind a toggle control.
+- Use when screen space is limited and the navigation panel should be hidden by default.
+- Avoid on desktop layouts where there is sufficient space to display navigation links permanently. Consider NavigationMenu instead.
+
+## Headless
+
+This headless component provides a `<button>` with `aria-expanded`, `aria-controls`, and a conditional navigation region with `role="navigation"`. The consumer provides all visual styling including the hamburger icon, animation, panel positioning, and overlay effects.
+
+## Advice
+
+- **Designers**: Use a universally recognized three-line (hamburger) icon. Animate the icon to an X when open to indicate the toggle state.
+- **Developers**: Use two-way binding on `open` to synchronize menu state. Ensure the navigation content receives focus when opened for keyboard accessibility.
+
 ## References
 
 - WAI-ARIA Disclosure Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/disclosure/

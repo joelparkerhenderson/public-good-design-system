@@ -30,3 +30,19 @@ None -- this component is a passive container for descriptive text.
 ## ARIA
 
 - Implicit semantics from `<figcaption>` -- automatically associated with its parent `<figure>` element, providing an accessible caption without additional ARIA attributes
+
+## When to Use
+
+- Use for providing descriptive text alongside images, videos, charts, or other media elements within a `<figure>` parent.
+- Use when you need a semantic association between media content and its explanatory caption.
+- Avoid for standalone text that is not associated with a figure or media element -- use a paragraph or heading instead.
+- Consider using `aria-describedby` to link the caption to other elements when used outside a `<figure>`.
+
+## Headless
+
+This component provides a semantic `<figcaption>` element with automatic `<figure>` association and zero visual styling. The consumer is responsible for all CSS including font size, font style (e.g., italic), color, alignment, spacing relative to the media, and any border or background treatment.
+
+## Advice
+
+- **Designers**: Place captions directly below the media element. Use a smaller font size and muted color to establish visual hierarchy. Keep captions concise.
+- **Developers**: Always place this component inside a `<figure>` element for proper semantic association. Use the `id` attribute if you need to reference the caption via `aria-describedby` from other elements.

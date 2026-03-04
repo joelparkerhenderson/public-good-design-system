@@ -35,3 +35,22 @@ The component uses `aria-label` for accessible labeling in a headless context, a
 ## ARIA
 
 - `aria-label` -- set from the `label` prop to provide an accessible name
+
+## When to Use
+
+- Use when the user needs to enter a specific measurement value with its unit, such as "72 kg" or "98.6 F".
+- Use in medical, scientific, or engineering forms where recording measurement instances is required.
+- Consider using MeasurementUnitInput and a NumberInput separately if the value and unit should be captured in distinct fields.
+
+## Headless
+
+This headless component provides a text input with `aria-label` for accessible naming and two-way bindable value for reactive form integration. The consumer provides all visual styling, including input dimensions, borders, placeholder text, and validation feedback appearance.
+
+## Advice
+
+- **Designers**: Include placeholder text showing the expected format (e.g., "72 kg") so users understand what to enter.
+- **Developers**: Validate measurement format on the consumer side, as this component accepts free-text input without built-in format enforcement.
+
+## Composition
+
+MeasurementInstanceInput is part of the measurement component family. It works alongside MeasurementUnitInput, MeasurementUnitView, MeasurementSystemInput, MeasurementSystemView, and MeasurementInstanceView to cover input and display of measurement data.

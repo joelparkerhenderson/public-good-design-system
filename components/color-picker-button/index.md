@@ -46,6 +46,25 @@ This component is useful in color palette UIs, theme builders, product customiza
 - `aria-label={label}` -- provides an accessible name for the swatch since it has no visible text content
 - `aria-pressed={selected}` -- indicates whether the swatch is currently selected in a toggle context
 
+## When to Use
+
+- Use a ColorPickerButton to present a selectable color swatch within a palette of predefined color options.
+- Use ColorPickerButton components in product customization forms, theme builders, or any interface where users choose from a fixed set of colors.
+- Avoid using a ColorPickerButton for free-form color selection; use a ColorPicker for 2D saturation/brightness picking or a ColorInput for hex entry.
+
+## Headless
+
+This headless ColorPickerButton component provides a `<button>` with inline `style:background-color`, `aria-label` for the color name, `aria-pressed` for selected state, and `data-color` for CSS targeting. The consumer provides all visual styling including swatch size, border, selected-state ring or outline, hover effects, and layout within the palette.
+
+## Advice
+
+- **Designers**: Use a visible border or ring to indicate the selected swatch. Ensure swatches are large enough to distinguish similar colors and meet touch target guidelines.
+- **Developers**: Use the `data-color` attribute for CSS selectors and the `aria-pressed` state for selected styling. Group multiple ColorPickerButton components in a container for palette layout.
+
+## Composition
+
+ColorPickerButton is the child component in the ColorPicker/ColorPickerButton composition pattern. Multiple ColorPickerButton instances form a color palette. They can be combined with a ColorPicker for interfaces that offer both preset swatches and fine-grained 2D color selection.
+
 ## References
 
 - WAI-ARIA Button Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/button/

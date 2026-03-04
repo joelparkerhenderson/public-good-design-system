@@ -40,3 +40,18 @@ None -- this component is a passive container. Keyboard interactions are determi
 
 - `contentinfo` landmark role -- provided natively by the `<footer>` element, allowing screen reader users to navigate directly to the footer
 - `aria-label` -- optional accessible name to distinguish this footer from others on the page
+
+## When to Use
+
+- Use at the bottom of a page or section for secondary navigation, legal information, copyright, or contact details.
+- Use when the page needs a `contentinfo` landmark for assistive technology navigation.
+- Avoid nesting a footer directly inside another footer; use `aria-label` to distinguish section footers from the page footer.
+
+## Headless
+
+This headless component provides a semantic `<footer>` element that automatically exposes the `contentinfo` landmark role to assistive technologies. The consumer provides all visual styling including layout, colors, typography, and spacing.
+
+## Advice
+
+- **Designers**: Keep footer content organized with clear groupings (e.g., navigation links, legal text, social links). Use a visually distinct background to separate the footer from main content.
+- **Developers**: When multiple footers exist on a page, provide the `label` prop to help screen reader users distinguish between them.

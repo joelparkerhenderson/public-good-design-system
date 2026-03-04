@@ -43,6 +43,21 @@ None -- this component is a passive container. Keyboard behavior depends on the 
 - `aria-label="..."` -- provides the accessible name for meaningful icons
 - `aria-hidden="true"` -- applied when `decorative` is true, hiding the icon from the accessibility tree
 
+## When to Use
+
+- Use to display a visual symbol representing an action, object, or concept in buttons, menus, toolbars, or navigation.
+- Use with `decorative` for icons that are purely visual and have adjacent text labels.
+- Avoid using a meaningful icon without a `label` prop; screen reader users would miss the icon's purpose.
+
+## Headless
+
+This headless component provides a `<span>` with `role="img"` and `aria-label` for meaningful icons, or `aria-hidden="true"` for decorative icons. The consumer provides all visual content (SVG, text characters, icon fonts) and styling.
+
+## Advice
+
+- **Designers**: Ensure icons are visually clear at small sizes. Pair icons with text labels when the meaning may be ambiguous. Maintain consistent icon sizing across the interface.
+- **Developers**: Set `decorative={true}` when the icon is adjacent to a text label that conveys the same meaning. Always provide `label` for standalone icons.
+
 ## References
 
 - WAI-ARIA img role: https://www.w3.org/TR/wai-aria-1.2/#img

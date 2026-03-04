@@ -48,6 +48,26 @@ Use TabBar when building a tabbed interface where users switch between different
 - Child tabs should have `role="tab"` and `aria-selected` attributes (managed by consumer)
 - Associated tab panels should have `role="tabpanel"` with `aria-labelledby` pointing to the corresponding tab (managed by consumer)
 
+## When to Use
+
+- Use when users need to switch between different content panels within the same page context, such as settings categories, dashboard views, or content sections.
+- Use when the content sections are related and users benefit from quickly switching between them without page navigation.
+- Avoid when each section is a separate page; use navigation links instead.
+- Consider an AccordionNav when vertical space is limited and multiple sections should be expandable simultaneously.
+
+## Headless
+
+This headless component renders a `<div>` with `role="tablist"`, `aria-label`, and built-in arrow key navigation (Left/Right to cycle tabs, Home/End to jump to first/last). The consumer provides tab button children, manages selection state, associates tab panels, and applies all visual styling.
+
+## Advice
+
+- **Designers**: Clearly indicate the active tab with a visual treatment such as an underline, background color, or border. Keep tab labels short and descriptive.
+- **Developers**: Pair each TabBarButton with a corresponding `role="tabpanel"` element linked via `aria-controls` and `aria-labelledby`. Manage the `aria-selected` state on child tab buttons from the consumer.
+
+## Composition
+
+TabBar uses the Bar/BarButton composition pattern. Place TabBarButton components as children inside TabBar. The TabBar provides the `role="tablist"` container with keyboard navigation, while each TabBarButton provides `role="tab"` with selection state and panel association.
+
 ## References
 
 - WAI-ARIA Tabs Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/tabs/

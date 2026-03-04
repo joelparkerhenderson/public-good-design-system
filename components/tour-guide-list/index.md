@@ -80,6 +80,26 @@ With step management:
 - `aria-modal="true"` -- indicates the dialog is modal and content behind it is inert
 - `aria-label={label}` -- provides an accessible name describing the tour
 - `tabindex="-1"` -- allows the dialog element to receive focus for keyboard event handling
+## When to Use
+
+- Use TourGuideList to walk users through a step-by-step onboarding flow, feature discovery tour, or contextual help walkthrough.
+- Use when guidance needs to appear as a modal overlay that focuses user attention on one step at a time.
+- Avoid using TourGuideList for simple tooltips or hints; use Tooltip or InformationCallout instead.
+- Consider a non-modal approach if users need to interact with the page while reading instructions.
+
+## Headless
+
+This headless component provides a modal `<div>` with `role="dialog"`, `aria-modal="true"`, `aria-label`, and Escape key dismissal. The consumer provides all step content, navigation buttons, progress indicators, and all visual styling including backdrop, positioning, and animations.
+
+## Advice
+
+- **Designers**: Include clear step progress indicators (e.g., "Step 2 of 5") and provide both "Next" and "Skip" options so users are not forced through the entire tour.
+- **Developers**: Manage step state externally and pass it to TourGuideListItem children via the `current` prop. Trap focus within the dialog while active.
+
+## Composition
+
+TourGuideList contains TourGuideListItem children following the Guide/GuideList/GuideListItem pattern. TourGuideList provides the modal dialog overlay, and each TourGuideListItem provides one step with conditional visibility based on the `current` prop.
+
 ## References
 
 - WAI-ARIA Dialog Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/

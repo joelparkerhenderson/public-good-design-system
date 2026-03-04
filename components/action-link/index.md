@@ -34,6 +34,22 @@ Action links are useful when you want to draw attention to a key navigational st
 - Implicit `link` role from the `<a>` element
 - `aria-label` -- optional override for screen reader text when the visible link text does not fully convey the action
 
+## When to Use
+
+- Use for prominent navigational actions that need visual emphasis, such as "Continue to next step", "Find a service near you", or "Start your application".
+- Use when you want to distinguish a key navigation action from standard inline text links.
+- Avoid for triggering non-navigation actions like form submission or state changes -- use Button instead.
+- Consider BackLink instead when the action is specifically returning to a previous page.
+
+## Headless
+
+This component provides a semantic `<a>` element with optional `aria-label` override and zero visual styling. The consumer is responsible for all CSS including colors, font weight, underline styles, hover effects, focus indicators, and any arrow or icon decoration.
+
+## Advice
+
+- **Designers**: Make action links visually distinct from standard inline links using size, weight, or an arrow icon to signal their importance as key navigational steps.
+- **Developers**: Use the `label` prop to provide expanded screen reader text when the visible link text is ambiguous, such as providing "Find a GP near your postcode" for a link that just reads "Find a GP".
+
 ## References
 
 - Inspired by NHS England action link pattern

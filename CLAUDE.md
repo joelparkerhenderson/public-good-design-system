@@ -18,37 +18,34 @@ Subprojects for web app examples:
 
 ## Components
 
-- accordion:
-  - accordion-nav = AccordionNav = a navigation container for collapsible accordion information
-  - accordion-nav-list = AccordionNavList = an ordered list of accordion nav list item components
-  - accordion-nav-list-item = AccordionNavListItem = one accordion nav list item component
+- accordion-nav = AccordionNav = a navigation container for collapsible accordion information
+- accordion-nav-list = AccordionNavList = an ordered list of accordion nav list item components
+- accordion-nav-list-item = AccordionNavListItem = one accordion nav list item component
 - action-link = ActionLink = a hyperlink styled as an action trigger
+- ai-label = AiLabel = an indicator of AI instances that is a pathway to AI explainability
 - alert-dialog = AlertDialog = a modal dialog for urgent messages requiring user acknowledgment
 - alert = Alert = a status message for important information or feedback
 - angle-slider-range-input = AngleSliderRangeInput = a range input for selecting an angle in degrees
 - aspect-ratio-container = AspectRatioContainer = a container that maintains a fixed aspect ratio
-- avatar:
-  - avatar = Avatar = an avatar indicator that shows an avatar image or avatar text
-  - avatar-image = AvatarImage = an avatar indicator inside image such as a user photo
-  - avatar-text = AvatarText = an avatar indicator inner text such as a user name
+- avatar = Avatar = an avatar indicator that shows an avatar image or avatar text
+- avatar-image = AvatarImage = an avatar indicator inside image such as a user photo
+- avatar-text = AvatarText = an avatar indicator inner text such as a user name
 - back-link = BackLink = a navigation link to return to a previous page
 - badge = Badge = a small label for counts, statuses, or categories
 - banner = Banner = a prominent message bar across the top of a page
 - beach-ball = BeachBall = a decorative animated beach ball element
-- breadcrumb:
-  - breadcrumb-nav = BreadcrumbNav = a navigation container for breadcrumb trail links
-  - breadcrumb-nav-list = BreadcrumbNavList = an ordered list of breadcrumb navigation items
-  - breadcrumb-nav-list-item = BreadcrumbNavListItem = one breadcrumb navigation link in the trail
+- breadcrumb-nav = BreadcrumbNav = a navigation container for breadcrumb trail links
+- breadcrumb-nav-list = BreadcrumbNavList = an ordered list of breadcrumb navigation items
+- breadcrumb-nav-list-item = BreadcrumbNavListItem = one breadcrumb navigation link in the trail
 - button = Button = a generic clickable button element
 - button-input = ButtonInput = an input element of type button for form actions
-- calendar-table:
-  - calendar-table = CalendarTable = a calendar table interactive grid for managing dates, days, etc.
-  - calendar-table-head = CalendarTableHead = a calendar table interactive grid thead for managing dates, days, etc.
-  - calendar-table-body = CalendarTableBody = a calendar table interactive grid tbody for managing dates, days, etc.
-  - calendar-table-foot = CalendarTableFoot = a calendar table interactive grid tfoot for managing dates, days, etc.
-  - calendar-table-col = CalendarTableCol = a calendar table interactive grid column for managing dates, days, etc.
-  - calendar-table-row = CalendarTableRow = a calendar table interactive grid row for managing dates, days, etc.
-  - calendar-table-data = CalendarTableData = a calendar table interactive grid data cell for managing dates, days, etc.
+- calendar-table = CalendarTable = a calendar table interactive grid for managing dates, days, etc.
+- calendar-table-head = CalendarTableHead = a calendar table interactive grid thead for managing dates, days, etc.
+- calendar-table-body = CalendarTableBody = a calendar table interactive grid tbody for managing dates, days, etc.
+- calendar-table-foot = CalendarTableFoot = a calendar table interactive grid tfoot for managing dates, days, etc.
+- calendar-table-col = CalendarTableCol = a calendar table interactive grid column for managing dates, days, etc.
+- calendar-table-row = CalendarTableRow = a calendar table interactive grid row for managing dates, days, etc.
+- calendar-table-data = CalendarTableData = a calendar table interactive grid data cell for managing dates, days, etc.
 - calendar-range-picker = CalendarRangePicker = a picker for selecting a date range on a calendar
 - call-to-action = CallToAction = a prominent prompt encouraging user action
 - caption = Caption = a caption for a table or figure element
@@ -58,6 +55,7 @@ Subprojects for web app examples:
 - character-counter = CharacterCounter = a counter showing remaining or used characters in a text field
 - character = Character = a single character display element
 - checkbox-input = CheckboxInput = a checkbox input for toggling a boolean value
+- checkbox-group = Checkbox Group = a group component that manages a collection of checkboxes with shared state
 - check-list = CheckList = an ordered list of check list item components
 - check-list-item = CheckListItem = one check list item component with a checkbox
 - clipboard-copy-button = ClipboardCopyButton = a button that copies text to the clipboard
@@ -65,6 +63,7 @@ Subprojects for web app examples:
 - color-input = ColorInput = an input for selecting a color value
 - color-picker = ColorPicker = a two-dimensional board for picking colors by hue and saturation
 - color-picker-button = ColorPickerButton = a button showing a color swatch in a color picker
+- collapsible = Collapsible = an interactive component which expands/collapses a panel
 - combobox = Combobox = a text input combined with a dropdown list for filtering options
 - command = Command = a command palette for searching and executing actions
 - contents-nav = ContentsNav = a navigation landmark for a table of contents
@@ -72,15 +71,15 @@ Subprojects for web app examples:
 - contents-list-item = ContentsListItem = one contents list item component linking to a page section
 - context-menu = ContextMenu = a menu that appears on right-click or long-press
 - context-menu-item = ContextMenuItem = one item in a context menu
+- currency-input = CurrencyInput = a locale-aware currency input with automatic formatting, symbols, separators
 - data-filter-form = DataFilterForm = a form for filtering data by criteria
-- data-table:
-  - data-table = DataTable = a data table interactive grid for displaying and sorting tabular data
-  - data-table-head = DataTableHead = a data table interactive grid thead for displaying and sorting tabular data
-  - data-table-body = DataTableBody = a data table interactive grid tbody for displaying and sorting tabular data
-  - data-table-foot = DataTableFoot = a data table interactive grid tfoot for displaying and sorting tabular data
-  - data-table-col = DataTableCol = a data table interactive grid column for displaying and sorting tabular data
-  - data-table-row = DataTableRow = a data table interactive grid row for displaying and sorting tabular data
-  - data-table-data = DataTableData = a data table interactive grid data cell for displaying and sorting tabular data
+- data-table = DataTable = a data table interactive grid for displaying and sorting tabular data
+- data-table-head = DataTableHead = a data table interactive grid thead for displaying and sorting tabular data
+- data-table-body = DataTableBody = a data table interactive grid tbody for displaying and sorting tabular data
+- data-table-foot = DataTableFoot = a data table interactive grid tfoot for displaying and sorting tabular data
+- data-table-col = DataTableCol = a data table interactive grid column for displaying and sorting tabular data
+- data-table-row = DataTableRow = a data table interactive grid row for displaying and sorting tabular data
+- data-table-data = DataTableData = a data table interactive grid data cell for displaying and sorting tabular data
 - date-field = DateField = a structured field for entering date components
 - date-input = DateInput = an input for entering a date value
 - date-range = DateRange = a display of a start and end date range
@@ -110,32 +109,36 @@ Subprojects for web app examples:
 - file-input = FileInput = an input for selecting files from the file system
 - file-manager = FileManager = a file browser for navigating and managing files
 - file-upload = FileUpload = a drag-and-drop area for uploading files
-- five-face-rating:
-  - five-face-rating-view = FiveFaceRatingView = a read-only display of a five-face satisfaction rating
-  - five-face-rating-picker = FiveFaceRatingPicker = a picker for selecting a 1-5 satisfaction rating using face labels
-  - five-face-rating-picker-button = FiveFaceRatingPickerButton = a picker button for selecting a 1-5 satisfaction rating using face labels
-- five-star-rating:
-  - five-star-rating-view = FiveStarRatingView = a read-only display of a five-star rating
-  - five-star-rating-picker = FiveStarRatingPicker = a picker for selecting a 1-5 star rating using radio buttons
-  - five-star-rating-picker-button = FiveStarRatingPickerButton = a picker button for selecting a 1-5 star rating using radio buttons
+- five-face-rating-view = FiveFaceRatingView = a read-only display of a five-face satisfaction rating
+- five-face-rating-picker = FiveFaceRatingPicker = a picker for selecting a 1-5 satisfaction rating using face labels
+- five-face-rating-picker-button = FiveFaceRatingPickerButton = a picker button for selecting a 1-5 satisfaction rating using face labels
+- five-star-rating-view = FiveStarRatingView = a read-only display of a five-star rating
+- five-star-rating-picker = FiveStarRatingPicker = a picker for selecting a 1-5 star rating using radio buttons
+- five-star-rating-picker-button = FiveStarRatingPickerButton = a picker button for selecting a 1-5 star rating using radio buttons
 - flair = Flair = a decorative highlight or emphasis element
 - floating-panel = FloatingPanel = a panel that floats above page content
 - footer = Footer = a page or section footer area
 - footnote = Footnote = a footnote reference and content element
 - form = Form = a form element for collecting and submitting user data
-- gantt-table:
-  - gantt-table = GanttTable = a Gantt chart table interactive grid for planning schedule visualization
-  - gantt-table-head = GanttTableHead = a Gantt chart table interactive grid thead for planning schedule visualization
-  - gantt-table-body = GanttTableBody = a Gantt chart table interactive grid tbody for planning schedule visualization
-  - gantt-table-foot = GanttTableFoot = a Gantt chart table interactive grid tfoot for planning schedule visualization
-  - gantt-table-col = GanttTableCol = a Gantt chart table interactive grid column for planning schedule visualization
-  - gantt-table-row = GanttTableRow = a Gantt chart table interactive grid row for interactive grid planning schedule visualization
-  - gantt-table-data = GanttTableData = a Gantt chart table interactive grid data cell for planning schedule visualization
+- gantt-table = GanttTable = a Gantt chart table interactive grid for planning schedule visualization
+- gantt-table-head = GanttTableHead = a Gantt chart table interactive grid thead for planning schedule visualization
+- gantt-table-body = GanttTableBody = a Gantt chart table interactive grid tbody for planning schedule visualization
+- gantt-table-foot = GanttTableFoot = a Gantt chart table interactive grid tfoot for planning schedule visualization
+- gantt-table-col = GanttTableCol = a Gantt chart table interactive grid column for planning schedule visualization
+- gantt-table-row = GanttTableRow = a Gantt chart table interactive grid row for interactive grid planning schedule visualization
+- gantt-table-data = GanttTableData = a Gantt chart table interactive grid data cell for planning schedule visualization
+- grail-layout = GrailLayout = a responsive web design structure with header, left aside, center main, right aside, footer
+- grail-layout-top-header = GrailLayoutTopHeader = grail layout top header full width with <header> tag
+- grail-layout-left-aside = GrailLayoutLeftAside = grail layout left aside sidebar with <aside> tag
+- grail-layout-center-main = GrailLayoutCenterMain = grail layout center main content with <main> tag
+- grail-layout-right-aside = GrailLayoutRightAside = grail layout right aside sidebar with <aside> tag
+- grail-layout-bottom-footer = GrailLayoutBottomFooter = grail layout bottom footer full width with <footer> tag
+- responsive web design structure with top header, left sidebar, center content, right sidebar, bottom footer
+- grail-layout-center = GrailLayoutCenter = a responsive web design structure with top header, left sidebar, center content, right sidebar, bottom footer
 - hamburger-menu = HamburgerMenu = a toggle button that opens a mobile navigation menu
 - header = Header = a page or section header area
 - hidden-input = HiddenInput = a hidden input for including data in form submission
 - hint = Hint = hint text providing guidance for a form field
-- holy-grail-layout = HolyGrailLayout = a classic layout with header, footer, main content, and two sidebars
 - hover-card = HoverCard = a card that appears on hover over a trigger element
 - icon = Icon = a container for displaying an icon
 - image-file-input = ImageFileInput = an input for selecting image files with preview
@@ -143,23 +146,22 @@ Subprojects for web app examples:
 - information-callout = InformationCallout = a callout box highlighting informational content
 - input = Input = a generic HTML input element
 - inset-text = InsetText = indented text to distinguish it from surrounding content
-- kanban-table:
-  - kanban-table = KanbanTable = a kanban board table interactive grid for organizing items by status
-  - kanban-table-head = KanbanTableHead = a kanban board table interactive grid thead for organizing items by status
-  - kanban-table-body = KanbanTableBody = a kanban board table interactive grid tbody for organizing items by status
-  - kanban-table-foot = KanbanTableFoot = a kanban board table interactive grid tfoot for organizing items by status
-  - kanban-table-col = KanbanTableCol = a kanban board table interactive grid column for organizing items by status
-  - kanban-table-row = KanbanTableRow = a kanban board interactive grid table row for organizing items by status
-  - kanban-table-data = KanbanTableData = kanban board table interactive grid data cell or organizing items by status
+- kanban-table = KanbanTable = a kanban board table interactive grid for organizing items by status
+- kanban-table-head = KanbanTableHead = a kanban board table interactive grid thead for organizing items by status
+- kanban-table-body = KanbanTableBody = a kanban board table interactive grid tbody for organizing items by status
+- kanban-table-foot = KanbanTableFoot = a kanban board table interactive grid tfoot for organizing items by status
+- kanban-table-col = KanbanTableCol = a kanban board table interactive grid column for organizing items by status
+- kanban-table-row = KanbanTableRow = a kanban board interactive grid table row for organizing items by status
+- kanban-table-data = KanbanTableData = kanban board table interactive grid data cell or organizing items by status
+- kbd = Kbd = show keyboard shortcuts and key combinations in a styled inline element
 - label = Label = a label associated with a form input
 - listbox = Listbox = a list of selectable options with keyboard navigation
-- measurement:
-  - measurement-instance-input = MeasurementInstanceInput = an input for entering a measurement value and unit
-  - measurement-instance-view = MeasurementInstanceView = a read-only display of a measurement value and unit
-  - measurement-system-input = MeasurementSystemInput = an input for selecting a measurement system
-  - measurement-system-view = MeasurementSystemView = a read-only display of a measurement system
-  - measurement-unit-input = MeasurementUnitInput = an input for selecting a measurement unit
-  - measurement-unit-view = MeasurementUnitView = a read-only display of a measurement unit
+- measurement-instance-input = MeasurementInstanceInput = an input for entering a measurement value and unit
+- measurement-instance-view = MeasurementInstanceView = a read-only display of a measurement value and unit
+- measurement-system-input = MeasurementSystemInput = an input for selecting a measurement system
+- measurement-system-view = MeasurementSystemView = a read-only display of a measurement system
+- measurement-unit-input = MeasurementUnitInput = an input for selecting a measurement unit
+- measurement-unit-view = MeasurementUnitView = a read-only display of a measurement unit
 - medical-record-red-box = MedicalRecordRedBox = a red highlighted box for critical medical record information
 - menu = Menu = a list of actions or options triggered by a button
 - menu-item = MenuItem = one item in a menu
@@ -168,25 +170,22 @@ Subprojects for web app examples:
 - meter = Meter = a gauge displaying a scalar value within a known range
 - month-input = MonthInput = an input for selecting a month and year
 - navigation-menu = NavigationMenu = a site-wide navigation menu with links
-- net-promoter-score:
-  - net-promoter-score-view = NetPromoterScoreView = a read-only display of a Net Promoter Score
-  - net-promoter-score-picker = NetPromoterScorePicker = a picker for selecting a 0-10 Net Promoter Score
-  - net-promoter-score-picker-button = NetPromoterScorePickerButton = a picker button for selecting a 0-10 Net Promoter Score
+- net-promoter-score-view = NetPromoterScoreView = a read-only display of a Net Promoter Score
+- net-promoter-score-picker = NetPromoterScorePicker = a picker for selecting a 0-10 Net Promoter Score
+- net-promoter-score-picker-button = NetPromoterScorePickerButton = a picker button for selecting a 0-10 Net Promoter Score
 - notification = Notification = a brief message about an event or update
 - number-input = NumberInput = an input for entering a numeric value with validation
 - option = Option = an option element within a select dropdown
-- pagination:
-  - pagination-nav = PaginationNav = an ordered list of page navigation links
-  - pagination-list = PaginationList = an ordered list of page navigation links
-  - pagination-list-item = PaginationListItem = one page link in a pagination list
+- pagination-nav = PaginationNav = an ordered list of page navigation links
+- pagination-list = PaginationList = an ordered list of page navigation links
+- pagination-list-item = PaginationListItem = one page link in a pagination list
 - panel = Panel = a generic content panel with optional heading
 - password-input-div = PasswordInputDiv = an input for entering a password with obscured text
 - pin-input-div = PinInputDiv = a series of single-digit inputs for entering a PIN or OTP code
 - popover = Popover = a floating content box anchored to a trigger element
 - popup = Popup = a temporary overlay that appears above page content
-- postal-code:
-  - postal-code-input = PostalCodeInput = an input for entering a postal or ZIP code
-  - postal-code-view = PostalCodeView = a read-only display of a postal or ZIP code
+- postal-code-input = PostalCodeInput = an input for entering a postal or ZIP code
+- postal-code-view = PostalCodeView = a read-only display of a postal or ZIP code
 - progress-circle = ProgressCircle = a circular progress indicator
 - progress-spinner = ProgressSpinner = an indeterminate spinning progress indicator
 - progress = Progress = a horizontal progress bar showing completion
@@ -194,14 +193,12 @@ Subprojects for web app examples:
 - radio-group = RadioGroup = a group of radio buttons for selecting one option
 - radio-input = RadioInput = a single radio button input
 - range-input = RangeInput = a slider input for selecting a value within a range
-- red-amber-green:
-  - red-amber-green-view = RedAmberGreenView = a read-only display of a red/amber/green status
-  - red-amber-green-picker = RedAmberGreenPicker = a picker for selecting a red/amber/green status
-  - red-amber-green-picker-button = RedAmberGreenPickerButton = a picker button for selecting a red/amber/green status
-- red-orange-yellow-green-blue:
-  - red-orange-yellow-green-blue-view = RedOrangeYellowGreenBlueView = a read-only display of a five-level color status
-  - red-orange-yellow-green-blue-picker = RedOrangeYellowGreenBluePicker = a picker for selecting a five-level color status
-  - red-orange-yellow-green-blue-picker-button = RedOrangeYellowGreenBluePickerButton = a picker button for selecting a five-level color status
+- red-amber-green-view = RedAmberGreenView = a read-only display of a red/amber/green status
+- red-amber-green-picker = RedAmberGreenPicker = a picker for selecting a red/amber/green status
+- red-amber-green-picker-button = RedAmberGreenPickerButton = a picker button for selecting a red/amber/green status
+- red-orange-yellow-green-blue-view = RedOrangeYellowGreenBlueView = a read-only display of a five-level color status
+- red-orange-yellow-green-blue-picker = RedOrangeYellowGreenBluePicker = a picker for selecting a five-level color status
+- red-orange-yellow-green-blue-picker-button = RedOrangeYellowGreenBluePickerButton = a picker button for selecting a five-level color status
 - reset-input = ResetInput = a button input that resets a form to default values
 - resizable = Resizable = a container that the user can resize by dragging
 - review-date = ReviewDate = a display of a content review date
@@ -238,7 +235,7 @@ Subprojects for web app examples:
 - task-list = TaskList = an ordered list of task list items
 - task-list-item = TaskListItem = one task item with a checkbox and label
 - tel-input = TelInput = an input for entering a telephone number
-- tel-link = TelLink = a tel: hyperlink for a telephone number
+- tel-link = TelLink = a tel hyperlink for a telephone number
 - text-input = TextInput = a single-line text input field
 - textarea = Textarea = a multi-line text input area
 - theme-picker = ThemePicker = a picker for selecting a visual theme
@@ -261,15 +258,43 @@ Subprojects for web app examples:
 - tour-list-item = TourListItem = one step in a tour guide list
 - tree-nav = TreeNav = a hierarchical navigation with expandable branches
 - tree-nav-list = TreeNavList = a hierarchical list with nested expandable items
-- united-kingdom:
-  - united-kingdom-national-health-service-number-input = UnitedKingdomNationalHealthServiceNumberInput = an input for entering a UK NHS number
-  - united-kingdom-national-health-service-number-view = UnitedKingdomNationalHealthServiceNumberView = a read-only display of a UK NHS number
-- united-states:
-  - united-states-social-security-number-input = UnitedStatesSocialSecurityNumberInput = an input for entering a US Social Security number
-  - united-states-social-security-number-view = UnitedStatesSocialSecurityNumberView = a read-only display of a US Social Security number
+- united-kingdom-national-health-service-number-input = UnitedKingdomNationalHealthServiceNumberInput = an input for entering a UK NHS number
+- united-kingdom-national-health-service-number-view = UnitedKingdomNationalHealthServiceNumberView = a read-only display of a UK NHS number
+- united-states-social-security-number-input = UnitedStatesSocialSecurityNumberInput = an input for entering a US Social Security number
+- united-states-social-security-number-view = UnitedStatesSocialSecurityNumberView = a read-only display of a US Social Security number
 - url-input = UrlInput = an input for entering a URL
 - warning-callout = WarningCallout = a callout box highlighting a warning message
 - week-input = WeekInput = an input for selecting a week and year
+
+## Component patterns for file name and HTML tag
+
+- article suffix = <article> tag
+- aside suffix = <aside> tag
+- button suffix = <button> tag
+- dialog suffix = <dialog> tag
+- div suffix = <div> tag
+- fieldset suffix = <fieldset> tag
+- figure suffix = <figure> tag
+- footer suffix = <footer> tag
+- header suffix = <header> tag
+- input suffix = <input> tag
+- kbd suffix = <kbd> tag
+- list suffix = <ol> tag
+- list-item suffix = <li> tag
+- main suffix = <main> tag
+- meter suffix = <meter> tag
+- nav suffix = <nav> tag
+- option suffix = <option> tag
+- picker suffix = <div> tag
+- progress suffix = <progress> tag
+- table suffix = <table> tag
+- table-head suffix = <thead> tag
+- table-body suffix = <tbody> tag
+- table-foot suffix = <tfoot> tag
+- table-row suffix = <tr> tag
+- table-data suffix = <td> tag
+- select suffix = <select> tag
+- span suffix = <span> tag
 
 ## Component name patterns
 
@@ -316,33 +341,6 @@ Subprojects for web app examples:
   - GanttTable GanttTableHead GanttTableBody GanttTableFoot GanttTableCol GanttTableRow GanttTableData
   - KanbanTable KanbanTableHead KanbanTableBody KanbanTableFoot KanbanTableCol KanbanTableRow KanbanTableData
 
-## Component patterns for file name and HTML tag
-
-- Article suffix = <article> tag
-- Button suffix = <button> tag
-- Dialog suffix = <dialog> tag
-- Div suffix = <div> tag
-- Fieldset suffix = <fieldset> tag
-- Figure suffix = <figure> tag
-- Footer suffix = <footer> tag
-- Header suffix = <header> tag
-- Input suffix = <input> tag
-- List suffix = <ol> tag (exception: DoList, DontList use <ul> for unordered guidelines)
-- ListItem suffix = <li> tag
-- Meter suffix = <meter> tag
-- Nav suffix = <nav> tag
-- Option suffix = <option> tag
-- Picker suffix = <div> tag
-- Progress suffix = <progress> tag
-- Table suffix = <table> tag
-- TableHead suffix = <thead> tag
-- TableBody suffix = <tbody> tag
-- TableFoot suffix = <tfoot> tag
-- TableRow suffix = <tr> tag
-- TableData suffix = <td> tag
-- Select suffix = <select> tag
-- Span suffix = <span> tag
-
 ## Component Composition Patterns
 
 ### Form pattern: Form → Field → Input
@@ -357,6 +355,18 @@ Subprojects for web app examples:
   </ErrorSummary>
   <Button type="submit">Submit</Button>
 </Form>
+```
+
+### Grail layout pattern: GrailLayout → GrailLayoutTop, GrailLayoutLeft, GrailLayoutCenter, GrailLayoutRight, GrailLayoutBottom
+
+```tsx
+<GrailLayout>
+  <GrailLayoutTopHeader>…</GrailLayoutTopHeader>
+  <GrailLayoutLeftAside>…</GrailLayoutLeftAside>
+  <GrailLayoutCenterMain>…</GrailLayoutCenterMain>
+  <GrailLayoutRightAside>…</GrailLayoutRightAside>
+  <GrailLayoutBottomFooter>…</GrailLayoutBottomFooter>
+</GrailLayout>
 ```
 
 ### Navigation pattern: Nav → List → ListItem

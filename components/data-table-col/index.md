@@ -43,6 +43,25 @@ None -- this component is a structural column definition and is not interactive.
 
 - No implicit ARIA role -- `<col>` is a structural element used for column styling and does not convey semantics to assistive technologies
 
+## When to Use
+
+- Use a DataTableCol inside a `<colgroup>` to apply consistent widths or styles to entire columns without repeating attributes on every cell.
+- Use a DataTableCol when column sizing needs to be defined declaratively rather than through cell-level styles.
+- Avoid using a DataTableCol when column styling is handled entirely through CSS classes on cells; it adds unnecessary markup.
+
+## Headless
+
+This headless DataTableCol component provides a `<col>` element with a `span` attribute for applying properties across multiple consecutive columns. The consumer provides all visual styling including column widths, background colors, and any other column-level CSS.
+
+## Advice
+
+- **Designers**: Define consistent column proportions to maintain a balanced table layout. Use percentage-based widths for responsive tables.
+- **Developers**: Place DataTableCol elements inside a `<colgroup>` within the DataTable. Use the `span` attribute to apply one `<col>` definition across multiple consecutive columns.
+
+## Composition
+
+DataTableCol is part of the DataTable composition pattern. It sits inside a `<colgroup>` within a DataTable, alongside DataTableHead, DataTableBody, and DataTableFoot sections. It applies column-level properties that affect all cells in the specified columns.
+
 ## References
 
 - WAI-ARIA Table Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/table/

@@ -46,6 +46,22 @@ This headless component renders a `<fieldset>` containing two native `<input typ
 - `aria-label={startLabel}` on the start input -- identifies the start date field
 - `aria-label={endLabel}` on the end input -- identifies the end date field
 
+## When to Use
+
+- Use when users need to specify a start and end date together, such as booking forms, reporting filters, or scheduling tools.
+- Use when the two dates are semantically paired and should be grouped under a single label.
+- Avoid when only a single date is needed; use DateInput instead.
+- Consider CalendarRangePicker instead when users benefit from a visual calendar for selecting the range.
+
+## Headless
+
+This headless component provides a semantic `<fieldset>` grouping two native `<input type="date">` elements with accessible labels and two-way binding. It handles ARIA labeling for both the group and individual inputs. The consumer provides all visual styling, layout, spacing, and any validation indicators.
+
+## Advice
+
+- **Designers**: Clearly indicate which field is the start and which is the end, using visual labels or positioning. Ensure the date inputs are visually grouped so users understand they form a pair.
+- **Developers**: Validate that the end date is not before the start date. Use the `min` and `max` attributes on the underlying inputs via `restProps` to constrain selectable ranges.
+
 ## References
 
 - MDN input type="date": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/date

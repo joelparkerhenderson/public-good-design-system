@@ -34,3 +34,18 @@ None -- this component is a passive inline display element.
 
 - `role="img"` -- identifies the emoji as an image for assistive technologies
 - `aria-label` -- provides a textual description of the emoji character for screen readers
+
+## When to Use
+
+- Use to display an emoji that conveys meaning and needs to be announced by screen readers with a descriptive label.
+- Use in interfaces where emoji supplement text content, such as status indicators, reactions, or labels.
+- Avoid for purely decorative emoji that add no informational value; hide those from assistive technology with `aria-hidden="true"` instead.
+
+## Headless
+
+This headless component provides a `<span>` with `role="img"` and a required `aria-label` to ensure emoji are announced meaningfully by screen readers. The consumer provides all visual styling such as font size, spacing, and color adjustments.
+
+## Advice
+
+- **Designers**: Ensure emoji are large enough to be recognizable and are not the sole means of conveying information. Pair emoji with text labels when clarity is important.
+- **Developers**: Always provide a descriptive `label` that conveys the emoji's meaning in context, not just its Unicode name (e.g., "Approved" rather than "Check mark").

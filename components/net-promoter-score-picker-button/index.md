@@ -47,6 +47,29 @@ A Net Promoter Score picker button is an individual button within a NetPromoterS
 - `aria-pressed` -- indicates whether this button is the currently selected score (`true` when selected, `false` otherwise)
 - `aria-label` -- provides the accessible name for the button (e.g., "8")
 
+## When to Use
+
+- Use as an individual score button within a NetPromoterScorePicker to represent one value on the 0-10 NPS scale.
+- Use when each score option needs `aria-pressed` toggle semantics and an accessible label.
+- Avoid using NetPromoterScorePickerButton outside of a NetPromoterScorePicker; it is designed for that specific context.
+
+## Headless
+
+This headless component renders a `<button>` with `aria-pressed` for toggle state and `aria-label` for accessible naming. The consumer provides all visual styling, including button size, color coding for Detractor/Passive/Promoter ranges, selected-state appearance, and hover effects.
+
+## Advice
+
+- **Designers**: Size buttons consistently so all 11 values (0-10) fit in a row, and use distinct visual treatment for the selected state.
+- **Developers**: Set descriptive `label` values for endpoint buttons (e.g., "0 - Not at all likely", "10 - Extremely likely") to give screen reader users context about the scale.
+
+## Composition
+
+NetPromoterScorePickerButton is a child component of NetPromoterScorePicker. The picker provides the container with radiogroup semantics, while each button represents one score value with toggle state.
+
+```
+NetPromoterScorePicker → NetPromoterScorePickerButton (value="0" through "10")
+```
+
 ## References
 
 - WAI-ARIA Button Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/button/

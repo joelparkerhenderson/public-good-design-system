@@ -57,6 +57,22 @@ The component manages its own focus lifecycle: when the menu opens, focus moves 
 - `role="menu"` -- on the menu container, identifies it as a menu widget
 - `role="menuitem"` -- expected on each child item provided by the consumer
 
+## When to Use
+
+- Use to present a list of actions or options triggered by a button, such as settings menus, action menus, or context-sensitive options.
+- Use when screen space is limited and a persistent menu would be visually overwhelming.
+- Avoid for navigation links; use NavigationMenu or a Nav component instead.
+- Consider ContextMenu when the menu should appear on right-click rather than a button trigger.
+
+## Headless
+
+This headless component provides a trigger `<button>` with `aria-haspopup` and `aria-expanded`, a `<div>` menu container with `role="menu"`, automatic focus management (first item on open), full arrow key navigation with wrapping, Home/End support, and Escape dismissal. The consumer provides all visual styling, positioning, animation, and menu item content.
+
+## Advice
+
+- **Designers**: Position the menu directly below the trigger button. Keep the menu width consistent and avoid overly long item labels. Use separators for grouping related actions.
+- **Developers**: Ensure each child element has `role="menuitem"` and `tabindex="-1"`. Return focus to the trigger button after the menu closes.
+
 ## References
 
 - WAI-ARIA Menu Button Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/menubutton/

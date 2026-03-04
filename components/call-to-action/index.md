@@ -40,3 +40,19 @@ This component renders as an `<a>` element when an `href` is provided (for navig
 - Implicit `link` role when rendered as `<a>`
 - Implicit `button` role when rendered as `<button>`
 - Optional `aria-label` -- provides screen reader text when visible text alone is insufficient
+
+## When to Use
+
+- Use for the most prominent interactive element on a page that drives user engagement toward a key goal, such as "Sign Up", "Get Started", or "Buy Now".
+- Use when you need dual-mode behavior: an `<a>` for navigation CTAs or a `<button>` for action CTAs, determined automatically by the `href` prop.
+- Avoid for secondary actions or navigation links that do not warrant prominence -- use Button or ActionLink instead.
+- Consider Button instead when the action is not the primary conversion goal on the page.
+
+## Headless
+
+This component provides either a semantic `<a>` or `<button>` element (based on the `href` prop), optional `aria-label`, and disabled state management, all with zero visual styling. The consumer is responsible for all CSS including prominent sizing, bold colors, padding, border-radius, hover/focus effects, and any arrow or icon decoration.
+
+## Advice
+
+- **Designers**: Limit to one primary CTA per page or section to avoid diluting focus. Use size, color, and whitespace to make it the most visually prominent element.
+- **Developers**: The component automatically renders as `<a>` when `href` is provided and `<button>` otherwise. The `disabled` prop only applies in button mode since links cannot be natively disabled.

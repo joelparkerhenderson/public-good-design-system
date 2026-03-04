@@ -46,6 +46,21 @@ Use SegmentGroupItem inside a SegmentGroup to build custom segmented controls su
 - `aria-checked` -- indicates whether this segment is selected (`true`) or not (`false`)
 - Roving tabindex -- only the checked item has `tabindex="0"`, others have `tabindex="-1"`
 
+## When to Use
+
+- Use SegmentGroupItem inside a SegmentGroup to represent one mutually exclusive option in a segmented control.
+- Use SegmentGroupItem for custom toggle button UIs such as view mode switches, filter options, or density controls.
+- Avoid using SegmentGroupItem outside of a SegmentGroup; it requires the parent radiogroup context for proper semantics.
+
+## Headless
+
+The SegmentGroupItem headless component provides a `<button>` with `role="radio"`, `aria-checked`, roving `tabindex`, and `data-value` for CSS targeting. The consumer provides all visual styling for the segment button, including selected and disabled states.
+
+## Advice
+
+- **Designers**: Make the selected segment visually distinct with a filled background or bold text, and ensure disabled segments are visually muted.
+- **Developers**: Use the `checked` prop to control `aria-checked` and tabindex; ensure only one item in the group has `checked={true}` at a time.
+
 ## References
 
 - WAI-ARIA Radio Group Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/radio/

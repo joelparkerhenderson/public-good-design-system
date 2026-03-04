@@ -46,6 +46,21 @@ None -- this component is a passive container. Navigation links inside use stand
 - The `<nav>` element implicitly has `role="navigation"`, making it a navigation landmark.
 - `aria-label` -- provides an accessible name to distinguish this navigation from other `<nav>` landmarks on the page.
 
+## When to Use
+
+- Use to wrap a group of navigation links as a semantic `<nav>` landmark for site-wide, section-level, or footer navigation.
+- Use when screen reader users need to quickly locate and jump to a navigation region via landmark navigation.
+- Avoid using NavigationMenu for action menus or command palettes; use Menu or Command instead.
+
+## Headless
+
+This headless component provides a native `<nav>` element with `aria-label` for landmark identification, automatically recognized by assistive technologies. The consumer provides all visual styling, including link layout, responsive behavior, hover states, and active indicators.
+
+## Advice
+
+- **Designers**: Highlight the current page link in the navigation to orient users, and ensure the navigation is responsive across screen sizes.
+- **Developers**: Use distinct `aria-label` values when multiple `<nav>` elements exist on the same page (e.g., "Main navigation" vs. "Footer navigation") so screen reader users can distinguish them.
+
 ## References
 
 - WAI-ARIA Navigation Landmark: https://www.w3.org/TR/wai-aria-1.2/#navigation

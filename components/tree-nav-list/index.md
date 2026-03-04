@@ -61,6 +61,25 @@ File browser with nesting:
 
 - `role="tree"` -- identifies the container as a tree widget for hierarchical data
 - `aria-label={label}` -- provides an accessible name describing the purpose of the tree
+## When to Use
+
+- Use TreeNavList as the tree container inside a TreeNav navigation landmark, providing `role="tree"` and keyboard navigation for hierarchical items.
+- Use when you need arrow key navigation between tree items with wrapping behavior.
+- Avoid using TreeNavList without a parent TreeNav when the tree serves as site navigation; the `<nav>` landmark is important for accessibility.
+
+## Headless
+
+This headless component provides a `<ul>` with `role="tree"`, `aria-label`, and built-in keyboard navigation (ArrowDown, ArrowUp, Home, End with wrapping). It queries `[role="treeitem"]` descendants for focus management. The consumer provides TreeNavListItem children and all visual styling.
+
+## Advice
+
+- **Designers**: Use consistent indentation to show hierarchy depth. Provide visual cues for focused and selected items.
+- **Developers**: Ensure each child uses `role="treeitem"` and `tabindex` attributes. Use nested `<ul role="group">` for subtrees within expandable items.
+
+## Composition
+
+TreeNavList is a child of TreeNav and contains TreeNavListItem children, following the Nav/List/ListItem pattern. TreeNavList provides `role="tree"` with keyboard navigation, while its parent TreeNav provides the `<nav>` landmark and its children TreeNavListItem provide individual `role="treeitem"` nodes.
+
 ## References
 
 - WAI-ARIA Tree View Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/treeview/

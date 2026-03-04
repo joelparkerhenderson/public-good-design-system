@@ -37,6 +37,43 @@ None -- this component is a passive container. Keyboard navigation is handled by
 
 - Implicit `rowgroup` role from the `<tbody>` element -- groups the body rows of the grid
 
+## When to Use
+
+- Use as the main content section of a CalendarTable to wrap the rows that contain day cells.
+- Use when each row represents a week and each cell represents a day in the calendar grid.
+- Avoid using outside of a CalendarTable parent -- the parent provides the required `<table>` and `role="grid"` structure.
+
+## Headless
+
+This component provides a semantic `<tbody>` element with implicit `rowgroup` role and zero visual styling. The consumer is responsible for all CSS including row spacing, cell layout, and any visual distinction between the body and header/footer sections.
+
+## Advice
+
+- **Designers**: Ensure consistent row heights and cell sizes across all weeks in the body. Visually distinguish the body from the header row of day-of-week labels.
+- **Developers**: Each child row should contain exactly 7 cells (one per day of the week). Use empty cells or disabled styling for days outside the current month.
+
+## Composition
+
+CalendarTableBody is part of the CalendarTable composition pattern:
+
+- **CalendarTable** -- outer `<table>` with `role="grid"`.
+- **CalendarTableHead** -- `<thead>` for day-of-week column headers.
+- **CalendarTableBody** -- `<tbody>` grouping the week rows of day cells.
+- **CalendarTableRow** -- `<tr>` representing one week.
+- **CalendarTableCell** -- `<td>` representing one day.
+
+```html
+<CalendarTable label="January 2025">
+  <CalendarTableHead>...</CalendarTableHead>
+  <CalendarTableBody>
+    <CalendarTableRow>
+      <CalendarTableCell>1</CalendarTableCell>
+      <CalendarTableCell>2</CalendarTableCell>
+    </CalendarTableRow>
+  </CalendarTableBody>
+</CalendarTable>
+```
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

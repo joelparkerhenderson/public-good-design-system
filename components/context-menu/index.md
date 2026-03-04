@@ -42,6 +42,25 @@ This component manages menu visibility, keyboard navigation, and focus. When ope
 - `role="menu"` -- identifies the container as a menu widget
 - `aria-label` -- provides an accessible name for the menu
 
+## When to Use
+
+- Use a ContextMenu to provide contextual actions triggered by right-click or long-press, such as cut, copy, paste, or custom actions relevant to the selected element.
+- Use a ContextMenu when actions apply to a specific item and displaying them inline would clutter the interface.
+- Avoid using a ContextMenu as the only way to access critical actions; ensure all actions are also available through visible controls.
+
+## Headless
+
+This headless ContextMenu component provides a `<div>` with `role="menu"` and `aria-label`, automatic focus management (first item receives focus on open), keyboard navigation with ArrowUp/ArrowDown wrapping, Home/End, and Escape to close. The consumer provides all visual styling including positioning near the pointer, background, borders, shadows, and item appearance.
+
+## Advice
+
+- **Designers**: Position the menu near the trigger point and ensure it does not overflow the viewport. Group related actions with visual separators.
+- **Developers**: Trigger the menu by handling the `contextmenu` event on the target element and setting `open` to true. Use ContextMenuItem components as children with `role="menuitem"`.
+
+## Composition
+
+ContextMenu follows the Menu/MenuItem composition pattern. Use ContextMenu as the container with ContextMenuItem components as children. The ContextMenu manages focus and keyboard navigation, while each ContextMenuItem renders as a `role="menuitem"` element with `tabindex="-1"` for roving focus.
+
 ## References
 
 - WAI-ARIA Menu Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/menu/

@@ -33,6 +33,38 @@ None directly -- keyboard interaction is handled by the contained links.
 - Implicit `listitem` role from the semantic `<li>` element
 - `aria-current="page"` -- set when `current` is true, indicating the user's current location in the breadcrumb trail
 
+## When to Use
+
+- Use for each individual step in a breadcrumb navigation trail, placed inside a BreadcrumbNavList.
+- Use with the `current` prop on the final item to indicate the user's current page location.
+- Avoid using outside of a BreadcrumbNavList parent -- the parent provides the required `<ol>` list structure.
+
+## Headless
+
+This component provides a semantic `<li>` element with conditional `aria-current="page"` and zero visual styling. The consumer is responsible for all CSS including link styling, separator decorations, current-page visual treatment, and spacing.
+
+## Advice
+
+- **Designers**: Style the current page item differently from linked items (e.g., bold text, no underline) to help users identify where they are in the hierarchy.
+- **Developers**: Set the `current` prop to `true` only on the last item in the trail. Use plain text (not a link) for the current page content.
+
+## Composition
+
+BreadcrumbNavListItem follows the Nav / List / ListItem composition pattern:
+
+- **BreadcrumbNav** -- outer `<nav>` container providing the navigation landmark.
+- **BreadcrumbNavList** -- `<ol>` list conveying the ordered hierarchy.
+- **BreadcrumbNavListItem** -- individual `<li>` items with links or current page text.
+
+```html
+<BreadcrumbNav label="Breadcrumb">
+  <BreadcrumbNavList>
+    <BreadcrumbNavListItem><a href="/">Home</a></BreadcrumbNavListItem>
+    <BreadcrumbNavListItem current>About</BreadcrumbNavListItem>
+  </BreadcrumbNavList>
+</BreadcrumbNav>
+```
+
 ## References
 
 - WAI-ARIA Breadcrumb Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/breadcrumb/

@@ -36,6 +36,26 @@ None built-in -- the consumer should implement keyboard interactions for dismiss
 - `aria-label={label}` -- provides an accessible name identifying the notification area
 - `aria-live="polite"` -- ensures new content is announced after the screen reader finishes its current output
 
+## When to Use
+
+- Use as the designated notification region where Toast components appear to provide brief, non-intrusive status messages.
+- Use for success confirmations, error alerts, progress updates, and system messages that do not require user interaction.
+- Avoid for critical messages that require acknowledgment; use AlertDialog instead.
+- Consider a Banner for persistent page-level messages that should not auto-dismiss.
+
+## Headless
+
+This headless component renders a `<div>` with `role="region"`, `aria-live="polite"`, and `aria-label` to create an accessible notification landmark. It provides the live region semantics so screen readers announce new content. The consumer provides all visual styling, positioning, stacking, and animation for the notification area.
+
+## Advice
+
+- **Designers**: Position the notification region in a consistent screen corner (typically bottom-right or top-right). Limit visible toasts to 3-5 at a time to avoid overwhelming users.
+- **Developers**: Manage toast lifecycle (auto-dismiss timers, manual dismiss) in the consumer. Ensure new toasts are appended as children so the `aria-live` region announces them.
+
+## Composition
+
+Sonner serves as the container region that manages Toast notification components. Place individual Toast elements as children inside the Sonner region. The Sonner provides the live region semantics while each Toast provides the individual notification content and dismiss behavior.
+
 ## References
 
 - WAI-ARIA Live Regions: https://www.w3.org/TR/wai-aria-1.2/#aria-live

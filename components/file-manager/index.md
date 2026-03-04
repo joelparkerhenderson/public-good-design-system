@@ -38,6 +38,22 @@ None built-in -- the consumer should implement keyboard navigation for file sele
 - `role="region"` -- defines the file manager as a named landmark section
 - `aria-label={label}` -- provides an accessible name for the region
 
+## When to Use
+
+- Use to provide a file browsing and management interface in CMS applications, cloud storage dashboards, or document editors.
+- Use when users need to navigate folder hierarchies, view file listings, and perform file operations.
+- Avoid for simple single-file selection; use FileInput or FileUpload instead.
+- Consider FileDialog when the file browsing interface should appear as a modal overlay.
+
+## Headless
+
+This headless component provides a `<div>` with `role="region"` and `aria-label`, defining a named landmark that screen reader users can navigate to directly. The consumer provides all visual styling, file listing content, folder navigation, action controls, and keyboard navigation.
+
+## Advice
+
+- **Designers**: Organize the interface with clear navigation (breadcrumbs or tree view), a file list area, and contextual action buttons. Use icons to differentiate file types and folders.
+- **Developers**: Implement keyboard navigation for file selection and folder traversal. Use the region landmark to help screen reader users locate the file manager quickly within the page.
+
 ## References
 
 - WAI-ARIA region role: https://www.w3.org/TR/wai-aria-1.2/#region

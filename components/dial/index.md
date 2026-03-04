@@ -56,6 +56,22 @@ The component renders as a `div` with `role="slider"` and full keyboard navigati
 - `aria-valuemax="{max}"` -- communicates the maximum allowed value
 - `aria-disabled="true"` -- present only when the dial is disabled
 
+## When to Use
+
+- Use for fine-grained numeric adjustment in control panels, audio interfaces, or configuration screens where a knob metaphor is intuitive.
+- Use when the value range is bounded and continuous, such as volume, brightness, or angle controls.
+- Avoid for simple value selection where a standard RangeInput (slider) would be clearer and more familiar.
+- Consider NumberInput instead when users need to type an exact value rather than drag or use arrow keys.
+
+## Headless
+
+This headless component provides a `<div>` with `role="slider"`, full ARIA value attributes (`aria-valuenow`, `aria-valuemin`, `aria-valuemax`), keyboard navigation with fine and coarse step support, and two-way binding. The consumer provides all visual styling, the rotary knob appearance, and any value display.
+
+## Advice
+
+- **Designers**: Provide a clear visual indicator of the current value position on the dial. Include a numeric readout near the dial so users can see the exact value.
+- **Developers**: Use the `step` prop to match the precision users need. The Shift+Arrow coarse adjustment (10x step) is built in, so choose a base step that makes both fine and coarse increments intuitive.
+
 ## References
 
 - WAI-ARIA Slider Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/slider/

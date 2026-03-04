@@ -41,6 +41,22 @@ Note: keyboard interactions are provided natively by the `<input type="search">`
 
 - `aria-label={label}` -- provides the accessible name for the search field since no visible label element is associated
 
+## When to Use
+
+- Use SearchInput for site-wide search bars, list filtering, and any interface where users need to enter a search query.
+- Use SearchInput to benefit from browser-native search behaviors such as the Escape-to-clear shortcut and search-optimized mobile keyboards.
+- Avoid using SearchInput for general text entry; use TextInput instead.
+- Consider Combobox when search results should appear as a filterable dropdown list.
+
+## Headless
+
+The SearchInput headless component provides a native `<input type="search">` with `aria-label` for accessible naming and two-way value binding. The browser provides semantic search behavior and may show a native clear button. The consumer provides all visual styling, search icons, and result handling.
+
+## Advice
+
+- **Designers**: Include a visible search icon or placeholder text to clearly indicate the field's purpose, and ensure the clear button (native or custom) is easily discoverable.
+- **Developers**: Debounce the search input value to avoid excessive search requests, and wrap the input in a `<form>` with `role="search"` for full semantic search landmark support.
+
 ## References
 
 - WAI-ARIA Search Role: https://www.w3.org/WAI/ARIA/apd/patterns/search/

@@ -41,6 +41,20 @@ A five-star rating picker button is an individual button within a FiveStarRating
 - `aria-pressed` -- indicates whether this button is the currently selected rating (`true` when selected, `false` otherwise)
 - `aria-label` -- provides the accessible name for the button (e.g., "3 stars")
 
+## When to Use
+
+- Use as a child of FiveStarRatingPicker to represent one star level in the rating scale.
+- Avoid using this component outside of a FiveStarRatingPicker context; it relies on the parent for group semantics.
+
+## Headless
+
+This headless component provides a `<button>` with `aria-pressed` and `aria-label` for accessible toggle state. The consumer provides all visual styling including star icons, colors, sizing, and pressed/unpressed visual states.
+
+## Advice
+
+- **Designers**: Ensure the pressed and unpressed states are visually distinct, with sufficient color contrast for both states. Consider animation on press.
+- **Developers**: Always provide a descriptive `label` prop (e.g., "3 stars") so screen readers announce the rating level clearly.
+
 ## References
 
 - WAI-ARIA Button Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/button/

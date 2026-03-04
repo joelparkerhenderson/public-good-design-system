@@ -65,6 +65,25 @@ Activity feed item:
 
 - Semantic `<li>` element within an `<ol>` conveys ordered list item semantics
 - Consumers should use `<time>` elements with `datetime` attributes for machine-readable dates
+## When to Use
+
+- Use TimelineListItem for each individual event or milestone within a TimelineList.
+- Use when each entry represents a distinct point in time with a timestamp and description.
+- Avoid using TimelineListItem outside of a TimelineList parent; it renders an `<li>` that requires an `<ol>` context.
+
+## Headless
+
+This headless component provides a semantic `<li>` element for a single chronological entry within an ordered list. The consumer provides all content (timestamps, descriptions, icons) and all visual styling including markers, connectors, and layout.
+
+## Advice
+
+- **Designers**: Give each item a clear visual marker (dot, icon, or number) and a prominent timestamp to reinforce the timeline sequence.
+- **Developers**: Include `<time datetime="...">` elements for machine-readable dates. Use `data-*` attributes for status indicators that can drive conditional styling.
+
+## Composition
+
+TimelineListItem is a child of TimelineList, following the List/ListItem pattern. Each TimelineListItem represents one chronological event within the parent TimelineList container.
+
 ## References
 
 - HTML `<li>` element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li

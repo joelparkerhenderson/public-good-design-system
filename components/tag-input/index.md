@@ -35,6 +35,22 @@ This component is commonly used alongside TagGroup to build tag management inter
 
 - `aria-label={label}` -- provides an accessible name for the text input
 
+## When to Use
+
+- Use alongside a TagGroup to build tag management interfaces where users add tags by typing and pressing Enter.
+- Use for adding keywords, labels, skills, or categories to items such as articles, profiles, or issue trackers.
+- Avoid when users should only select from a predefined set of options; use a Combobox or Select instead.
+- Consider a Combobox when autocomplete suggestions should appear as the user types.
+
+## Headless
+
+This headless component renders a native `<input type="text">` with `aria-label`, Enter key handling for tag submission, and two-way value binding. It provides the text input semantics and add-on-enter behavior. The consumer provides all visual styling and manages the tag collection state.
+
+## Advice
+
+- **Designers**: Place the TagInput visually adjacent to or inside the TagGroup so users understand the relationship. Show a clear placeholder text such as "Add a tag..." to indicate purpose.
+- **Developers**: Use the `onadd` callback to append the new tag to your collection state. Consider trimming and deduplicating tags in the callback. Pair with a TagGroup for displaying the resulting tags.
+
 ## References
 
 - WAI-ARIA textbox role (implicit via input type="text"): https://www.w3.org/TR/wai-aria-1.2/#textbox

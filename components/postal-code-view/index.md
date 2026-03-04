@@ -39,6 +39,25 @@ None -- this component is a passive display element with no interactive behavior
 
 No ARIA attributes are needed. The `<span>` renders inline text content that is natively accessible to screen readers.
 
+## When to Use
+
+- Use PostalCodeView to display a postal or ZIP code in read-only contexts such as address summaries, confirmation pages, and shipping details.
+- Use PostalCodeView when the postal code should be visible but not editable.
+- Avoid using PostalCodeView when the user needs to edit the value; use PostalCodeInput instead.
+
+## Headless
+
+The PostalCodeView headless component provides a `<span>` element that renders postal code text content. It requires no ARIA attributes since inline text is natively accessible. The consumer provides all visual styling, formatting, and layout.
+
+## Advice
+
+- **Designers**: Ensure the postal code is visually distinct within address blocks, using consistent typography and spacing with surrounding address fields.
+- **Developers**: Format the postal code text appropriately for the target locale before passing it to the `text` prop (e.g., adding spaces in UK postcodes).
+
+## Composition
+
+PostalCodeView is the read-only counterpart of PostalCodeInput. Use PostalCodeInput for data entry and PostalCodeView for displaying the saved postal code value.
+
 ## References
 
 - MDN span element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/span

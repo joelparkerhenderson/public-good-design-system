@@ -62,6 +62,39 @@ None -- this component is a passive container. Keyboard interactions are handled
 
 - `role="region"` -- identifies the accordion as a landmark region
 - `aria-label` -- provides an accessible name for the region, allowing screen readers to announce it
+## When to Use
+
+- Use for grouping collapsible content sections such as FAQ pages, settings panels, filter groups, or mobile navigation menus.
+- Use when you need a labeled navigation landmark that wraps accordion items.
+- Avoid for simple show/hide of a single section -- use Details or Collapsible instead.
+- Consider TabBar instead when users need to see content from multiple sections simultaneously.
+
+## Headless
+
+This component provides a `<nav>` landmark with `role="region"` and `aria-label` for accessibility, with zero visual styling. The consumer is responsible for all CSS including container borders, background colors, spacing, and overall layout. Use the `data-*` attributes or element selectors as styling hooks.
+
+## Advice
+
+- **Designers**: Ensure the accordion has clear visual boundaries so users can distinguish it from surrounding content. Provide a visible label or heading above the accordion group.
+- **Developers**: Always provide a meaningful `label` prop that describes the accordion's purpose for screen reader users navigating by landmarks.
+
+## Composition
+
+AccordionNav follows the Nav / List / ListItem composition pattern:
+
+- **AccordionNav** -- outer `<nav>` container providing the landmark region and accessible label.
+- **AccordionList** -- `<ol>` list grouping the collapsible items in order.
+- **AccordionListItem** -- individual `<details>` / `<summary>` sections for each expandable item.
+
+```html
+<AccordionNav label="FAQ">
+  <AccordionList>
+    <AccordionListItem summary="Question 1">Answer 1</AccordionListItem>
+    <AccordionListItem summary="Question 2">Answer 2</AccordionListItem>
+  </AccordionList>
+</AccordionNav>
+```
+
 ## References
 
 - WAI-ARIA Accordion Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/accordion/

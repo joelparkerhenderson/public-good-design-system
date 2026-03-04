@@ -48,6 +48,26 @@ None -- this component is a passive container. Clicking the label focuses the as
 - `aria-hidden="true"` -- on the required asterisk, prevents screen readers from reading the decorative indicator
 - `data-required` -- data attribute on the wrapper for consumer CSS styling
 
+## When to Use
+
+- Use to wrap any form control (text input, select, textarea, checkbox) with its label, description, and error message.
+- Use when you need automatic ID generation and proper `<label for>` linking without manual wiring.
+- Avoid when a form control already has its own label mechanism built in.
+- Consider Fieldset when grouping multiple related fields together under a shared legend.
+
+## Headless
+
+This headless component provides a `<div>` wrapper with a `<label>` linked via `for` attribute, optional description and error `<p>` elements with ARIA linking, a required indicator with `aria-hidden`, and `role="alert"` on the error. The consumer provides all visual styling for the label, input, description, error display, and required indicator.
+
+## Advice
+
+- **Designers**: Position the label above or beside the input consistently across all fields. Use a subtle style for description text and a prominent style for error messages.
+- **Developers**: Pass the auto-generated or custom `inputId` to your input component's `id` attribute so the `<label for>` linking works. Use the `error` prop to conditionally show validation messages.
+
+## Composition
+
+Field composes with Label, input components (TextInput, Select, etc.), ErrorMessage, and Hint following the Form/Field/Input pattern. Field wraps a label, the consumer's input, an optional description, and an optional error message. Use inside a Form and group related Fields with Fieldset.
+
 ## References
 
 - WAI Forms Tutorial: https://www.w3.org/WAI/tutorials/forms/

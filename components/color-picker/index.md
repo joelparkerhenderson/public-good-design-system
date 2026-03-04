@@ -46,6 +46,25 @@ This component is useful for advanced color pickers where the user needs fine-gr
 - `aria-valuemax="100"` -- maximum slider value
 - `aria-disabled="true"` -- set when the control is disabled
 
+## When to Use
+
+- Use a ColorPicker when users need fine-grained 2D color selection by saturation and brightness, such as in advanced color editors or design tools.
+- Use a ColorPicker alongside hue and opacity sliders for a complete color selection interface.
+- Avoid using a ColorPicker for simple color choices from a predefined palette; consider ColorPickerButton components instead.
+
+## Headless
+
+This headless ColorPicker component provides a `<div>` with `role="slider"`, `aria-valuenow`/`aria-valuemin`/`aria-valuemax` for ARIA compliance, keyboard navigation with arrow keys (and Shift for larger steps), and `data-x`/`data-y` attributes for cursor positioning. The consumer provides all visual styling including the color gradient background, cursor indicator, border, and dimensions.
+
+## Advice
+
+- **Designers**: Display a visual cursor indicator at the selected position on the 2D area. Use a gradient background showing saturation and brightness to help users understand the mapping.
+- **Developers**: Use the `data-x` and `data-y` attributes in CSS to position a cursor element with `calc()` or CSS custom properties. Combine with a hue slider for a complete color picker.
+
+## Composition
+
+ColorPicker is the parent component in the ColorPicker/ColorPickerButton composition pattern. Use ColorPicker for free-form 2D color selection, and ColorPickerButton for individual predefined color swatches. They can be combined in a single interface where ColorPickerButton offers quick presets and ColorPicker provides fine-grained adjustment.
+
 ## References
 
 - WAI-ARIA Slider Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/slider/

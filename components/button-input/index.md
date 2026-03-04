@@ -49,6 +49,22 @@ This component is useful in form contexts where the native input semantics are p
 - `aria-label={label}` -- optional screen reader label override; when provided, screen readers announce this instead of the `value` text
 - `aria-disabled` -- implicitly managed by the native `disabled` attribute
 
+## When to Use
+
+- Use when you need a form-native `<input type="button">` element with plain text labels in contexts that expect `<input>` elements.
+- Use when the button label is simple text with no need for rich content (icons, formatted text).
+- Avoid when you need rich content inside the button -- use Button instead, which supports children slots.
+- Consider SubmitInput or ResetInput for form submission or reset actions.
+
+## Headless
+
+This component provides a native `<input type="button">` with optional `aria-label` override and standard form attributes (`name`, `disabled`), all with zero visual styling. The consumer is responsible for all CSS including colors, padding, border, border-radius, hover states, focus indicators, and disabled appearance.
+
+## Advice
+
+- **Designers**: Apply the same visual treatment as Button components to maintain consistency. Ensure disabled state has sufficient contrast.
+- **Developers**: Use the `label` prop for an `aria-label` override when the `value` text alone is insufficient context for screen reader users. The `name` prop is useful for identifying the button in form submissions.
+
 ## References
 
 - MDN input type="button": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/button

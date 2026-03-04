@@ -38,6 +38,20 @@ None -- this component is a passive container. Keyboard navigation is handled by
 
 - Implicit `rowgroup` role from the `<tbody>` element -- groups the body rows of the grid
 
+## When to Use
+
+- Use as the main content section of a GanttTable to contain task rows and their timeline data.
+- Avoid using outside of a GanttTable structure; this component depends on the parent table grid context.
+
+## Headless
+
+This headless component provides a `<tbody>` element with implicit `rowgroup` role for grouping body rows within a Gantt chart grid. The consumer provides all visual styling including row spacing, alternating row colors, and bar rendering.
+
+## Advice
+
+- **Designers**: Use alternating row backgrounds or subtle borders to help users track across long timelines. Highlight the current time period column.
+- **Developers**: Place GanttTableRow elements as children. Each row should have a `<th>` for the task name followed by GanttTableData cells for time periods.
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

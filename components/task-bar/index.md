@@ -36,6 +36,26 @@ Task bars are commonly used to provide quick access to frequently performed acti
 - `role="toolbar"` -- identifies the container as a toolbar widget, grouping related controls
 - `aria-label` -- provides the accessible name for the toolbar, set from the `label` prop
 
+## When to Use
+
+- Use to group frequently performed task actions (e.g., "New", "Open", "Save") in a toolbar-style container for quick access.
+- Use when related action buttons should be semantically grouped as a toolbar for assistive technologies.
+- Avoid for navigation links; use a NavigationMenu or MenuBar instead.
+- Consider a ToolBar when the actions are general-purpose editing tools rather than task-specific operations.
+
+## Headless
+
+This headless component renders a `<div>` with `role="toolbar"` and `aria-label` to identify it as a toolbar widget for assistive technologies. The consumer provides all child buttons, keyboard navigation (if arrow key support is desired), and visual styling including layout, spacing, and button appearance.
+
+## Advice
+
+- **Designers**: Arrange buttons in a logical order of frequency or workflow. Use icon+label or icon-only buttons with tooltips for space efficiency.
+- **Developers**: Place TaskBarButton components or plain buttons as children. Consider implementing arrow key navigation within the toolbar for full WAI-ARIA toolbar compliance.
+
+## Composition
+
+TaskBar uses the Bar/BarButton composition pattern. Place TaskBarButton components as children inside TaskBar. The TaskBar provides the `role="toolbar"` container with an accessible label, while each TaskBarButton provides an individual action button within the toolbar.
+
 ## References
 
 - WAI-ARIA Toolbar Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/toolbar/

@@ -35,3 +35,22 @@ The component uses `aria-label` for accessible labeling in a headless context, a
 ## ARIA
 
 - `aria-label` -- set from the `label` prop to provide an accessible name
+
+## When to Use
+
+- Use when the user needs to enter or select a measurement unit such as "kg", "lb", "cm", or "inch".
+- Use in forms where measurement units may vary and the user must specify which unit applies to a value.
+- Consider using a Select or Combobox instead if the valid units are a fixed, known set that benefits from a dropdown.
+
+## Headless
+
+This headless component provides a text input with `aria-label` for accessible naming and two-way bindable value for reactive form integration. The consumer provides all visual styling, including input dimensions, borders, and any unit-selection UI enhancements.
+
+## Advice
+
+- **Designers**: Position the unit input adjacent to the corresponding value input so the relationship between value and unit is visually clear.
+- **Developers**: Validate unit values on the consumer side if only specific units are acceptable, as this component accepts free-text input.
+
+## Composition
+
+MeasurementUnitInput is part of the measurement component family. It works alongside MeasurementUnitView, MeasurementInstanceInput, MeasurementInstanceView, MeasurementSystemInput, and MeasurementSystemView.

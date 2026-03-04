@@ -42,6 +42,22 @@ Use Splitter between two adjacent panels to provide a visual and interactive han
 - `aria-valuemin={0}` -- the minimum allowed position value
 - `aria-valuemax={100}` -- the maximum allowed position value
 
+## When to Use
+
+- Use between two adjacent panels to provide a draggable handle for resizing, such as in code editors, file managers, or split-view layouts.
+- Use when users need to adjust the relative sizes of adjacent content areas.
+- Avoid when fixed-width panels are more appropriate for the layout.
+- Consider a simple Separator when no resize interaction is needed.
+
+## Headless
+
+This headless component renders a `<div>` with `role="separator"`, keyboard focus support (`tabindex="0"`), `aria-orientation`, and value attributes (`aria-valuenow`, `aria-valuemin`, `aria-valuemax`) for screen reader position reporting. The consumer provides all visual styling, drag behavior, keyboard handlers for arrow keys, and dynamic value updates.
+
+## Advice
+
+- **Designers**: Make the splitter handle at least 8px wide for easy grabbing, with a visible drag affordance such as dots or a grip icon. Change the cursor to `col-resize` or `row-resize` on hover.
+- **Developers**: Update `aria-valuenow` dynamically as the user drags. Implement arrow key handlers to adjust position in small increments, and Home/End to jump to min/max values.
+
 ## References
 
 - WAI-ARIA Window Splitter Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/windowsplitter/

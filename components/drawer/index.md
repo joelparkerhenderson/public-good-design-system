@@ -45,6 +45,22 @@ The `side` prop indicates which edge the drawer enters from via a `data-side` at
 - `aria-modal="true"` -- indicates the drawer is modal, restricting interaction to its contents
 - `data-side={side}` -- data attribute for consumer CSS styling based on drawer position
 
+## When to Use
+
+- Use for navigation menus, filters, or supplementary content that should slide in from a screen edge without replacing the main view.
+- Use when the content is contextual and temporary, not a primary destination.
+- Avoid for critical actions that require a centered modal; use Dialog instead.
+- Consider Sheet instead when the overlay should behave more like a bottom sheet on mobile devices.
+
+## Headless
+
+This headless component provides a `<div>` with `role="dialog"`, `aria-modal="true"`, accessible labeling via `aria-label`, a `data-side` attribute for positioning, keyboard dismissal via Escape, and two-way binding on `open`. The consumer provides all visual styling, animations, backdrop, and positioning CSS.
+
+## Advice
+
+- **Designers**: Include a visible close button and consider adding a semi-transparent backdrop to indicate the main content is temporarily inaccessible. Animate the slide-in transition for a smooth experience.
+- **Developers**: Trap focus within the drawer when it is open and return focus to the trigger element on close. Use the `data-side` attribute to apply directional CSS transitions.
+
 ## References
 
 - WAI-ARIA Dialog Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/dialog-modal/

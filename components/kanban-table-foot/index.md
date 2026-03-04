@@ -41,6 +41,29 @@ None -- passive container. Keyboard interaction depends on interactive elements 
 - No explicit ARIA roles required on the footer container itself
 - Interactive elements within the footer (e.g., buttons) provide their own semantics
 
+## When to Use
+
+- Use to provide a footer area for a Kanban board with summary information, item counts, or board-level actions.
+- Use when the board needs persistent controls such as "Add column" or aggregate status indicators.
+- Avoid using KanbanTableFoot when the board does not require footer-level information; it is optional.
+
+## Headless
+
+This headless component provides a structural footer wrapper for a Kanban board. It outputs a `<div>` container with no ARIA roles, relying on its child content for semantics. The consumer provides all visual styling, including layout, spacing, and appearance of footer controls.
+
+## Advice
+
+- **Designers**: Keep footer content minimal and visually distinct from the board body so users do not confuse summary data with active cards.
+- **Developers**: Place interactive elements like buttons in the footer with clear accessible labels, as the footer container itself is a passive wrapper.
+
+## Composition
+
+KanbanTableFoot is an optional child of KanbanTable, appearing after KanbanTableBody. It is part of the KanbanTable compound component pattern.
+
+```
+KanbanTable → KanbanTableHead + KanbanTableBody + KanbanTableFoot (optional)
+```
+
 ## References
 
 - WAI-ARIA region role: https://www.w3.org/TR/wai-aria-1.2/#region

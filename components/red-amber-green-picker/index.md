@@ -63,6 +63,26 @@ With additional HTML attributes:
 
 - `aria-label` on the select from the label prop
 
+## When to Use
+
+- Use RedAmberGreenPicker in dashboards, project trackers, and reporting tools where users need to set a traffic-light status.
+- Use RedAmberGreenPicker when a simple three-level severity or health indicator is sufficient.
+- Avoid using RedAmberGreenPicker when more granularity is needed; use RedOrangeYellowGreenBluePicker for five-level status.
+- Consider RedAmberGreenView for displaying a previously selected RAG status in read-only contexts.
+
+## Headless
+
+The RedAmberGreenPicker headless component provides a `<select>` with `aria-label` and three predefined options (red, amber, green) with two-way value binding. Native select keyboard navigation is fully supported. The consumer provides all visual styling, including color coding.
+
+## Advice
+
+- **Designers**: Color-code the options (red, amber, green) but also include text labels, as color alone is insufficient for users with color vision deficiencies.
+- **Developers**: Initialize the `value` prop to a meaningful default rather than leaving it empty, so the status is always in a valid state.
+
+## Composition
+
+RedAmberGreenPicker is the container for RedAmberGreenPickerButton children. Use `<RedAmberGreenPicker>` to wrap `<RedAmberGreenPickerButton>` elements, where each button represents one RAG status level with `aria-pressed` toggle state.
+
 ## References
 
 - RAG Status: https://en.wikipedia.org/wiki/Traffic_light_rating_system

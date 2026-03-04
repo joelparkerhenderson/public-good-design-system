@@ -39,6 +39,21 @@ None at the component level. Keyboard behavior is handled natively by the browse
 
 - `aria-label={label}` -- provides an accessible name describing the purpose of the number input
 
+## When to Use
+
+- Use for form fields that accept numeric values, such as quantity selectors, age inputs, or price fields.
+- Use when you need browser-built-in validation, increment/decrement controls, and numeric virtual keyboards on mobile.
+- Consider using TextInput with a pattern attribute instead if you need to accept formatted numbers like "1,000" or phone numbers.
+
+## Headless
+
+This headless component wraps a native `<input type="number">` with `aria-label` for accessible naming, two-way bindable value, and optional `min`, `max`, and `step` constraints. The consumer provides all visual styling, including input dimensions, borders, spinner button appearance, and validation error display.
+
+## Advice
+
+- **Designers**: Clearly indicate the expected range and step size near the input (e.g., "Enter a value between 1 and 100") to reduce input errors.
+- **Developers**: Set `min`, `max`, and `step` props to leverage browser-native validation. Be aware that `<input type="number">` returns an empty string for non-numeric input.
+
 ## References
 
 - HTML number input: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number

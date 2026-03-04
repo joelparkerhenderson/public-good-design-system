@@ -32,6 +32,25 @@ None -- this component is a passive display element with no interactive behavior
 
 - `aria-label={label}` -- provides an accessible name describing what the displayed value represents
 
+## When to Use
+
+- Use ThemeView to display the currently active theme name in a read-only context, such as a settings summary, status bar, or confirmation screen.
+- Use when users need to see which theme is active without being able to change it directly.
+- Avoid using ThemeView when users need to change the theme; use ThemePicker or ThemeSelect instead.
+
+## Headless
+
+This headless component provides a `<span>` element with `aria-label` for accessible read-only theme display. The consumer provides all visual styling, including typography, color, and layout.
+
+## Advice
+
+- **Designers**: Style the theme name to visually reflect the current theme (e.g., dark text for dark mode label) so users can confirm at a glance.
+- **Developers**: Keep the `value` prop in sync with the actual applied theme so the display is always accurate.
+
+## Composition
+
+ThemeView is the read-only display counterpart to ThemePicker and ThemeSelect. Use ThemeView to show the current theme, and pair it with ThemePicker or ThemeSelect for editing.
+
 ## References
 
 - WAI-ARIA Accessible Name: https://www.w3.org/TR/accname-1.2/

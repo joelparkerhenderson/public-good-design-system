@@ -35,6 +35,25 @@ None -- this component is a passive container. Keyboard interactions are determi
 - `role="list"` -- explicit list role on the `<ul>` ensures assistive technologies treat it as a list
 - `aria-label` -- optional accessible name describing the purpose of the checklist
 
+## When to Use
+
+- Use a CheckList for tracking tasks, options, or steps that users can mark as completed, such as to-do lists or onboarding flows.
+- Use a CheckList when users need to see progress through a series of actionable items.
+- Avoid using a CheckList for non-actionable informational lists; consider a standard `<ul>` or ContentsList instead.
+
+## Headless
+
+This headless CheckList component provides a semantic `<ul>` with explicit `role="list"` and optional `aria-label` for accessible identification. The consumer provides all visual styling including checkmark indicators, strikethrough effects, progress visualization, spacing, and color changes for completed items.
+
+## Advice
+
+- **Designers**: Provide clear visual distinction between completed and pending items, such as strikethrough text or a filled checkmark. Show overall progress when appropriate.
+- **Developers**: Use CheckListItem components as children. Manage checkbox state externally and pass it to each item for consistent state tracking.
+
+## Composition
+
+CheckList follows the List/ListItem composition pattern. Use CheckList as the container with CheckListItem components as children. Each CheckListItem renders as an `<li>` and should contain a checkbox input and label. The CheckList manages the accessible list semantics while each CheckListItem manages its own item semantics.
+
 ## References
 
 - WAI-ARIA Listbox Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/listbox/

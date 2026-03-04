@@ -72,6 +72,22 @@ Settings panel:
 - `aria-modal="true"` indicates modal behavior (content behind the drawer is inert)
 - `tabindex="-1"` for programmatic focus management
 
+## When to Use
+
+- Use for menus, filters, settings, or secondary content that should slide in from the side without navigating away from the current page.
+- Use on mobile and responsive layouts to conserve screen space by hiding infrequently used options.
+- Avoid for primary content or critical actions that users should see without extra interaction.
+- Consider a Sheet when you need the panel to appear from any edge (top, right, bottom, left), not just left or right.
+
+## Headless
+
+This headless component provides a modal dialog container with `role="dialog"`, `aria-modal="true"`, `aria-label`, Escape key dismissal, and `tabindex="-1"` for programmatic focus. The consumer provides all visual styling including slide-in animations, backdrop overlay, width, and positioning.
+
+## Advice
+
+- **Designers**: Include a visible close button inside the drawer and use a semi-transparent backdrop to indicate the drawer is an overlay. Animate the slide transition to reinforce direction.
+- **Developers**: Implement focus trapping within the drawer so keyboard users cannot interact with content behind it. Restore focus to the trigger element when the drawer closes.
+
 ## References
 
 - WAI-ARIA Dialog Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/dialog-modal/

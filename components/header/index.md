@@ -51,6 +51,21 @@ None -- this component is a passive container. Keyboard interactions are determi
 - `aria-label={label}` -- optionally provides an accessible name for the header landmark, useful when multiple headers exist on a page to help screen reader users distinguish between them
 - The `<header>` element implicitly has `role="banner"` when it is a direct child of `<body>`, providing a page-level landmark
 
+## When to Use
+
+- Use at the top of a page or section for introductory content, branding, navigation links, or search controls.
+- Use when the page needs a `banner` landmark for assistive technology navigation.
+- Avoid nesting a header directly inside another header; use `aria-label` to distinguish section headers from the page header.
+
+## Headless
+
+This headless component provides a semantic `<header>` element that automatically exposes the `banner` landmark role (when a direct child of `<body>`) to assistive technologies. The consumer provides all visual styling including layout, background, typography, and spacing.
+
+## Advice
+
+- **Designers**: Keep the header visually consistent across pages. Include branding and primary navigation prominently. Use a sticky or fixed position for easy access on long pages.
+- **Developers**: When multiple headers exist on a page, provide the `label` prop to help screen reader users distinguish between them.
+
 ## References
 
 - MDN header element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/header

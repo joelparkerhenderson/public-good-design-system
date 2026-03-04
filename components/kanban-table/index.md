@@ -52,6 +52,25 @@ None built-in -- the consumer should implement keyboard interactions for moving 
 - `role="region"` -- defines the Kanban board as a named landmark section
 - `aria-label={label}` -- provides an accessible name for the board region
 
+## When to Use
+
+- Use to organize work items into columns representing workflow stages (e.g., "To Do", "In Progress", "Done") in project management or task tracking tools.
+- Use when teams need a visual overview of work status, flow, and bottlenecks.
+- Avoid for simple task lists without workflow stages; use TaskList or CheckList instead.
+
+## Headless
+
+This headless component provides a `<div>` with `role="region"` and `aria-label` for defining a named landmark for the Kanban board. The consumer provides all visual styling including column layout, card design, drag-and-drop interactions, and status color coding.
+
+## Advice
+
+- **Designers**: Use distinct column backgrounds or headers to clearly separate workflow stages. Design cards with consistent layout showing title, assignee, and priority.
+- **Developers**: Implement keyboard-based item movement between columns for accessibility. The consumer is responsible for drag-and-drop and column management.
+
+## Composition
+
+KanbanTable uses the Table composition pattern: KanbanTable contains KanbanTableHead, KanbanTableBody, and optionally KanbanTableFoot. Each section contains KanbanTableRow elements, which contain KanbanTableData cells representing items in each workflow column. Use KanbanTableCol for column-level styling.
+
 ## References
 
 - WAI-ARIA region role: https://www.w3.org/TR/wai-aria-1.2/#region

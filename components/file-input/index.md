@@ -44,6 +44,22 @@ None beyond native input behavior -- **Enter** or **Space** opens the file picke
 
 - `aria-label={label}` -- provides an accessible name for the file input since no visible `<label>` element is included
 
+## When to Use
+
+- Use when users need to select one or more files from their device, such as in upload forms, profile editors, or document attachments.
+- Use when the native file picker is sufficient and a drag-and-drop area is not needed.
+- Avoid when you need a styled upload button with status feedback; use FileUpload instead.
+- Consider ImageFileInput when the upload is specifically for image files with preview support.
+
+## Headless
+
+This headless component provides a native `<input type="file">` with accessible labeling via `aria-label`, support for `accept`, `multiple`, `required`, and `disabled` attributes, and `restProps` for consumer extensibility. The consumer provides all visual styling, custom button appearance, and any file list display.
+
+## Advice
+
+- **Designers**: Consider pairing the file input with a visible label or instructions about accepted file types and size limits. The default browser styling varies, so plan for custom styling.
+- **Developers**: Use the `accept` prop to restrict file types at the browser level, but always validate on the server as well. Access selected files via the input's `files` property or event handlers.
+
 ## References
 
 - MDN input type="file": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file

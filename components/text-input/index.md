@@ -43,6 +43,22 @@ None beyond native input behavior -- standard text editing keys (typing, backspa
 
 - `aria-label={label}` -- provides an accessible name for the input since no visible `<label>` element is included
 
+## When to Use
+
+- Use for short, single-line text entry such as names, titles, search terms, or other brief textual data in forms.
+- Use when the expected input fits comfortably on one line.
+- Avoid for multi-line text entry; use Textarea instead.
+- Consider a specialized input (EmailInput, TelInput, UrlInput, SearchInput) when the data type has a specific semantic meaning.
+
+## Headless
+
+This headless component renders a native `<input type="text">` with `aria-label` and two-way value binding. It provides standard text input semantics, required/disabled states, and rest prop forwarding for attributes like `placeholder`, `maxlength`, and `pattern`. The consumer provides all visual styling.
+
+## Advice
+
+- **Designers**: Size the input width to match the expected content length (e.g., wider for full names, narrower for short codes). Use placeholder text sparingly and never as a substitute for labels.
+- **Developers**: Use `restProps` to pass `placeholder`, `maxlength`, `pattern`, and other native attributes. Wrap the input with a Field and Label component for a complete accessible form field.
+
 ## References
 
 - MDN input type="text": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/text

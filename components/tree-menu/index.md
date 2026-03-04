@@ -41,6 +41,22 @@ This headless component renders a `<ul>` with `role="tree"` and provides keyboar
 - `aria-label={label}` -- provides an accessible name for the tree
 - Consumer items should use `role="treeitem"` on each navigable child
 
+## When to Use
+
+- Use TreeMenu to display hierarchical or nested navigation options with expandable and collapsible nodes, such as file directories, category browsers, or multi-level menus.
+- Use when the data has a natural tree structure with parent-child relationships.
+- Avoid using TreeMenu for flat lists without hierarchy; use a simple list or menu instead.
+- Consider TreeNav instead when the tree is used as a site navigation landmark (TreeNav wraps a tree in a `<nav>` element).
+
+## Headless
+
+This headless component provides a `<ul>` with `role="tree"`, `aria-label`, and built-in keyboard navigation (ArrowUp, ArrowDown, Home, End with wrapping). The consumer provides `<li role="treeitem">` children and all visual styling including indentation, expansion indicators, and icons.
+
+## Advice
+
+- **Designers**: Use indentation and visual connectors (lines or icons) to clearly show the hierarchy depth. Provide expand/collapse indicators for branch nodes.
+- **Developers**: Ensure all tree items have `role="treeitem"` and `tabindex="-1"` for keyboard focusability. Use nested `<ul role="group">` for subtrees.
+
 ## References
 
 - WAI-ARIA Tree View Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/treeview/

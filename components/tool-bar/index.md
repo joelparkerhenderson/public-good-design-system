@@ -42,6 +42,26 @@ The component queries focusable children via `button`, `[role='button']`, and `[
 - `role="toolbar"` -- identifies the container as a toolbar widget
 - `aria-label` -- provides the accessible name for the toolbar
 
+## When to Use
+
+- Use ToolBar when you have a horizontal row of action buttons or controls that benefit from roving focus keyboard navigation (e.g., text editor formatting, drawing tools, media controls).
+- Use when you want users to Tab into the toolbar once, arrow between items, and Tab out.
+- Avoid using ToolBar for navigation links; use a NavBar or MenuBar instead.
+- Consider a simple button group when there are only two or three actions that do not need roving focus.
+
+## Headless
+
+This headless component provides a `<div>` with `role="toolbar"`, `aria-label`, and built-in roving focus keyboard navigation (ArrowLeft, ArrowRight, Home, End). It queries focusable children automatically. The consumer provides all button elements as children and all visual styling.
+
+## Advice
+
+- **Designers**: Group related actions visually with separators or spacing. Use consistent icon sizes and provide tooltips for icon-only buttons.
+- **Developers**: Ensure all toolbar items are focusable (`<button>`, `[role="button"]`, or elements with `tabindex`). The component handles focus management automatically.
+
+## Composition
+
+ToolBar contains ToolBarButton children following the Bar/BarButton pattern. ToolBar provides the toolbar container with keyboard navigation, and each ToolBarButton provides a single action button within the toolbar.
+
 ## References
 
 - WAI-ARIA Toolbar Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/toolbar/

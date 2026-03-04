@@ -38,6 +38,20 @@ None -- this component is a passive container. Keyboard navigation is handled by
 
 - Implicit `row` role from the `<tr>` element -- identifies a row of cells within the grid
 
+## When to Use
+
+- Use inside GanttTableHead, GanttTableBody, or GanttTableFoot to represent a single row (task, header, or summary) in the Gantt chart.
+- Avoid using outside of a GanttTable section component.
+
+## Headless
+
+This headless component provides a `<tr>` element with implicit `row` role for identifying a row within the Gantt chart grid. The consumer provides all visual styling including row height, hover states, and borders.
+
+## Advice
+
+- **Designers**: Ensure rows have enough height to display bar segments clearly. Add hover states to help users track across wide timelines.
+- **Developers**: Start each body row with a `<th>` for the task name, followed by GanttTableData cells for the time period columns.
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

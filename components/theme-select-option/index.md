@@ -52,6 +52,25 @@ With disabled option:
 
 - Native `<option>` element provides built-in accessibility semantics
 - `disabled` attribute communicates disabled state to assistive technology
+## When to Use
+
+- Use ThemeSelectOption for individual theme choices inside a ThemeSelect dropdown.
+- Use when you want a dedicated component per option rather than plain `<option>` elements, for consistency or added logic.
+- Avoid using ThemeSelectOption outside of a ThemeSelect parent; it renders a native `<option>` element that requires a `<select>` context.
+
+## Headless
+
+This headless component provides a native `<option>` element with `value` and `disabled` attributes. Full browser and assistive technology compatibility comes from the native element. The consumer provides the display text as children and all visual styling is handled by the parent select and browser defaults.
+
+## Advice
+
+- **Designers**: Keep option labels short and descriptive (e.g., "Light", "Dark", "High Contrast") so they are scannable in the dropdown.
+- **Developers**: Use the `disabled` attribute on a placeholder option (e.g., "Choose a theme...") to prevent it from being selected as a valid value.
+
+## Composition
+
+ThemeSelectOption is a child of ThemeSelect, following the Select/SelectOption pattern. Each ThemeSelectOption represents one available theme choice within the parent dropdown.
+
 ## References
 
 - MDN option element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option

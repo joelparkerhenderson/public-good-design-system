@@ -52,6 +52,21 @@ Native radio input keyboard behavior is handled by the browser:
 
 - `aria-label={label}` -- provides an accessible name for the radio button since no visible `<label>` element is included
 
+## When to Use
+
+- Use RadioInput inside a RadioGroup when you need custom radio button layouts where the radio and its label are independently positioned or styled.
+- Use RadioInput for card-selection interfaces, segmented controls, or any design that wraps radio buttons in non-standard visual containers.
+- Avoid using RadioInput outside of a group context; always pair with RadioGroup or a native fieldset for proper semantics.
+
+## Headless
+
+The RadioInput headless component provides a native `<input type="radio">` with `aria-label` for accessible naming, and supports `name`, `value`, `checked`, and `disabled` attributes. The browser handles all radio group keyboard navigation natively. The consumer provides all visual styling.
+
+## Advice
+
+- **Designers**: Ensure the clickable area around each radio option is large enough for comfortable touch interaction, even when using custom visual designs.
+- **Developers**: Always set a consistent `name` attribute across grouped RadioInput components to ensure mutual exclusion, and use `onchange` handlers to update state.
+
 ## References
 
 - WAI-ARIA Radio Group Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/radiobutton/

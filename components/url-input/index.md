@@ -38,6 +38,22 @@ None beyond native text input behavior. The `<input type="url">` element support
 
 - `aria-label={label}` -- provides the accessible name for the URL input since no visible label element is associated
 
+## When to Use
+
+- Use UrlInput when users need to enter a web address, such as in profile forms, link submission pages, or configuration settings.
+- Use when built-in browser URL validation (requiring a protocol like `https://`) is appropriate for the use case.
+- Avoid using UrlInput for general text that may contain URLs mixed with other content; use TextInput instead.
+- Consider TextInput with a custom pattern if you need to accept URLs without a protocol prefix.
+
+## Headless
+
+This headless component provides a native `<input type="url">` element with `aria-label`, two-way value binding, and support for `required` and `disabled` states. Built-in browser validation ensures URL format compliance. The consumer provides all visual styling and any surrounding labels or hints.
+
+## Advice
+
+- **Designers**: Include a placeholder (e.g., "https://example.com") to clarify the expected format. Show validation errors inline near the input.
+- **Developers**: The browser requires a valid URL with a protocol (e.g., `https://`) for validation. Pass `placeholder` and `pattern` via restProps to customize behavior.
+
 ## References
 
 - MDN input type="url": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/url

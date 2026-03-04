@@ -35,6 +35,25 @@ None beyond native form behavior -- Enter key submits the form when a text input
 
 - `aria-label="..."` -- provides an accessible name for the form, helping screen readers identify its purpose
 
+## When to Use
+
+- Use to wrap any collection of form inputs that are submitted together as a unit.
+- Use when you need automatic `preventDefault()` on submit, which is standard in single-page applications.
+- Avoid wrapping unrelated input groups in a single Form; use separate Form components for distinct submission actions.
+
+## Headless
+
+This headless component provides a native `<form>` element with `aria-label`, automatic submit default prevention, and reset support. The consumer provides all visual styling including layout, spacing, and button placement.
+
+## Advice
+
+- **Designers**: Group related fields visually using spacing or Fieldset components. Place the primary submit button in a predictable location.
+- **Developers**: Use the Form composition pattern: Form wraps Field components, which in turn wrap input components. Pair with ErrorSummary for validation feedback.
+
+## Composition
+
+Form uses the Form composition pattern: Form contains Field components, which wrap input components (TextInput, EmailInput, Select, etc.). Add ErrorSummary for validation errors and Button for submission actions.
+
 ## References
 
 - MDN `<form>`: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form

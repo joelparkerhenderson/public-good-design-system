@@ -41,6 +41,21 @@ None -- this component is a passive form label. Clicking the label focuses or ac
 - The native `<label>` element with `for` attribute provides an implicit accessible name for the linked form control
 - No additional ARIA attributes are needed because the semantic HTML `<label>` element is fully recognized by assistive technology
 
+## When to Use
+
+- Use to provide a visible, accessible name for a form control such as an input, checkbox, or radio button.
+- Use when you need click-to-focus behavior so clicking the label text activates the associated control.
+- Avoid omitting labels for form fields; every interactive form control should have a visible label for usability and accessibility.
+
+## Headless
+
+This headless component renders a native `<label>` element with optional `for` attribute linking, providing built-in browser accessibility and click-to-focus behavior. The consumer provides all visual styling, including typography, spacing, required-field indicators, and layout relative to the associated control.
+
+## Advice
+
+- **Designers**: Position labels consistently relative to their controls (typically above or to the left) and visually indicate required fields with a marker such as an asterisk.
+- **Developers**: Use the `for` prop to link the label to its control by ID, or wrap the control inside the label element. Avoid using `aria-label` as a substitute for a visible label.
+
 ## References
 
 - WAI Forms Tutorial - Labels: https://www.w3.org/WAI/tutorials/forms/labels/

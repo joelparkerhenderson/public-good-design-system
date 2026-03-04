@@ -40,6 +40,22 @@ This headless component renders a `<div>` with `role="status"` and `aria-live="p
 - `aria-busy` -- set to `true` when active, signaling to assistive technologies that content is loading
 - `aria-label` -- provides the accessible name describing what is loading, set from the `label` prop
 
+## When to Use
+
+- Use as a loading or waiting indicator when a process is in progress and the user should wait, such as during page loads, data fetching, or background processing.
+- Use when you want a whimsical, macOS-inspired loading indicator as an alternative to a standard spinner.
+- Avoid for progress that has a known completion percentage -- use Progress or ProgressCircle instead.
+- Consider Skeleton instead when you want placeholder content that matches the layout being loaded.
+
+## Headless
+
+This component provides `role="status"`, `aria-live="polite"`, `aria-busy`, and a `data-active` attribute with an inner `<span>` animation target, all with zero visual styling. The consumer is responsible for all CSS including the spinning animation, colors, size, and any backdrop or overlay effects.
+
+## Advice
+
+- **Designers**: Keep the indicator visually lightweight so it does not overwhelm the content area. Ensure the animation is smooth and not distracting at small sizes.
+- **Developers**: Use the `active` prop to control visibility rather than mounting/unmounting the component, so the live region remains in the DOM for consistent screen reader announcements.
+
 ## References
 
 - WAI-ARIA Status Role: https://www.w3.org/TR/wai-aria-1.2/#status

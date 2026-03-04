@@ -39,6 +39,48 @@ None built-in -- the consumer should implement grid keyboard navigation on cells
 - `role="grid"` -- identifies the table as an interactive grid widget
 - `aria-label={label}` -- provides an accessible name describing the calendar period
 
+## When to Use
+
+- Use for displaying dates in a structured grid layout organized by weeks and days, such as scheduling applications, event planners, and dashboard calendars.
+- Use when users need to view and optionally interact with dates at a glance.
+- Avoid for selecting a date range -- use CalendarRangePicker instead.
+- Consider DateInput instead when you just need a compact date entry field without a visual calendar.
+
+## Headless
+
+This component provides a `<table>` element with `role="grid"` and `aria-label` for accessible calendar grid semantics, with zero visual styling. The consumer is responsible for all CSS including cell sizing, grid lines, day-of-week header styling, selected/today state highlights, and month navigation controls.
+
+## Advice
+
+- **Designers**: Clearly distinguish today's date and selected dates from other days. Use consistent cell sizing and ensure enough contrast for day numbers.
+- **Developers**: Implement arrow key navigation between cells, Enter/Space for selection, and ensure the `label` prop describes the calendar period (e.g., "January 2025") for screen readers.
+
+## Composition
+
+CalendarTable follows the Table composition pattern:
+
+- **CalendarTable** -- outer `<table>` with `role="grid"` and `aria-label`.
+- **CalendarTableHead** -- `<thead>` containing day-of-week column headers.
+- **CalendarTableBody** -- `<tbody>` containing rows of day cells.
+- **CalendarTableFoot** -- `<tfoot>` for optional summary or navigation content.
+- **CalendarTableRow** -- `<tr>` representing one week.
+- **CalendarTableCell** -- `<td>` representing one day with selection and today state.
+
+```html
+<CalendarTable label="January 2025">
+  <CalendarTableHead>
+    <CalendarTableRow><th>Sun</th><th>Mon</th><th>Tue</th></CalendarTableRow>
+  </CalendarTableHead>
+  <CalendarTableBody>
+    <CalendarTableRow>
+      <CalendarTableCell>1</CalendarTableCell>
+      <CalendarTableCell today selected>2</CalendarTableCell>
+      <CalendarTableCell>3</CalendarTableCell>
+    </CalendarTableRow>
+  </CalendarTableBody>
+</CalendarTable>
+```
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

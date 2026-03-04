@@ -66,6 +66,26 @@ With additional HTML attributes:
 
 - `aria-label` on the select from the label prop
 
+## When to Use
+
+- Use RedOrangeYellowGreenBluePicker when a five-level status scale provides more useful granularity than a three-level RAG status.
+- Use RedOrangeYellowGreenBluePicker in risk assessments, health dashboards, and detailed project tracking.
+- Avoid using RedOrangeYellowGreenBluePicker when a simpler three-level scale suffices; use RedAmberGreenPicker instead.
+- Consider RedOrangeYellowGreenBlueView for displaying a previously selected status in read-only contexts.
+
+## Headless
+
+The RedOrangeYellowGreenBluePicker headless component provides a `<select>` with `aria-label` and five predefined options (red, orange, yellow, green, blue) with two-way value binding. Native select keyboard navigation is fully supported. The consumer provides all visual styling, including color coding.
+
+## Advice
+
+- **Designers**: Assign distinct, accessible colors to each of the five levels and always include text labels since five color-only indicators are harder to distinguish.
+- **Developers**: Initialize the `value` prop to a valid default, and consider providing a placeholder option if no initial status is appropriate.
+
+## Composition
+
+RedOrangeYellowGreenBluePicker is the container for RedOrangeYellowGreenBluePickerButton children. Use `<RedOrangeYellowGreenBluePicker>` to wrap `<RedOrangeYellowGreenBluePickerButton>` elements, where each button represents one of the five status levels with `aria-pressed` toggle state.
+
 ## References
 
 - Traffic Light Rating System: https://en.wikipedia.org/wiki/Traffic_light_rating_system

@@ -37,6 +37,25 @@ None -- this component is a passive container. Navigation within the table follo
 
 - Implicit `rowgroup` role from the `<tfoot>` element -- groups the footer rows of the table
 
+## When to Use
+
+- Use a DataTableFoot to display summary rows such as totals, averages, or aggregate data at the bottom of a DataTable.
+- Use a DataTableFoot when the table needs a persistent footer that remains visible during scrolling in fixed-header table layouts.
+- Avoid using a DataTableFoot when there is no summary or aggregate data to display; not every table needs a footer.
+
+## Headless
+
+This headless DataTableFoot component provides a semantic `<tfoot>` element with implicit `rowgroup` role for assistive technology. The consumer provides all visual styling including background color to distinguish the footer from body rows, bold text for totals, and borders.
+
+## Advice
+
+- **Designers**: Visually distinguish footer rows from body rows using a different background color or bold text to indicate summary data.
+- **Developers**: Place DataTableRow or `<tr>` elements as children with `<th scope="row">` for row labels and `<td>` for aggregate values.
+
+## Composition
+
+DataTableFoot is part of the DataTable composition pattern. It sits inside a DataTable alongside DataTableHead and DataTableBody, and contains DataTableRow components. The full hierarchy is DataTable > DataTableHead/DataTableBody/DataTableFoot > DataTableRow > DataTableData.
+
 ## References
 
 - WAI-ARIA Table Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/table/

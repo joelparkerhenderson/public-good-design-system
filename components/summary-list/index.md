@@ -37,6 +37,26 @@ None -- this is a passive informational display, not an interactive element.
 
 - `aria-label={label}` -- provides the accessible name for the description list, allowing screen readers to announce the context of the key-value pairs
 
+## When to Use
+
+- Use to display key-value pairs in a structured, scannable format such as order summaries, account details, form review pages, or configuration settings.
+- Use when information is best presented as labeled terms with corresponding descriptions.
+- Avoid for tabular data with multiple columns; use a Table component instead.
+- Consider a Card when the information needs grouped visual containment beyond a flat list.
+
+## Headless
+
+This headless component renders a semantic `<dl>` element with `aria-label` for accessible naming. It provides description list semantics for key-value pairs. The consumer provides all visual styling including layout, spacing, typography, and row separation.
+
+## Advice
+
+- **Designers**: Align terms and descriptions consistently, using either a side-by-side or stacked layout. Use subtle row separators or alternating backgrounds to improve scannability.
+- **Developers**: Use SummaryListItem child components for structured `<dt>`/`<dd>` pairs, or provide raw `<dt>`/`<dd>` elements directly. Ensure the `label` prop accurately describes the summary context.
+
+## Composition
+
+SummaryList uses the List/ListItem composition pattern. Place SummaryListItem components as children inside SummaryList. Each SummaryListItem renders a `<dt>`/`<dd>` pair within a `<div>` wrapper, while SummaryList provides the outer `<dl>` container with accessible labeling.
+
 ## References
 
 - MDN dl element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dl

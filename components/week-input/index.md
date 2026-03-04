@@ -45,6 +45,22 @@ Note: keyboard interactions depend on the browser's native week picker implement
 
 - `aria-label={label}` -- provides the accessible name for the week input since no visible label element is associated
 
+## When to Use
+
+- Use WeekInput when users need to select a specific week of the year, such as for scheduling, time tracking, or weekly reporting.
+- Use when data is organized by week rather than by specific date.
+- Avoid using WeekInput when users need to select a specific date; use DateInput instead.
+- Consider a custom week picker if consistent cross-browser behavior is required, since native `<input type="week">` support varies.
+
+## Headless
+
+This headless component provides a native `<input type="week">` element with `aria-label`, two-way value binding in ISO 8601 YYYY-Www format, and support for `required` and `disabled` states. The consumer provides all visual styling and any surrounding labels or hints.
+
+## Advice
+
+- **Designers**: Display a hint showing the expected format (e.g., "2024-W01") since the native week picker appearance varies significantly across browsers. Provide a fallback UI for unsupported browsers.
+- **Developers**: Values follow ISO 8601 week format (YYYY-Www). Use `min` and `max` via restProps to constrain the selectable range. Test across browsers, as some fall back to a plain text input.
+
 ## References
 
 - MDN input type="week": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/week

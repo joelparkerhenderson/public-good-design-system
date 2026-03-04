@@ -43,6 +43,22 @@ None -- this component is a passive container. The `<hr>` element is not focusab
 - `role="separator"` -- explicitly identifies the element as a separator between sections of content
 - `aria-label={label}` -- optional descriptive label for the separator, announced by screen readers when present
 
+## When to Use
+
+- Use to visually and semantically divide distinct sections of content, such as between page sections, form groups, or menu item groups.
+- Use when you need assistive technologies to announce a content boundary.
+- Avoid using purely for decorative spacing; use CSS margin or padding instead.
+- Consider using a heading element instead if the separation also introduces a new topic.
+
+## Headless
+
+This headless component renders a semantic `<hr>` element with an explicit `role="separator"` and optional `aria-label`. It provides the accessible separator semantics and leaves all visual styling -- thickness, color, margin, and orientation -- entirely to the consumer.
+
+## Advice
+
+- **Designers**: Use subtle styling that visually distinguishes sections without drawing excessive attention. Maintain consistent separator weight and color throughout the interface.
+- **Developers**: Provide an `aria-label` when the purpose of the separation is not obvious from the surrounding content. Avoid nesting separators inside interactive widgets.
+
 ## References
 
 - WAI-ARIA Separator Role: https://www.w3.org/TR/wai-aria-1.2/#separator

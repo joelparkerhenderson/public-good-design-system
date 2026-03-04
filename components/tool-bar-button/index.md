@@ -55,6 +55,25 @@ Inside a ToolBar:
 
 - Implicit `button` role from the `<button>` element
 - `disabled` attribute communicates disabled state to assistive technology
+## When to Use
+
+- Use ToolBarButton for individual action buttons within a ToolBar, such as formatting controls, drawing tools, or media actions.
+- Use when you want a consistent button component that integrates with the parent ToolBar's roving focus navigation.
+- Avoid using ToolBarButton outside of a ToolBar parent; use a plain Button instead for standalone actions.
+
+## Headless
+
+This headless component provides a native `<button type="button">` element with `disabled` support. It relies on the parent ToolBar for roving focus keyboard navigation. The consumer provides all content (text, icons) and all visual styling.
+
+## Advice
+
+- **Designers**: Maintain consistent button sizing within the toolbar. For icon-only buttons, ensure there is an accessible label or tooltip.
+- **Developers**: Use `type="button"` (already set) to prevent unintended form submissions. Pass additional attributes like `aria-label` via restProps for icon-only buttons.
+
+## Composition
+
+ToolBarButton is a child of ToolBar, following the Bar/BarButton pattern. The parent ToolBar manages roving focus navigation between ToolBarButton children.
+
 ## References
 
 - WAI-ARIA Toolbar Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/toolbar/

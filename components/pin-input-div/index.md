@@ -74,6 +74,22 @@ With additional HTML attributes:
 - Each input has `aria-label="Digit X of Y"` for positional context
 - `inputmode="numeric"` for numeric keyboard on mobile
 
+## When to Use
+
+- Use PinInput for two-factor authentication, SMS verification codes, and OTP entry flows.
+- Use PinInput when you need a segmented input that clearly communicates the expected code length.
+- Avoid using PinInput for general numeric entry; use NumberInput or TextInput instead.
+- Consider PasswordInput if the code should be masked for security.
+
+## Headless
+
+The PinInput headless component provides a `<div role="group">` containing individual `<input>` fields with `inputmode="numeric"`, `maxlength="1"`, per-digit `aria-label` attributes, and auto-focus navigation. The consumer provides all visual styling for the digit fields, spacing, and container layout.
+
+## Advice
+
+- **Designers**: Space digit fields evenly and make each field large enough for easy touch input; consider visual separators between groups (e.g., after the third digit in a 6-digit code).
+- **Developers**: Handle paste events to distribute a pasted code across all digit fields, and auto-submit the form when all digits are entered for a smoother user experience.
+
 ## References
 
 - WAI-ARIA Group Role: https://www.w3.org/TR/wai-aria-1.2/#group

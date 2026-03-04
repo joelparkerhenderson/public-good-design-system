@@ -75,6 +75,25 @@ Navigation tree:
 - `tabindex` -- manages focus: `0` for the active item, `-1` for others (roving tabindex)
 - `aria-expanded` -- indicates whether an expandable item is open (`true`) or closed (`false`); omit for leaf nodes
 - `aria-selected` -- indicates whether the item is selected (optional)
+## When to Use
+
+- Use TreeNavListItem for individual entries within a TreeNavList hierarchy, such as file names, navigation links, or category labels.
+- Use for both expandable branch nodes (with `aria-expanded`) and leaf nodes.
+- Avoid using TreeNavListItem outside of a TreeNavList parent; it relies on the parent for keyboard navigation and tree semantics.
+
+## Headless
+
+This headless component provides an `<li>` element with `role="treeitem"` support. The consumer manages `tabindex`, `aria-expanded`, and `aria-selected` attributes via restProps, and provides all content and visual styling including indentation, icons, and expansion indicators.
+
+## Advice
+
+- **Designers**: Distinguish branch nodes from leaf nodes visually (e.g., folder vs. file icons, chevron indicators). Highlight the currently focused or selected item.
+- **Developers**: Use `tabindex="0"` for the active item and `tabindex="-1"` for all others (roving tabindex pattern). Omit `aria-expanded` for leaf nodes.
+
+## Composition
+
+TreeNavListItem is a child of TreeNavList, following the Nav/List/ListItem pattern. Expandable items can contain a nested `<ul role="group">` with additional TreeNavListItem children to create subtrees.
+
 ## References
 
 - WAI-ARIA Tree View Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/treeview/

@@ -34,3 +34,18 @@ None -- this component is a passive inline display element.
 
 - `aria-hidden="true"` -- applied when no `label` is provided, marking the flair as decorative
 - `aria-label` -- applied when `label` is provided, giving the flair an accessible name for screen readers
+
+## When to Use
+
+- Use to add visual categorization, status, or emphasis labels inline with content (e.g., "Moderator", "New", "Urgent").
+- Use in forums, dashboards, or social platforms where user roles or content types need quick visual identification.
+- Avoid for critical status information that must be conveyed independently; use Alert or Badge instead.
+
+## Headless
+
+This headless component provides a `<span>` with conditional `aria-hidden` or `aria-label` depending on whether the flair is decorative or meaningful. The consumer provides all visual styling including background color, border, font size, and padding.
+
+## Advice
+
+- **Designers**: Use consistent color coding across your application for flair categories. Keep flair text short -- one or two words maximum.
+- **Developers**: Provide the `label` prop whenever the flair conveys meaningful information that is not available from surrounding text. Omit `label` only for purely decorative flair.

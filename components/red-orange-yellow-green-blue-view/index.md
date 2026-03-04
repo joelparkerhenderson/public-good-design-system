@@ -38,6 +38,21 @@ None -- this is a passive informational display, not an interactive element.
 
 - `aria-label={label}` -- provides the accessible name for the status display, allowing screen readers to announce the context of the value
 
+## When to Use
+
+- Use RedOrangeYellowGreenBlueView to display a five-level color-coded status in read-only dashboards, reports, or detail views.
+- Use RedOrangeYellowGreenBlueView when the status has already been captured and only needs to be displayed.
+- Avoid using RedOrangeYellowGreenBlueView when users need to change the status; use RedOrangeYellowGreenBluePicker instead.
+
+## Headless
+
+The RedOrangeYellowGreenBlueView headless component provides a `<span>` with `aria-label` for accessible naming and displays the ROYGB status value as text content. The consumer provides all visual styling, including color-coded backgrounds, text colors, or icons.
+
+## Advice
+
+- **Designers**: Use both color and text to communicate the status level, ensuring the display is understandable for users with color vision deficiencies.
+- **Developers**: Apply dynamic CSS classes or inline styles based on the `value` prop to color-code the display element appropriately.
+
 ## References
 
 - WAI-ARIA status role: https://www.w3.org/TR/wai-aria-1.2/#status

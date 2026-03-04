@@ -35,6 +35,21 @@ The consumer provides the content through the children slot. The component is in
 - Semantic `<li>` provides implicit `listitem` role
 - Inherits list context from the parent DontList `<ul>`
 
+## When to Use
+
+- Use as a child of DontList to represent one discouraged action or practice to avoid.
+- Use when each guidance item needs individual styling or interactive behavior.
+- Avoid using outside of a DontList; it is designed to be placed inside a `<ul>` container.
+
+## Headless
+
+This headless component provides a semantic `<li>` element that inherits list context from its parent DontList. It handles proper list item semantics. The consumer provides all visual styling, icons, and content for the individual item.
+
+## Advice
+
+- **Designers**: Keep each item to a single, clear sentence. Use consistent visual markers (e.g., cross marks) across all dont-list items.
+- **Developers**: Always place DontListItem inside a DontList component for valid HTML structure. Use `restProps` to add custom data attributes or event handlers.
+
 ## References
 
 - MDN li element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/li

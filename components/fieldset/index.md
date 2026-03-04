@@ -41,6 +41,26 @@ None -- this component is a passive container. Keyboard interactions are determi
 
 - No custom ARIA attributes required -- native `<fieldset>` and `<legend>` elements provide built-in group semantics and labeling for screen readers
 
+## When to Use
+
+- Use to group related form controls under a shared legend, such as address fields, contact information, or payment details.
+- Use when the `disabled` attribute should cascade to all child form controls at once.
+- Avoid for a single form field; use Field instead.
+- Consider using Form as the outermost wrapper and Fieldset for logical sub-groups within it.
+
+## Headless
+
+This headless component provides native `<fieldset>` and `<legend>` elements with built-in group semantics for screen readers. The `disabled` attribute natively disables all descendant form controls. The consumer provides all visual styling for the fieldset border, legend appearance, and internal layout.
+
+## Advice
+
+- **Designers**: Style the fieldset border and legend consistently. Use the legend text to clearly describe the purpose of the grouped fields (e.g., "Shipping address").
+- **Developers**: Use the `disabled` prop to conditionally disable an entire section of the form (e.g., when "same as billing" is checked). No custom ARIA is needed because native elements handle semantics.
+
+## Composition
+
+Fieldset groups multiple Field components together. Each Field wraps a label and input, and Fieldset provides the semantic group boundary with a legend. Use Fieldset inside a Form for well-structured form layouts.
+
 ## References
 
 - HTML Specification fieldset: https://html.spec.whatwg.org/multipage/form-elements.html#the-fieldset-element

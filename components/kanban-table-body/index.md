@@ -54,6 +54,30 @@ None -- passive container. Keyboard interaction depends on interactive elements 
 - Column containers within should use `role="list"` with `aria-label` to identify each workflow stage
 - Card items within columns should use `role="listitem"` (provided by KanbanTableData)
 
+## When to Use
+
+- Use to wrap the main content area of a Kanban board, containing columns and their card items.
+- Use when you need a structural container to separate board content from the header and footer areas.
+- Avoid using KanbanTableBody outside of a KanbanTable parent; it depends on the board context.
+
+## Headless
+
+This headless component provides the semantic structure for a Kanban board content area, including proper list container roles for columns. The consumer provides all visual styling, including column layout, card appearance, spacing, and drag-and-drop affordances.
+
+## Advice
+
+- **Designers**: Use clear visual separation between columns, such as background shading or borders, so users can quickly identify workflow stages.
+- **Developers**: Ensure each column container within the body uses `role="list"` with an `aria-label` matching the column heading for screen reader navigation.
+
+## Composition
+
+KanbanTableBody is part of the KanbanTable compound component. It is used as a child of KanbanTable alongside KanbanTableHead and optionally KanbanTableFoot. It contains column containers that hold KanbanTableData card items.
+
+```
+KanbanTable → KanbanTableHead + KanbanTableBody + KanbanTableFoot
+                                  └→ columns → KanbanTableData
+```
+
 ## References
 
 - WAI-ARIA Listbox Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/listbox/

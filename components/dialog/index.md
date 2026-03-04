@@ -53,6 +53,22 @@ This component uses the native `<dialog>` HTML element with conditional renderin
 - `aria-modal="true"` -- present when the `modal` prop is true, indicating the dialog traps focus and blocks background interaction
 - `tabindex="-1"` -- allows the dialog element itself to receive focus for keyboard event handling
 
+## When to Use
+
+- Use for confirmations, alerts, forms, or focused interactions that require the user's immediate attention.
+- Use modal dialogs when background interaction must be blocked; use non-modal dialogs for supplementary information.
+- Avoid for simple notifications or status messages; use Toast or Alert instead.
+- Consider Drawer or Sheet instead when the content is a side panel or supplementary view rather than a focused prompt.
+
+## Headless
+
+This headless component provides a native `<dialog>` element with conditional rendering, accessible labeling via `aria-label`, modal/non-modal support via `aria-modal`, keyboard dismissal with Escape, and two-way binding on the `open` prop. The consumer provides all visual styling, backdrop appearance, positioning, and dialog content.
+
+## Advice
+
+- **Designers**: Include a clear close or cancel affordance in every dialog. For modal dialogs, dim the background to communicate that the main content is not interactive.
+- **Developers**: Manage focus carefully -- move focus into the dialog when it opens and return it to the trigger element when it closes. Use the `modal` prop to control `aria-modal` behavior.
+
 ## References
 
 - WAI-ARIA Dialog Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/dialog-modal/

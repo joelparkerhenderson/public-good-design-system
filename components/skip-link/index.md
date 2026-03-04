@@ -40,6 +40,21 @@ Use SkipLink as the very first focusable element on a page. When a keyboard user
 - No explicit ARIA roles or attributes are needed; the `<a>` element with an `href` is natively accessible as a link
 - The link text content (`label` prop) serves as the accessible name
 
+## When to Use
+
+- Use as the very first focusable element on every page to allow keyboard users to bypass repetitive navigation and jump directly to main content.
+- Use on pages with significant repeated content before the main area (navigation bars, headers, sidebars).
+- Avoid omitting skip links; they are a WCAG 2.1 Level A requirement for bypass blocks.
+
+## Headless
+
+This headless component renders a simple `<a>` element with a configurable `href` target and visible link text. It provides the semantic skip navigation link with no visual styling. The consumer is responsible for styling the link to be visually hidden until focused, then positioning it prominently on screen.
+
+## Advice
+
+- **Designers**: Style the skip link to appear at the top of the viewport with high contrast when focused. Ensure it is large enough and clearly visible so keyboard users can easily see it.
+- **Developers**: Ensure the target element (e.g., `<main id="content">`) exists and has `tabindex="-1"` so focus moves correctly. Place the SkipLink component before all other focusable page content in the DOM order.
+
 ## References
 
 - WCAG 2.1 Bypass Blocks: https://www.w3.org/WAI/WCAG21/Understanding/bypass-blocks.html

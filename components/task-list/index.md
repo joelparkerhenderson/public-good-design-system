@@ -72,6 +72,26 @@ With checkboxes for completable tasks:
 - `aria-label` provides accessible name for the list
 - Screen readers announce the list with its label and item count
 
+## When to Use
+
+- Use to display a series of tasks, actions, or to-dos that users can track and complete, such as project checklists, onboarding steps, or daily task lists.
+- Use when tasks benefit from being presented in a scannable list with optional completion tracking.
+- Avoid for ordered step-by-step instructions where sequence matters; consider a Timeline or numbered list instead.
+- Consider a CheckList when every item is a simple checkbox without additional task metadata.
+
+## Headless
+
+This headless component renders a `<ul>` with explicit `role="list"` and `aria-label` to ensure list semantics are preserved even when CSS removes default styling. The consumer provides all visual styling including layout, spacing, completion indicators, and any interactive elements within list items.
+
+## Advice
+
+- **Designers**: Include clear completion indicators such as checkboxes or strikethrough text. Use visual hierarchy to distinguish completed tasks from pending ones.
+- **Developers**: Use TaskListItem children for structured task items with completion state. The explicit `role="list"` ensures screen readers announce item counts even with `list-style: none` CSS.
+
+## Composition
+
+TaskList uses the List/ListItem composition pattern. Place TaskListItem components as children inside TaskList. The TaskList provides the outer `<ul>` container with accessible labeling, while each TaskListItem provides an individual `<li>` with completion state tracking via `data-completed`.
+
 ## References
 
 - WAI-ARIA list role: https://www.w3.org/TR/wai-aria-1.2/#list

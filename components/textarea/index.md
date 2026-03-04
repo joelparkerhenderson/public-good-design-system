@@ -45,6 +45,22 @@ Unlike a single-line text input, a textarea provides a larger, scrollable text a
 
 - `aria-label={label}` -- provides an accessible name for the textarea since there is no visible `<label>` element
 
+## When to Use
+
+- Use for multi-line text entry such as comments, messages, descriptions, feedback, or code input.
+- Use when the expected input is longer than a single line and benefits from a larger, scrollable text area.
+- Avoid for short, single-line text; use TextInput instead.
+- Consider adding a CharacterCounter alongside the Textarea when there is a maximum length constraint.
+
+## Headless
+
+This headless component renders a native `<textarea>` element with `aria-label`, two-way value binding, and configurable `rows`. It provides multi-line text input semantics with required/disabled states. The consumer provides all visual styling including borders, padding, resize behavior, and responsive sizing.
+
+## Advice
+
+- **Designers**: Set a visible height (via `rows`) that reflects the expected content length. Allow vertical resizing so users can expand the area if needed.
+- **Developers**: Use the `rows` prop to set an appropriate initial height. Wrap the textarea with a Field and Label component for a complete accessible form field. Consider debouncing the bound value for expensive reactive operations.
+
 ## References
 
 - MDN textarea element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/textarea

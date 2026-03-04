@@ -45,6 +45,21 @@ The five levels provide a more granular status scale than the traditional three-
 - `aria-label` -- provides the accessible name for the button (e.g., "Yellow - Caution")
 - `data-value` -- carries the status value for CSS-based styling (e.g., `data-value="yellow"`)
 
+## When to Use
+
+- Use RedOrangeYellowGreenBluePickerButton inside a RedOrangeYellowGreenBluePicker to represent one of five status levels.
+- Use RedOrangeYellowGreenBluePickerButton when you need a button-based five-level status picker instead of a select dropdown.
+- Avoid using RedOrangeYellowGreenBluePickerButton outside of a RedOrangeYellowGreenBluePicker container.
+
+## Headless
+
+The RedOrangeYellowGreenBluePickerButton headless component provides a `<button>` with `aria-pressed` for toggle state, `aria-label` for accessible naming, and `data-value` for CSS targeting. The consumer provides all visual styling, including color indicators and selected-state appearance.
+
+## Advice
+
+- **Designers**: Ensure each of the five buttons is visually distinct with both color and text, and make the selected state clearly prominent.
+- **Developers**: Use `data-value` for CSS selectors to apply status-specific colors, and ensure only one button has `aria-pressed="true"` at a time.
+
 ## References
 
 - WAI-ARIA Button Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/button/

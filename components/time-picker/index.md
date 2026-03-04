@@ -40,6 +40,22 @@ This headless component wraps a native `<input type="time">` element with an acc
 
 - `aria-label={label}` -- provides an accessible name for the time input
 
+## When to Use
+
+- Use TimePicker when users need to select a time of day in forms, scheduling tools, or booking systems.
+- Use when you want a dedicated time selection component that can be styled independently from a plain time input.
+- Avoid using TimePicker for time duration or elapsed time tracking; use a custom duration component instead.
+- Consider TimeInput for a simpler native time field without additional wrapper behavior.
+
+## Headless
+
+This headless component provides a native `<input type="time">` element with `aria-label`, two-way value binding, and `required`/`disabled` states. The browser handles 12-hour/24-hour format based on locale. The consumer provides all visual styling and layout.
+
+## Advice
+
+- **Designers**: Provide clear visual feedback for the selected time and consider adding a visible label above the picker for clarity.
+- **Developers**: The `value` is always in HH:MM 24-hour format internally. Use the `step` attribute via restProps to control minute granularity (e.g., `step="900"` for 15-minute intervals).
+
 ## References
 
 - MDN input type="time": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/time

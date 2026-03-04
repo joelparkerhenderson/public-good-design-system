@@ -36,6 +36,21 @@ None -- this component is a passive text element. It is announced by screen read
 
 - `id={id}` -- provides a target for `aria-describedby` on the associated form control
 
+## When to Use
+
+- Use to provide contextual guidance near a form input, such as expected format, examples, or character limits.
+- Use when the hint text should be announced by screen readers when the associated input receives focus.
+- Avoid for error messages; use ErrorMessage instead. Avoid for lengthy instructions; use InformationCallout instead.
+
+## Headless
+
+This headless component provides a `<p>` element with an optional `id` for linking to a form control via `aria-describedby`. The consumer provides all visual styling including font size, color, spacing, and position relative to the input.
+
+## Advice
+
+- **Designers**: Place hint text directly below the label and above the input. Use a lighter color or smaller font to distinguish it from labels and error messages.
+- **Developers**: Always set the `id` prop and add `aria-describedby` to the associated input so screen readers announce the hint when the input is focused.
+
 ## References
 
 - WAI Forms Tutorial - Instructions: https://www.w3.org/WAI/tutorials/forms/instructions/

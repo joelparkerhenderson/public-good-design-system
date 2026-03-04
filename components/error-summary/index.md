@@ -50,6 +50,22 @@ This component uses `role="alert"` to ensure screen readers announce the error s
 - `aria-labelledby={titleId}` -- associates the alert region with its heading for context
 - `tabindex="-1"` -- allows the error summary to receive programmatic focus without being in the natural tab order
 
+## When to Use
+
+- Use at the top of a form to display a consolidated list of all validation errors after form submission.
+- Use when errors should link to the specific fields that need correction, following the GOV.UK/NHS England pattern.
+- Avoid for single field-level errors; use ErrorMessage instead.
+- Consider Alert for general informational or warning messages that are not validation errors.
+
+## Headless
+
+This headless component provides a `<div>` with `role="alert"`, an `<h2>` heading linked via `aria-labelledby`, and `tabindex="-1"` for programmatic focus. It announces the error summary immediately when rendered. The consumer provides all visual styling, error list content, and anchor links to error fields.
+
+## Advice
+
+- **Designers**: Place the error summary prominently at the top of the form with a distinct visual treatment (e.g., red border, error icon). Each error should be a clickable link that scrolls to the relevant field.
+- **Developers**: Call `element.focus()` on the error summary after form submission fails to direct the user's attention. Populate each list item with an anchor link targeting the input's ID.
+
 ## References
 
 - GOV.UK Error Summary: https://design-system.service.gov.uk/components/error-summary/

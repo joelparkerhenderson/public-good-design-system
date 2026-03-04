@@ -46,6 +46,22 @@ This component is useful for scheduling interfaces, event creation forms, appoin
 
 - `aria-label={label}` -- provides an accessible name for the datetime input since there is no visible `<label>` element
 
+## When to Use
+
+- Use when both a date and a time must be captured in a single field, such as scheduling events, booking appointments, or setting deadlines.
+- Use when the time zone is not relevant or is handled separately.
+- Avoid when only a date is needed; use DateInput instead.
+- Consider separate DateInput and TimeInput components when the date and time should be independently editable.
+
+## Headless
+
+This headless component provides a native `<input type="datetime-local">` with accessible labeling via `aria-label`, two-way value binding, and standard form attributes. The browser supplies the native datetime picker UI. The consumer provides all visual styling, layout, and any custom validation feedback.
+
+## Advice
+
+- **Designers**: Place the datetime input near contextual information (e.g., time zone indicator) so users understand the expected format. Ensure sufficient width for the native picker to display properly.
+- **Developers**: Use the `min` and `max` props to constrain selectable datetimes. Remember that the value format is `YYYY-MM-DDThh:mm`, not a full ISO 8601 string.
+
 ## References
 
 - MDN datetime-local input: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/datetime-local

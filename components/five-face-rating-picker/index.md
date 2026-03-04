@@ -40,6 +40,26 @@ Standard radio group keyboard behavior provided by the browser:
 - `role="radiogroup"` -- on the `<fieldset>`, identifies the group as a set of radio buttons
 - `aria-label="..."` -- provides an accessible name for the entire rating group
 
+## When to Use
+
+- Use in satisfaction surveys, feedback forms, or experience ratings where face-based labels are more intuitive than numeric or star scales.
+- Use when you need a 1-5 rating with descriptive face labels like "Very bad" through "Very good".
+- Avoid for generic numeric ratings; use FiveStarRatingPicker or a RangeInput instead.
+- Consider NetPromoterScorePicker for a 0-10 scale survey question.
+
+## Headless
+
+This headless component provides a `<fieldset>` with `role="radiogroup"`, five `<label>`/`<input type="radio">` pairs with customizable face labels, two-way value binding, and `disabled` support. The consumer provides all visual styling, face icons or illustrations, and layout.
+
+## Advice
+
+- **Designers**: Use distinct face illustrations or emoji for each level to make the scale visually intuitive. Ensure the faces are large enough to be easily tapped on touch devices.
+- **Developers**: Customize the `labels` prop for internationalization. The `name` prop groups the radio buttons for form submission. Use the `value` binding to track the selected rating.
+
+## Composition
+
+FiveFaceRatingPicker composes with FiveFaceRatingPickerButton using the Picker/PickerButton pattern. The picker provides the group container with `role="radiogroup"`, and each picker button represents one selectable face rating level.
+
 ## References
 
 - WAI-ARIA Radio Group Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/radiobutton/

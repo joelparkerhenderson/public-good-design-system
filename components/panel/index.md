@@ -44,6 +44,22 @@ None -- this component is a passive container. Screen reader users can navigate 
 - `<section aria-label="...">` -- creates a named region landmark, allowing assistive technology to list and navigate to this section
 - The `aria-label` value should be concise and descriptive of the panel's content
 
+## When to Use
+
+- Use Panel to group related content into a labeled section on dashboards, settings pages, or multi-section layouts.
+- Use Panel when you need screen reader users to navigate between distinct content regions via landmark navigation.
+- Avoid using Panel for purely decorative grouping; use a plain `<div>` if no landmark semantics are needed.
+- Consider Card instead when the grouped content needs a visual container with header, body, and footer areas.
+
+## Headless
+
+The Panel headless component provides a semantic `<section>` element with `aria-label` for region landmark navigation. It handles accessible naming and landmark semantics. The consumer provides all visual styling, including borders, backgrounds, padding, and spacing.
+
+## Advice
+
+- **Designers**: Keep panel labels concise and unique on each page so users can quickly distinguish between sections in a landmark list.
+- **Developers**: Ensure each Panel on a page has a distinct `label` value; duplicate region names make landmark navigation confusing for screen reader users.
+
 ## References
 
 - WAI-ARIA region role: https://www.w3.org/TR/wai-aria-1.2/#region

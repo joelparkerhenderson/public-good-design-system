@@ -66,6 +66,29 @@ With additional HTML attributes:
 - `aria-label` on the fieldset from the label prop
 - Each radio has `aria-label` with its numeric value
 
+## When to Use
+
+- Use to collect a Net Promoter Score (0-10) from users in feedback forms, surveys, or satisfaction questionnaires.
+- Use when you need a standardized NPS input with radio group semantics and keyboard navigation.
+- Avoid using for general numeric ratings that are not on the NPS 0-10 scale; consider FiveStarRatingPicker or a custom range instead.
+
+## Headless
+
+This headless component provides a `<fieldset>` with `role="radiogroup"` containing 11 radio buttons (0-10) with `aria-label` on each. The consumer provides all visual styling, including button layout, color coding for Detractor/Passive/Promoter ranges, and selected-state appearance.
+
+## Advice
+
+- **Designers**: Color-code the score ranges (0-6 Detractors, 7-8 Passives, 9-10 Promoters) and add endpoint labels such as "Not at all likely" and "Extremely likely".
+- **Developers**: The `value` prop is two-way bindable and stores the selected score as a string ("0" through "10"). Use the `name` prop to differentiate multiple NPS pickers on one page.
+
+## Composition
+
+NetPromoterScorePicker is a compound component that can contain NetPromoterScorePickerButton children. The picker provides the radiogroup container, while each button represents one score value.
+
+```
+NetPromoterScorePicker (role="radiogroup") → NetPromoterScorePickerButton (0-10)
+```
+
 ## References
 
 - Net Promoter Score: https://en.wikipedia.org/wiki/Net_promoter_score

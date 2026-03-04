@@ -36,6 +36,20 @@ None -- this component is a passive container. Keyboard navigation is handled by
 
 - Implicit `rowgroup` role from the `<thead>` element -- groups the header rows of the grid
 
+## When to Use
+
+- Use as the header section of a GanttTable to label the task-name column and time period columns (e.g., weeks, months, sprints).
+- Avoid using outside of a GanttTable structure; this component depends on the parent table grid context.
+
+## Headless
+
+This headless component provides a `<thead>` element with implicit `rowgroup` role for grouping header rows within a Gantt chart grid. The consumer provides all visual styling including header background, typography, and column alignment.
+
+## Advice
+
+- **Designers**: Make header labels concise and readable. For long timelines, consider multi-row headers (e.g., months on one row, weeks on another).
+- **Developers**: Use `<th>` elements inside GanttTableRow children for proper header cell semantics. Add `scope="col"` to column headers for screen reader clarity.
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

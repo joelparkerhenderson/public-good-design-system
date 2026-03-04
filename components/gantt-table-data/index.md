@@ -42,6 +42,20 @@ None built-in -- the consumer should implement grid keyboard navigation on cells
 - Implicit `gridcell` role from the `<td>` element when inside a `role="grid"` table
 - Consumer may add `aria-label` or `aria-describedby` for cells with visual-only content (e.g., bar segments)
 
+## When to Use
+
+- Use inside a GanttTableRow to represent a single time period cell containing a bar segment, milestone marker, or empty space.
+- Avoid using outside of a GanttTableRow within a GanttTable structure.
+
+## Headless
+
+This headless component provides a `<td>` element with implicit `gridcell` role when inside a `role="grid"` table. The consumer provides all visual styling including bar rendering, milestone markers, progress indicators, and background colors.
+
+## Advice
+
+- **Designers**: Use color-coded bar segments to represent task progress. Add milestone markers (e.g., diamonds) for key dates.
+- **Developers**: Add `aria-label` to cells with visual-only content (e.g., bar segments) so screen readers can announce the cell meaning.
+
 ## References
 
 - WAI-ARIA Grid Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/grid/

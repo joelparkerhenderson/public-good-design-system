@@ -40,6 +40,22 @@ Unlike tooltips, popovers can contain rich interactive content such as text, for
 - `role="dialog"` -- identifies the popover as a dialog overlay for assistive technology
 - `aria-label="..."` -- provides the accessible name for the dialog
 
+## When to Use
+
+- Use Popover to display rich interactive content like forms, menus, or detailed information near a trigger element.
+- Use Popover when the overlay content needs to persist until the user explicitly dismisses it.
+- Avoid using Popover for simple descriptive text; use Tooltip instead.
+- Consider Dialog or AlertDialog when the content requires a full modal with backdrop overlay.
+
+## Headless
+
+The Popover headless component provides a conditionally rendered `<div>` with `role="dialog"` and `aria-label` for accessible naming. It handles open/close state via two-way binding. The consumer provides all visual styling, positioning logic, trigger elements, and focus management.
+
+## Advice
+
+- **Designers**: Position popovers to avoid obscuring the trigger element, and ensure the popover has a clear visual boundary (border or shadow) to distinguish it from surrounding content.
+- **Developers**: Implement focus trapping within the popover when open, and close it on Escape key press to follow the WAI-ARIA dialog pattern.
+
 ## References
 
 - WAI-ARIA Dialog Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/dialog/

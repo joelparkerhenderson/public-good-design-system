@@ -81,6 +81,26 @@ Activity feed:
 - Semantic `<ol>` for ordered/chronological content
 - `aria-label` provides accessible name for the list
 - Consumers should use `<time>` elements with `datetime` attributes for machine-readable dates within items
+## When to Use
+
+- Use TimelineList to present a sequence of events or milestones in chronological order, such as project history, order tracking, or activity feeds.
+- Use when the ordering of items conveys meaningful progression over time.
+- Avoid using TimelineList for unordered or non-chronological content; use a plain list instead.
+- Consider a simple list when items lack timestamps or chronological significance.
+
+## Headless
+
+This headless component provides a semantic `<ol>` element with `aria-label` for accessible chronological content. Screen readers convey the ordered nature of the list. The consumer provides `<li>` children (or TimelineListItem components) and all visual styling including connectors, markers, and layout.
+
+## Advice
+
+- **Designers**: Use visual connectors (lines, dots) between items to reinforce the chronological flow. Ensure timestamps are visually prominent.
+- **Developers**: Use semantic `<time>` elements with `datetime` attributes inside each item for machine-readable dates.
+
+## Composition
+
+TimelineList contains TimelineListItem children following the List/ListItem pattern. TimelineList provides the `<ol>` container with accessible labeling, and each TimelineListItem provides an `<li>` for one chronological event.
+
 ## References
 
 - HTML `<time>` element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/time

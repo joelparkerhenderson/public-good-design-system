@@ -47,6 +47,22 @@ The native `<details>` element provides built-in accessibility support without r
 - The browser automatically exposes the expanded/collapsed state to assistive technology
 - No additional ARIA attributes are needed because the native elements handle accessibility
 
+## When to Use
+
+- Use for progressive disclosure of supplementary content, such as FAQs, additional explanations, or advanced options.
+- Use when content should be hidden by default but available on demand without navigating to another page.
+- Avoid for critical information that users must see; do not hide essential content behind a disclosure toggle.
+- Consider Expander instead when you need full control over the toggle button behavior beyond native `<details>`.
+
+## Headless
+
+This headless component provides native `<details>` and `<summary>` elements with built-in browser accessibility, including automatic expanded/collapsed state announcements. It supports two-way binding on the `open` prop. The consumer provides all visual styling for the summary toggle and expanded content area.
+
+## Advice
+
+- **Designers**: Make the summary text descriptive enough that users understand what content will be revealed. Use visual cues (such as a chevron icon) to indicate expandability.
+- **Developers**: Use the bindable `open` prop to synchronize state with parent components. Avoid nesting multiple levels of Details deeply, as it can create confusing navigation.
+
 ## References
 
 - MDN details element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details

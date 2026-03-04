@@ -41,6 +41,22 @@ Switch inputs are commonly used for settings, preferences, and feature toggles w
 - `aria-checked={checked}` -- communicates whether the switch is currently on (`true`) or off (`false`)
 - `aria-label={label}` -- provides the accessible name for the switch control
 
+## When to Use
+
+- Use for binary settings that take immediate effect, such as enabling/disabling notifications, toggling dark mode, or turning features on and off.
+- Use when the on/off semantic is more appropriate than a checked/unchecked semantic.
+- Avoid when the change requires form submission to take effect; use a CheckboxInput instead.
+- Consider a CheckboxInput when the control is part of a group of related options in a form.
+
+## Headless
+
+This headless component renders a `<button>` with `role="switch"` and `aria-checked`, providing proper switch semantics and keyboard activation (Space and Enter keys). The consumer provides all visual styling including the track, thumb, on/off indicators, and transition animations.
+
+## Advice
+
+- **Designers**: Make the on and off states visually distinct using color, position, and optionally text labels. Ensure the switch is large enough for touch targets (at least 44x44px).
+- **Developers**: Use the two-way bindable `checked` prop for reactive state. Remember that switches convey immediate effect -- do not use them for settings that require a separate save action.
+
 ## References
 
 - WAI-ARIA Switch Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/switch/

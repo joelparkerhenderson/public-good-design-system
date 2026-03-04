@@ -66,6 +66,22 @@ Polite status message using role="status":
 - `aria-live="assertive"` (default for alert role) or `aria-live="polite"` (default for status role)
 - `aria-atomic="true"` ensures the entire region is re-announced on any change
 
+## When to Use
+
+- Use for displaying important feedback messages such as form validation errors, success confirmations, warnings, or system status updates.
+- Use when the message should be announced immediately to screen reader users via a live region.
+- Avoid for persistent page-level announcements -- use Banner instead.
+- Consider AlertDialog instead when the message requires user acknowledgment before continuing.
+
+## Headless
+
+This component provides ARIA live region semantics (`role="alert"` or `role="status"`), `aria-atomic`, and a `data-type` attribute for severity variants, with zero visual styling. The consumer is responsible for all CSS including background colors, border styles, icons, typography, and spacing for each severity level.
+
+## Advice
+
+- **Designers**: Use consistent color coding across severity types (info, success, warning, error) and pair colors with icons so that meaning is not conveyed by color alone.
+- **Developers**: Use `role="alert"` with `aria-live="assertive"` for critical messages and `role="status"` with `aria-live="polite"` for non-urgent updates to avoid disrupting the user unnecessarily.
+
 ## References
 
 - WAI-ARIA Alert Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/alert/

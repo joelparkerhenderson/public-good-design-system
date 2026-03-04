@@ -42,6 +42,22 @@ Use Sheet when you need a temporary panel that slides in from the top, right, bo
 - `aria-label={label}` -- provides an accessible name for the dialog
 - `aria-modal="true"` -- indicates the dialog is modal, meaning content behind it is inert
 
+## When to Use
+
+- Use when you need a temporary overlay panel that slides in from a screen edge for navigation, settings, filters, or detail views.
+- Use when the content should overlay the page rather than navigate away from it.
+- Avoid for critical confirmations or urgent messages; use AlertDialog instead.
+- Consider a Dialog when the panel does not need to be anchored to a specific screen edge.
+
+## Headless
+
+This headless component provides a modal dialog container with `role="dialog"`, `aria-modal="true"`, `aria-label`, Escape key dismissal, and a `data-side` attribute for CSS targeting. The consumer provides all visual styling including slide-in animations, backdrop, positioning, and focus management.
+
+## Advice
+
+- **Designers**: Include a visible close button and a semi-transparent backdrop so users understand the panel is an overlay. Animate the slide-in transition to reinforce which edge the sheet originates from.
+- **Developers**: Implement focus trapping so keyboard users cannot tab behind the sheet. Move focus into the sheet on open and restore focus to the trigger element on close.
+
 ## References
 
 - WAI-ARIA Dialog (Modal) Pattern: https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/

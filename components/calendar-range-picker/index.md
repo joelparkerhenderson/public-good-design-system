@@ -33,6 +33,22 @@ None built-in -- the consumer should implement date cell navigation (arrow keys)
 - `role="application"` -- indicates that the widget manages its own keyboard interactions, overriding standard screen reader navigation
 - `aria-label={label}` -- provides an accessible name for the calendar range picker
 
+## When to Use
+
+- Use for selecting a contiguous date range in booking systems, travel planners, analytics dashboards, and reporting tools.
+- Use when users need to visually pick both a start date and end date on a calendar grid.
+- Avoid for selecting a single date -- use a date input or CalendarTable with cell selection instead.
+- Consider DateInput with two fields instead when a compact, non-visual date range entry is acceptable.
+
+## Headless
+
+This component provides a `<div>` with `role="application"` and `aria-label` as a container for calendar-based range selection, with zero visual styling. The consumer is responsible for all rendering of the calendar grid, date cells, range highlighting, navigation controls, and all CSS including layout, colors, selected state, and hover effects.
+
+## Advice
+
+- **Designers**: Clearly highlight the selected range with a distinct background color spanning from the start date to the end date. Show hover previews as the user moves toward the end date.
+- **Developers**: Implement keyboard navigation for date cells (arrow keys), selection (Enter/Space), and range extension (Shift+click or Shift+arrow). Since `role="application"` overrides screen reader navigation, ensure all keyboard interactions are fully implemented.
+
 ## References
 
 - WAI-ARIA Application Role: https://www.w3.org/TR/wai-aria-1.2/#application

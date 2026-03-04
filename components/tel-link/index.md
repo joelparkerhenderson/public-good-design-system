@@ -36,6 +36,26 @@ None -- this component uses a native `<a>` element, which provides built-in keyb
 
 - `aria-label` -- when provided, gives an accessible name that provides more context than the phone number alone (e.g., describing who the number belongs to or its purpose).
 
+## When to Use
+
+- Use to display a phone number as a clickable `tel:` link, enabling one-tap dialing on mobile devices.
+- Use on contact pages, business listings, user profiles, and customer support sections where phone numbers should be actionable.
+- Avoid when the phone number is editable; use TelInput for form entry instead.
+- Consider providing an `aria-label` when the phone number alone does not convey sufficient context.
+
+## Headless
+
+This headless component renders an `<a>` element with `href="tel:{phone}"` and optional `aria-label` for accessibility. It provides native phone dialing link semantics. The consumer provides all visual styling including typography, color, underline treatment, and icon placement.
+
+## Advice
+
+- **Designers**: Style phone links distinctly from other text so users recognize them as actionable. Consider adding a phone icon to reinforce the call-to-action.
+- **Developers**: Include the country code in the `phone` prop for reliable international dialing (e.g., "+1-555-0100"). Use the `label` prop to provide context like "Call customer support at +1-555-0100".
+
+## Composition
+
+TelLink and TelInput follow the Input/Link pattern. TelLink provides the read-only clickable `tel:` link for display, while TelInput provides the editable telephone input for forms. Use them together for view and edit modes of phone number data.
+
 ## References
 
 - MDN tel: links: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/a#linking_to_telephone_numbers

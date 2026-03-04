@@ -33,6 +33,22 @@ None -- keyboard behavior is provided by the browser-native email input.
 
 - `aria-label="..."` -- provides an accessible name for the email input since it has no visible `<label>` element
 
+## When to Use
+
+- Use when collecting an email address in a form with a minimal, straightforward API.
+- Use when browser-native email validation is sufficient for your needs.
+- Avoid when you need placeholder text or autocomplete support; consider a more feature-rich email input variant.
+- Consider EmailLink for displaying an email address as a clickable mailto link.
+
+## Headless
+
+This headless component provides a native `<input type="email">` with accessible labeling via `aria-label`, two-way value binding, and support for `required` and `disabled` states. Browser-native email validation is included automatically. The consumer provides all visual styling, layout, and any custom validation messages.
+
+## Advice
+
+- **Designers**: Place the email input near related contact fields. Provide clear error styling when validation fails so users know the expected format.
+- **Developers**: Rely on the browser's built-in email validation for basic format checking. Add server-side validation for stricter requirements. Pair with a Field component for label and error message display.
+
 ## References
 
 - MDN `<input type="email">`: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/email

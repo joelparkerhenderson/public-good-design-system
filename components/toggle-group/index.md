@@ -36,6 +36,25 @@ None at the container level. Keyboard behavior depends on the child toggle butto
 - `role="group"` -- identifies the container as a semantic grouping of related toggle buttons
 - `aria-label={label}` -- provides an accessible name describing the purpose of the toggle collection
 
+## When to Use
+
+- Use ToggleGroup to semantically group related toggle buttons that can be independently toggled on or off (e.g., text formatting: bold, italic, underline).
+- Use when multiple toggles share a common purpose and should be perceived as a group by assistive technology.
+- Avoid using ToggleGroup for mutually exclusive options where only one can be active; consider SegmentGroup or RadioGroup instead.
+
+## Headless
+
+This headless component provides a `<div>` with `role="group"` and `aria-label` for accessible grouping of related toggle buttons. The consumer provides individual toggle button elements as children and all visual styling including layout, spacing, and button appearance.
+
+## Advice
+
+- **Designers**: Visually connect grouped toggles (e.g., shared border, joined buttons) to reinforce that they belong together.
+- **Developers**: Each child button should use `aria-pressed` to indicate its individual toggle state. The group does not manage child state; each toggle is independent.
+
+## Composition
+
+ToggleGroup contains ToggleButton children (or plain buttons with `aria-pressed`) following the Group/Item pattern. ToggleGroup provides the semantic grouping container, and each child ToggleButton manages its own pressed state independently.
+
 ## References
 
 - WAI-ARIA group role: https://www.w3.org/TR/wai-aria-1.2/#group

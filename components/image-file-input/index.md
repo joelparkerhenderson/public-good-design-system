@@ -38,6 +38,21 @@ None -- this component uses the native `<input type="file">` element, which prov
 
 - `aria-label` -- provides an accessible name for the file input when no visible label is present.
 
+## When to Use
+
+- Use for profile photo uploads, gallery image selection, document scanning, or any form requiring image file input.
+- Use when you want to pre-filter the file picker to image files only via `accept="image/*"`.
+- Avoid when users need to upload non-image files; use FileInput instead.
+
+## Headless
+
+This headless component provides a native `<input type="file">` with `accept="image/*"` and `aria-label` for accessible file selection. The consumer provides all visual styling including the file button appearance, drag-and-drop zones, and image preview functionality.
+
+## Advice
+
+- **Designers**: Consider adding an image preview area adjacent to the input so users can confirm their selection. Show accepted file type guidance near the input.
+- **Developers**: Narrow the `accept` prop to specific MIME types (e.g., `"image/png, image/jpeg"`) when only certain formats are supported. Validate file size on the client side before submission.
+
 ## References
 
 - MDN Input type="file": https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file

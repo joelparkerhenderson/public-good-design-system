@@ -42,6 +42,22 @@ None -- this component is a passive display element that does not accept user in
 - `aria-label={label}` -- provides an accessible name describing what process the progress bar represents
 - The `<progress>` element implicitly has `role="Progress"` with `aria-valuenow`, `aria-valuemin`, and `aria-valuemax` attributes managed by the browser
 
+## When to Use
+
+- Use Progress for determinate tasks where completion percentage is known, such as file uploads, form submissions, or installation steps.
+- Use Progress without a `value` prop for indeterminate loading states where duration is unknown.
+- Avoid using Progress for static measurements or known quantities; use Meter instead.
+- Consider ProgressCircle or ProgressSpinner for alternative visual representations of progress.
+
+## Headless
+
+The Progress headless component provides a native `<progress>` element with `aria-label` for accessible naming, supporting both determinate and indeterminate states. The browser provides built-in semantics including `aria-valuenow`, `aria-valuemin`, and `aria-valuemax`. The consumer provides all visual styling for the progress bar appearance.
+
+## Advice
+
+- **Designers**: Provide a clear visual distinction between determinate (filled bar) and indeterminate (animated/pulsing) states, and ensure the progress bar has sufficient color contrast.
+- **Developers**: Include a text fallback inside the `<progress>` element for older browsers, and update the `value` prop in real time during async operations to give users meaningful feedback.
+
 ## References
 
 - MDN progress element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/progress

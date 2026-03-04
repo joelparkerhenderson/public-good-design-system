@@ -50,6 +50,35 @@ With custom sizing:
 
 - Native `<img>` element with `alt` text provides accessible image semantics
 - When inside an Avatar, the parent's `aria-label` provides the primary accessible name
+## When to Use
+
+- Use inside an Avatar component to display a user's profile photo when an image source is available.
+- Use when you need an `<img>` element with proper `alt` text for accessible avatar display.
+- Avoid using standalone without an Avatar parent unless you handle the accessible label and fallback behavior yourself.
+
+## Headless
+
+This component provides a semantic `<img>` element with `alt` text and zero visual styling. The consumer is responsible for all CSS including sizing, circular clipping (border-radius), object-fit behavior, and any border or shadow effects.
+
+## Advice
+
+- **Designers**: Ensure avatar images are cropped and centered on the face. Provide a consistent size across all avatar instances in a given context.
+- **Developers**: When inside an Avatar parent, the parent's `aria-label` provides the primary accessible name, so the `alt` text on the image serves as supplementary context.
+
+## Composition
+
+AvatarImage is a child component within the Avatar composition pattern:
+
+- **Avatar** -- outer container with `role="img"` and `aria-label`.
+- **AvatarImage** -- `<img>` element for the user's photo.
+- **AvatarText** -- `<span>` fallback for initials when the image is unavailable.
+
+```html
+<Avatar alt="Jane Doe" initials="JD">
+  <AvatarImage src="/photo.jpg" alt="Jane Doe" />
+</Avatar>
+```
+
 ## References
 
 - HTML img element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/img

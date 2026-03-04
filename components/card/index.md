@@ -38,3 +38,23 @@ The component renders as an `<article>` element for standalone content grouping.
 
 - Implicit `article` role from the `<article>` element
 - Optional `aria-label` -- identifies the card as a named landmark for screen readers
+
+## When to Use
+
+- Use a card to group related content such as a product listing, user profile, or article preview into a scannable unit.
+- Use a card when users need to browse and compare multiple items displayed in a grid or list layout.
+- Avoid using a card for single full-width content sections; consider a Panel or section element instead.
+- Consider a CareCard instead when displaying medical guidance with urgency levels.
+
+## Headless
+
+This headless Card component provides the semantic `<article>` element, configurable heading level for document outline, optional heading link via `href`, and `aria-label` for landmark identification. The consumer provides all visual styling including card borders, shadows, spacing, background colors, and layout of header, body, and footer areas.
+
+## Advice
+
+- **Designers**: Keep card content concise and scannable. Use consistent card heights within a grid to maintain visual rhythm.
+- **Developers**: Choose the heading level carefully to preserve the document outline hierarchy. Use the `label` prop when multiple cards appear on one page to help screen reader users distinguish between them.
+
+## Composition
+
+Card supports header, body, and footer content areas through its children slot. Structure the card content with a heading for the header area, paragraph or descriptive content for the body, and action links or buttons for the footer. The `heading` prop provides a built-in heading element, or consumers can supply their own heading as part of the children content.

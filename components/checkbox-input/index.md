@@ -45,6 +45,21 @@ This component is ideal when you need a bare checkbox that you will wrap in your
 
 - `aria-label={label}` -- provides an accessible name for the checkbox since there is no visible `<label>` element
 
+## When to Use
+
+- Use a CheckboxInput when you need a bare checkbox with custom label placement or integration into a complex form layout.
+- Use a CheckboxInput for boolean toggles such as "Accept terms" or "Subscribe to newsletter."
+- Avoid using a CheckboxInput when you need a visible label wrapper; consider a full Checkbox component with a `<label>` element instead.
+
+## Headless
+
+This headless CheckboxInput component provides a native `<input type="checkbox">` with `aria-label` for accessible naming, two-way binding on the `checked` prop, and support for `disabled`, `required`, and form attributes. The consumer provides all visual styling including custom checkbox indicators, colors, sizes, and label positioning.
+
+## Advice
+
+- **Designers**: Ensure custom checkbox indicators have sufficient size (at least 24x24px touch target) and clear checked/unchecked states with adequate contrast.
+- **Developers**: Use the `aria-label` prop to provide an accessible name. For visible labels, wrap the CheckboxInput in your own `<label>` element or use a separate linked label.
+
 ## References
 
 - MDN checkbox input: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox

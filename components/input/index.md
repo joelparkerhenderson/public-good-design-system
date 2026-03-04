@@ -44,6 +44,21 @@ None -- this component uses the native `<input>` element, which provides built-i
 
 - `aria-label` -- provides an accessible name for the input when no visible label is present.
 
+## When to Use
+
+- Use as the foundational text entry component for forms, supporting text, email, password, number, search, and other HTML input types.
+- Use when you need a simple, single-line input with accessible labeling and two-way value binding.
+- Avoid for multi-line text entry; use Textarea instead. Consider specialized inputs (EmailInput, SearchInput, etc.) for type-specific features.
+
+## Headless
+
+This headless component provides a native `<input>` element with `aria-label`, two-way value binding, and support for `required` and `disabled` attributes. The consumer provides all visual styling including borders, padding, focus states, and placeholder text appearance.
+
+## Advice
+
+- **Designers**: Ensure input fields have visible focus indicators and sufficient padding. Use consistent sizing across related form fields.
+- **Developers**: Prefer specialized input components (EmailInput, TelInput, etc.) when available, as they provide type-specific defaults. Use the `type` prop to leverage browser-native validation and mobile keyboard optimization.
+
 ## References
 
 - MDN Input element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input

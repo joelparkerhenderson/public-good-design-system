@@ -36,6 +36,26 @@ None at the container level. Keyboard behavior is handled natively by the `<inpu
 - `role="radiogroup"` -- identifies the fieldset as a group of related radio buttons
 - `aria-label={label}` -- provides an accessible name describing the purpose of the theme selection
 
+## When to Use
+
+- Use ThemePicker when users need to choose between a set of theme options presented as radio buttons (e.g., light, dark, system).
+- Use when you want a radiogroup-based selection rather than a dropdown.
+- Avoid using ThemePicker for a single toggle between two modes; consider SwitchButton or ToggleButton instead.
+- Consider ThemeSelect instead when screen space is limited and a dropdown is preferable.
+
+## Headless
+
+This headless component provides a semantic `<fieldset>` with `role="radiogroup"` and an `aria-label` for accessible theme selection. The consumer provides all radio button markup, visual styling, layout, and theme application logic.
+
+## Advice
+
+- **Designers**: Place theme options in a clear, evenly spaced row or column with recognizable labels or icons for each theme.
+- **Developers**: Persist the selected theme to localStorage or a user preferences API so it survives page reloads.
+
+## Composition
+
+ThemePicker is a standalone picker component that contains consumer-provided radio buttons. It is related to ThemeSelect (dropdown approach) and ThemeView (read-only display). Use ThemePicker when you want visible radio options; use ThemeSelect for a compact dropdown.
+
 ## References
 
 - WAI-ARIA radiogroup role: https://www.w3.org/TR/wai-aria-1.2/#radiogroup

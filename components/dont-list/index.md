@@ -44,6 +44,25 @@ None -- this component is a passive container for list items.
 - `role="list"` -- explicitly declares list semantics on the `<ul>`, ensuring assistive technology announces it as a list
 - `aria-label={label}` -- provides an accessible name for the list (defaults to "Don't")
 
+## When to Use
+
+- Use in design system documentation and guidelines to present discouraged actions or anti-patterns.
+- Use alongside DoList to create clear do/don't guidance patterns.
+- Avoid for general-purpose lists; use a standard `<ul>` or CheckList instead.
+
+## Headless
+
+This headless component provides a `<ul>` with explicit `role="list"` to preserve list semantics even when CSS removes default markers, and `aria-label` for accessible naming. The consumer provides all visual styling, icons, and layout for the list and its items.
+
+## Advice
+
+- **Designers**: Use a distinct visual treatment (such as a red cross or warning color) to differentiate dont-list items from do-list items. Keep items concise and specific.
+- **Developers**: Place DontListItem components as children. Override the `label` prop for internationalization when the default "Don't" label is not appropriate.
+
+## Composition
+
+DontList composes with DontListItem using the List/ListItem pattern. DontList renders the `<ul>` container, and each DontListItem renders an `<li>` within it. Pair with DoList and DoListItem for complete do/don't guidance.
+
 ## References
 
 - MDN ul element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/ul

@@ -41,6 +41,22 @@ The component is similar to Popover but is designed as a general-purpose overlay
 - `role="dialog"` -- identifies the popup as a dialog overlay for assistive technology
 - `aria-label="..."` -- provides the accessible name for the dialog
 
+## When to Use
+
+- Use Popup for temporary overlays that prompt user actions, such as confirmations, quick forms, or contextual options.
+- Use Popup when the overlay should appear above page content without a full-page modal backdrop.
+- Avoid using Popup for permanent content sections; use Panel or Card instead.
+- Consider Dialog when you need a full modal with backdrop dimming and focus lock.
+
+## Headless
+
+The Popup headless component provides a conditionally rendered `<div>` with `role="dialog"` and `aria-label` for accessible naming. It manages open/close visibility via two-way binding. The consumer provides all visual styling, positioning, trigger elements, and focus trap logic.
+
+## Advice
+
+- **Designers**: Give popups a clear visual elevation (shadow or border) and ensure they do not cover critical page actions the user may need to reach.
+- **Developers**: Implement Escape key handling to close the popup, and return focus to the trigger element when the popup closes.
+
 ## References
 
 - WAI-ARIA Dialog Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/dialog/

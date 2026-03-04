@@ -33,6 +33,21 @@ None -- this component is a passive display container.
 - `role="img"` -- identifies the container as an image for assistive technologies
 - `aria-label` -- provides an accessible description of the QR code content, ensuring screen reader users know what the code encodes
 
+## When to Use
+
+- Use QrCode to encode URLs, text, or contact information for quick mobile scanning in marketing materials, event check-ins, or payment flows.
+- Use QrCode when users need to transfer information from screen to mobile device without manual typing.
+- Avoid using QrCode as the sole means of sharing a link; always provide a text-based alternative for accessibility.
+
+## Headless
+
+The QrCode headless component provides a `<div>` with `role="img"` and `aria-label` so screen readers can describe what the QR code encodes. The consumer provides the actual QR code rendering (SVG, canvas, or a third-party library) as children, along with all visual styling.
+
+## Advice
+
+- **Designers**: Ensure the QR code has sufficient size and contrast for reliable scanning, and include a short text label or caption explaining what scanning will do.
+- **Developers**: Use a proven QR generation library for the children content, and set the `aria-label` to describe the action (e.g., "Scan to visit example.com") rather than the raw encoded data.
+
 ## References
 
 - WAI-ARIA img Role: https://www.w3.org/TR/wai-aria-1.2/#img

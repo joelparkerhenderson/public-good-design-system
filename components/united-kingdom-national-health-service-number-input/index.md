@@ -64,6 +64,26 @@ Disabled state:
 - `required` and `disabled` states conveyed to assistive technology
 - `inputmode="numeric"` hints mobile assistive technology to present a numeric keyboard
 
+## When to Use
+
+- Use UnitedKingdomNationalHealthServiceNumberInput when a form requires entry of a UK NHS patient identifier in the standard XXX XXX XXXX format.
+- Use in healthcare applications, patient registration forms, or any system that processes NHS numbers.
+- Avoid using a generic text input for NHS numbers; this component provides pattern validation and numeric keyboard hints.
+- Consider UnitedKingdomNationalHealthServiceNumberView for displaying an existing NHS number in a read-only context.
+
+## Headless
+
+This headless component provides an `<input type="text">` with NHS number pattern validation, `inputmode="numeric"`, `autocomplete="off"`, `aria-label`, and support for `required`/`disabled` states. The consumer provides all visual styling, surrounding labels, hints, and error messages.
+
+## Advice
+
+- **Designers**: Display a format hint (e.g., "XXX XXX XXXX") near the input to help users enter the number correctly. Use error messaging for invalid formats.
+- **Developers**: The component enforces the pattern `[0-9]{3} [0-9]{3} [0-9]{4}` on form submission. Consider adding real-time formatting or a checksum validation for the NHS number's modulus 11 algorithm.
+
+## Composition
+
+UnitedKingdomNationalHealthServiceNumberInput is the editable input counterpart to UnitedKingdomNationalHealthServiceNumberView, following the Input/View pattern. Use the Input for data entry and the View for read-only display.
+
 ## References
 
 - NHS Number format: https://www.nhs.uk/nhs-services/online-services/find-nhs-number/

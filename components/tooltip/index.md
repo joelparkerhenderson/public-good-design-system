@@ -48,6 +48,22 @@ Tooltips are used to clarify the function or meaning of an element without clutt
 - `role="tooltip"` -- identifies the element as a tooltip, a popup that displays a description for an element
 - `id={id}` -- used with `aria-describedby` on the trigger element to create an accessible association between the trigger and the tooltip
 
+## When to Use
+
+- Use Tooltip to provide brief, supplementary descriptions for UI elements on hover or focus (e.g., icon button labels, abbreviation explanations).
+- Use when the information is helpful but not essential for completing a task.
+- Avoid using Tooltip for critical information that users must see; use inline text or an alert instead.
+- Consider using a Popover when the supplementary content includes interactive elements, links, or rich formatting.
+
+## Headless
+
+This headless component provides a `<div>` with `role="tooltip"` and conditional rendering (fully removed from DOM when hidden). The consumer manages visibility toggling (hover, focus events), positioning, and all visual styling including background, border, and arrow indicators.
+
+## Advice
+
+- **Designers**: Keep tooltip text concise (one line if possible). Position tooltips so they do not obscure the trigger element or important content.
+- **Developers**: Link the tooltip to its trigger using `id` and `aria-describedby`. Handle Escape key to dismiss the tooltip and ensure it works on both hover and focus for keyboard accessibility.
+
 ## References
 
 - WAI-ARIA Tooltip Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/tooltip/

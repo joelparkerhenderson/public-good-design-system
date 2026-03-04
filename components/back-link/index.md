@@ -35,3 +35,19 @@ Back links are especially important in mobile and multi-step interfaces, helping
 
 - Implicit `link` role from the `<a>` element
 - `aria-label` -- optional override for descriptive screen reader text, set from the `label` prop
+
+## When to Use
+
+- Use at the top of a page or multi-step flow to provide a clear "back" navigation action, especially in mobile and wizard-style interfaces.
+- Use when users need an explicit way to return to the previous page without relying on the browser back button.
+- Avoid for general page navigation -- use standard links or NavigationMenu instead.
+- Consider BreadcrumbNav instead when the user needs to see and navigate the full hierarchy.
+
+## Headless
+
+This component provides a semantic `<a>` element with optional `aria-label` override and zero visual styling. The consumer is responsible for all CSS including left-arrow or chevron icons, link color, underline style, hover effects, and focus indicators.
+
+## Advice
+
+- **Designers**: Place the back link consistently at the top-left of the content area. Include a left-pointing arrow icon to visually reinforce the "back" direction.
+- **Developers**: Use the `label` prop to provide descriptive screen reader text when the visible text is short (e.g., "Back" visible but "Return to dashboard" announced).

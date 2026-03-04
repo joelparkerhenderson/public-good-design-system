@@ -38,6 +38,25 @@ Use ScrollArea when you have content that may overflow its container, such as lo
 - `role="region"` -- identifies the container as a landmark region so assistive technologies can announce it
 - `aria-label={label}` -- provides an accessible name describing what content is scrollable
 
+## When to Use
+
+- Use ScrollArea for content that overflows its container, such as long lists, chat messages, code blocks, or data tables.
+- Use ScrollArea when keyboard users need to scroll through content without a mouse via standard scrolling keys.
+- Avoid using ScrollArea for content that fits within its container; unnecessary scroll regions add complexity for assistive technology users.
+
+## Headless
+
+The ScrollArea headless component provides a `<div>` with `role="region"`, `aria-label`, and `tabindex="0"` for keyboard-focusable scrolling. The consumer provides all visual styling, including `overflow`, dimensions, and custom scrollbar appearance.
+
+## Advice
+
+- **Designers**: Indicate scrollable content with visible scrollbars, fade edges, or truncation cues so users know more content is available.
+- **Developers**: Apply CSS `overflow: auto` and explicit height or max-height to enable actual scrolling; the component provides semantics only.
+
+## Composition
+
+ScrollArea can contain a ScrollBar child for custom scrollbar rendering. Use `<ScrollArea>` as the scrollable container and nest `<ScrollBar>` within for styled scrollbar controls that sync with the scroll position.
+
 ## References
 
 - WAI-ARIA Region Role: https://www.w3.org/TR/wai-aria-1.2/#region

@@ -50,6 +50,29 @@ A pagination nav is a navigation container for page navigation links, allowing u
 - `<nav aria-label="...">` -- creates a navigation landmark with a descriptive label for the pagination region
 - Consumer applies `aria-current="page"` on the link representing the current page
 
+## When to Use
+
+- Use as the outermost container for pagination controls, providing a navigation landmark for page links.
+- Use when you need to distinguish the pagination region from other `<nav>` elements on the page with a descriptive label.
+- Avoid using PaginationNav without child PaginationList and PaginationListItem components; it is a structural wrapper.
+
+## Headless
+
+This headless component provides a `<nav>` element with `aria-label` for navigation landmark identification. The consumer provides all visual styling, including layout, positioning, and responsive behavior of the pagination region.
+
+## Advice
+
+- **Designers**: Position pagination consistently (typically below the content it paginates) and ensure it is visible without scrolling.
+- **Developers**: Use a unique `aria-label` (e.g., "Search results pages") to distinguish this navigation from other `<nav>` landmarks on the page. Nest PaginationList inside.
+
+## Composition
+
+PaginationNav is the outermost component in the pagination compound pattern. It contains PaginationList, which contains PaginationListItem children.
+
+```
+PaginationNav (nav) → PaginationList (nav + ul) → PaginationListItem (li)
+```
+
 ## References
 
 - WAI-ARIA Navigation Role: https://www.w3.org/TR/wai-aria-1.2/#navigation

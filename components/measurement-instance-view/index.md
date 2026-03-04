@@ -32,3 +32,22 @@ None -- this is a display-only component.
 ## ARIA
 
 - `aria-label` -- optionally set from the `label` prop to provide additional context beyond the displayed value
+
+## When to Use
+
+- Use to display a read-only measurement value such as "72 kg", "98.6 F", or "120/80 mmHg" in dashboards, reports, or detail views.
+- Use when the measurement should be visible but not editable by the user.
+- Consider using MeasurementInstanceInput instead when the user needs to enter or modify the measurement value.
+
+## Headless
+
+This headless component renders a `<span>` with the measurement value as text content and optional `aria-label` for additional accessible context. The consumer provides all visual styling, including typography, color coding based on value ranges, and spacing.
+
+## Advice
+
+- **Designers**: Use consistent formatting and alignment for measurement values so users can quickly scan and compare readings across a page.
+- **Developers**: Provide the `label` prop when the displayed value alone may be ambiguous to screen reader users, such as labeling "72 kg" as "Patient weight".
+
+## Composition
+
+MeasurementInstanceView is part of the measurement component family. It is the read-only counterpart to MeasurementInstanceInput and works alongside MeasurementUnitView, MeasurementSystemView, and their input counterparts.

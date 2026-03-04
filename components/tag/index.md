@@ -41,6 +41,26 @@ Tags help users quickly scan and identify relevant information, and are presente
 - `role="status"` -- identifies this as a live region for screen reader announcements of content changes
 - `aria-label` -- provides an accessible name from the `label` prop, giving expanded context beyond the visible tag text
 
+## When to Use
+
+- Use to label, categorize, or indicate the status of content items, such as article categories, product attributes, or workflow states.
+- Use when short keyword labels help users quickly scan and identify relevant information.
+- Avoid for interactive filtering; use a ToggleButton or CheckboxInput inside a filter group instead.
+- Consider a Badge when displaying a numeric count rather than a text label.
+
+## Headless
+
+This headless component renders a `<span>` with `role="status"` and `aria-label`, creating an implicit live region for screen reader announcements. The consumer provides all visual styling including background color, border radius, padding, and typography.
+
+## Advice
+
+- **Designers**: Use color-coding consistently to distinguish tag categories, but do not rely on color alone -- include text labels. Keep tags compact with consistent padding and font size.
+- **Developers**: Use the `label` prop to provide expanded context for screen readers beyond the visible tag text (e.g., `label="Priority: High"` with visible text "High"). Be aware that `role="status"` creates a live region, so dynamic content changes will be announced.
+
+## Composition
+
+Tag is designed to be used as a child of TagGroup. The TagGroup provides a `role="group"` container with an accessible label, while each Tag provides an individual labeled status element within the group.
+
 ## References
 
 - WAI-ARIA Status Role: https://www.w3.org/TR/wai-aria-1.2/#status

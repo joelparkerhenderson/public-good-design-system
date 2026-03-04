@@ -51,6 +51,26 @@ Feature flag control:
 - `role="switch"` -- identifies the element as a two-state toggle switch
 - `aria-checked={pressed}` -- communicates whether the toggle is currently on (`true`) or off (`false`)
 - `aria-label={label}` -- provides the accessible name for the toggle control
+## When to Use
+
+- Use ToggleButton for binary on/off controls with button semantics, such as dark mode, mute, or feature flags.
+- Use when "pressed/unpressed" better describes the interaction than "checked/unchecked".
+- Avoid using ToggleButton for form fields where a checkbox is more appropriate; use CheckboxInput instead.
+- Consider SwitchButton when the visual metaphor of a sliding switch is more intuitive for the use case.
+
+## Headless
+
+This headless component provides a `<button>` with `role="switch"`, `aria-checked`, and `aria-label` for accessible two-state toggle behavior. It handles Space key toggling with `preventDefault`. The consumer provides all visual styling, including pressed/unpressed states and any icons or labels.
+
+## Advice
+
+- **Designers**: Provide distinct visual states for pressed and unpressed (e.g., filled vs. outlined, color change) so the current state is immediately obvious.
+- **Developers**: Use two-way binding on the `pressed` prop to keep parent state in sync. ToggleButton can be used standalone or inside a ToggleGroup.
+
+## Composition
+
+ToggleButton works as a standalone component or as a child of ToggleGroup. When used inside a ToggleGroup, multiple ToggleButtons are semantically grouped with `role="group"` for related toggle options (e.g., text formatting: bold, italic, underline).
+
 ## References
 
 - WAI-ARIA Switch Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/switch/

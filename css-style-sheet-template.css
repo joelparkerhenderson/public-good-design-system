@@ -1,5 +1,9 @@
 /* Public Good Design System: CSS style sheet template */
 
+/* ai-label: an indicator of AI instances that is a pathway to AI explainability */
+.ai-label {
+}
+
 /* accordion-nav: a navigation container for collapsible accordion information */
 .accordion-nav {
 }
@@ -138,6 +142,10 @@
 
 /* character: a single character display element */
 .character {
+}
+
+/* checkbox-group: a group component that manages a collection of checkboxes with shared state */
+.checkbox-group {
 }
 
 /* checkbox-input: a checkbox input for toggling a boolean value */
@@ -420,6 +428,30 @@
 .gantt-table-data {
 }
 
+/* grail-layout: a responsive web design structure with header, left aside, center content, right aside, footer */
+.grail-layout {
+}
+
+/* grail-layout-top-header: a grail layout top header section full width */
+.grail-layout-top-header {
+}
+
+/* grail-layout-left-aside: a grail layout left aside section */
+.grail-layout-left-aside {
+}
+
+/* grail-layout-center-main: a grail layout center main content section */
+.grail-layout-center-main {
+}
+
+/* grail-layout-right-aside: a grail layout right aside section */
+.grail-layout-right-aside {
+}
+
+/* grail-layout-bottom-footer: a grail layout bottom footer section full width */
+.grail-layout-bottom-footer {
+}
+
 /* hamburger-menu: a toggle button that opens a mobile navigation menu */
 .hamburger-menu {
 }
@@ -434,10 +466,6 @@
 
 /* hint: hint text providing guidance for a form field */
 .hint {
-}
-
-/* holy-grail-layout: a classic layout with header, footer, main content, and two sidebars */
-.holy-grail-layout {
 }
 
 /* hover-card: a card that appears on hover over a trigger element */

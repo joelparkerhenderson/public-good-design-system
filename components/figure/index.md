@@ -40,6 +40,22 @@ None -- this component is a passive container for data visualization.
 - `role="img"` -- identifies the figure as a graphical image to assistive technologies
 - `aria-label={label}` -- provides an accessible name describing the figure content
 
+## When to Use
+
+- Use to wrap self-contained graphical content such as charts, diagrams, illustrations, or data visualizations with an accessible label.
+- Use when the graphical content needs semantic grouping and a descriptive name for screen readers.
+- Avoid for inline images that are part of the text flow; use Image instead.
+- Consider Caption as a child element when a visible caption is needed alongside the figure.
+
+## Headless
+
+This headless component provides a `<figure>` element with `role="img"` and `aria-label` for accessible identification of graphical content. It serves as a semantic container. The consumer provides all visualization content (SVG, canvas, charting libraries) and all visual styling.
+
+## Advice
+
+- **Designers**: Include a visible caption or title near the figure so sighted users understand what it represents. Ensure the figure has sufficient contrast and is not the sole means of conveying critical data.
+- **Developers**: Write a descriptive `label` that summarizes the figure's content and purpose, not just a generic title. For complex charts, consider providing a data table as an alternative.
+
 ## References
 
 - WAI-ARIA img role: https://www.w3.org/TR/wai-aria-1.2/#img

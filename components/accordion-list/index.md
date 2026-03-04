@@ -54,6 +54,38 @@ None -- this component is a passive list container. Keyboard interactions are ha
 
 - Semantic `<ol>` element provides ordered list semantics for assistive technology
 - List structure conveys that the accordion sections are related and ordered
+## When to Use
+
+- Use for grouping multiple collapsible sections such as FAQ lists, settings panels, or stacked content panels.
+- Use when you need an ordered sequence of expandable items within an AccordionNav container.
+- Avoid for a single expandable section -- use a standalone Details or Collapsible component instead.
+
+## Headless
+
+This component provides semantic `<ol>` list structure with zero visual styling. The consumer is responsible for all CSS including list styling, spacing, borders, and visual grouping. Use the `<ol>` element or `data-*` attributes as styling hooks.
+
+## Advice
+
+- **Designers**: Ensure consistent spacing between accordion items and provide clear visual separation (borders or gaps) so users can distinguish individual sections.
+- **Developers**: Do not add keyboard handlers to this component -- it is a passive container. Keyboard interactions are handled by AccordionListItem children.
+
+## Composition
+
+AccordionList follows the Nav / List / ListItem composition pattern:
+
+- **AccordionNav** -- outer `<nav>` container providing the landmark region and accessible label.
+- **AccordionList** -- `<ol>` list grouping the collapsible items in order.
+- **AccordionListItem** -- individual `<details>` / `<summary>` sections for each expandable item.
+
+```html
+<AccordionNav label="FAQ">
+  <AccordionList>
+    <AccordionListItem summary="Question 1">Answer 1</AccordionListItem>
+    <AccordionListItem summary="Question 2">Answer 2</AccordionListItem>
+  </AccordionList>
+</AccordionNav>
+```
+
 ## References
 
 - WAI-ARIA Accordion Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/accordion/

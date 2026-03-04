@@ -40,6 +40,22 @@ This component is useful in applications that need custom file operation interfa
 - `aria-label={label}` -- provides an accessible name for the dialog
 - Native `<dialog>` element -- provides implicit `role="dialog"` semantics
 
+## When to Use
+
+- Use for custom file operation interfaces such as open, save, or browse dialogs in file managers, document editors, or CMS applications.
+- Use when you need more control over the file selection UI than the native file picker provides.
+- Avoid for simple file selection; use FileInput or FileUpload instead.
+- Consider Dialog instead when the modal content is not file-specific.
+
+## Headless
+
+This headless component provides a native `<dialog>` element with conditional rendering, accessible labeling via `aria-label`, keyboard dismissal with Escape, and two-way binding on `open`. The consumer provides all visual styling, file listing content, navigation controls, and action buttons.
+
+## Advice
+
+- **Designers**: Include clear action buttons (Open, Cancel) and a file list or navigation area within the dialog. Provide visual feedback for the currently selected file.
+- **Developers**: Manage focus by moving it into the dialog when opened and returning it to the trigger on close. Use the `open` binding to coordinate visibility with parent component state.
+
 ## References
 
 - WAI-ARIA Dialog Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/dialog-modal/

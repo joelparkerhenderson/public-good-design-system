@@ -45,6 +45,30 @@ None -- passive container for heading elements. Keyboard interaction depends on 
 - No explicit ARIA roles required -- the headings within provide their own semantic structure
 - Column headings should use appropriate heading levels (e.g., `<h3>`) for proper document outline
 
+## When to Use
+
+- Use to provide column headings that label each workflow stage in a Kanban board.
+- Use when users need clear, visible labels for board columns such as "To Do", "In Progress", "Done".
+- Avoid using KanbanTableHead outside of a KanbanTable parent; it depends on the board context.
+
+## Headless
+
+This headless component provides a structural header wrapper for Kanban board column headings. It outputs a `<div>` container where the consumer places heading elements. The consumer provides all visual styling, including heading typography, alignment, and column width coordination.
+
+## Advice
+
+- **Designers**: Align column headings with their corresponding body columns and use consistent typography so the board structure is immediately clear.
+- **Developers**: Use appropriate heading levels (e.g., `<h3>`) inside the header to maintain proper document outline and screen reader navigation.
+
+## Composition
+
+KanbanTableHead is a child of KanbanTable, appearing before KanbanTableBody. It is part of the KanbanTable compound component pattern.
+
+```
+KanbanTable → KanbanTableHead + KanbanTableBody + KanbanTableFoot
+                └→ column headings
+```
+
 ## References
 
 - WAI-ARIA region role: https://www.w3.org/TR/wai-aria-1.2/#region

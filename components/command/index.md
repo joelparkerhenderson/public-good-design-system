@@ -43,6 +43,21 @@ The component renders a search region containing a text input and a listbox for 
 - `role="listbox"` -- identifies the results container as a listbox for selectable options
 - `aria-label={label}` -- provides accessible name for the listbox
 
+## When to Use
+
+- Use a Command palette for quick-access search interfaces such as Ctrl+K action launchers, searchable menus, or command-driven navigation.
+- Use a Command when users need to search and execute actions from a large set without navigating through menus.
+- Avoid using a Command for simple search fields without an action list; consider a SearchInput instead.
+
+## Headless
+
+This headless Command component provides a `<div>` with `role="search"` and `aria-label`, an `<input type="search">` with `autocomplete="off"`, and a `<div>` with `role="listbox"` for displaying results. The consumer provides all visual styling including modal/overlay presentation, result item layout, keyboard shortcut hints, grouping headers, and animations.
+
+## Advice
+
+- **Designers**: Present the command palette in a modal overlay centered on screen. Group related commands and show keyboard shortcut hints alongside each action.
+- **Developers**: Implement filtering logic by reacting to the bindable `value` prop. Add arrow key navigation for the listbox items in your consumer code. Pair with a Dialog for modal presentation.
+
 ## References
 
 - WAI-ARIA Listbox Pattern: https://www.w3.org/WAI/ARIA/apd/patterns/listbox/

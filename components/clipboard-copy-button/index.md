@@ -42,6 +42,21 @@ The component tracks a `copied` state that automatically resets after 2 seconds.
 - `aria-label` -- describes the copy action for screen readers
 - `data-copied` -- reflects `"true"` or `"false"` for CSS-based visual feedback (not an ARIA attribute, but useful for consumer styling)
 
+## When to Use
+
+- Use a ClipboardCopyButton next to text content that users frequently need to copy, such as URLs, code snippets, or API keys.
+- Use a ClipboardCopyButton when a one-click copy action improves user efficiency over manual text selection.
+- Avoid using a ClipboardCopyButton for content that is rarely copied or where selection-based copying is sufficient.
+
+## Headless
+
+This headless ClipboardCopyButton component provides a `<button>` with `aria-label`, Clipboard API integration (`navigator.clipboard.writeText`), automatic `copied` state tracking with 2-second reset, and `data-copied` attribute for styling hooks. The consumer provides all visual styling including button appearance, copy/success icons, tooltip feedback, and animations.
+
+## Advice
+
+- **Designers**: Provide clear visual feedback when copying succeeds, such as a checkmark icon or "Copied!" text. Keep the button close to the content it copies.
+- **Developers**: Use the `data-copied` attribute (e.g., `[data-copied="true"]`) in CSS to show success state. Handle the `onerror` callback for browsers that restrict clipboard access.
+
 ## References
 
 - ClipboardCopyButton API: https://developer.mozilla.org/en-US/docs/Web/API/ClipboardCopyButton/writeText

@@ -38,6 +38,21 @@ The component supports `selected` for pre-selecting an option and `disabled` for
 - Native `<option>` provides built-in accessibility via the parent `<select>` element
 - Screen readers announce the option text and selected state automatically
 
+## When to Use
+
+- Use inside a `<select>` element to represent one selectable choice in a dropdown.
+- Use when each option needs a distinct form submission value separate from its display text.
+- Avoid using Option outside of a Select component; it depends on the parent `<select>` for semantics and keyboard behavior.
+
+## Headless
+
+This headless component wraps the native `<option>` element with props for `value`, `selected`, and `disabled` states. Accessibility is provided automatically by the browser through the parent `<select>`. The consumer provides all visual styling via the parent Select component, as native `<option>` elements have limited styling capabilities.
+
+## Advice
+
+- **Designers**: Keep option text concise and scannable. For long lists, group related options using `<optgroup>` via the parent Select.
+- **Developers**: Use the `value` prop for the form submission value and children for the display text. Native `<option>` styling is limited; for custom-styled dropdowns, consider Listbox or Combobox instead.
+
 ## References
 
 - HTML option element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/option

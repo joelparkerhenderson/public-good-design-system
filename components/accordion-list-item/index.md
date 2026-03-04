@@ -74,6 +74,37 @@ FAQ item:
 
 - Native `<details>` / `<summary>` provide implicit disclosure widget semantics
 - Browser automatically manages expanded/collapsed state announcement
+## When to Use
+
+- Use for individual collapsible sections within an AccordionList, such as FAQ answers, grouped settings, or expandable content panels.
+- Use when you need native disclosure behavior without custom JavaScript.
+- Avoid for top-level page sections that should always be visible -- use headings or Panel instead.
+
+## Headless
+
+This component provides native `<details>` / `<summary>` disclosure semantics, two-way bindable open state, and keyboard toggle behavior with zero visual styling. The consumer is responsible for all CSS including summary appearance, expanded/collapsed indicators, content padding, borders, and transition animations.
+
+## Advice
+
+- **Designers**: Provide a clear expand/collapse indicator (chevron, plus/minus icon) next to the summary text so users understand the section is interactive.
+- **Developers**: Use the two-way bindable `open` prop to synchronize state when you need programmatic control, such as "expand all" or "collapse all" functionality.
+
+## Composition
+
+AccordionListItem follows the Nav / List / ListItem composition pattern:
+
+- **AccordionNav** -- outer `<nav>` container providing the landmark region.
+- **AccordionList** -- `<ol>` list grouping the collapsible items.
+- **AccordionListItem** -- individual `<details>` / `<summary>` sections for each expandable item.
+
+```html
+<AccordionNav label="FAQ">
+  <AccordionList>
+    <AccordionListItem summary="Question 1">Answer 1</AccordionListItem>
+  </AccordionList>
+</AccordionNav>
+```
+
 ## References
 
 - HTML details element: https://developer.mozilla.org/en-US/docs/Web/HTML/Element/details
