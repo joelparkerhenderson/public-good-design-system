@@ -38,7 +38,7 @@ Subprojects for web app examples:
 - breadcrumb-nav-list = BreadcrumbNavList = an ordered list of breadcrumb navigation items
 - breadcrumb-nav-list-item = BreadcrumbNavListItem = one breadcrumb navigation link in the trail
 - button = Button = a generic clickable button element
-- button-input = ButtonInput = an input element of type button for form actions
+- button-input = ButtonInput = an input element of type button for form actions <input type="button">
 - calendar-table = CalendarTable = a calendar table interactive grid for managing dates, days, etc.
 - calendar-table-head = CalendarTableHead = a calendar table interactive grid thead for managing dates, days, etc.
 - calendar-table-body = CalendarTableBody = a calendar table interactive grid tbody for managing dates, days, etc.
@@ -54,16 +54,15 @@ Subprojects for web app examples:
 - carousel = Carousel = a slideshow for cycling through content items
 - character-counter = CharacterCounter = a counter showing remaining or used characters in a text field
 - character = Character = a single character display element
-- checkbox-input = CheckboxInput = a checkbox input for toggling a boolean value
+- checkbox-input = CheckboxInput = a checkbox input for toggling a boolean value <input type="checkbox">
 - checkbox-group = Checkbox Group = a group component that manages a collection of checkboxes with shared state
 - check-list = CheckList = an ordered list of check list item components
 - check-list-item = CheckListItem = one check list item component with a checkbox
 - clipboard-copy-button = ClipboardCopyButton = a button that copies text to the clipboard
 - collapsible = Collapsible = a container that can be expanded or collapsed
-- color-input = ColorInput = an input for selecting a color value
+- color-input = ColorInput = an input for selecting a color value <input type="color">
 - color-picker = ColorPicker = a two-dimensional board for picking colors by hue and saturation
 - color-picker-button = ColorPickerButton = a button showing a color swatch in a color picker
-- collapsible = Collapsible = an interactive component which expands/collapses a panel
 - combobox = Combobox = a text input combined with a dropdown list for filtering options
 - command = Command = a command palette for searching and executing actions
 - contents-nav = ContentsNav = a navigation landmark for a table of contents
@@ -81,9 +80,9 @@ Subprojects for web app examples:
 - data-table-row = DataTableRow = a data table interactive grid row for displaying and sorting tabular data
 - data-table-data = DataTableData = a data table interactive grid data cell for displaying and sorting tabular data
 - date-field = DateField = a structured field for entering date components
-- date-input = DateInput = an input for entering a date value
+- date-input = DateInput = an input for entering a date value <input type="date">
 - date-range = DateRange = a display of a start and end date range
-- datetime-local-input = DatetimeLocalInput = an input for entering a date and time without time zone
+- datetime-local-input = DatetimeLocalInput = an input for entering a date and time without time zone <input type="datetime-local">
 - details = Details = a disclosure widget that shows and hides content
 - dial = Dial = a rotary dial control for selecting a value
 - dialog = Dialog = a modal or non-modal dialog window
@@ -96,7 +95,7 @@ Subprojects for web app examples:
 - editable-form = EditableForm = a form wrapper for inline editing of content
 - editable = Editable = an inline-editable text element that toggles between view and edit modes
 - email-link = EmailLink = a mailto hyperlink for an email address
-- email-input = EmailInput = an input for entering an email address
+- email-input = EmailInput = an input for entering an email address <input type="email">
 - emoji-character-picker = EmojiCharacterPicker = a picker for browsing and selecting emoji characters
 - emoji = Emoji = a single emoji character with accessible name
 - error-message = ErrorMessage = an error message associated with a form field
@@ -106,7 +105,7 @@ Subprojects for web app examples:
 - fieldset = Fieldset = a group of related form fields with a legend
 - figure = Figure = a self-contained figure with optional caption
 - file-dialog = FileDialog = a dialog for browsing and selecting files
-- file-input = FileInput = an input for selecting files from the file system
+- file-input = FileInput = an input for selecting files from the file system <input type="file">
 - file-manager = FileManager = a file browser for navigating and managing files
 - file-upload = FileUpload = a drag-and-drop area for uploading files
 - five-face-rating-view = FiveFaceRatingView = a read-only display of a five-face satisfaction rating
@@ -133,16 +132,15 @@ Subprojects for web app examples:
 - grail-layout-center-main = GrailLayoutCenterMain = grail layout center main content with <main> tag
 - grail-layout-right-aside = GrailLayoutRightAside = grail layout right aside sidebar with <aside> tag
 - grail-layout-bottom-footer = GrailLayoutBottomFooter = grail layout bottom footer full width with <footer> tag
-- responsive web design structure with top header, left sidebar, center content, right sidebar, bottom footer
-- grail-layout-center = GrailLayoutCenter = a responsive web design structure with top header, left sidebar, center content, right sidebar, bottom footer
 - hamburger-menu = HamburgerMenu = a toggle button that opens a mobile navigation menu
 - header = Header = a page or section header area
-- hidden-input = HiddenInput = a hidden input for including data in form submission
+- hidden-input = HiddenInput = a hidden input for including data in form submission <input type="hidden">
 - hint = Hint = hint text providing guidance for a form field
 - hover-card = HoverCard = a card that appears on hover over a trigger element
 - icon = Icon = a container for displaying an icon
 - image-file-input = ImageFileInput = an input for selecting image files with preview
 - image = Image = an image element with alt text
+- image-input = ImageInput = a graphical submit button that displays an image <input type="image">
 - information-callout = InformationCallout = a callout box highlighting informational content
 - input = Input = a generic HTML input element
 - inset-text = InsetText = indented text to distinguish it from surrounding content
@@ -168,19 +166,20 @@ Subprojects for web app examples:
 - menu-bar = MenuBar = a horizontal bar of menu triggers
 - menu-bar-button = MenuBarButton = one item in a menu bar
 - meter = Meter = a gauge displaying a scalar value within a known range
-- month-input = MonthInput = an input for selecting a month and year
+- month-input = MonthInput = an input for selecting a month and year <input type="month">
 - navigation-menu = NavigationMenu = a site-wide navigation menu with links
 - net-promoter-score-view = NetPromoterScoreView = a read-only display of a Net Promoter Score
 - net-promoter-score-picker = NetPromoterScorePicker = a picker for selecting a 0-10 Net Promoter Score
 - net-promoter-score-picker-button = NetPromoterScorePickerButton = a picker button for selecting a 0-10 Net Promoter Score
 - notification = Notification = a brief message about an event or update
-- number-input = NumberInput = an input for entering a numeric value with validation
+- number-input = NumberInput = an input for entering a numeric value with validation <input type="number">
 - option = Option = an option element within a select dropdown
 - pagination-nav = PaginationNav = an ordered list of page navigation links
 - pagination-list = PaginationList = an ordered list of page navigation links
 - pagination-list-item = PaginationListItem = one page link in a pagination list
 - panel = Panel = a generic content panel with optional heading
-- password-input-div = PasswordInputDiv = an input for entering a password with obscured text
+- password-input = PasswordInput = an input for entering a password with obscured text <input type="password">
+- password-input-or-text-input-div = PasswordInputOrTextInputDiv = an input for entering a password <input type="password"> or text <input type="text"> with show/hide toggle
 - pin-input-div = PinInputDiv = a series of single-digit inputs for entering a PIN or OTP code
 - popover = Popover = a floating content box anchored to a trigger element
 - popup = Popup = a temporary overlay that appears above page content
@@ -191,20 +190,20 @@ Subprojects for web app examples:
 - progress = Progress = a horizontal progress bar showing completion
 - qr-code = QrCode = a QR code image generated from text or URL data
 - radio-group = RadioGroup = a group of radio buttons for selecting one option
-- radio-input = RadioInput = a single radio button input
-- range-input = RangeInput = a slider input for selecting a value within a range
+- radio-input = RadioInput = a single radio button input <input type="radio">
+- range-input = RangeInput = a slider input for selecting a value within a range <input type="range">
 - red-amber-green-view = RedAmberGreenView = a read-only display of a red/amber/green status
 - red-amber-green-picker = RedAmberGreenPicker = a picker for selecting a red/amber/green status
 - red-amber-green-picker-button = RedAmberGreenPickerButton = a picker button for selecting a red/amber/green status
 - red-orange-yellow-green-blue-view = RedOrangeYellowGreenBlueView = a read-only display of a five-level color status
 - red-orange-yellow-green-blue-picker = RedOrangeYellowGreenBluePicker = a picker for selecting a five-level color status
 - red-orange-yellow-green-blue-picker-button = RedOrangeYellowGreenBluePickerButton = a picker button for selecting a five-level color status
-- reset-input = ResetInput = a button input that resets a form to default values
+- reset-input = ResetInput = a button input that resets a form to default values <input type="reset">
 - resizable = Resizable = a container that the user can resize by dragging
 - review-date = ReviewDate = a display of a content review date
 - scroll-area = ScrollArea = a scrollable container with custom scrollbar support
 - scroll-bar = ScrollBar = a custom scrollbar element
-- search-input = SearchInput = an input for entering a search query
+- search-input = SearchInput = an input for entering a search query <input type="search">
 - segment-group = SegmentGroup = a group of mutually exclusive segment options
 - segment-group-item = SegmentGroupItem = one selectable segment in a segment group
 - select-with-extras = SelectWithExtras = a select dropdown with additional features like search or groups
@@ -220,7 +219,7 @@ Subprojects for web app examples:
 - sonner = Sonner = a toast notification manager
 - sparkline = Sparkline = a small inline chart showing a data trend
 - splitter = Splitter = a draggable divider for resizing adjacent panels
-- submit-input = SubmitInput = a button input that submits a form
+- submit-input = SubmitInput = a button input that submits a form <input type="submit">
 - summary-list = SummaryList = an ordered list of key-value summary pairs
 - summary-list-item = SummaryListItem = one key-value pair in a summary list
 - switch-button = SwitchButton = a toggle switch for turning a setting on or off
@@ -234,15 +233,15 @@ Subprojects for web app examples:
 - task-bar-button = TaskBarButton = one item in a task bar
 - task-list = TaskList = an ordered list of task list items
 - task-list-item = TaskListItem = one task item with a checkbox and label
-- tel-input = TelInput = an input for entering a telephone number
+- tel-input = TelInput = an input for entering a telephone number <input type="tel">
 - tel-link = TelLink = a tel hyperlink for a telephone number
-- text-input = TextInput = a single-line text input field
+- text-input = TextInput = a single-line text input field <input type="text">
 - textarea = Textarea = a multi-line text input area
 - theme-picker = ThemePicker = a picker for selecting a visual theme
 - theme-select = ThemeSelect = a select dropdown for choosing a theme
 - theme-select-option = ThemeSelectOption = one option in a theme select dropdown
 - theme-view = ThemeView = a read-only display of the current theme
-- time-input = TimeInput = an input for entering a time value
+- time-input = TimeInput = an input for entering a time value <input type="time">
 - time-picker-input = TimePickerInput = an input with a dropdown for picking a time
 - timeline-list = TimelineList = an ordered list of chronological events or milestones
 - timeline-list-item = TimelineListItem = one event in a timeline list
@@ -262,9 +261,35 @@ Subprojects for web app examples:
 - united-kingdom-national-health-service-number-view = UnitedKingdomNationalHealthServiceNumberView = a read-only display of a UK NHS number
 - united-states-social-security-number-input = UnitedStatesSocialSecurityNumberInput = an input for entering a US Social Security number
 - united-states-social-security-number-view = UnitedStatesSocialSecurityNumberView = a read-only display of a US Social Security number
-- url-input = UrlInput = an input for entering a URL
+- url-input = UrlInput = an input for entering a URL <input type="url">
+- vital-sign-blood-pressure-diastolic-view = VitalSignBloodPressureDiastolicView = number display of one vital sign blood pressure diastolic with integers
+- vital-sign-blood-pressure-diastolic-input = VitalSignBloodPressureDiastolicInput = number input of one vital sign blood pressure diastolic with integers
+- vital-sign-blood-pressure-systolic-view = VitalSignBloodPressureSystolicView = number display of one vital sign blood pressure systolic with integers
+- vital-sign-blood-pressure-systolic-input = VitalSignBloodPressureSystolicInput = number input of one vital sign blood pressure systolic with integers
+- vital-sign-body-fat-percentage-view = VitalSignBodyFatPercentageView = number display of one vital sign body fat percentage with one decimal point
+- vital-sign-body-fat-percentage-input = VitalSignBodyFatPercentageInput = number input of one vital sign body fat percentage with one decimal point
+- vital-sign-body-temperature-celcius-view = VitalSignBodyTemperatureCelciusView = number display of one vital sign body temperature in Celsius degrees with one decimal point
+- vital-sign-body-temperature-celcius-input = VitalSignBodyTemperatureCelciusInput = number input of one vital sign body temperature in Celsius degrees with one decimal point
+- vital-sign-cholesterol-hdl-mmol-per-litre-view = VitalSignCholesterolHdlMmolPerLitreView = number display of one vital sign cholesterol HDL (good cholesterol) millimole per litre with one decimal point
+- vital-sign-cholesterol-hdl-mmol-per-litre-input = VitalSignCholesterolHdlMmolPerLitreInput = number input of one vital sign cholesterol HDL (good cholesterol) millimole per litre with one decimal point
+- vital-sign-cholesterol-ldl-mmol-per-litre-view = VitalSignCholesterolLdlMmolPerLitreView = number display of one vital sign cholesterol LDL (bad cholesterol) millimole per litre with one decimal point
+- vital-sign-cholesterol-ldl-mmol-per-litre-input = VitalSignCholesterolLdlMmolPerLitreInput = number input of one vital sign cholesterol LDL (bad cholesterol) millimole per litre with one decimal point
+- vital-sign-heart-rate-beats-per-minute-view = VitalSignHeartRateBeatsPerMinuteView = number display of one vital sign heart rate in beats per minute (BPM) with integers
+- vital-sign-heart-rate-beats-per-minute-input = VitalSignHeartRateBeatsPerMinuteInput = number input of one vital sign heart rate in beats per minute (BPM) with integers
+- vital-sign-heart-rate-variability-view = VitalSignHeartRateVariabilityView = number display of one vital sign heart rate variability (HRV) with integers
+- vital-sign-heart-rate-variability-input = VitalSignHeartRateVariabilityInput = number input of one vital sign heart rate variability (HRV) with integers
+- vital-sign-height-cm-view = VitalSignHeightCmView = number display of one vital sign height in centimetres with integers
+- vital-sign-height-cm-input = VitalSignHeightCmInput = number input of one vital sign height in centimetres with integers
+- vital-sign-respiratory-rate-breaths-per-minute-view = VitalSignRespiratoryRateBreathsPerMinuteView = number display of one vital sign respiratory rate in breaths per minute with integers
+- vital-sign-respiratory-rate-breaths-per-minute-input = VitalSignRespiratoryRateBreathsPerMinuteInput = number input of one vital sign respiratory rate in breaths per minute with integers
+- vital-sign-vo2-max-ml-per-kg-per-minute-view = VitalSignVo2MaxMlPerKgPerMinuteView = number display of one vital sign VO2 max in millilitres per kilogram per minute with integers
+- vital-sign-vo2-max-ml-per-kg-per-minute-input = VitalSignVo2MaxMlPerKgPerMinuteInput = number input of one vital sign VO2 max in millilitres per kilogram per minute with integers
+- vital-sign-waist-circumference-cm-view = VitalSignWaistCircumferenceCmView = number display of one vital sign waist circumference in centimetres with integers
+- vital-sign-waist-circumference-cm-input = VitalSignWaistCircumferenceCmInput = number input of one vital sign waist circumference in centimetres with integers
+- vital-sign-weight-kg-view = VitalSignWeightKgView = number display of one vital sign weight in kilograms with integers
+- vital-sign-weight-kg-input = VitalSignWeightKgInput = number input of one vital sign weight in kilograms with integers
 - warning-callout = WarningCallout = a callout box highlighting a warning message
-- week-input = WeekInput = an input for selecting a week and year
+- week-input = WeekInput = an input for selecting a week and year <input type="week">
 
 ## Component patterns for file name and HTML tag
 
@@ -397,4 +422,42 @@ Subprojects for web app examples:
     </DataTableRow>
   </DataTableBody>
 </DataTable>
+```
+
+### VitalSignGroupView pattern
+
+```tsx
+<VitalSignGroupView>
+  <VitalSignHeartRateBeatsPerMinuteView>…</VitalSignHeartRateBeatsPerMinuteView>
+  <VitalSignRespiratoryRateBreathsPerMinuteView>
+    …
+  </VitalSignRespiratoryRateBreathsPerMinuteView>
+  <VitalSignBodyTemperatureCelsiusView>…</VitalSignBodyTemperatureCelsiusView>
+  <VitalSignRespiratoryBloodPressureSystolicView>
+    …
+  </VitalSignRespiratoryBloodPressureSystolicView>
+  <VitalSignRespiratoryBloodPressureDiastolicView>
+    …
+  </VitalSignRespiratoryBloodPressureDiastolicView>
+</VitalSignGroupView>
+```
+
+### VitalSignGroupInput pattern
+
+```tsx
+<VitalSignGroupInput>
+  <VitalSignHeartRateBeatsPerMinuteInput>
+    …
+  </VitalSignHeartRateBeatsPerMinuteInput>
+  <VitalSignRespiratoryRateBreathsPerMinuteInput>
+    …
+  </VitalSignRespiratoryRateBreathsPerMinuteInput>
+  <VitalSignBodyTemperatureCelsiusInput>…</VitalSignBodyTemperatureCelsiusInput>
+  <VitalSignRespiratoryBloodPressureSystolicInput>
+    …
+  </VitalSignRespiratoryBloodPressureSystolicInput>
+  <VitalSignRespiratoryBloodPressureDiastolicInput>
+    …
+  </VitalSignRespiratoryBloodPressureDiastolicInput>
+</VitalSignGroupInput>
 ```

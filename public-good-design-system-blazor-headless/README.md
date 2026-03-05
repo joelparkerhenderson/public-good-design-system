@@ -102,7 +102,7 @@ AspectRatioContainer, Card, FloatingPanel, HolyGrailLayout, Panel, Resizable, Sc
 
 ### Forms & Inputs
 
-ButtonInput, CheckboxInput, ColorInput, Combobox, DateField, DateInput, DateRange, DatetimeLocalInput, EmailInput, Field, Fieldset, FileInput, Form, HiddenInput, ImageFileInput, Input, Listbox, MeasurementInstanceInput, MeasurementSystemInput, MeasurementUnitInput, MonthInput, NumberInput, Option, PasswordInputDiv, PinInputDiv, PostalCodeInput, RadioGroup, RadioInput, RangeInput, ResetInput, SearchInput, Select, SelectWithExtras, SubmitInput, TagInput, TelInput, Textarea, TextInput, TimeInput, TimePickerInput, UrlInput, WeekInput
+ButtonInput, CheckboxInput, ColorInput, Combobox, DateField, DateInput, DateRange, DatetimeLocalInput, EmailInput, Field, Fieldset, FileInput, Form, HiddenInput, ImageFileInput, Input, Listbox, MeasurementInstanceInput, MeasurementSystemInput, MeasurementUnitInput, MonthInput, NumberInput, Option, PasswordInputOrTextInputDiv, PinInputDiv, PostalCodeInput, RadioGroup, RadioInput, RangeInput, ResetInput, SearchInput, Select, SelectWithExtras, SubmitInput, TagInput, TelInput, Textarea, TextInput, TimeInput, TimePickerInput, UrlInput, WeekInput
 
 ### Buttons & Toggles
 

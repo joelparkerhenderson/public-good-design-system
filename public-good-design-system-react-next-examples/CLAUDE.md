@@ -76,7 +76,7 @@ export type * from "@pgds/Button";
 | --------- | ------------ | ------------------------------------------------ |
 | Button    | `<button>`   | Button, ToggleButton, SwitchButton               |
 | Dialog    | `<dialog>`   | Dialog, AlertDialog, FileDialog                  |
-| Div       | `<div>`      | PinInputDiv, PasswordInputDiv                    |
+| Div       | `<div>`      | PinInputDiv, PasswordInputOrTextInputDiv         |
 | Fieldset  | `<fieldset>` | Fieldset                                         |
 | Figure    | `<figure>`   | Figure                                           |
 | Footer    | `<footer>`   | Footer                                           |
@@ -328,7 +328,7 @@ const errorId = `${inputId}-error`;
   - pagination-list = PaginationList = an ordered list of page navigation links
   - pagination-list-item = PaginationListItem = one page link in a pagination list
 - panel = Panel = a generic content panel with optional heading
-- password-input-div = PasswordInputDiv = an input for entering a password with obscured text
+- password-input-or-text-input-div = PasswordInputOrTextInputDiv = an input for entering a password with obscured text
 - pin-input-div = PinInputDiv = a series of single-digit inputs for entering a PIN or OTP code
 - popover = Popover = a floating content box anchored to a trigger element
 - popup = Popup = a temporary overlay that appears above page content

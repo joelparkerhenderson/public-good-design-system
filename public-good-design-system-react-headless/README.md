@@ -110,7 +110,7 @@ Component names follow a suffix-based pattern that indicates the root HTML eleme
 | TableBody | `<tbody>` | `DataTableBody` |
 | TableRow | `<tr>` | `DataTableRow` |
 | TableData | `<td>` | `DataTableData` |
-| Div | `<div>` | `PinInputDiv`, `PasswordInputDiv` |
+| Div | `<div>` | `PinInputDiv`, `PasswordInputOrTextInputDiv` |
 | Meter | `<meter>` | `Meter` |
 | Progress | `<progress>` | `Progress` |
 | Fieldset | `<fieldset>` | `Fieldset` |
@@ -174,7 +174,7 @@ Every component's root element includes a semantic CSS class matching its kebab-
 | MonthInput | Month and year selector |
 | NumberInput | Numeric value input with validation |
 | Option | Option in a select dropdown |
-| PasswordInputDiv | Password input with obscured text |
+| PasswordInputOrTextInputDiv | Password input with obscured text |
 | PinInputDiv | Multi-digit PIN/OTP entry |
 | PostalCodeInput | Postal/ZIP code input |
 | RadioGroup | Group of radio buttons |

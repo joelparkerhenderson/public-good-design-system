@@ -1096,7 +1096,7 @@ article[class*="card"] {
 .month-input,
 .week-input,
 .postal-code-input,
-.password-input-div input,
+.password-input-or-text-input-div input,
 .pin-input-div input {
   display: block;
   width: 100%;
@@ -1331,8 +1331,8 @@ article[class*="card"] {
   border-radius: var(--nhs-border-radius);
 }
 
-/* password-input-div */
-.password-input-div {
+/* password-input-or-text-input-div */
+.password-input-or-text-input-div {
   position: relative;
 }
 

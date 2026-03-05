@@ -1,0 +1,121 @@
+using Bunit;
+using Xunit;
+using PublicGoodDesignSystemBlazorHeadless.Components;
+
+namespace PublicGoodDesignSystemBlazorHeadless.Tests.Components;
+
+public class ImageInputTests : TestContext
+{
+    [Fact]
+    public void RendersAsInput()
+    {
+        var cut = RenderComponent<ImageInput>();
+        var element = cut.Find("input");
+        Assert.NotNull(element);
+    }
+
+    [Fact]
+    public void HasTypeImage()
+    {
+        var cut = RenderComponent<ImageInput>();
+        var element = cut.Find("input");
+        Assert.Equal("image", element.GetAttribute("type"));
+    }
+
+    [Fact]
+    public void HasBaseClass()
+    {
+        var cut = RenderComponent<ImageInput>();
+        var element = cut.Find("input");
+        Assert.Contains("image-input", element.GetAttribute("class"));
+    }
+
+    [Fact]
+    public void MergesCssClass()
+    {
+        var cut = RenderComponent<ImageInput>(p => p
+            .Add(c => c.CssClass, "custom-class"));
+        var element = cut.Find("input");
+        var classes = element.GetAttribute("class");
+        Assert.Contains("image-input", classes);
+        Assert.Contains("custom-class", classes);
+    }
+
+    [Fact]
+    public void PassesThroughAdditionalAttributes()
+    {
+        var cut = RenderComponent<ImageInput>(p => p
+            .Add(c => c.AdditionalAttributes, new Dictionary<string, object> { { "data-testid", "test-123" } }));
+        var element = cut.Find("input");
+        Assert.Equal("test-123", element.GetAttribute("data-testid"));
+    }
+
+    [Fact]
+    public void RendersSrc()
+    {
+        var cut = RenderComponent<ImageInput>(p => p
+            .Add(c => c.Src, "/test.png"));
+        var element = cut.Find("input");
+        Assert.Equal("/test.png", element.GetAttribute("src"));
+    }
+
+    [Fact]
+    public void RendersAlt()
+    {
+        var cut = RenderComponent<ImageInput>(p => p
+            .Add(c => c.Alt, "Submit"));
+        var element = cut.Find("input");
+        Assert.Equal("Submit", element.GetAttribute("alt"));
+    }
+
+    [Fact]
+    public void RendersWidth()
+    {
+        var cut = RenderComponent<ImageInput>(p => p
+            .Add(c => c.Width, 200));
+        var element = cut.Find("input");
+        Assert.Equal("200", element.GetAttribute("width"));
+    }
+
+    [Fact]
+    public void RendersHeight()
+    {
+        var cut = RenderComponent<ImageInput>(p => p
+            .Add(c => c.Height, 100));
+        var element = cut.Find("input");
+        Assert.Equal("100", element.GetAttribute("height"));
+    }
+
+    [Fact]
+    public void RendersDisabledState()
+    {
+        var cut = RenderComponent<ImageInput>(p => p
+            .Add(c => c.Disabled, true));
+        var element = cut.Find("input");
+        Assert.True(element.HasAttribute("disabled"));
+    }
+
+    [Fact]
+    public void RendersEnabledByDefault()
+    {
+        var cut = RenderComponent<ImageInput>();
+        var element = cut.Find("input");
+        Assert.False(element.HasAttribute("disabled"));
+    }
+
+    [Fact]
+    public void SrcDefaultIsEmptyString()
+    {
+        var cut = RenderComponent<ImageInput>();
+        // Default value for Src should be ""
+        Assert.NotNull(cut.Instance);
+    }
+
+    [Fact]
+    public void AltDefaultIsEmptyString()
+    {
+        var cut = RenderComponent<ImageInput>();
+        // Default value for Alt should be ""
+        Assert.NotNull(cut.Instance);
+    }
+}

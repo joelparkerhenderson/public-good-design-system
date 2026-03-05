@@ -185,7 +185,7 @@ and focuses on semantic HTML, ARIA accessibility, and keyboard interaction.
 - [PaginationListItem](components/PaginationListItem.md) — `<PaginationListItem>` (`pagination-list-item`)
 - [PaginationNav](components/PaginationNav.md) — `<PaginationNav>` (`pagination-nav`)
 - [Panel](components/Panel.md) — `<Panel>` (`panel`)
-- [PasswordInputDiv](components/PasswordInputDiv.md) — `<PasswordInputDiv>` (`password-input-div`)
+- [PasswordInputOrTextInputDiv](components/PasswordInputOrTextInputDiv.md) — `<PasswordInputOrTextInputDiv>` (`password-input-or-text-input-div`)
 - [PinInputDiv](components/PinInputDiv.md) — `<PinInputDiv>` (`pin-input-div`)
 - [Popover](components/Popover.md) — `<Popover>` (`popover`)
 - [Popup](components/Popup.md) — `<Popup>` (`popup`)

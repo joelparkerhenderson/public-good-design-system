@@ -174,7 +174,7 @@ Headless versions if you want to use componets with all your own styles:
 - [pagination-list](components/pagination-list): an ordered list of page navigation links
 - [pagination-list-item](components/pagination-list-item): one page link in a pagination list
 - [panel](components/panel): a generic content panel with optional heading
-- [password-input-div](components/password-input-div): an input for entering a password with obscured text
+- [password-input-or-text-input-div](components/password-input-or-text-input-div): an input for entering a password or text with show/hide toggle
 - [pin-input-div](components/pin-input-div): a series of single-digit inputs for entering a PIN or OTP code
 - [popover](components/popover): a floating content box anchored to a trigger element
 - [popup](components/popup): a temporary overlay that appears above page content

@@ -113,7 +113,7 @@ Component names follow a suffix-based pattern that indicates the root HTML eleme
 | TableBody | `<tbody>` | `DataTableBody` |
 | TableRow | `<tr>` | `DataTableRow` |
 | TableData | `<td>` | `DataTableData` |
-| Div | `<div>` | `PinInputDiv`, `PasswordInputDiv` |
+| Div | `<div>` | `PinInputDiv`, `PasswordInputOrTextInputDiv` |
 | Meter | `<meter>` | `Meter` |
 | Progress | `<progress>` | `Progress` |
 | Fieldset | `<fieldset>` | `Fieldset` |

@@ -484,6 +484,10 @@
 .image {
 }
 
+/* image-input: a graphical submit button that displays an image */
+.image-input {
+}
+
 /* information-callout: a callout box highlighting informational content */
 .information-callout {
 }
@@ -628,8 +632,12 @@
 .panel {
 }
 
-/* password-input-div: an input for entering a password with obscured text */
-.password-input-div {
+/* password-input: an input for entering a password with obscured text */
+.password-input {
+}
+
+/* password-input-or-text-input-div: an input for entering a password or text with show/hide toggle */
+.password-input-or-text-input-div {
 }
 
 /* pin-input-div: a series of single-digit inputs for entering a PIN or OTP code */
@@ -954,6 +962,110 @@
 
 /* united-states-social-security-number-view: a read-only display of a US Social Security number */
 .united-states-social-security-number-view {
+}
+
+/* vital-sign-blood-pressure-diastolic-input: number input of one vital sign blood pressure diastolic with integers */
+.vital-sign-blood-pressure-diastolic-input {
+}
+
+/* vital-sign-blood-pressure-diastolic-view: number display of one vital sign blood pressure diastolic with integers */
+.vital-sign-blood-pressure-diastolic-view {
+}
+
+/* vital-sign-blood-pressure-systolic-input: number input of one vital sign blood pressure systolic with integers */
+.vital-sign-blood-pressure-systolic-input {
+}
+
+/* vital-sign-blood-pressure-systolic-view: number display of one vital sign blood pressure systolic with integers */
+.vital-sign-blood-pressure-systolic-view {
+}
+
+/* vital-sign-body-fat-percentage-input: number input of one vital sign body fat percentage with one decimal point */
+.vital-sign-body-fat-percentage-input {
+}
+
+/* vital-sign-body-fat-percentage-view: number display of one vital sign body fat percentage with one decimal point */
+.vital-sign-body-fat-percentage-view {
+}
+
+/* vital-sign-body-temperature-celcius-input: number input of one vital sign body temperature in Celsius degrees with one decimal point */
+.vital-sign-body-temperature-celcius-input {
+}
+
+/* vital-sign-body-temperature-celcius-view: number display of one vital sign body temperature in Celsius degrees with one decimal point */
+.vital-sign-body-temperature-celcius-view {
+}
+
+/* vital-sign-cholesterol-hdl-mmol-per-litre-input: number input of one vital sign cholesterol HDL (good cholesterol) millimole per litre with one decimal point */
+.vital-sign-cholesterol-hdl-mmol-per-litre-input {
+}
+
+/* vital-sign-cholesterol-hdl-mmol-per-litre-view: number display of one vital sign cholesterol HDL (good cholesterol) millimole per litre with one decimal point */
+.vital-sign-cholesterol-hdl-mmol-per-litre-view {
+}
+
+/* vital-sign-cholesterol-ldl-mmol-per-litre-input: number input of one vital sign cholesterol LDL (bad cholesterol) millimole per litre with one decimal point */
+.vital-sign-cholesterol-ldl-mmol-per-litre-input {
+}
+
+/* vital-sign-cholesterol-ldl-mmol-per-litre-view: number display of one vital sign cholesterol LDL (bad cholesterol) millimole per litre with one decimal point */
+.vital-sign-cholesterol-ldl-mmol-per-litre-view {
+}
+
+/* vital-sign-heart-rate-beats-per-minute-input: number input of one vital sign heart rate in beats per minute with integers */
+.vital-sign-heart-rate-beats-per-minute-input {
+}
+
+/* vital-sign-heart-rate-beats-per-minute-view: number display of one vital sign heart rate in beats per minute with integers */
+.vital-sign-heart-rate-beats-per-minute-view {
+}
+
+/* vital-sign-heart-rate-variability-input: number input of one vital sign heart rate variability with integers */
+.vital-sign-heart-rate-variability-input {
+}
+
+/* vital-sign-heart-rate-variability-view: number display of one vital sign heart rate variability with integers */
+.vital-sign-heart-rate-variability-view {
+}
+
+/* vital-sign-height-cm-input: number input of one vital sign height in centimetres with integers */
+.vital-sign-height-cm-input {
+}
+
+/* vital-sign-height-cm-view: number display of one vital sign height in centimetres with integers */
+.vital-sign-height-cm-view {
+}
+
+/* vital-sign-respiratory-rate-breaths-per-minute-input: number input of one vital sign respiratory rate in breaths per minute with integers */
+.vital-sign-respiratory-rate-breaths-per-minute-input {
+}
+
+/* vital-sign-respiratory-rate-breaths-per-minute-view: number display of one vital sign respiratory rate in breaths per minute with integers */
+.vital-sign-respiratory-rate-breaths-per-minute-view {
+}
+
+/* vital-sign-vo2-max-ml-per-kg-per-minute-input: number input of one vital sign VO2 max in millilitres per kilogram per minute with integers */
+.vital-sign-vo2-max-ml-per-kg-per-minute-input {
+}
+
+/* vital-sign-vo2-max-ml-per-kg-per-minute-view: number display of one vital sign VO2 max in millilitres per kilogram per minute with integers */
+.vital-sign-vo2-max-ml-per-kg-per-minute-view {
+}
+
+/* vital-sign-waist-circumference-cm-input: number input of one vital sign waist circumference in centimetres with integers */
+.vital-sign-waist-circumference-cm-input {
+}
+
+/* vital-sign-waist-circumference-cm-view: number display of one vital sign waist circumference in centimetres with integers */
+.vital-sign-waist-circumference-cm-view {
+}
+
+/* vital-sign-weight-kg-input: number input of one vital sign weight in kilograms with integers */
+.vital-sign-weight-kg-input {
+}
+
+/* vital-sign-weight-kg-view: number display of one vital sign weight in kilograms with integers */
+.vital-sign-weight-kg-view {
 }
 
 /* url-input: an input for entering a URL */
